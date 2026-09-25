@@ -4,10 +4,13 @@
 (function(){
   var LS_KEY='ys_lang';
   var qp=new URLSearchParams(location.search);
+  var LANGS=['ru','en','de'];
   var lang=qp.get('lang')||localStorage.getItem(LS_KEY)||'ru';
-  if(lang!=='ru'&&lang!=='en') lang='ru';
+  if(LANGS.indexOf(lang)<0) lang='ru';
 
   var YS=window.YS={lang:lang, onLang:[]};
+  // безопасно достать поле из объекта-словаря продукта (fallback: язык -> en -> ru)
+  YS.pick=function(o){return o?(o[YS.lang]||o.en||o.ru||''):'';};
   function dict(){return (window.I18N&&window.I18N[YS.lang])||{};}
   function t(k){var d=dict(); if(k in d) return d[k]; var r=window.I18N&&window.I18N.ru; return (r&&r[k])||k;}
   YS.t=t;
@@ -34,7 +37,8 @@
   function langToggle(){
     return '<div class="lang" role="group" aria-label="Language">'+
       '<button data-lang="ru" class="'+(YS.lang==='ru'?'active':'')+'">RU</button>'+
-      '<button data-lang="en" class="'+(YS.lang==='en'?'active':'')+'">EN</button></div>';
+      '<button data-lang="en" class="'+(YS.lang==='en'?'active':'')+'">EN</button>'+
+      '<button data-lang="de" class="'+(YS.lang==='de'?'active':'')+'">DE</button></div>';
   }
   function buildHeader(){
     var h=document.createElement('header');
@@ -157,9 +161,9 @@
   /* ---------- product cards ---------- */
   function productCard(p){
     return '<a class="prod-card reveal" href="product.html?slug='+p.slug+'">'+
-      '<div class="prod-media"><span class="prod-tag">'+p.type[YS.lang]+'</span>'+
-        '<img src="'+p.img+'" alt="'+p.title[YS.lang]+'" loading="lazy"></div>'+
-      '<div class="prod-body"><h3>'+p.title[YS.lang]+'</h3><p>'+p.desc[YS.lang]+'</p>'+
+      '<div class="prod-media"><span class="prod-tag">'+YS.pick(p.type)+'</span>'+
+        '<img src="'+p.img+'" alt="'+YS.pick(p.title)+'" loading="lazy"></div>'+
+      '<div class="prod-body"><h3>'+YS.pick(p.title)+'</h3><p>'+YS.pick(p.desc)+'</p>'+
         '<div class="prod-foot"><span class="prod-link">'+t('cta.open')+' '+ARROW+'</span></div>'+
       '</div></a>';
   }
@@ -196,16 +200,16 @@
     var p=(window.PRODUCTS||[]).find(function(x){return x.slug===slug;});
     function render(){
       if(!p){host.innerHTML='<div class="wrap" style="padding-top:150px;padding-bottom:100px"><a href="catalog.html">&larr; '+t('cta.back_catalog')+'</a><h1 style="margin-top:20px">404</h1></div>';return;}
-      document.title=p.title[YS.lang]+' — '+t('hero.name');
+      document.title=YS.pick(p.title)+' — '+t('hero.name');
       host.innerHTML=
       '<section class="page-hero"><div class="wrap"><div class="breadcrumb">'+
         '<a href="index.html" data-i18n="bc.home">'+t('bc.home')+'</a><span>/</span>'+
-        '<a href="catalog.html" data-i18n="nav.products">'+t('nav.products')+'</a><span>/</span>'+p.title[YS.lang]+
+        '<a href="catalog.html" data-i18n="nav.products">'+t('nav.products')+'</a><span>/</span>'+YS.pick(p.title)+
       '</div></div></section>'+
       '<section class="section" style="padding-top:20px"><div class="wrap pd">'+
-        '<div class="pd-media reveal"><img src="'+p.img+'" alt="'+p.title[YS.lang]+'"></div>'+
-        '<div class="reveal"><span class="pd-tag">'+p.type[YS.lang]+'</span><h1>'+p.title[YS.lang]+'</h1>'+
-          '<p class="lead">'+(p.long?p.long[YS.lang]:p.desc[YS.lang])+'</p>'+
+        '<div class="pd-media reveal"><img src="'+p.img+'" alt="'+YS.pick(p.title)+'"></div>'+
+        '<div class="reveal"><span class="pd-tag">'+YS.pick(p.type)+'</span><h1>'+YS.pick(p.title)+'</h1>'+
+          '<p class="lead">'+(p.long?YS.pick(p.long):YS.pick(p.desc))+'</p>'+
           '<div class="stub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p>'+t('pd.more_soon')+'</p></div>'+
           '<div class="cta-row"><a class="btn btn-magenta" href="consultation.html">'+t('pd.book')+' '+ARROW+'</a>'+
           '<a class="btn btn-ghost" href="catalog.html">'+t('cta.back_catalog')+'</a></div>'+

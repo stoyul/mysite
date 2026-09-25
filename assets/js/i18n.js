@@ -260,5 +260,139 @@ en: {
   "ps.final.title":"Where will you begin","ps.final.text":"Choose a direction above or ask one honest question — we will gather the rest together",
 
   "stub.title":"Page in progress","stub.text":"A detailed text will appear here soon. The section already exists — navigation leads here, not to the home page"
+},
+
+de: {
+  "nav.home":"Start","nav.self":"Für dich","nav.experts":"Für Experten",
+  "nav.products":"Produkte","nav.about":"Über mich","nav.contact":"Kontakt",
+  "cta.book":"Beratung buchen","cta.book_short":"Beratung",
+  "cta.self":"Für dich","cta.experts":"Für Experten","cta.more":"Mehr erfahren",
+  "cta.open":"Öffnen","cta.catalog":"Zum Katalog","cta.choose":"Weg wählen",
+  "cta.ask":"Frage stellen","cta.create_product":"Eigenes Produkt erstellen",
+  "cta.about_more":"Mich näher kennenlernen","cta.back_catalog":"Alle Produkte",
+
+  "hero.eyebrow":"Psychologin · Autorin von Methoden · Spieleentwicklerin",
+  "hero.name":"Julia Stojanowa","hero.sub":"Finde zu dir. Lebe aus der Kraft",
+  "hero.lead":"Ich helfe dir zu sehen, was in dir vorgeht, deine Kraft zurückzugewinnen und sie auf das Leben zu richten, das du wählst",
+  "trust.1":"Eigene Methoden","trust.2":"Tiefenpsychologie","trust.3":"Symbole, die wirken",
+
+  "self.eyebrow":"Womit anfangen","self.title":"Wo stehst du gerade",
+  "self.subtitle":"Wähle deine Richtung — und ich schlage dir die passenden Werkzeuge, Produkte und Unterstützung vor",
+  "self.c1.t":"Ich will mich selbst verstehen","self.c1.d":"Emotionen, Zustände, Bedürfnisse, innere Konflikte",
+  "self.c2.t":"Ich will wissen, was ich will","self.c2.d":"Wünsche, Entscheidungen, eigene Richtung",
+  "self.c3.t":"Ich will meine Energie zurück","self.c3.d":"Ressource, Selbstwert, innerer Zustand, Halt",
+  "self.c4.t":"Beziehungen und Familie","self.c4.d":"Partnerschaft, Nähe, Eltern, Kinder, Verhältnis zu sich",
+  "self.c5.t":"Archetypen und Symbole","self.c5.d":"Göttinnen, Symbole, heilige Geometrie, Bilder",
+  "self.c6.t":"Ich bin Experte — ich will ein Produkt schaffen","self.c6.d":"Ein Spiel, ein Kartenset, einen Kurs, ein Programm oder eine Methode",
+
+  "feat.eyebrow":"Autorensystem","feat.title":"Geh den Weg „Punkt der Kraft“",
+  "feat.lead":"Ein System aus fünf Schritten hilft dir, die Situation als Ganzes zu sehen, Energie zurückzugewinnen und den nächsten Schritt zu wählen — aus Klarheit, nicht aus Angst",
+  "step.1":"Wo bin ich","step.2":"Was brauche ich","step.3":"Was verleugne ich","step.4":"Wo ist meine Energie","step.5":"Was erschaffe ich",
+
+  "prod.eyebrow":"Eigene Produkte","prod.title":"Werkzeuge, die dich zu dir zurückbringen",
+  "prod.subtitle":"Spiele, Kartensets, Bücher und Praktiken für die Arbeit allein und gemeinsam",
+  "f.all":"Alle","f.game":"Spiele","f.deck":"Kartensets","f.book":"Bücher","f.course":"Kurse","f.meditation":"Meditationen",
+  "prod.empty":"In dieser Kategorie gibt es noch keine Produkte",
+
+  "exp.eyebrow":"Für Experten","exp.title":"Verwandle dein Wissen in ein eigenes Produkt",
+  "exp.lead":"Ich helfe Psychologen, Coaches und Experten, ihren Ansatz zu einem System zu formen und ihm die Form eines Spiels, Kartensets, Kurses oder einer Methode zu geben",
+  "exp.c1.t":"Ein Spiel schaffen","exp.c1.d":"Deine Methode in eine Route, Mechanik und ein lebendiges Erlebnis verwandeln",
+  "exp.c2.t":"Ein Kartenset schaffen","exp.c2.d":"Ein System aus Bildern, Fragen und Bedeutungen zu einem Werkzeug fügen",
+  "exp.c3.t":"Einen Kurs oder ein Programm schaffen","exp.c3.d":"Einen Lernweg und ein echtes Ergebnis für die Teilnehmenden aufbauen",
+  "exp.c4.t":"Eine Methode schaffen","exp.c4.d":"Deine Arbeitslogik beschreiben und für andere übertragbar machen",
+
+  "about.eyebrow":"Über mich","about.title":"Ich sehe das Wesentliche — und forme es zu einem System",
+  "about.p1":"Ich arbeite an der Schnittstelle von Psychologie, systemischem Denken, Methodik und der Sprache der Bilder. Mir ist wichtig, keine fertige Antwort zu geben, sondern dir zu helfen, deine eigene Logik zu sehen, inneren Halt zurückzugewinnen und zu wählen.",
+  "about.p2":"Ich erschaffe transformative Spiele, Kartensets, Programme und Methoden — Werkzeuge, die tief wirken und dabei eine klare Struktur behalten.",
+  "val.1":"Psychologie","val.2":"Systemik","val.3":"Methodik","val.4":"Symbole",
+
+  "final.title":"Was gerade für dich wichtig ist","final.text":"Beginne mit einer ehrlichen Frage — den Rest fügen wir gemeinsam zusammen",
+
+  "footer.tagline":"Finde zu dir. Wähle das Deine. Lebe aus der Kraft","footer.directions":"Richtungen",
+  "footer.products":"Produkte","footer.contact_h":"Kontakt aufnehmen",
+  "footer.contact_text":"Individuelle Arbeit und eigene Produkte — nach Terminvereinbarung zur Beratung",
+  "footer.rights":"© 2026 Julia Stojanowa. Alle Rechte vorbehalten","footer.tag":"Psychologie · Symbole · Transformation",
+
+  "bc.home":"Start",
+
+  /* Über mich */
+  "page.about.lead":"Psychologin, Autorin transformativer Methoden, Entwicklerin von Spielen und Werkzeugen der Entwicklung",
+  "page.about.h1":"Mein Ansatz","page.about.b1":"Ich verbinde Psychologie, systemisches Denken, Methodik und die Sprache der Bilder. Meine Stärke ist es, hinter vielen Details das Wesentliche und die Zusammenhänge zu sehen und sie zu einem klaren System zu fügen.",
+  "page.about.b2":"In meiner Arbeit gebe ich keine fertigen Antworten — ich helfe einem Menschen, seine eigene Logik zu sehen, inneren Halt zurückzugewinnen und aus Klarheit zu wählen.",
+  "page.about.h2":"Was ich erschaffe","page.about.b3":"Transformative Spiele, Kartensets, Programme und Methoden — Werkzeuge, die tief wirken und dabei eine klare Struktur behalten. Aus einer einzigen Methode kann ein ganzes Ökosystem von Produkten wachsen.",
+  "page.about.h3":"Mission","page.about.b4":"Einem Menschen helfen zu sehen, was in ihm vorgeht, seine Kraft zurückzugewinnen und sie auf das Leben zu richten, das er wählt.",
+
+  /* Beratung */
+  "page.consult.lead":"Wir klären dein Anliegen, gewinnen Klarheit zurück und bestimmen den nächsten Schritt. Du kannst mit einer ehrlichen Frage beginnen",
+  "form.name":"Wie heißt du","form.contact":"E-Mail oder Messenger für den Kontakt",
+  "form.format":"Format","form.opt.personal":"Individuelle Arbeit","form.opt.product":"Ein eigenes Produkt besprechen","form.opt.expert":"Beratung für Experten",
+  "form.message":"Dein Anliegen oder deine Frage","form.submit":"Anfrage senden",
+  "form.note":"Mit dem Klick sendest du eine Anfrage. Ich melde mich auf einem passenden Weg bei dir",
+  "form.success.h":"Danke, deine Anfrage wurde gesendet","form.success.p":"Ich melde mich in Kürze auf einem passenden Weg. Das Formular ist noch nicht mit einem Server verbunden — es werden keine Daten übertragen, dies ist eine Oberflächen-Vorschau",
+
+  /* Autorensystem */
+  "page.as.lead":"Der Raum der Autorensysteme und Methoden von Julia Stojanowa — ein Weg von Unklarheit zu Klarheit, vom Schatten zur Kraft",
+  "page.as.h1":"Wie es aufgebaut ist","page.as.b1":"Ein Autorensystem ist kein Satz von Übungen, sondern eine Logik, die einen Menschen von Punkt A zu Punkt B führt. Zuerst sehen wir das Wesentliche, dann formen wir es zu einem System und geben ihm die Form eines Produkts.",
+  "page.as.h2":"Punkt der Kraft","page.as.b2":"Das zentrale Autorensystem aus fünf Schritten. Es hilft, die Situation als Ganzes zu sehen, Energie zurückzugewinnen und den nächsten Schritt zu wählen.",
+
+  /* Punkt der Kraft */
+  "page.ts.title":"Punkt der Kraft",
+  "page.ts.lead":"Ein Autorensystem aus fünf Schritten: vom Verstehen der Situation zur Wahl und zum Handeln",
+  "page.ts.h1":"Die fünf Schritte des Systems","page.ts.h2":"Wobei es hilft",
+  "page.ts.s1":"Die Realität ohne Bewertung sehen","page.ts.s2":"Das wahre Bedürfnis benennen","page.ts.s3":"Dem begegnen, was im Schatten bleibt","page.ts.s4":"Die Lecks und Quellen der Ressource sehen","page.ts.s5":"Eine Handlung und einen neuen Weg wählen",
+  "page.ts.b1":"Den Punkt der Kraft kannst du allein gehen — im transformativen Spiel, oder gemeinsam mit mir in einer Beratung.",
+
+  /* Katalog */
+  "page.catalog.lead":"Alle eigenen Werkzeuge: Spiele, Kartensets, Bücher, Kurse und Meditationen",
+
+  /* Produkt */
+  "pd.about":"Über das Produkt","pd.book":"Beratung buchen","pd.more_soon":"Eine ausführliche Beschreibung, der Inhalt und die Zugangsbedingungen erscheinen hier später",
+
+  /* Für Experten (Seite) */
+  "page.exp.lead":"Dein Wissen, deine Erfahrung und dein einzigartiger Blick können zu einem System werden, das mit deinem Namen verbunden ist und Leben verändert",
+  "page.exp.h1":"Wähle deinen Weg des Erschaffens","page.exp.h2":"Von der Idee zum eigenen Produkt",
+  "es.process":"Wesen → Konzept → Methodik → Mechanik → Inhalt → Visuelles System → Fertiges Produkt",
+
+  /* Leistungen für Experten */
+  "svc.game.t":"Ich will mein Spiel schaffen","svc.game.l":"Dein Wissen kann zu einem Spiel werden — einem Autorensystem, in dem deine Methode wirkt, nicht nur Spielfeld und Karten",
+  "svc.deck.t":"Ich will mein Kartenset schaffen","svc.deck.l":"Dein Wissen kann zu einem Werkzeug werden, das ein Mensch in die Hand nimmt",
+  "svc.course.t":"Ich will einen Kurs oder ein Programm schaffen","svc.course.l":"Ein Kurs beginnt nicht mit Inhalt, sondern mit Veränderung. Wir bauen den Weg von A nach B",
+  "svc.product.t":"Eigenes Produkt erstellen","svc.product.l":"Ich helfe dir, deine Erfahrung und deinen Ansatz in ein ganzheitliches eigenes Produkt zu verwandeln",
+  "svc.method.t":"Ich will meine Methode schaffen","svc.method.l":"Verwandle deine Erfahrung und dein Wissen in eine eigene Arbeitsmethode, die sich weitergeben lässt",
+  "svc.stages":"Sechs Etappen der Arbeit","svc.st1":"Wesen","svc.st2":"Konzept","svc.st3":"Methodik","svc.st4":"Architektur","svc.st5":"Inhalt und Prototyp","svc.st6":"Fertiges Produkt",
+
+  /* Richtungen „Für dich“ */
+  "dir.understand.t":"Ich will verstehen, was mit mir geschieht","dir.understand.l":"Deinen Zustand sehen, verstehen, was dahintersteht, und tiefer blicken",
+  "dir.desire.t":"Ich will wissen, was ich will","dir.desire.l":"Deinen Wunsch von Erwartungen und dem gewohnten „muss“ trennen und dich hören",
+  "dir.energy.t":"Ich will meine Energie zurück","dir.energy.l":"Die Lecks sehen, Halt finden und die Ressource zum Handeln sammeln",
+  "dir.relations.t":"Beziehungen und Familie","dir.relations.l":"Partnerschaft, Nähe, Grenzen und wiederkehrende Muster",
+  "dir.symbols.t":"Archetypen und Symbole","dir.symbols.l":"Göttinnen, Symbole und heilige Geometrie als Sprache der Arbeit mit sich selbst",
+  "dir.rec":"Passende Werkzeuge","dir.cta":"Gemeinsam in einer Beratung erkunden",
+
+  /* Seite „Für dich“ */
+  "ps.eyebrow":"Wähle deinen Einstiegspunkt",
+  "ps.title":"Für <em>dich</em>",
+  "ps.lead":"Hier kannst du dich tiefer verstehen, deine Energie zurückgewinnen und ein Leben schaffen, in dem du wirklich glücklich bist",
+  "ps.c1.t":"Ich will verstehen, was mit mir geschieht","ps.c1.tags":"Emotionen · Zustände · Bedürfnisse · Reaktionen",
+  "ps.c2.t":"Ich will wissen, was ich will","ps.c2.tags":"Wünsche · Wahl · eigene Richtung · Entscheidungen",
+  "ps.c3.t":"Ich will meine Energie zurück","ps.c3.tags":"Lecks · Ressource · Selbstwert · innerer Zustand",
+  "ps.c4.t":"Beziehungen und Familie","ps.c4.tags":"Partnerschaft · Nähe · Eltern · Jugendliche",
+  "ps.c5.t":"Archetypen und Symbole sprechen mich an","ps.c5.tags":"Göttinnen · Symbole · heilige Geometrie",
+  "ps.start.q":"Ich weiß nicht, wo ich anfangen soll",
+  "ps.start.eyebrow":"Geh den Weg",
+  "ps.start.title":"„Punkt der Kraft“",
+  "ps.start.text":"Ein Schritt-für-Schritt-System, das dir hilft, deine Situation zu verstehen, Energie zurückzugewinnen und deine nächste Lebensstufe zu erschaffen",
+  "ps.how.eyebrow":"Wie es funktioniert",
+  "ps.how.title":"Drei Schritte zu dir",
+  "ps.how.s1.t":"Du wählst deinen Einstiegspunkt","ps.how.s1.d":"Das, was gerade jetzt anklingt — ein Zustand, ein Wunsch, Beziehungen oder Symbole",
+  "ps.how.s2.t":"Du bekommst die passenden Werkzeuge","ps.how.s2.d":"Spiele, Kartensets, Praktiken und Materialien, für dein Anliegen zusammengestellt",
+  "ps.how.s3.t":"Du gehst in die Tiefe — allein oder mit mir","ps.how.s3.d":"Selbstständig in deinem Tempo oder gemeinsam in einer Beratung",
+  "ps.sun.eyebrow":"Eine sanfte Erinnerung",
+  "ps.sun.title":"Du bist schon genug. Es bleibt nur, sich daran zu erinnern",
+  "ps.sun.text":"Arbeit an sich selbst heißt nicht, jemand anderes zu werden. Es heißt, zu deinem wahren Selbst zurückzukehren und dich auf deine Kraft zu stützen",
+  "ps.sun.cta":"Mit einer Beratung beginnen",
+  "ps.final.title":"Womit gerade du beginnst","ps.final.text":"Wähle oben eine Richtung oder stelle eine ehrliche Frage — den Rest fügen wir gemeinsam zusammen",
+
+  "stub.title":"Seite im Aufbau","stub.text":"Hier erscheint bald ein ausführlicher Text. Der Bereich existiert bereits — die Navigation führt hierher, nicht zur Startseite"
 }
 };
