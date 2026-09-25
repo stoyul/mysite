@@ -405,10 +405,13 @@ p{margin:0}
 .entry-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:16px}
 .entry-foot .entry-tags{flex:1}
 .entry-foot .entry-arrow{margin-top:0;flex:none}
-/* выравнивание подписей по высоте: заголовок и теги одинаковой высоты во всех карточках */
-.self-cards .entry-card h3{min-height:3.5em}
-.self-cards .entry-foot{min-height:3.3em}
-.self-cards .entry-tags{min-height:4.6em}
+/* иконки выровнены по верху карточки, стрелки — по низу (как в референсе) */
+@media(min-width:861px){
+  .self-cards .entry-body{display:flex;flex-direction:column;height:250px}
+  .self-cards .entry-card h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:0}
+  .self-cards .entry-foot{margin-top:auto;min-height:0}
+  .self-cards .entry-tags{min-height:0}
+}
 
 /* баннер «Точка силы» */
 .start-banner{position:relative;border-radius:24px;overflow:hidden;isolation:isolate;
