@@ -110,6 +110,30 @@ ru: {
   "dir.symbols.t":"Архетипы и символы","dir.symbols.l":"Богини, символы и сакральная геометрия как язык работы с собой",
   "dir.rec":"Подходящие инструменты","dir.cta":"Разобрать вместе на консультации",
 
+  /* Страница «Для себя» */
+  "ps.eyebrow":"Выберите точку входа",
+  "ps.title":"Для <em>себя</em>",
+  "ps.lead":"Здесь ты можешь глубже понять себя, вернуть энергию и создать жизнь, в которой ты по-настоящему счастлива",
+  "ps.c1.t":"Хочу понять, что со мной происходит","ps.c1.tags":"Эмоции · состояния · потребности · повторяющиеся реакции",
+  "ps.c2.t":"Хочу понять, чего я хочу","ps.c2.tags":"Желания · выбор · свое направление · решения",
+  "ps.c3.t":"Хочу вернуть энергию","ps.c3.tags":"Утечки · ресурс · самооценка · внутреннее состояние",
+  "ps.c4.t":"Отношения и семья","ps.c4.tags":"Пара · близость · родители · подростки",
+  "ps.c5.t":"Мне близки архетипы и символы","ps.c5.tags":"Богини · символы · сакральная геометрия",
+  "ps.start.q":"Не знаю, с чего начать",
+  "ps.start.eyebrow":"Пройти путь",
+  "ps.start.title":"«Точка силы»",
+  "ps.start.text":"Пошаговая система, которая поможет тебе разобраться в ситуации, вернуть энергию и создать свой следующий уровень жизни",
+  "ps.how.eyebrow":"Как это работает",
+  "ps.how.title":"Три шага к себе",
+  "ps.how.s1.t":"Выбираешь точку входа","ps.how.s1.d":"То, что откликается прямо сейчас — состояние, желание, отношения или символы",
+  "ps.how.s2.t":"Получаешь подходящие инструменты","ps.how.s2.d":"Игры, колоды, практики и материалы, собранные под твой запрос",
+  "ps.how.s3.t":"Идешь в глубину — сам или со мной","ps.how.s3.d":"Самостоятельно в своем темпе или вместе на консультации",
+  "ps.sun.eyebrow":"Мягкое напоминание",
+  "ps.sun.title":"Ты уже достаточно. Осталось это вспомнить",
+  "ps.sun.text":"Работа с собой — это не про то, чтобы стать кем-то другим. Это про то, чтобы вернуться к себе настоящей и опереться на свою силу",
+  "ps.sun.cta":"Начать с консультации",
+  "ps.final.title":"С чего начать именно тебе","ps.final.text":"Выбери направление выше или задай один честный вопрос — остальное соберем вместе",
+
   "stub.title":"Страница в наполнении","stub.text":"Здесь скоро появится подробный текст. Раздел уже создан — навигация ведет именно сюда, а не на главную"
 },
 
@@ -210,6 +234,30 @@ en: {
   "dir.relations.t":"Relationships and family","dir.relations.l":"Partnership, closeness, boundaries and repeating patterns",
   "dir.symbols.t":"Archetypes and symbols","dir.symbols.l":"Goddesses, symbols and sacred geometry as a language of working with yourself",
   "dir.rec":"Suitable tools","dir.cta":"Explore together in a consultation",
+
+  /* For yourself page */
+  "ps.eyebrow":"Choose your point of entry",
+  "ps.title":"For <em>yourself</em>",
+  "ps.lead":"Here you can understand yourself more deeply, restore your energy and create a life in which you are truly happy",
+  "ps.c1.t":"I want to understand what is happening to me","ps.c1.tags":"Emotions · states · needs · recurring reactions",
+  "ps.c2.t":"I want to know what I want","ps.c2.tags":"Desires · choice · my direction · decisions",
+  "ps.c3.t":"I want to restore energy","ps.c3.tags":"Leaks · resource · self-worth · inner state",
+  "ps.c4.t":"Relationships and family","ps.c4.tags":"Partnership · closeness · parents · teens",
+  "ps.c5.t":"Archetypes and symbols speak to me","ps.c5.tags":"Goddesses · symbols · sacred geometry",
+  "ps.start.q":"I don’t know where to start",
+  "ps.start.eyebrow":"Walk the path",
+  "ps.start.title":"“Point of Power”",
+  "ps.start.text":"A step-by-step system that helps you understand your situation, restore energy and create your next level of life",
+  "ps.how.eyebrow":"How it works",
+  "ps.how.title":"Three steps back to yourself",
+  "ps.how.s1.t":"Choose your point of entry","ps.how.s1.d":"What resonates right now — a state, a desire, relationships or symbols",
+  "ps.how.s2.t":"Get the right tools","ps.how.s2.d":"Games, decks, practices and materials gathered for your request",
+  "ps.how.s3.t":"Go deeper — alone or with me","ps.how.s3.d":"On your own at your pace, or together in a consultation",
+  "ps.sun.eyebrow":"A gentle reminder",
+  "ps.sun.title":"You are already enough. What is left is to remember it",
+  "ps.sun.text":"Working with yourself is not about becoming someone else. It is about coming back to your true self and leaning on your own strength",
+  "ps.sun.cta":"Start with a consultation",
+  "ps.final.title":"Where will you begin","ps.final.text":"Choose a direction above or ask one honest question — we will gather the rest together",
 
   "stub.title":"Page in progress","stub.text":"A detailed text will appear here soon. The section already exists — navigation leads here, not to the home page"
 }

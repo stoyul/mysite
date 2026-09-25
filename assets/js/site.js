@@ -17,7 +17,7 @@
   /* ---------- navigation model ---------- */
   var NAV=[
     {page:'home',href:'index.html',key:'nav.home'},
-    {page:'self',href:'index.html#self',key:'nav.self'},
+    {page:'self',href:'dlya-sebya.html',key:'nav.self'},
     {page:'experts',href:'experts.html',key:'nav.experts'},
     {page:'products',href:'catalog.html',key:'nav.products'},
     {page:'about',href:'about.html',key:'nav.about'},
@@ -93,7 +93,7 @@
           '<p class="tagline" data-i18n="footer.tagline" style="margin-top:16px">'+t('footer.tagline')+'</p>'+
         '</div>'+
         '<div class="col"><h4 data-i18n="footer.directions">'+t('footer.directions')+'</h4><nav>'+
-          '<a href="index.html#self" data-i18n="nav.self">'+t('nav.self')+'</a>'+
+          '<a href="dlya-sebya.html" data-i18n="nav.self">'+t('nav.self')+'</a>'+
           '<a href="experts.html" data-i18n="nav.experts">'+t('nav.experts')+'</a>'+
           '<a href="avtorskaya-sistema.html" data-i18n="feat.eyebrow">'+t('feat.eyebrow')+'</a>'+
           '<a href="about.html" data-i18n="nav.about">'+t('nav.about')+'</a>'+
