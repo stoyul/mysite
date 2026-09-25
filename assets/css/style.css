@@ -383,6 +383,10 @@ p{margin:0}
 .entry-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:16px}
 .entry-foot .entry-tags{flex:1}
 .entry-foot .entry-arrow{margin-top:0;flex:none}
+/* выравнивание подписей по высоте: заголовок и теги одинаковой высоты во всех карточках */
+.self-cards .entry-card h3{min-height:3.5em}
+.self-cards .entry-foot{min-height:3.3em}
+.self-cards .entry-tags{min-height:4.6em}
 
 /* баннер «Точка силы» */
 .start-banner{position:relative;border-radius:24px;overflow:hidden;isolation:isolate;
