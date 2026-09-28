@@ -126,9 +126,8 @@ section{position:relative}
 .langs{margin-top:22px;display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;
   color:var(--ink-soft);font-size:14.5px;font-weight:500}
 .langs b{color:var(--wine);font-weight:700}
-.flag{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);
-  border-radius:100px;padding:5px 13px;font-size:13.5px}
-.flag svg,.flagbadge svg{width:22px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.06);flex:none;display:block}
+.flag{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--line);
+  border-radius:100px;padding:5px 15px;font-size:13.5px;color:var(--wine);font-weight:600}
 .hero-media{position:relative}
 .hero-media img{width:100%;border-radius:26px;box-shadow:var(--shadow);
   border:6px solid #fff;outline:1px solid var(--line)}
@@ -218,15 +217,8 @@ section{position:relative}
 .lang-card{border-radius:var(--radius);overflow:hidden;background:#fff;border:1px solid var(--line);
   box-shadow:var(--shadow-soft);transition:transform .3s}
 .lang-card:hover{transform:translateY(-5px)}
-.lang-card .pic{aspect-ratio:4/3;overflow:hidden;position:relative}
+.lang-card .pic{aspect-ratio:4/3;overflow:hidden;position:relative;height:100%}
 .lang-card .pic img{width:100%;height:100%;object-fit:cover}
-.lang-card .pic.ph{background:linear-gradient(150deg,#c9436f,#7d1b3c);display:grid;place-items:center}
-.lang-card .pic.ph .big{font-family:var(--serif);font-weight:700;color:#fff;font-size:42px;opacity:.9}
-.lang-card .flagbadge{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.92);
-  border-radius:8px;padding:6px 8px;line-height:0;box-shadow:0 4px 10px -4px rgba(0,0,0,.3)}
-.lang-card .flagbadge svg{width:30px;height:20px}
-.lang-card b{display:block;padding:16px 18px 18px;font-family:var(--serif);font-weight:600;
-  font-size:18px;color:var(--wine);text-align:center}
 .world-note{text-align:center;margin-top:26px;font-family:var(--script);color:var(--magenta);
   font-size:clamp(20px,3vw,28px)}
 
@@ -316,9 +308,9 @@ section{position:relative}
       </div>
       <div class="langs">
         <span>Доступно на:</span>
-        <span class="flag"><svg viewBox="0 0 22 15"><rect width="22" height="5" fill="#fff"/><rect y="5" width="22" height="5" fill="#0039a6"/><rect y="10" width="22" height="5" fill="#d52b1e"/></svg>Русском</span>
-        <span class="flag"><svg viewBox="0 0 22 15"><rect width="22" height="5" fill="#111"/><rect y="5" width="22" height="5" fill="#dd0000"/><rect y="10" width="22" height="5" fill="#ffce00"/></svg>Немецком</span>
-        <span class="flag"><svg viewBox="0 0 22 15"><rect width="22" height="15" fill="#012169"/><path d="M0 0l22 15M22 0L0 15" stroke="#fff" stroke-width="3"/><path d="M0 0l22 15M22 0L0 15" stroke="#c8102e" stroke-width="1.6"/><path d="M11 0v15M0 7.5h22" stroke="#fff" stroke-width="4"/><path d="M11 0v15M0 7.5h22" stroke="#c8102e" stroke-width="2"/></svg>Английском</span>
+        <span class="flag">Русском</span>
+        <span class="flag">Немецком</span>
+        <span class="flag">Английском</span>
       </div>
     </div>
     <div class="hero-media reveal">
@@ -485,12 +477,13 @@ section{position:relative}
 <!-- ===== ЯЗЫКИ ===== -->
 <section class="sec blush" id="languages">
   <div class="wrap center">
-    <span class="eyebrow" style="justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9z"/></svg>Три языка</span>
-    <h2 class="sec-title" style="margin:12px auto 8px">Доступно на 3 языках</h2>
+    <span class="eyebrow" style="justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9z"/></svg>Языки</span>
+    <h2 class="sec-title" style="margin:12px auto 12px;max-width:760px">Карточки доступны на разных языках</h2>
+    <p class="lead" style="max-width:620px;margin:0 auto">Выбирайте версию, на которой вам обоим будет уютно проводить время вместе.</p>
     <div class="lang-cards">
-      <div class="lang-card reveal"><div class="pic"><span class="flagbadge"><svg viewBox="0 0 22 15"><rect width="22" height="5" fill="#fff"/><rect y="5" width="22" height="5" fill="#0039a6"/><rect y="10" width="22" height="5" fill="#d52b1e"/></svg></span><img src="assets/img/vn-poster.jpg" alt="Русская версия колоды"></div><b>Русская версия</b></div>
-      <div class="lang-card reveal"><div class="pic"><span class="flagbadge"><svg viewBox="0 0 22 15"><rect width="22" height="5" fill="#111"/><rect y="5" width="22" height="5" fill="#dd0000"/><rect y="10" width="22" height="5" fill="#ffce00"/></svg></span><img src="assets/img/vn-box.jpg" alt="Немецкая версия колоды"></div><b>Немецкая версия</b></div>
-      <div class="lang-card reveal"><div class="pic ph"><span class="flagbadge"><svg viewBox="0 0 22 15"><rect width="22" height="15" fill="#012169"/><path d="M0 0l22 15M22 0L0 15" stroke="#fff" stroke-width="3"/><path d="M0 0l22 15M22 0L0 15" stroke="#c8102e" stroke-width="1.6"/><path d="M11 0v15M0 7.5h22" stroke="#fff" stroke-width="4"/><path d="M11 0v15M0 7.5h22" stroke="#c8102e" stroke-width="2"/></svg></span><span class="big">Time for Us</span></div><b>Английская версия</b></div>
+      <div class="lang-card reveal"><div class="pic"><img src="assets/img/vn-poster.jpg" alt="Колода «Время для нас»"></div></div>
+      <div class="lang-card reveal"><div class="pic"><img src="assets/img/vn-box.jpg" alt="Колода «Время для нас»"></div></div>
+      <div class="lang-card reveal"><div class="pic"><img src="assets/img/vn-card.jpg" alt="Карточка колоды «Время для нас»"></div></div>
     </div>
     <p class="world-note">Одна колода — для пар по всему миру ♥</p>
   </div>
