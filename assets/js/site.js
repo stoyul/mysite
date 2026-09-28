@@ -160,7 +160,8 @@
 
   /* ---------- product cards ---------- */
   function productCard(p){
-    return '<a class="prod-card reveal" href="product.html?slug='+p.slug+'">'+
+    var href=p.href||('product.html?slug='+p.slug);
+    return '<a class="prod-card reveal" href="'+href+'">'+
       '<div class="prod-media"><span class="prod-tag">'+YS.pick(p.type)+'</span>'+
         '<img src="'+p.img+'" alt="'+YS.pick(p.title)+'" loading="lazy"></div>'+
       '<div class="prod-body"><h3>'+YS.pick(p.title)+'</h3><p>'+YS.pick(p.desc)+'</p>'+
@@ -198,6 +199,7 @@
     var host=document.querySelector('#product-host');if(!host)return;
     var slug=qp.get('slug');
     var p=(window.PRODUCTS||[]).find(function(x){return x.slug===slug;});
+    if(p&&p.href){location.replace(p.href);return;}
     function render(){
       if(!p){host.innerHTML='<div class="wrap" style="padding-top:150px;padding-bottom:100px"><a href="catalog.html">&larr; '+t('cta.back_catalog')+'</a><h1 style="margin-top:20px">404</h1></div>';return;}
       document.title=YS.pick(p.title)+' — '+t('hero.name');
@@ -247,10 +249,14 @@
     var topic=qp.get('topic')||'understand';
     var map={understand:'dir.understand',desire:'dir.desire',energy:'dir.energy',relations:'dir.relations',symbols:'dir.symbols'};
     var base=map[topic]||'dir.understand';
-    // recommend a few products
+    // recommend products relevant to the topic (fallback: first three)
     function render(){
       document.title=t(base+'.t')+' — '+t('hero.name');
-      var recs=(window.PRODUCTS||[]).slice(0,3).map(productCard).join('');
+      var all=(window.PRODUCTS||[]);
+      var picked=all.filter(function(p){return p.topics&&p.topics.indexOf(topic)>=0;});
+      var list=picked.slice();
+      for(var i=0;i<all.length&&list.length<3;i++){if(list.indexOf(all[i])<0)list.push(all[i]);}
+      var recs=list.slice(0,3).map(productCard).join('');
       host.innerHTML=
       '<section class="page-hero"><div class="wrap page-hero-inner"><div class="breadcrumb">'+
         '<a href="index.html">'+t('bc.home')+'</a><span>/</span><a href="index.html#self">'+t('nav.self')+'</a><span>/</span>'+t(base+'.t')+

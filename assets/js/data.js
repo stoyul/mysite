@@ -104,14 +104,15 @@ window.PRODUCTS = [
           de:"Eine Reihe von Meditationen und sanften Praktiken, um deinen Zustand wiederherzustellen, zu dir zurückzukehren und dich auf deine innere Ressource zu stützen."}
   },
   {
-    slug:"52-svidaniya", cat:"game", img:"assets/img/c03.jpg",
-    type:{ru:"Игра", en:"Game", de:"Spiel"},
-    title:{ru:"52 свидания", en:"52 Dates", de:"52 Dates"},
-    desc:{ru:"Игра для пары: близость, внимание и живой контакт.",
-          en:"A game for couples: closeness, attention and living contact.",
-          de:"Ein Spiel für Paare: Nähe, Aufmerksamkeit und lebendiger Kontakt."},
-    long:{ru:"Игра для пары, которая помогает вернуть внимание друг к другу, укрепить близость и создать пространство живого контакта.",
-          en:"A game for couples that helps bring attention back to each other, deepen closeness and create space for living contact.",
-          de:"Ein Spiel für Paare, das hilft, die Aufmerksamkeit füreinander zurückzugewinnen, die Nähe zu vertiefen und Raum für lebendigen Kontakt zu schaffen."}
+    slug:"52-svidaniya", cat:"deck", img:"assets/img/vn-box.jpg",
+    href:"vremya-dlya-nas.html", topics:["relations"], featured:true,
+    type:{ru:"Колода", en:"Deck", de:"Kartenset"},
+    title:{ru:"Время для нас", en:"Time for Us", de:"Zeit für uns"},
+    desc:{ru:"48 идей для свиданий и теплых моментов вдвоем на целый год.",
+          en:"48 ideas for dates and warm moments together for a whole year.",
+          de:"48 Ideen für Dates und schöne gemeinsame Momente für ein ganzes Jahr."},
+    long:{ru:"«Время для нас» — колода из 48 карточек с готовыми идеями совместного времени для пары. Каждую неделю выбирайте одну карточку и устраивайте свое маленькое свидание: уютные вечера, прогулки, поездки, творческие задания, игры и сюрпризы друг для друга.",
+          en:"“Time for Us” is a deck of 48 cards with ready-made ideas for couples. Each week you pick one card and create your own little date: cozy evenings, walks, trips, creative tasks, games and surprises for each other.",
+          de:"„Zeit für uns“ ist ein Kartenset aus 48 Karten mit fertigen Ideen für Paare. Jede Woche zieht ihr eine Karte und gestaltet euer kleines Date: gemütliche Abende, Spaziergänge, Ausflüge, kreative Aufgaben, Spiele und Überraschungen füreinander."}
   }
 ];
