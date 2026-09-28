@@ -145,8 +145,8 @@ ul{margin:0;padding:0;list-style:none}
 .hero-list li::before{content:"";position:absolute;left:2px;top:8px;width:11px;height:11px;
   background:conic-gradient(from 45deg,var(--gold),var(--gold-soft),var(--gold));
   clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
-.hero-media{position:relative}
-.hero-media img{width:100%;border-radius:var(--radius);box-shadow:0 40px 80px -34px rgba(0,0,0,.7);
+.hero-media{position:relative;min-width:0}
+.hero-media img{width:100%;height:auto;border-radius:var(--radius);box-shadow:0 40px 80px -34px rgba(0,0,0,.7);
   border:1px solid rgba(230,196,126,.35)}
 .hero-chips{position:absolute;top:16px;right:-6px;display:grid;gap:8px}
 .hero-chips span{background:rgba(40,9,19,.72);border:1px solid rgba(230,196,126,.4);color:var(--gold-soft);
