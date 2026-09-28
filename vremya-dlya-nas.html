@@ -169,15 +169,10 @@ section{position:relative}
 .date-tile{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-soft);text-align:center;
   background:#fff;border:1px solid var(--line);transition:transform .3s}
 .date-tile:hover{transform:translateY(-4px)}
-.date-tile .thumb{aspect-ratio:1/1;display:grid;place-items:center;color:#fff}
-.date-tile .thumb svg{width:40px;height:40px}
+.date-tile .thumb{aspect-ratio:1/1;overflow:hidden}
+.date-tile .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.date-tile:hover .thumb img{transform:scale(1.05)}
 .date-tile span{display:block;padding:13px 10px;font-family:var(--serif);font-weight:600;font-size:14.5px;color:var(--wine)}
-.g1{background:linear-gradient(150deg,#c9436f,#7d1b3c)}
-.g2{background:linear-gradient(150deg,#e07a94,#b23a5f)}
-.g3{background:linear-gradient(150deg,#d98f6b,#a94f6a)}
-.g4{background:linear-gradient(150deg,#c66a8e,#6d1230)}
-.g5{background:linear-gradient(150deg,#d1607f,#8a1a3f)}
-.g6{background:linear-gradient(150deg,#e0956e,#b8506a)}
 
 /* ---------- card anatomy ---------- */
 .anatomy{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:40px}
@@ -357,7 +352,7 @@ section{position:relative}
 <section class="sec blush">
   <div class="wrap two">
     <div class="media-frame reveal">
-      <img src="assets/img/vn-card.jpg" alt="Рука держит карточку колоды с идеей свидания">
+      <img src="assets/img/couple-mugs.jpg" alt="Пара уютно проводит вечер с чашками какао при свечах">
     </div>
     <div class="reveal">
       <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.65-9.5 9-9.5 9z"/></svg>Знакомо?</span>
@@ -402,12 +397,12 @@ section{position:relative}
     <h2 class="sec-title" style="margin:12px auto 14px;max-width:760px">Совершенно разные свидания</h2>
     <p class="lead" style="max-width:720px;margin:0 auto">Чтобы совместное время не превращалось в очередную обязанность, идеи в колоде очень разные. Одни можно реализовать почти бесплатно, другие станут поводом выбраться из дома и попробовать что-то новое.</p>
     <div class="dates-grid">
-      <div class="date-tile reveal"><div class="thumb g1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-5h6v5"/></svg></div><span>Уютные домашние вечера</span></div>
-      <div class="date-tile reveal"><div class="thumb g2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="7" r="2.4"/><path d="M12 9.5V15l-3 5M12 15l3 5M8 12l4-1 4 1"/></svg></div><span>Романтические прогулки</span></div>
-      <div class="date-tile reveal"><div class="thumb g3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c4-3.5 7-7 7-11a7 7 0 1 0-14 0c0 4 3 7.5 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div><span>Небольшие путешествия</span></div>
-      <div class="date-tile reveal"><div class="thumb g4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15.5 4.5l4 4L8 20l-4.5.5L4 16z"/><path d="M13.5 6.5l4 4"/></svg></div><span>Творческие задания</span></div>
-      <div class="date-tile reveal"><div class="thumb g5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="8" width="19" height="9" rx="4.5"/><path d="M7 11v3M5.5 12.5h3M15.5 12h.01M18 13.5h.01"/></svg></div><span>Игры и челленджи</span></div>
-      <div class="date-tile reveal"><div class="thumb g6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div><span>Свидания на природе</span></div>
+      <div class="date-tile reveal"><div class="thumb"><img src="assets/img/date-home.jpg" alt="Уютные домашние вечера" loading="lazy"></div><span>Уютные домашние вечера</span></div>
+      <div class="date-tile reveal"><div class="thumb"><img src="assets/img/date-walk.jpg" alt="Романтические прогулки" loading="lazy"></div><span>Романтические прогулки</span></div>
+      <div class="date-tile reveal"><div class="thumb"><img src="assets/img/date-trip.jpg" alt="Небольшие путешествия" loading="lazy"></div><span>Небольшие путешествия</span></div>
+      <div class="date-tile reveal"><div class="thumb"><img src="assets/img/date-craft.jpg" alt="Творческие задания" loading="lazy"></div><span>Творческие задания</span></div>
+      <div class="date-tile reveal"><div class="thumb"><img src="assets/img/date-games.jpg" alt="Игры и челленджи" loading="lazy"></div><span>Игры и челленджи</span></div>
+      <div class="date-tile reveal"><div class="thumb"><img src="assets/img/date-nature.jpg" alt="Свидания на природе" loading="lazy"></div><span>Свидания на природе</span></div>
     </div>
   </div>
 </section>
@@ -432,11 +427,8 @@ section{position:relative}
 <!-- ===== БОЛЬШЕ, ЧЕМ 48 ИДЕЙ ===== -->
 <section class="sec blush">
   <div class="wrap two">
-    <div class="quote-card reveal">
-      <div>
-        <p>Один вечер, одна прогулка,<br>один разговор,<br>который потом<br>вспоминается годами</p>
-        <div class="qh center"><svg viewBox="0 0 24 24" width="30" fill="#ffd9e4" style="margin:6px auto 0"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.65-9.5 9-9.5 9z"/></svg></div>
-      </div>
+    <div class="media-frame reveal">
+      <img src="assets/img/couple-sunset-quote.jpg" alt="Пара встречает закат у моря — один вечер, который вспоминается годами">
     </div>
     <div class="reveal">
       <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.65-9.5 9-9.5 9z"/></svg>Больше, чем игра</span>
@@ -481,9 +473,9 @@ section{position:relative}
     <h2 class="sec-title" style="margin:12px auto 12px;max-width:760px">Карточки доступны на разных языках</h2>
     <p class="lead" style="max-width:620px;margin:0 auto">Выбирайте версию, на которой вам обоим будет уютно проводить время вместе.</p>
     <div class="lang-cards">
-      <div class="lang-card reveal"><div class="pic"><img src="assets/img/vn-poster.jpg" alt="Колода «Время для нас»"></div></div>
-      <div class="lang-card reveal"><div class="pic"><img src="assets/img/vn-box.jpg" alt="Колода «Время для нас»"></div></div>
-      <div class="lang-card reveal"><div class="pic"><img src="assets/img/vn-card.jpg" alt="Карточка колоды «Время для нас»"></div></div>
+      <div class="lang-card reveal"><div class="pic"><img src="assets/img/vn-poster.jpg" alt="Колода «Время для нас» — русскоязычная версия"></div></div>
+      <div class="lang-card reveal"><div class="pic"><img src="assets/img/vn-box.jpg" alt="Колода «Время для нас» — немецкоязычная версия"></div></div>
+      <div class="lang-card reveal"><div class="pic"><img src="assets/img/vn-box-en.jpg" alt="Time for Us — англоязычная версия колоды"></div></div>
     </div>
     <p class="world-note">Одна колода — для пар по всему миру ♥</p>
   </div>
@@ -502,11 +494,8 @@ section{position:relative}
         <p>Ведь вы оба этого хотите: вернуть в вашу жизнь романтику друг для друга.</p>
       </div>
     </div>
-    <div class="quote-card reveal" style="background:linear-gradient(150deg,#8a1a3f,#c9436f 70%,#e0b06e)">
-      <div>
-        <p>Продолжайте открывать<br>друг друга —<br>каждую неделю<br>по одной идее</p>
-        <div class="qh center"><svg viewBox="0 0 24 24" width="30" fill="#ffd9e4" style="margin:6px auto 0"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.65-9.5 9-9.5 9z"/></svg></div>
-      </div>
+    <div class="media-frame reveal">
+      <img src="assets/img/couple-dinner.jpg" alt="Романтический ужин вдвоём при свечах">
     </div>
   </div>
 </section>
