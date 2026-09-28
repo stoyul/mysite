@@ -71,15 +71,16 @@ window.PRODUCTS = [
           de:"Ein Kartenset aus Archetypen und Symbolen, um innere Zustände und Ressourcen durch die Sprache der Bilder zu erkunden."}
   },
   {
-    slug:"vozvraschenie-energii", cat:"deck", img:"assets/img/c04.jpg",
-    type:{ru:"Колода", en:"Deck", de:"Kartenset"},
-    title:{ru:"Возвращение энергии", en:"Return of Energy", de:"Rückkehr der Energie"},
-    desc:{ru:"Увидеть утечки энергии и собрать ресурс для действия.",
-          en:"See where energy leaks and gather the resource to act.",
-          de:"Sehen, wo Energie verloren geht, und die Ressource zum Handeln sammeln."},
-    long:{ru:"Инструмент, чтобы увидеть, куда уходит энергия, и найти то, что действительно поддерживает и возвращает ресурс.",
-          en:"A tool to see where your energy goes and find what truly supports you and restores the resource.",
-          de:"Ein Werkzeug, um zu sehen, wohin deine Energie geht, und zu finden, was dich wirklich unterstützt und die Ressource zurückbringt."}
+    slug:"vernut-energiyu", cat:"deck", img:"assets/img/ve-cards.jpg",
+    href:"vernut-energiyu.html", topics:["energy"], featured:true,
+    type:{ru:"Колода практик", en:"Practice deck", de:"Praxis-Kartenset"},
+    title:{ru:"Вернуть энергию", en:"Return Your Energy", de:"Energie zurückholen"},
+    desc:{ru:"24 практики, чтобы вернуть внимание, силы и внутренний ресурс.",
+          en:"24 practices to reclaim your attention, strength and inner resource.",
+          de:"24 Praktiken, um Aufmerksamkeit, Kraft und innere Ressource zurückzuholen."},
+    long:{ru:"«Вернуть энергию» — колода из 24 психологических практик. Часто сил нет не потому, что их мало, а потому что энергия занята тем, что мы удерживаем: прошлым, тревогой, контролем, чужими ожиданиями. Колода помогает увидеть, куда уходит внимание, и вернуть ресурс себе. Часть системы «Точка силы».",
+          en:"“Return Your Energy” is a deck of 24 psychological practices. Often we feel drained not because we have little strength, but because our energy is held by what we keep carrying: the past, anxiety, control, other people’s expectations. The deck helps you see where your attention goes and bring the resource back to yourself. Part of the “Point of Power” system.",
+          de:"„Energie zurückholen“ ist ein Kartenset aus 24 psychologischen Praktiken. Oft fehlt die Kraft nicht, weil wir wenig davon haben, sondern weil unsere Energie durch das gebunden ist, was wir festhalten: die Vergangenheit, Angst, Kontrolle, fremde Erwartungen. Das Set hilft zu sehen, wohin die Aufmerksamkeit geht, und die Ressource zu dir zurückzuholen. Teil des Systems „Punkt der Kraft“."}
   },
   {
     slug:"disciplina-uma", cat:"book", img:"assets/img/c08.jpg",
