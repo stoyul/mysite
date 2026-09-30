@@ -1,10 +1,21 @@
 # Чек-лист перед деплоем — yuliastoyanova.com (репозиторий stoyul/mysite)
 
-Хостинг: статика из корня репозитория (Cloudflare Pages по `wrangler.toml` + `.nojekyll`).
-Домены: **https://yuliastoyanova.com**, зеркала — `stoyul.github.io/mysite`, `mysite.pages.dev`.
+Хостинг: статика из корня репозитория (Cloudflare Workers Static Assets по `wrangler.toml`).
+Домены: **https://yuliastoyanova.com** (Cloudflare), зеркало — `stoyul.github.io/mysite` (GitHub Pages).
 Чистые URL: `/tochka-sily` → отдаёт файл `tochka-sily.html`; `/foo/` → `foo/index.html`.
 
-Каждый деплой = `git commit` + `git push origin main`. Хост пересобирается автоматически.
+## ⚠️ КАК ДЕПЛОИТСЯ (важно)
+- `git push origin main` обновляет ТОЛЬКО зеркало **GitHub Pages** (`stoyul.github.io/mysite`) — мгновенно.
+- **Боевой домен yuliastoyanova.com (Cloudflare) НЕ обновляется от git push.** В репозитории нет CI/workflow.
+  Его нужно **деплоить вручную** из папки репозитория:
+
+  ```
+  wrangler deploy
+  ```
+
+  (нужен установленный Node + wrangler и вход в Cloudflare: `wrangler login`).
+- Порядок релиза: `git commit` → `git push` → **`wrangler deploy`**. Без последнего шага правки на боевом домене НЕ появятся.
+- Быстрая проверка «доехало ли»: сравнить одну и ту же страницу на `yuliastoyanova.com` и на `stoyul.github.io/mysite` — если на зеркале ново, а на домене старо, значит не хватает `wrangler deploy` (или нужен Purge cache в панели Cloudflare).
 
 ---
 
