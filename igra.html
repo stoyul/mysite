@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ТОЧКА СИЛЫ — трансформационная игра | Найди место, где твоя жизнь снова становится твоей</title>
+<meta name="description" content="«Точка силы» — трансформационная игра, которая помогает увидеть, что происходит с тобой сейчас, куда уходит твоя энергия и что ты хочешь создать дальше. Онлайн и оффлайн.">
+<meta name="theme-color" content="#0c0a16">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ТОЧКА СИЛЫ — трансформационная игра">
+<meta property="og:description" content="Найди место, где твоя жизнь снова становится твоей. Онлайн и оффлайн.">
+<meta property="og:image" content="tochka-sily-igra/assets/img/hero-md.webp">
+<meta property="og:locale" content="ru_RU">
+
+<link rel="icon" href="tochka-sily-igra/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="tochka-sily-igra/assets/img/hero-lg.webp" imagesrcset="tochka-sily-igra/assets/img/hero-sm.webp 760w, tochka-sily-igra/assets/img/hero-md.webp 1200w, tochka-sily-igra/assets/img/hero-lg.webp 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="tochka-sily-igra/style.v2.css">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo" data-i18n="brand">ТОЧКА&nbsp;СИЛЫ</a>
+    <nav class="nav__menu" id="navMenu" aria-label="Навигация">
+      <a href="#for-this" data-i18n="nav.about">Об игре</a>
+      <a href="#path" data-i18n="nav.how">Как проходит</a>
+      <a href="#formats" data-i18n="nav.formats">Форматы</a>
+      <a href="#imagine" data-i18n="nav.author">Об авторе</a>
+      <a href="#booking" class="nav__cta" data-i18n="nav.cta">ХОЧУ В ИГРУ</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Язык / Language">
+      <button type="button" data-lang="ru" class="active">RU</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="de">DE</button>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <img class="hero__bg" src="tochka-sily-igra/assets/img/hero-lg.webp"
+       srcset="tochka-sily-igra/assets/img/hero-sm.webp 760w, tochka-sily-igra/assets/img/hero-md.webp 1200w, tochka-sily-igra/assets/img/hero-lg.webp 1920w"
+       sizes="100vw" alt="Золотой рассвет над горами и реальные карты игры «Точка силы»" fetchpriority="high" width="1920" height="768">
+  <img class="hero__author" src="tochka-sily-igra/assets/img/hero-author.webp"
+       srcset="tochka-sily-igra/assets/img/hero-author-sm.webp 420w, tochka-sily-igra/assets/img/hero-author.webp 660w"
+       sizes="(max-width:900px) 70vw, 46vw" alt="Автор игры с сияющим кристаллом в малиновом платье" fetchpriority="high" width="660" height="793">
+  <div class="hero__scrim"></div>
+  <svg class="geo geo--hero" viewBox="0 0 400 400" aria-hidden="true"><use href="#compass"/></svg>
+  <div class="hero__content reveal">
+    <p class="hero__eyebrow" data-i18n="hero.eyebrow">Трансформационная игра</p>
+    <h1 class="hero__title" data-i18n="hero.title">ТОЧКА СИЛЫ</h1>
+    <p class="hero__lead" data-i18n="hero.lead">Найди место, где твоя жизнь снова становится твоей</p>
+    <p class="hero__text" data-i18n="hero.text">Трансформационная игра, которая помогает увидеть, что происходит с тобой сейчас, куда уходит твоя энергия, что удерживает тебя на месте и куда ты реально хочешь двигаться дальше.</p>
+    <p class="hero__format"><span class="dot"></span><span data-i18n="hero.format">Онлайн и оффлайн</span></p>
+    <a href="#booking" class="btn btn--primary"><span data-i18n="nav.cta">ХОЧУ В ИГРУ</span> <span class="arr">→</span></a>
+  </div>
+  <a href="#realize" class="hero__scroll" aria-label="Листать вниз"><span></span></a>
+</section>
+
+<!-- ============= И ВРОДЕ БЫ ВСЕ ПОНИМАЕШЬ ============= -->
+<section class="sec sec--dark" id="realize">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__text reveal">
+        <h2 class="h2" data-i18n="realize.h">И вроде бы всё понимаешь…</h2>
+        <p data-i18n="realize.p1">Ты много думаешь и много работаешь над собой.</p>
+        <ul class="ticks">
+          <li data-i18n="realize.t1">Знаешь свои страхи.</li>
+          <li data-i18n="realize.t2">Понимаешь свои паттерны.</li>
+          <li data-i18n="realize.t3">Читаешь книги, смотришь видео на YouTube.</li>
+          <li data-i18n="realize.t4">Проходишь обучения.</li>
+        </ul>
+        <p data-i18n="realize.p2">И становится лучше и легче, но всё остаётся примерно на том же месте.</p>
+      </div>
+      <figure class="split__media reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/author-behind-lg.webp"
+             srcset="tochka-sily-igra/assets/img/author-behind-sm.webp 800w, tochka-sily-igra/assets/img/author-behind-lg.webp 1400w"
+             sizes="(max-width:900px) 90vw, 45vw"
+             alt="Автор игры смотрит на золотой закат сквозь арку" width="1400" height="933">
+        <span class="frame"></span>
+      </figure>
+      <div class="split__text reveal">
+        <p data-i18n="realize.p3">Отношения повторяются по знакомому сценарию.</p>
+        <p data-i18n="realize.p4">Деньги словно упираются в невидимый потолок.</p>
+        <p data-i18n="realize.p5">Есть идея, но нет энергии воплотить её.</p>
+        <p data-i18n="realize.p6">Хочется перемен, но непонятно каких именно.</p>
+        <p data-i18n="realize.p7">Или внешне всё хорошо, а внутри появляется ощущение:</p>
+        <p class="quote-soft" data-i18n="realize.q">«Я больше не хочу жить по-старому. Но куда мне дальше?»</p>
+      </div>
+    </div>
+    <p class="pull reveal" data-i18n="realize.pull">И тебе не нужен ещё один совет.<br><em>Тебе нужно увидеть всю картину целиком.</em></p>
+  </div>
+</section>
+
+<!-- ============= ИМЕННО ДЛЯ ЭТОГО ============= -->
+<section class="sec sec--dark sec--tight" id="for-this">
+  <div class="wrap">
+    <div class="cols">
+      <div class="cols__main reveal">
+        <h2 class="h2" data-i18n="forthis.h">Именно для этого создана<br><span class="gold">«Точка силы»</span></h2>
+        <p data-i18n="forthis.p1">Это не игра, в которой тебе расскажут, каким человеком тебе нужно стать. И не набор универсальных советов.</p>
+        <p data-i18n="forthis.p2">Ты приходишь со своим запросом и начинаешь исследовать его через игровое поле, карты, вопросы, символы, выборы и неожиданные события.</p>
+        <p data-i18n="forthis.p3">И постепенно то, что раньше казалось запутанным, начинает складываться в единую картину.</p>
+      </div>
+      <ul class="qlist reveal">
+        <li data-i18n="forthis.q1">Почему я оказалась именно здесь?</li>
+        <li data-i18n="forthis.q2">Чего мне на самом деле не хватает?</li>
+        <li data-i18n="forthis.q3">Что я продолжаю удерживать?</li>
+        <li data-i18n="forthis.q4">Куда уходит моя энергия?</li>
+        <li data-i18n="forthis.q5">Какую силу я пока не использую?</li>
+        <li data-i18n="forthis.q6">Что я хочу создать вместо того, что есть сейчас?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============= ПРЕДСТАВЬ ============= -->
+<section class="sec sec--light" id="imagine">
+  <div class="wrap">
+    <div class="imagine">
+      <figure class="imagine__media reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/author-golden-lg.webp"
+             srcset="tochka-sily-igra/assets/img/author-golden-sm.webp 800w, tochka-sily-igra/assets/img/author-golden-lg.webp 1400w"
+             sizes="(max-width:900px) 90vw, 48vw"
+             alt="Автор с закрытыми глазами в золотом свете и сакральной геометрии" width="1400" height="820">
+        <span class="frame frame--gold"></span>
+      </figure>
+      <div class="imagine__text reveal">
+        <h2 class="h2 h2--dark" data-i18n="imagine.h">Представь…</h2>
+        <p data-i18n="imagine.p1">Ты приходишь в игру с вопросом:</p>
+        <p class="quote-soft quote-soft--dark" data-i18n="imagine.q1">«Почему я никак не могу изменить эту ситуацию?»</p>
+        <p data-i18n="imagine.p2">А уходишь не с чужим советом. Ты вдруг сама видишь:</p>
+        <p class="quote-soft quote-soft--dark" data-i18n="imagine.q2">«Вот оно. Теперь я понимаю».</p>
+        <ul class="ticks ticks--dark">
+          <li data-i18n="imagine.t1">где застряла;</li>
+          <li data-i18n="imagine.t2">что на самом деле было тебе нужно;</li>
+          <li data-i18n="imagine.t3">почему определённые ситуации повторялись;</li>
+          <li data-i18n="imagine.t4">где ты отдавала свою силу;</li>
+          <li data-i18n="imagine.t5">что забирало энергию;</li>
+          <li data-i18n="imagine.t6">что наконец пора завершить;</li>
+          <li data-i18n="imagine.t7">что ты выбираешь теперь.</li>
+        </ul>
+      </div>
+    </div>
+    <blockquote class="bigquote reveal">
+      <span class="bigquote__mark">“</span>
+      <p data-i18n="imagine.bq">Я могу влиять на свою жизнь</p>
+      <cite data-i18n="imagine.bqcite">Осознанно направлять свою энергию туда, где я хочу создать изменения.</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============= С КАКИМ ЗАПРОСОМ ============= -->
+<section class="sec sec--light sec--tight" id="requests">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <h2 class="h2 h2--dark" data-i18n="req.h">С каким запросом можно прийти?</h2>
+      <p class="sub" data-i18n="req.sub">Практически с любой ситуацией, в которой тебе сейчас нужна ясность.</p>
+    </div>
+    <div class="qcards">
+      <article class="qcard reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/q-relations.webp" srcset="tochka-sily-igra/assets/img/q-relations-sm.webp 460w, tochka-sily-igra/assets/img/q-relations.webp 720w" sizes="(max-width:600px) 90vw, 30vw" alt="Отношения" width="720" height="720">
+        <div class="qcard__body"><h3 data-i18n="req.c1.t">Отношения</h3><p data-i18n="req.c1.d">Почему повторяется один и тот же сценарий? Что происходит между нами? Чего хочу я?</p></div>
+      </article>
+      <article class="qcard reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/q-money.webp" srcset="tochka-sily-igra/assets/img/q-money-sm.webp 460w, tochka-sily-igra/assets/img/q-money.webp 720w" sizes="(max-width:600px) 90vw, 30vw" alt="Деньги и реализация" width="720" height="720">
+        <div class="qcard__body"><h3 data-i18n="req.c2.t">Деньги и реализация</h3><p data-i18n="req.c2.d">Что мешает мне двигаться дальше? Где я сама останавливаю своё развитие?</p></div>
+      </article>
+      <article class="qcard reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/q-purpose.webp" srcset="tochka-sily-igra/assets/img/q-purpose-sm.webp 460w, tochka-sily-igra/assets/img/q-purpose.webp 720w" sizes="(max-width:600px) 90vw, 30vw" alt="Предназначение и новый этап" width="720" height="720">
+        <div class="qcard__body"><h3 data-i18n="req.c3.t">Предназначение и новый этап</h3><p data-i18n="req.c3.d">Куда мне дальше? Чего я действительно хочу сейчас?</p></div>
+      </article>
+      <article class="qcard reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/q-energy.webp" srcset="tochka-sily-igra/assets/img/q-energy-sm.webp 460w, tochka-sily-igra/assets/img/q-energy.webp 720w" sizes="(max-width:600px) 90vw, 30vw" alt="Энергия" width="720" height="718">
+        <div class="qcard__body"><h3 data-i18n="req.c4.t">Энергия</h3><p data-i18n="req.c4.d">Почему ничего не хочется? Куда уходит мой ресурс?</p></div>
+      </article>
+      <article class="qcard reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/portal.webp" sizes="(max-width:600px) 90vw, 30vw" alt="Цель" width="900" height="934">
+        <div class="qcard__body"><h3 data-i18n="req.c5.t">Цель</h3><p data-i18n="req.c5.d">Почему я знаю, чего хочу, но никак не начинаю действовать?</p></div>
+      </article>
+      <article class="qcard reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/q-choice.webp" srcset="tochka-sily-igra/assets/img/q-choice-sm.webp 460w, tochka-sily-igra/assets/img/q-choice.webp 720w" sizes="(max-width:600px) 90vw, 30vw" alt="Выбор" width="720" height="718">
+        <div class="qcard__body"><h3 data-i18n="req.c6.t">Выбор</h3><p data-i18n="req.c6.d">Какое решение действительно моё?</p></div>
+      </article>
+      <article class="qcard reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/q-repeat.webp" srcset="tochka-sily-igra/assets/img/q-repeat-sm.webp 460w, tochka-sily-igra/assets/img/q-repeat.webp 720w" sizes="(max-width:600px) 90vw, 30vw" alt="Повторяющаяся ситуация" width="720" height="718">
+        <div class="qcard__body"><h3 data-i18n="req.c7.t">Повторяющаяся ситуация</h3><p data-i18n="req.c7.d">Почему я снова здесь?</p></div>
+      </article>
+    </div>
+    <p class="pull pull--dark reveal" data-i18n="req.pull">И даже если ты пока не можешь сформулировать запрос и чувствуешь только «Что-то в моей жизни должно измениться» — с этого тоже можно начать.</p>
+    <div class="center reveal"><a href="#booking" class="btn btn--primary"><span data-i18n="req.cta">ХОЧУ ПРОЙТИ ИГРУ</span> <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============= ИГРОВОЕ ПОЛЕ ============= -->
+<section class="sec sec--dark board" id="board">
+  <div class="board__glow" data-parallax="0.15"></div>
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <p class="eyebrow" data-i18n="board.eyebrow">Реальное игровое поле</p>
+      <h2 class="h2" data-i18n="board.h">Пространство, в котором разворачивается твой путь</h2>
+    </div>
+    <figure class="board__media reveal">
+      <img loading="lazy" src="tochka-sily-igra/assets/img/board-lg.webp"
+           srcset="tochka-sily-igra/assets/img/board-sm.webp 800w, tochka-sily-igra/assets/img/board-lg.webp 1400w"
+           sizes="(max-width:1000px) 94vw, 1100px"
+           alt="Реальное игровое поле «Точка силы» с кристаллом в центре, картами, свечами и кристаллами" width="1400" height="933">
+      <span class="frame frame--gold"></span>
+    </figure>
+  </div>
+</section>
+
+<!-- ============= ТВОЙ ПУТЬ В ИГРЕ ============= -->
+<section class="sec sec--dark sec--tight path" id="path">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <h2 class="h2" data-i18n="path.h">Твой путь в игре</h2>
+      <p class="sub sub--light" data-i18n="path.sub">Ты проходишь через 5 пространств «Точки силы».</p>
+    </div>
+    <div class="steps">
+      <article class="step reveal">
+        <div class="step__img"><img loading="lazy" src="tochka-sily-igra/assets/img/path-1.webp" srcset="tochka-sily-igra/assets/img/path-1-sm.webp 440w, tochka-sily-igra/assets/img/path-1.webp 620w" sizes="(max-width:700px) 90vw, 22vw" alt="Где я — реальность и текущая точка пути" width="562" height="724"></div>
+        <span class="step__num">01</span>
+        <h3 data-i18n="path.s1.t">Где я?</h3>
+        <p data-i18n="path.s1.d">Сначала мы смотрим не на то, где ты «должна» быть, а на реальность. Что происходит сейчас? Что ты чувствуешь? В какой точке своей истории находишься?</p>
+      </article>
+      <article class="step reveal">
+        <div class="step__img"><img loading="lazy" src="tochka-sily-igra/assets/img/path-2.webp" srcset="tochka-sily-igra/assets/img/path-2-sm.webp 440w, tochka-sily-igra/assets/img/path-2.webp 620w" sizes="(max-width:700px) 90vw, 22vw" alt="Что мне нужно — карты потребностей" width="537" height="724"></div>
+        <span class="step__num">02</span>
+        <h3 data-i18n="path.s2.t">Что мне нужно?</h3>
+        <p data-i18n="path.s2.d">За нашими эмоциями, конфликтами и желаниями часто скрывается гораздо более глубокая потребность. Иногда одно её осознание полностью меняет взгляд на ситуацию.</p>
+      </article>
+      <article class="step reveal">
+        <div class="step__img"><img loading="lazy" src="tochka-sily-igra/assets/img/path-3.webp" srcset="tochka-sily-igra/assets/img/path-3-sm.webp 440w, tochka-sily-igra/assets/img/path-3.webp 620w" sizes="(max-width:700px) 90vw, 22vw" alt="Что я не вижу — встреча с Тенью" width="537" height="724"></div>
+        <span class="step__num">03</span>
+        <h3 data-i18n="path.s3.t">Что я не вижу?</h3>
+        <p data-i18n="path.s3.d">Здесь ты встречаешься со своей Тенью. Не для того, чтобы бороться с ней, а чтобы увидеть: какую Силу она всё это время скрывала. <em>Жертва&nbsp;→&nbsp;Автор.</em></p>
+      </article>
+      <article class="step reveal">
+        <div class="step__img"><img loading="lazy" src="tochka-sily-igra/assets/img/path-4.webp" srcset="tochka-sily-igra/assets/img/path-4-sm.webp 440w, tochka-sily-igra/assets/img/path-4.webp 620w" sizes="(max-width:700px) 90vw, 22vw" alt="Где моя энергия — возвращение энергии" width="537" height="724"></div>
+        <span class="step__num">04</span>
+        <h3 data-i18n="path.s4.t">Где моя энергия?</h3>
+        <p data-i18n="path.s4.d">Мы ищем места, где остаётся твоё внимание: незавершённые истории, люди, ожидания, прошлое, страх будущего. И шаг за шагом возвращаем энергию туда, где она нужна больше всего&nbsp;— <em>тебе</em>.</p>
+      </article>
+      <article class="step reveal">
+        <div class="step__img"><img loading="lazy" src="tochka-sily-igra/assets/img/path-5.webp" srcset="tochka-sily-igra/assets/img/path-5-sm.webp 440w, tochka-sily-igra/assets/img/path-5.webp 620w" sizes="(max-width:700px) 90vw, 22vw" alt="Что я создаю — новый выбор" width="620" height="620"></div>
+        <span class="step__num">05</span>
+        <h3 data-i18n="path.s5.t">Что я создаю?</h3>
+        <p data-i18n="path.s5.d">Освободившееся пространство больше не остаётся пустым. Ты выбираешь: какое состояние, какую жизнь, какой следующий шаг ты будешь создавать с новой энергией?</p>
+      </article>
+    </div>
+    <p class="pull reveal" data-i18n="path.pull">Игра постепенно переводит тебя из вопроса «Почему со мной это происходит?»<br>в вопрос <em>«Что я выбираю создать дальше?»</em></p>
+  </div>
+</section>
+
+<!-- ============= ЭТО НЕ ПРОСТО ПОЛЕ И КАРТОЧКИ ============= -->
+<section class="sec sec--light decks" id="decks">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <h2 class="h2 h2--dark" data-i18n="decks.h">Это не просто поле и карточки</h2>
+      <p class="sub" data-i18n="decks.sub">Во время путешествия ты встречаешь разные колоды игры.</p>
+    </div>
+    <div class="deckgrid">
+      <article class="deck reveal"><img loading="lazy" src="tochka-sily-igra/assets/img/deck-shadow.webp" alt="Карта колоды «Тень ↔ Сила»" width="173" height="325"><h3 data-i18n="decks.d1.t">Тень&nbsp;↔&nbsp;Сила</h3><p data-i18n="decks.d1.d">Помогает увидеть скрытый ресурс внутри привычного сценария.</p></article>
+      <article class="deck reveal"><img loading="lazy" src="tochka-sily-igra/assets/img/deck-needs.webp" alt="Карта колоды «Потребности»" width="173" height="325"><h3 data-i18n="decks.d2.t">Потребности</h3><p data-i18n="decks.d2.d">Показывают, чего тебе может не хватать на самом деле.</p></article>
+      <article class="deck reveal"><img loading="lazy" src="tochka-sily-igra/assets/img/deck-leaks.webp" alt="Карта колоды «Утечки энергии»" width="173" height="325"><h3 data-i18n="decks.d3.t">Утечки энергии</h3><p data-i18n="decks.d3.d">Помогают обнаружить, где остаётся твоя сила.</p></article>
+      <article class="deck reveal"><img loading="lazy" src="tochka-sily-igra/assets/img/deck-return.webp" alt="Карта колоды «Возвращение энергии»" width="172" height="325"><h3 data-i18n="decks.d4.t">Возвращение энергии</h3><p data-i18n="decks.d4.d">Предлагает конкретный способ вернуть внимание к себе.</p></article>
+      <article class="deck reveal"><img loading="lazy" src="tochka-sily-igra/assets/img/deck-archetypes.webp" alt="Карта колоды «Архетипы силы»" width="173" height="325"><h3 data-i18n="decks.d5.t">Архетипы силы</h3><p data-i18n="decks.d5.d">Помогают соприкоснуться с качествами, которые могут поддержать тебя сейчас.</p></article>
+      <article class="deck reveal"><img loading="lazy" src="tochka-sily-igra/assets/img/deck-keys.webp" alt="Карта колоды «Ключи»" width="173" height="325"><h3 data-i18n="decks.d6.t">Ключи</h3><p data-i18n="decks.d6.d">Открывают следующие этапы пути.</p></article>
+      <article class="deck deck--art reveal"><div class="deck__back"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#eye"/></svg></div><h3 data-i18n="decks.d7.t">Другой взгляд</h3><p data-i18n="decks.d7.d">Помогает посмотреть на ситуацию с другой точки зрения.</p></article>
+      <article class="deck reveal"><img loading="lazy" src="tochka-sily-igra/assets/img/deck-creation.webp" alt="Карта колоды «Творение»" width="173" height="325"><h3 data-i18n="decks.d8.t">Творение</h3><p data-i18n="decks.d8.d">Переводит осознание в выбор, намерение и действие.</p></article>
+      <article class="deck deck--art reveal"><div class="deck__back"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#spark"/></svg></div><h3 data-i18n="decks.d9.t">Особое событие</h3><p data-i18n="decks.d9.d">Неожиданно меняет ход игры и предлагает новый опыт.</p></article>
+    </div>
+    <p class="pull pull--dark reveal" data-i18n="decks.pull">Но заранее ты не знаешь, какой именно путь сложится у тебя.<br><em>И в этом магия игры.</em></p>
+  </div>
+</section>
+
+<!-- ============= ОНЛАЙН / ОФФЛАЙН ============= -->
+<section class="sec sec--dark formats" id="formats">
+  <div class="wrap">
+    <div class="sec__head reveal"><h2 class="h2" data-i18n="formats.h">Онлайн или оффлайн</h2></div>
+    <div class="fgrid">
+      <article class="fmt reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/portal.webp" alt="Онлайн-пространство игры — портал в космос" width="900" height="934">
+        <div class="fmt__body">
+          <h3><span class="ic">🌐</span> <span data-i18n="formats.online.t">Онлайн</span></h3>
+          <p data-i18n="formats.online.d">Ты можешь пройти «Точку силы» из любой точки мира. Перед тобой будет полноценное игровое пространство: поле, карты, переходы между зонами, выборы и весь путь игры. Настоящая игра онлайн.</p>
+          <a href="#booking" class="btn btn--ghost"><span data-i18n="formats.online.cta">ВЫБРАТЬ ОНЛАЙН</span> <span class="arr">→</span></a>
+        </div>
+      </article>
+      <article class="fmt reveal">
+        <img loading="lazy" src="tochka-sily-igra/assets/img/board-sm.webp" alt="Оффлайн — реальный игровой стол с полем и картами" width="800" height="533">
+        <div class="fmt__body">
+          <h3><span class="ic">✦</span> <span data-i18n="formats.offline.t">Оффлайн</span></h3>
+          <p data-i18n="formats.offline.d">Если тебе хочется живого погружения — приходи играть за настоящий игровой стол. Поле. Карты. Кубик. Ключи. Энергия. Кристалл. И твой путь, который постепенно разворачивается прямо перед тобой.</p>
+          <a href="#booking" class="btn btn--ghost"><span data-i18n="formats.offline.cta">ВЫБРАТЬ ОФФЛАЙН</span> <span class="arr">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============= ЧТО МОЖЕТ ОСТАТЬСЯ ============= -->
+<section class="sec sec--light after" id="after">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <h2 class="h2 h2--dark" data-i18n="after.h">Что может остаться с тобой после игры?</h2>
+      <p class="sub" data-i18n="after.sub">Не обещание, что за несколько часов исчезнут все жизненные сложности. А кое-что гораздо ценнее.</p>
+    </div>
+    <ol class="after__list">
+      <li class="reveal"><span class="after__i">01</span><h3 data-i18n="after.1.t">Ясность</h3><p data-i18n="after.1.d">Что со мной происходит?</p></li>
+      <li class="reveal"><span class="after__i">02</span><h3 data-i18n="after.2.t">Понимание</h3><p data-i18n="after.2.d">Почему я оказалась именно здесь?</p></li>
+      <li class="reveal"><span class="after__i">03</span><h3 data-i18n="after.3.t">Осознание</h3><p data-i18n="after.3.d">Где я теряю себя и свою энергию?</p></li>
+      <li class="reveal"><span class="after__i">04</span><h3 data-i18n="after.4.t">Новый взгляд</h3><p data-i18n="after.4.d">Какую силу я раньше не замечала?</p></li>
+      <li class="reveal"><span class="after__i">05</span><h3 data-i18n="after.5.t">Выбор</h3><p data-i18n="after.5.d">Чего я хочу теперь?</p></li>
+      <li class="reveal"><span class="after__i">06</span><h3 data-i18n="after.6.t">Действие</h3><p data-i18n="after.6.d">Какой мой следующий шаг?</p></li>
+    </ol>
+    <p class="pull pull--dark reveal" data-i18n="after.pull">Потому что настоящие изменения часто начинаются не тогда, когда кто-то говорит нам правильный ответ.<br><em>А в тот момент, когда мы вдруг видим свой.</em></p>
+  </div>
+</section>
+
+<!-- ============= ФИНАЛ ============= -->
+<section class="sec final" id="final">
+  <img class="final__bg" loading="lazy" src="tochka-sily-igra/assets/img/author-portal-lg.webp"
+       srcset="tochka-sily-igra/assets/img/author-portal-sm.webp 800w, tochka-sily-igra/assets/img/author-portal-lg.webp 1400w"
+       sizes="100vw" alt="Автор в малиновом платье в золотом портале на фоне заката" width="1400" height="933">
+  <div class="final__scrim"></div>
+  <div class="wrap final__content reveal">
+    <h2 class="h2 final__title" data-i18n="final.h">Может быть, твоя точка силы уже совсем рядом</h2>
+    <div class="final__text">
+      <p data-i18n="final.p1">Есть жизнь, которую мы продолжаем проживать по привычке. И есть момент, когда внутри появляется: <em>«Всё. Я хочу по-другому»</em>. Именно с этого момента может начаться игра.</p>
+      <p data-i18n="final.p2">Ты приходишь со своим вопросом. Проходишь свой путь. Собираешь свои ключи. Возвращаешь свою энергию. Находишь свою силу.</p>
+      <p data-i18n="final.p3">И в конце отвечаешь себе на самый важный вопрос:</p>
+    </div>
+    <p class="final__q" data-i18n="final.q">Что я создаю дальше?</p>
+    <div class="final__logo">
+      <span class="final__brand" data-i18n="brand">ТОЧКА СИЛЫ</span>
+      <span class="final__tag" data-i18n="final.tag">Твоя жизнь. Твоя энергия. Твой выбор.</span>
+    </div>
+    <a href="#booking" class="btn btn--primary btn--lg"><span data-i18n="final.cta">Я ХОЧУ НАЙТИ СВОЮ ТОЧКУ СИЛЫ</span> <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- ============= BOOKING ============= -->
+<section class="sec sec--dark booking" id="booking">
+  <div class="wrap booking__wrap">
+    <div class="sec__head reveal">
+      <p class="eyebrow" data-i18n="booking.eyebrow">Запись в игру</p>
+      <h2 class="h2" data-i18n="booking.h">Оставь заявку — и я свяжусь с тобой</h2>
+      <p class="sub sub--light" data-i18n="booking.sub">Расскажи, какой формат тебе ближе. Я отвечу и помогу выбрать удобное время.</p>
+    </div>
+    <form class="form reveal" id="bookingForm" novalidate>
+      <div class="form__row">
+        <label><span data-i18n="booking.name">Имя</span><input type="text" name="name" required autocomplete="name" data-i18n-ph="booking.name.ph" placeholder="Как тебя зовут"></label>
+        <label><span data-i18n="booking.contact">Телефон или e-mail</span><input type="text" name="contact" required autocomplete="tel" data-i18n-ph="booking.contact.ph" placeholder="Для связи"></label>
+      </div>
+      <fieldset class="form__formats">
+        <legend data-i18n="booking.format">Формат</legend>
+        <label class="chip"><input type="radio" name="format" value="online" checked><span data-i18n="booking.online">🌐 Онлайн</span></label>
+        <label class="chip"><input type="radio" name="format" value="offline"><span data-i18n="booking.offline">✦ Оффлайн</span></label>
+      </fieldset>
+      <label class="form__msg"><span data-i18n="booking.msg">Твой запрос <span>(по желанию)</span></span><textarea name="message" rows="3" data-i18n-ph="booking.msg.ph" placeholder="С чем хочешь прийти в игру"></textarea></label>
+      <button type="submit" class="btn btn--primary btn--lg"><span data-i18n="nav.cta">ХОЧУ В ИГРУ</span> <span class="arr">→</span></button>
+      <p class="form__ok" id="formOk" hidden data-i18n="booking.ok">Спасибо! Заявка отправлена — я свяжусь с тобой в ближайшее время.</p>
+      <p class="form__note" data-i18n="booking.note">Нажимая кнопку, ты соглашаешься на обработку данных для связи по заявке.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span class="footer__logo" data-i18n="brand">ТОЧКА СИЛЫ</span>
+    <p class="footer__tag" data-i18n="footer.tag">Трансформационная игра · Онлайн и оффлайн</p>
+    <nav class="footer__nav" aria-label="Подвал">
+      <a href="#for-this" data-i18n="nav.about">Об игре</a>
+      <a href="#path" data-i18n="nav.how">Как проходит</a>
+      <a href="#formats" data-i18n="nav.formats">Форматы</a>
+      <a href="#booking" data-i18n="footer.signup">Записаться</a>
+    </nav>
+    <p class="footer__copy" data-i18n="footer.copy">© 2026 «Точка силы». Твоя жизнь. Твоя энергия. Твой выбор.</p>
+  </div>
+</footer>
+
+<!-- SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="compass" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="150" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="200" cy="200" r="110" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.35"/>
+    <circle cx="200" cy="200" r="185" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.25"/>
+    <g stroke="currentColor" stroke-width="0.6" opacity="0.4">
+      <line x1="200" y1="15" x2="200" y2="385"/><line x1="15" y1="200" x2="385" y2="200"/>
+      <line x1="70" y1="70" x2="330" y2="330"/><line x1="330" y1="70" x2="70" y2="330"/>
+    </g>
+    <path d="M200 40 L214 186 L360 200 L214 214 L200 360 L186 214 L40 200 L186 186 Z" fill="currentColor" opacity="0.55"/>
+    <path d="M200 95 L208 192 L305 200 L208 208 L200 305 L192 208 L95 200 L192 192 Z" fill="currentColor" opacity="0.8"/>
+  </symbol>
+  <symbol id="eye" viewBox="0 0 64 64">
+    <path d="M6 32 C18 16 46 16 58 32 C46 48 18 48 6 32 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="32" cy="32" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="32" cy="32" r="3" fill="currentColor"/>
+    <path d="M32 4 L32 12 M32 52 L32 60 M4 32 L12 32 M52 32 L60 32" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+  </symbol>
+  <symbol id="spark" viewBox="0 0 64 64">
+    <path d="M32 6 L37 27 L58 32 L37 37 L32 58 L27 37 L6 32 L27 27 Z" fill="currentColor"/>
+    <circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+  </symbol>
+</svg>
+
+<script src="tochka-sily-igra/i18n.v2.js" defer></script>
+<script src="tochka-sily-igra/main.v2.js" defer></script>
+</body>
+</html>
