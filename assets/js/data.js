@@ -115,5 +115,17 @@ window.PRODUCTS = [
     long:{ru:"«Время для нас» — колода из 48 карточек с готовыми идеями совместного времени для пары. Каждую неделю выбирайте одну карточку и устраивайте свое маленькое свидание: уютные вечера, прогулки, поездки, творческие задания, игры и сюрпризы друг для друга.",
           en:"“Time for Us” is a deck of 48 cards with ready-made ideas for couples. Each week you pick one card and create your own little date: cozy evenings, walks, trips, creative tasks, games and surprises for each other.",
           de:"„Zeit für uns“ ist ein Kartenset aus 48 Karten mit fertigen Ideen für Paare. Jede Woche zieht ihr eine Karte und gestaltet euer kleines Date: gemütliche Abende, Spaziergänge, Ausflüge, kreative Aufgaben, Spiele und Überraschungen füreinander."}
+  },
+  {
+    slug:"mandaly-egipta", cat:"book", img:"public/images/egypt-mandalas/final-book.webp",
+    href:"mandaly-egipta.html", topics:["symbols"], featured:true,
+    type:{ru:"Цифровая книга · PDF", en:"Digital book · PDF", de:"Digitales Buch · PDF"},
+    title:{ru:"Мандалы Египта", en:"Mandalas of Egypt", de:"Mandalas Ägyptens"},
+    desc:{ru:"56 страниц мандал, египетских символов и сакральной геометрии в PDF.",
+          en:"56 pages of mandalas, Egyptian symbols and sacred geometry in PDF.",
+          de:"56 Seiten Mandalas, ägyptische Symbole und heilige Geometrie als PDF."},
+    long:{ru:"«Мандалы Египта с сакральной геометрией» — авторская цифровая книга-практика на 56 страниц. Египетские божества, сакральные символы и геометрические формы превращаются в мандалы для творчества, созерцания и исследования своих состояний. Мгновенный доступ в PDF: скачайте, выберите мандалу, распечатайте и раскрашивайте.",
+          en:"“Mandalas of Egypt with Sacred Geometry” is an original digital practice book of 56 pages. Egyptian deities, sacred symbols and geometric forms turn into mandalas for creativity, contemplation and exploring your states. Instant PDF access: download, choose a mandala, print and color.",
+          de:"„Mandalas Ägyptens mit heiliger Geometrie“ ist ein eigenes digitales Praxisbuch mit 56 Seiten. Ägyptische Gottheiten, heilige Symbole und geometrische Formen werden zu Mandalas für Kreativität, Betrachtung und die Erforschung deiner Zustände. Sofortiger PDF-Zugang: herunterladen, Mandala wählen, drucken und ausmalen."}
   }
 ];
