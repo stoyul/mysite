@@ -119,7 +119,7 @@ window.PRODUCTS = [
   {
     slug:"mandaly-egipta", cat:"book", img:"public/images/egypt-mandalas/final-book.webp",
     href:"mandaly-egipta.html", topics:["symbols"], featured:true,
-    type:{ru:"Цифровая книга · PDF", en:"Digital book · PDF", de:"Digitales Buch · PDF"},
+    type:{ru:"Книга", en:"Book", de:"Buch"},
     title:{ru:"Мандалы Египта", en:"Mandalas of Egypt", de:"Mandalas Ägyptens"},
     desc:{ru:"56 страниц мандал, египетских символов и сакральной геометрии в PDF.",
           en:"56 pages of mandalas, Egyptian symbols and sacred geometry in PDF.",
