@@ -5,17 +5,15 @@
 Чистые URL: `/tochka-sily` → отдаёт файл `tochka-sily.html`; `/foo/` → `foo/index.html`.
 
 ## ⚠️ КАК ДЕПЛОИТСЯ (важно)
-- `git push origin main` обновляет ТОЛЬКО зеркало **GitHub Pages** (`stoyul.github.io/mysite`) — мгновенно.
-- **Боевой домен yuliastoyanova.com (Cloudflare) НЕ обновляется от git push.** В репозитории нет CI/workflow.
-  Его нужно **деплоить вручную** из папки репозитория:
-
-  ```
-  wrangler deploy
-  ```
-
-  (нужен установленный Node + wrangler и вход в Cloudflare: `wrangler login`).
-- Порядок релиза: `git commit` → `git push` → **`wrangler deploy`**. Без последнего шага правки на боевом домене НЕ появятся.
-- Быстрая проверка «доехало ли»: сравнить одну и ту же страницу на `yuliastoyanova.com` и на `stoyul.github.io/mysite` — если на зеркале ново, а на домене старо, значит не хватает `wrangler deploy` (или нужен Purge cache в панели Cloudflare).
+- `git push origin main` **доезжает и до GitHub Pages, и до боевого домена** (Cloudflare тянет из GitHub). Пуш работает.
+- НО перед боевым доменом стоит **кэш Cloudflare**. Проверено: `CF-Cache-Status: HIT` — существующие URL отдаются из кэша.
+  - **Новые файлы/страницы** (новый URL) появляются на домене сами — их в кэше не было.
+  - **Изменённые существующие страницы/скрипты** (`index.html`, `tochka-sily.html`, `data.js`, `site.js`, `i18n.js`…)
+    остаются старыми, пока висит кэш. `?v=N` не помогает, если кэш игнорирует query.
+- **Решение после каждого изменения существующих файлов:** в панели Cloudflare →
+  **Caching → Configuration → Purge Everything** (или Custom Purge конкретных URL). После этого свежее сразу.
+- Быстрая проверка «доехало ли»: сравнить страницу на `yuliastoyanova.com` и на зеркале `stoyul.github.io/mysite`.
+  Если на зеркале ново, а на домене старо → это кэш Cloudflare, нужен Purge (заголовок ответа покажет `CF-Cache-Status: HIT`).
 
 ---
 
