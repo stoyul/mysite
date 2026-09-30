@@ -16,7 +16,7 @@ window.PRODUCTS = [
           de:"Ein transformatives Kartenset aus 60 doppelseitigen Karten. Eine Seite ist der Schatten — eine automatische Strategie, die dich lenkt. Die andere ist die darin verborgene Kraft. Ein Werkzeug zur Reflexion und Selbsterforschung, kein Wahrsagen."}
   },
   {
-    slug:"tochka-sily", cat:"game", img:"assets/img/c05.jpg", featured:true,
+    slug:"tochka-sily", href:"tochka-sily.html", cat:"game", img:"assets/img/c05.jpg", featured:true,
     type:{ru:"Игра", en:"Game", de:"Spiel"},
     title:{ru:"Точка силы", en:"Point of Power", de:"Punkt der Kraft"},
     desc:{ru:"Трансформационная игра и система пяти шагов для работы с запросом.",
