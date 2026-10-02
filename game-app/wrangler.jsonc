@@ -1,0 +1,17 @@
+{
+  "name": "tochka-sily-game",
+  "main": "dist/server/index.js",
+  "compatibility_date": "2026-09-30",
+  "assets": {
+    "directory": "dist/client",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tochka-sily",
+      "database_id": "REPLACE_WITH_CLOUDFLARE_D1_ID",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

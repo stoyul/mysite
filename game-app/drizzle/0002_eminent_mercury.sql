@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `idx_player_rewards_owner_reward` ON `player_rewards` (`owner_id`,`reward_id`);

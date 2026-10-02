@@ -1,0 +1,12 @@
+/* Смысловые события; интерфейсные клики, интерфейсные клики не озвучиваются. */
+const soundButton=document.createElement('button');soundButton.type='button';soundButton.id='global-sound';soundButton.className='global-sound';soundButton.onclick=()=>SoundManager.setEnabled(!SoundManager.enabled);document.body.append(soundButton);SoundManager.updateButton();ge('sound-toggle').hidden=true;
+const soundModal=showModal;showModal=function(...args){SoundManager.stop('portal');soundModal(...args)};
+const soundClose=closeModal;closeModal=function(){soundClose();if(!modalOpen)SoundManager.stop('portal')};
+const soundCell=handleCell;handleCell=function(){const type=routeCells()[game.position].type;soundCell();const cue={guardian:'guardian'}[type];if(cue)playSound(cue)};
+const soundPortal=showPortalChoice;showPortalChoice=function(){soundPortal();if(canPassPortal()){playSound('moduleComplete');SoundManager.play('portalOpen',{group:'portal',delay:.55});SoundManager.later(()=>SoundManager.loop('portalIdle'),1700,'portal')}else SoundManager.play('portalIdle',{group:'portal'})};
+const soundTransition=transitionTo;transitionTo=function(next){if(moving||!canPassPortal())return;SoundManager.stop();playSound('portalEnter');soundTransition(next)};
+const soundDraw=showDrawnCard;showDrawnCard=function(card){soundDraw(card);const cue={'Тень ↔ Сила':'shadow','Другой взгляд':'differentView','Особое событие':'specialEvent','Богини / Архетипы силы':'support'}[card.deck];if(cue)playSound(cue)};
+const soundKey=showKey;showKey=function(){soundKey();SoundManager.play('keyActivate',{delay:.85})};
+const soundReflection=showShadowReflection;const soundedReflections=new Set();showShadowReflection=function(card){soundReflection(card);const id=game.pendingReflection?.eventId;if(id&&!soundedReflections.has(id)){soundedReflections.add(id);ge('modal-content').dataset.effect='shadow';playSound('shadowToPower')}};
+let soundStage=`${game.level}:${game.stage}`;
+const soundRender=renderGame;renderGame=function(){soundRender();const stage=`${game.level}:${game.stage}`;if(stage===soundStage)return;soundStage=stage;if(game.stage==='center')playSound('finalTransformation');else if(game.stage.startsWith('intro'))SoundManager.play('stepReveal',{step:game.level});else if(game.stage==='board'||game.stage==='request')playSound('screenTransition')};

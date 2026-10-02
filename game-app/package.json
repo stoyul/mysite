@@ -1,0 +1,1 @@
+{"name":"tochka-sily","private":true,"type":"module","scripts":{"db:generate":"drizzle-kit generate","build":"node scripts/build.mjs"},"devDependencies":{"drizzle-kit":"0.31.10","drizzle-orm":"0.45.2","jsdom":"^26.1.0"}}

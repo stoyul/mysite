@@ -1,0 +1,114 @@
+{
+  "version": 2,
+  "rewards": {
+    "insight": 1,
+    "lap": 1,
+    "module": 0,
+    "game": 0
+  },
+  "treasuryTitle": "СОКРОВИЩНИЦА",
+  "privacy": {
+    "version": "2026-10-01",
+    "controller": "Юлия Стоянова",
+    "contact": null,
+    "ready": false
+  },
+  "gifts": [
+    {
+      "id": "mandalas-egypt",
+      "title": "Мандалы Египта с сакральной геометрией",
+      "description": "PDF-книга-раскраска для спокойной самостоятельной практики.",
+      "cost": 50,
+      "type": "download",
+      "available": false,
+      "url": null,
+      "fileKey": null,
+      "image": "./assets/gifts/gift-mandala.webp",
+      "filename": "mandalas-egypt.pdf"
+    },
+    {
+      "id": "goddesses",
+      "title": "Богини / Архетипы силы",
+      "description": "Онлайн-набор образов и карточек поддержки.",
+      "cost": 80,
+      "type": "download",
+      "available": false,
+      "url": null,
+      "fileKey": null,
+      "image": "./assets/gifts/gift-goddesses.webp",
+      "filename": "goddesses.pdf"
+    },
+    {
+      "id": "return-energy",
+      "title": "Возвращение энергии",
+      "description": "Цифровые карточки для самостоятельной работы.",
+      "cost": 120,
+      "type": "download",
+      "available": false,
+      "url": null,
+      "fileKey": null,
+      "image": "./assets/gifts/gift-return.webp",
+      "filename": "return-energy.pdf"
+    },
+    {
+      "id": "marathon-desires",
+      "title": "Путь к себе через истинные желания",
+      "description": "Доступ к марафону.",
+      "cost": 170,
+      "type": "access",
+      "available": false,
+      "url": null,
+      "fileKey": null,
+      "image": "./assets/gifts/gift-marathon.webp",
+      "filename": null
+    },
+    {
+      "id": "shadow-power",
+      "title": "Тень ↔ Сила",
+      "description": "Цифровой набор карточек.",
+      "cost": 230,
+      "type": "download",
+      "available": false,
+      "url": null,
+      "fileKey": null,
+      "image": "./assets/gifts/gift-shadow.webp",
+      "filename": "shadow-power.pdf"
+    },
+    {
+      "id": "needs-book",
+      "title": "Потребности",
+      "description": "Книга и практическое руководство.",
+      "cost": 300,
+      "type": "download",
+      "available": false,
+      "url": null,
+      "fileKey": null,
+      "image": "./assets/gifts/gift-needs.webp",
+      "filename": "needs-book.pdf"
+    },
+    {
+      "id": "course-30",
+      "title": "Курс «Точка силы» · скидка 30%",
+      "description": "Персональная возможность приобрести курс со скидкой 30%.",
+      "cost": 400,
+      "type": "discount",
+      "available": false,
+      "url": null,
+      "fileKey": null,
+      "image": "./assets/gifts/gift-course30.webp",
+      "filename": null
+    },
+    {
+      "id": "course-50",
+      "title": "Курс «Точка силы» · скидка 50%",
+      "description": "Высшая награда: скидка 50% на курс.",
+      "cost": 600,
+      "type": "discount",
+      "available": false,
+      "url": null,
+      "fileKey": null,
+      "image": "./assets/gifts/gift-course50.webp",
+      "filename": null
+    }
+  ]
+}

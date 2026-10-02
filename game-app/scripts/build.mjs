@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+for(const dir of ['dist/client','dist/server','dist/.openai'])fs.rmSync(dir,{recursive:true,force:true});
+fs.mkdirSync('dist/client',{recursive:true});fs.mkdirSync('dist/server',{recursive:true});fs.mkdirSync('dist/.openai',{recursive:true});
+for(const file of fs.readdirSync('dist'))if(!['client','server','.openai'].includes(file))fs.cpSync('dist/'+file,'dist/client/'+file,{recursive:true});
+const publicEconomy=JSON.parse(fs.readFileSync('dist/economy-config.json','utf8'));
+publicEconomy.gifts=publicEconomy.gifts.map(({url,fileKey,...gift})=>({...gift,deliverable:!!(gift.available&&(url||fileKey))}));
+fs.writeFileSync('dist/client/economy-config.json',JSON.stringify(publicEconomy));
+const worker=fs.readFileSync('worker/index.js','utf8').replace('/*ECONOMY*/{}',fs.readFileSync('dist/economy-config.json','utf8'));
+fs.writeFileSync('dist/server/index.js',worker);
+fs.writeFileSync('dist/server/wrangler.json',JSON.stringify({name:'tochka-sily',main:'index.js',compatibility_date:'2026-09-30',assets:{directory:'../client',binding:'ASSETS'},d1_databases:[{binding:'DB',database_name:'tochka-sily',database_id:'local'}]}));
+console.log('Built Worker + unchanged game assets');

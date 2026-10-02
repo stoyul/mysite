@@ -1,0 +1,165 @@
+{
+  "version": 3,
+  "types": {
+    "diagnostic": {
+      "file": "./assets/cells/diagnostic.webp",
+      "name": "Диагностика",
+      "accent": "#66b9bc",
+      "displaySize": 80,
+      "objectFraction": 0.9721
+    },
+    "need": {
+      "file": "./assets/cells/need.webp",
+      "name": "Потребности",
+      "accent": "#e97c94",
+      "displaySize": 92,
+      "objectFraction": 0.8022
+    },
+    "view": {
+      "file": "./assets/cells/view.webp",
+      "name": "Другой взгляд",
+      "accent": "#379eb4",
+      "displaySize": 80,
+      "objectFraction": 0.9226
+    },
+    "shadow": {
+      "file": "./assets/cells/shadow.webp",
+      "name": "Тень ↔ Сила",
+      "accent": "#ad934e",
+      "displaySize": 82,
+      "objectFraction": 0.8995
+    },
+    "leak": {
+      "file": "./assets/cells/leak.webp",
+      "name": "Утечка энергии",
+      "accent": "#cf9143",
+      "displaySize": 90,
+      "objectFraction": 0.8198
+    },
+    "return": {
+      "file": "./assets/cells/return.webp",
+      "name": "Возвращение энергии",
+      "accent": "#45b6b0",
+      "displaySize": 80,
+      "objectFraction": 0.929
+    },
+    "creation": {
+      "file": "./assets/cells/creation.webp",
+      "name": "Творение",
+      "accent": "#d96daf",
+      "displaySize": 87,
+      "objectFraction": 0.8541
+    },
+    "insight": {
+      "file": "./assets/cells/insight.webp",
+      "name": "Осознание",
+      "accent": "#e3bf65",
+      "displaySize": 103,
+      "objectFraction": 0.7193
+    },
+    "energy": {
+      "file": "./assets/cells/energy.webp",
+      "name": "Энергия",
+      "accent": "#e8af31",
+      "displaySize": 80,
+      "objectFraction": 0.9226
+    },
+    "key": {
+      "file": "./assets/cells/key.webp",
+      "name": "Ключ",
+      "accent": "#d6ad48",
+      "displaySize": 80,
+      "objectFraction": 0.9458
+    },
+    "guardian": {
+      "file": "./assets/cells/guardian.webp",
+      "name": "Хранитель",
+      "accent": "#647db5",
+      "displaySize": 80,
+      "objectFraction": 0.9673
+    },
+    "support": {
+      "file": "./assets/cells/support.webp",
+      "name": "Поддержка",
+      "accent": "#62afb0",
+      "displaySize": 112,
+      "objectFraction": 0.6595
+    },
+    "archetype": {
+      "file": "./assets/cells/archetype.webp",
+      "name": "Архетип",
+      "accent": "#c73d91",
+      "displaySize": 80,
+      "objectFraction": 1.0
+    },
+    "event": {
+      "file": "./assets/cells/event.webp",
+      "name": "Особое событие",
+      "accent": "#a67cd3",
+      "displaySize": 103,
+      "objectFraction": 0.7185
+    },
+    "ocean": {
+      "file": "./assets/cells/ocean.webp",
+      "name": "Океан иллюзий",
+      "accent": "#8065c5",
+      "displaySize": 80,
+      "objectFraction": 0.925
+    },
+    "portal": {
+      "file": "./assets/cells/portal.webp",
+      "name": "Портал",
+      "accent": "#39b6dd",
+      "displaySize": 82,
+      "objectFraction": 0.9043
+    },
+    "goal": {
+      "file": "./assets/cells/goal.webp",
+      "name": "Цель",
+      "accent": "#d5a144",
+      "displaySize": 94,
+      "objectFraction": 0.7911
+    },
+    "action": {
+      "file": "./assets/cells/action.webp",
+      "name": "Действие",
+      "accent": "#e2a441",
+      "displaySize": 91,
+      "objectFraction": 0.8166
+    },
+    "acceptance": {
+      "file": "./assets/cells/insight.webp",
+      "name": "Осознание",
+      "base": "insight",
+      "accent": "#e3bf65",
+      "displaySize": 103,
+      "objectFraction": 0.7193
+    },
+    "trueNeed": {
+      "file": "./assets/cells/insight.webp",
+      "name": "Осознание",
+      "base": "insight",
+      "accent": "#e3bf65",
+      "displaySize": 103,
+      "objectFraction": 0.7193
+    },
+    "returnInsight": {
+      "file": "./assets/cells/insight.webp",
+      "name": "Осознание",
+      "base": "insight",
+      "accent": "#e3bf65",
+      "displaySize": 103,
+      "objectFraction": 0.7193
+    },
+    "creationInsight": {
+      "file": "./assets/cells/insight.webp",
+      "name": "Осознание",
+      "base": "insight",
+      "accent": "#e3bf65",
+      "displaySize": 103,
+      "objectFraction": 0.7193
+    }
+  },
+  "style": "premium fantasy infographic",
+  "objectOccupancy": "50–65% of the cell"
+}

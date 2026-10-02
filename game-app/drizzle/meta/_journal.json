@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1790866756111,
+      "tag": "0000_silent_old_lace",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1790868169293,
+      "tag": "0001_yellow_pandemic",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790883021622,
+      "tag": "0002_eminent_mercury",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,730 @@
+[
+  {
+    "id": "world-1-cell-0",
+    "level": 1,
+    "index": 0,
+    "type": "portal",
+    "image": "./assets/cells/portal.webp"
+  },
+  {
+    "id": "world-1-cell-1",
+    "level": 1,
+    "index": 1,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-1-cell-2",
+    "level": 1,
+    "index": 2,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-1-cell-3",
+    "level": 1,
+    "index": 3,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-1-cell-4",
+    "level": 1,
+    "index": 4,
+    "type": "diagnostic",
+    "image": "./assets/cells/diagnostic.webp"
+  },
+  {
+    "id": "world-1-cell-5",
+    "level": 1,
+    "index": 5,
+    "type": "ocean",
+    "image": "./assets/cells/ocean.webp"
+  },
+  {
+    "id": "world-1-cell-6",
+    "level": 1,
+    "index": 6,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-1-cell-7",
+    "level": 1,
+    "index": 7,
+    "type": "insight",
+    "image": "./assets/cells/insight.webp"
+  },
+  {
+    "id": "world-1-cell-8",
+    "level": 1,
+    "index": 8,
+    "type": "diagnostic",
+    "image": "./assets/cells/diagnostic.webp"
+  },
+  {
+    "id": "world-1-cell-9",
+    "level": 1,
+    "index": 9,
+    "type": "key",
+    "image": "./assets/cells/key.webp"
+  },
+  {
+    "id": "world-1-cell-10",
+    "level": 1,
+    "index": 10,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-1-cell-11",
+    "level": 1,
+    "index": 11,
+    "type": "diagnostic",
+    "image": "./assets/cells/diagnostic.webp"
+  },
+  {
+    "id": "world-1-cell-12",
+    "level": 1,
+    "index": 12,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-1-cell-13",
+    "level": 1,
+    "index": 13,
+    "type": "guardian",
+    "image": "./assets/cells/guardian.webp"
+  },
+  {
+    "id": "world-1-cell-14",
+    "level": 1,
+    "index": 14,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-1-cell-15",
+    "level": 1,
+    "index": 15,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-1-cell-16",
+    "level": 1,
+    "index": 16,
+    "type": "diagnostic",
+    "image": "./assets/cells/diagnostic.webp"
+  },
+  {
+    "id": "world-1-cell-17",
+    "level": 1,
+    "index": 17,
+    "type": "view",
+    "image": "./assets/cells/view.webp"
+  },
+  {
+    "id": "world-1-cell-18",
+    "level": 1,
+    "index": 18,
+    "type": "ocean",
+    "image": "./assets/cells/ocean.webp"
+  },
+  {
+    "id": "world-1-cell-19",
+    "level": 1,
+    "index": 19,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-2-cell-0",
+    "level": 2,
+    "index": 0,
+    "type": "portal",
+    "image": "./assets/cells/portal.webp"
+  },
+  {
+    "id": "world-2-cell-1",
+    "level": 2,
+    "index": 1,
+    "type": "view",
+    "image": "./assets/cells/view.webp"
+  },
+  {
+    "id": "world-2-cell-2",
+    "level": 2,
+    "index": 2,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-2-cell-3",
+    "level": 2,
+    "index": 3,
+    "type": "need",
+    "image": "./assets/cells/need.webp"
+  },
+  {
+    "id": "world-2-cell-4",
+    "level": 2,
+    "index": 4,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-2-cell-5",
+    "level": 2,
+    "index": 5,
+    "type": "key",
+    "image": "./assets/cells/key.webp"
+  },
+  {
+    "id": "world-2-cell-6",
+    "level": 2,
+    "index": 6,
+    "type": "need",
+    "image": "./assets/cells/need.webp"
+  },
+  {
+    "id": "world-2-cell-7",
+    "level": 2,
+    "index": 7,
+    "type": "ocean",
+    "image": "./assets/cells/ocean.webp"
+  },
+  {
+    "id": "world-2-cell-8",
+    "level": 2,
+    "index": 8,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-2-cell-9",
+    "level": 2,
+    "index": 9,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-2-cell-10",
+    "level": 2,
+    "index": 10,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-2-cell-11",
+    "level": 2,
+    "index": 11,
+    "type": "trueNeed",
+    "image": "./assets/cells/insight.webp"
+  },
+  {
+    "id": "world-2-cell-12",
+    "level": 2,
+    "index": 12,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-2-cell-13",
+    "level": 2,
+    "index": 13,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-2-cell-14",
+    "level": 2,
+    "index": 14,
+    "type": "ocean",
+    "image": "./assets/cells/ocean.webp"
+  },
+  {
+    "id": "world-2-cell-15",
+    "level": 2,
+    "index": 15,
+    "type": "need",
+    "image": "./assets/cells/need.webp"
+  },
+  {
+    "id": "world-2-cell-16",
+    "level": 2,
+    "index": 16,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-2-cell-17",
+    "level": 2,
+    "index": 17,
+    "type": "guardian",
+    "image": "./assets/cells/guardian.webp"
+  },
+  {
+    "id": "world-2-cell-18",
+    "level": 2,
+    "index": 18,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-2-cell-19",
+    "level": 2,
+    "index": 19,
+    "type": "need",
+    "image": "./assets/cells/need.webp"
+  },
+  {
+    "id": "world-2-cell-20",
+    "level": 2,
+    "index": 20,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-3-cell-0",
+    "level": 3,
+    "index": 0,
+    "type": "portal",
+    "image": "./assets/cells/portal.webp"
+  },
+  {
+    "id": "world-3-cell-1",
+    "level": 3,
+    "index": 1,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-3-cell-2",
+    "level": 3,
+    "index": 2,
+    "type": "shadow",
+    "image": "./assets/cells/shadow.webp"
+  },
+  {
+    "id": "world-3-cell-3",
+    "level": 3,
+    "index": 3,
+    "type": "view",
+    "image": "./assets/cells/view.webp"
+  },
+  {
+    "id": "world-3-cell-4",
+    "level": 3,
+    "index": 4,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-3-cell-5",
+    "level": 3,
+    "index": 5,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-3-cell-6",
+    "level": 3,
+    "index": 6,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-3-cell-7",
+    "level": 3,
+    "index": 7,
+    "type": "ocean",
+    "image": "./assets/cells/ocean.webp"
+  },
+  {
+    "id": "world-3-cell-8",
+    "level": 3,
+    "index": 8,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-3-cell-9",
+    "level": 3,
+    "index": 9,
+    "type": "shadow",
+    "image": "./assets/cells/shadow.webp"
+  },
+  {
+    "id": "world-3-cell-10",
+    "level": 3,
+    "index": 10,
+    "type": "acceptance",
+    "image": "./assets/cells/insight.webp"
+  },
+  {
+    "id": "world-3-cell-11",
+    "level": 3,
+    "index": 11,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-3-cell-12",
+    "level": 3,
+    "index": 12,
+    "type": "key",
+    "image": "./assets/cells/key.webp"
+  },
+  {
+    "id": "world-3-cell-13",
+    "level": 3,
+    "index": 13,
+    "type": "shadow",
+    "image": "./assets/cells/shadow.webp"
+  },
+  {
+    "id": "world-3-cell-14",
+    "level": 3,
+    "index": 14,
+    "type": "ocean",
+    "image": "./assets/cells/ocean.webp"
+  },
+  {
+    "id": "world-3-cell-15",
+    "level": 3,
+    "index": 15,
+    "type": "support",
+    "image": "./assets/cells/support.webp"
+  },
+  {
+    "id": "world-3-cell-16",
+    "level": 3,
+    "index": 16,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-3-cell-17",
+    "level": 3,
+    "index": 17,
+    "type": "guardian",
+    "image": "./assets/cells/guardian.webp"
+  },
+  {
+    "id": "world-3-cell-18",
+    "level": 3,
+    "index": 18,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-3-cell-19",
+    "level": 3,
+    "index": 19,
+    "type": "shadow",
+    "image": "./assets/cells/shadow.webp"
+  },
+  {
+    "id": "world-3-cell-20",
+    "level": 3,
+    "index": 20,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-4-cell-0",
+    "level": 4,
+    "index": 0,
+    "type": "portal",
+    "image": "./assets/cells/portal.webp"
+  },
+  {
+    "id": "world-4-cell-1",
+    "level": 4,
+    "index": 1,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-4-cell-2",
+    "level": 4,
+    "index": 2,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-4-cell-3",
+    "level": 4,
+    "index": 3,
+    "type": "ocean",
+    "image": "./assets/cells/ocean.webp"
+  },
+  {
+    "id": "world-4-cell-4",
+    "level": 4,
+    "index": 4,
+    "type": "returnInsight",
+    "image": "./assets/cells/insight.webp"
+  },
+  {
+    "id": "world-4-cell-5",
+    "level": 4,
+    "index": 5,
+    "type": "return",
+    "image": "./assets/cells/return.webp"
+  },
+  {
+    "id": "world-4-cell-6",
+    "level": 4,
+    "index": 6,
+    "type": "key",
+    "image": "./assets/cells/key.webp"
+  },
+  {
+    "id": "world-4-cell-7",
+    "level": 4,
+    "index": 7,
+    "type": "support",
+    "image": "./assets/cells/support.webp"
+  },
+  {
+    "id": "world-4-cell-8",
+    "level": 4,
+    "index": 8,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-4-cell-9",
+    "level": 4,
+    "index": 9,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-4-cell-10",
+    "level": 4,
+    "index": 10,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-4-cell-11",
+    "level": 4,
+    "index": 11,
+    "type": "guardian",
+    "image": "./assets/cells/guardian.webp"
+  },
+  {
+    "id": "world-4-cell-12",
+    "level": 4,
+    "index": 12,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-4-cell-13",
+    "level": 4,
+    "index": 13,
+    "type": "return",
+    "image": "./assets/cells/return.webp"
+  },
+  {
+    "id": "world-4-cell-14",
+    "level": 4,
+    "index": 14,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-4-cell-15",
+    "level": 4,
+    "index": 15,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-4-cell-16",
+    "level": 4,
+    "index": 16,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-4-cell-17",
+    "level": 4,
+    "index": 17,
+    "type": "return",
+    "image": "./assets/cells/return.webp"
+  },
+  {
+    "id": "world-4-cell-18",
+    "level": 4,
+    "index": 18,
+    "type": "view",
+    "image": "./assets/cells/view.webp"
+  },
+  {
+    "id": "world-4-cell-19",
+    "level": 4,
+    "index": 19,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-4-cell-20",
+    "level": 4,
+    "index": 20,
+    "type": "energy",
+    "image": "./assets/cells/energy.webp"
+  },
+  {
+    "id": "world-5-cell-0",
+    "level": 5,
+    "index": 0,
+    "type": "portal",
+    "image": "./assets/cells/portal.webp"
+  },
+  {
+    "id": "world-5-cell-1",
+    "level": 5,
+    "index": 1,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-5-cell-2",
+    "level": 5,
+    "index": 2,
+    "type": "action",
+    "image": "./assets/cells/action.webp"
+  },
+  {
+    "id": "world-5-cell-3",
+    "level": 5,
+    "index": 3,
+    "type": "goal",
+    "image": "./assets/cells/goal.webp"
+  },
+  {
+    "id": "world-5-cell-4",
+    "level": 5,
+    "index": 4,
+    "type": "creationInsight",
+    "image": "./assets/cells/insight.webp"
+  },
+  {
+    "id": "world-5-cell-5",
+    "level": 5,
+    "index": 5,
+    "type": "creation",
+    "image": "./assets/cells/creation.webp"
+  },
+  {
+    "id": "world-5-cell-6",
+    "level": 5,
+    "index": 6,
+    "type": "key",
+    "image": "./assets/cells/key.webp"
+  },
+  {
+    "id": "world-5-cell-7",
+    "level": 5,
+    "index": 7,
+    "type": "action",
+    "image": "./assets/cells/action.webp"
+  },
+  {
+    "id": "world-5-cell-8",
+    "level": 5,
+    "index": 8,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-5-cell-9",
+    "level": 5,
+    "index": 9,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-5-cell-10",
+    "level": 5,
+    "index": 10,
+    "type": "guardian",
+    "image": "./assets/cells/guardian.webp"
+  },
+  {
+    "id": "world-5-cell-11",
+    "level": 5,
+    "index": 11,
+    "type": "action",
+    "image": "./assets/cells/action.webp"
+  },
+  {
+    "id": "world-5-cell-12",
+    "level": 5,
+    "index": 12,
+    "type": "event",
+    "image": "./assets/cells/event.webp"
+  },
+  {
+    "id": "world-5-cell-13",
+    "level": 5,
+    "index": 13,
+    "type": "support",
+    "image": "./assets/cells/support.webp"
+  },
+  {
+    "id": "world-5-cell-14",
+    "level": 5,
+    "index": 14,
+    "type": "creation",
+    "image": "./assets/cells/creation.webp"
+  },
+  {
+    "id": "world-5-cell-15",
+    "level": 5,
+    "index": 15,
+    "type": "goal",
+    "image": "./assets/cells/goal.webp"
+  },
+  {
+    "id": "world-5-cell-16",
+    "level": 5,
+    "index": 16,
+    "type": "action",
+    "image": "./assets/cells/action.webp"
+  },
+  {
+    "id": "world-5-cell-17",
+    "level": 5,
+    "index": 17,
+    "type": "support",
+    "image": "./assets/cells/support.webp"
+  },
+  {
+    "id": "world-5-cell-18",
+    "level": 5,
+    "index": 18,
+    "type": "creation",
+    "image": "./assets/cells/creation.webp"
+  },
+  {
+    "id": "world-5-cell-19",
+    "level": 5,
+    "index": 19,
+    "type": "archetype",
+    "image": "./assets/cells/archetype.webp"
+  },
+  {
+    "id": "world-5-cell-20",
+    "level": 5,
+    "index": 20,
+    "type": "support",
+    "image": "./assets/cells/support.webp"
+  }
+]

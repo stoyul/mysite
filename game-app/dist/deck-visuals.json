@@ -1,0 +1,42 @@
+{
+  "Диагностика": {
+    "id": "diagnostic",
+    "back": "./assets/deck-backs/diagnostic.png",
+    "status": "Создана и подключена"
+  },
+  "Потребности": {
+    "id": "need",
+    "back": "./assets/deck-backs/need.png",
+    "status": "Создана и подключена"
+  },
+  "Другой взгляд": {
+    "id": "view",
+    "back": "./assets/deck-backs/view.png",
+    "status": "Создана и подключена"
+  },
+  "Тень ↔ Сила": {
+    "id": "shadow",
+    "back": "./assets/deck-backs/shadow.png",
+    "status": "Создана и подключена"
+  },
+  "Возвращение энергии": {
+    "id": "return",
+    "back": "./assets/deck-backs/return.png",
+    "status": "Создана и подключена"
+  },
+  "Творение": {
+    "id": "creation",
+    "back": "./assets/deck-backs/creation.png",
+    "status": "Создана и подключена"
+  },
+  "Богини / Архетипы силы": {
+    "id": "support",
+    "back": "./assets/deck-backs/support.png",
+    "status": "Создана и подключена"
+  },
+  "Особое событие": {
+    "id": "event",
+    "back": "./assets/deck-backs/event.png",
+    "status": "Создана и подключена"
+  }
+}
