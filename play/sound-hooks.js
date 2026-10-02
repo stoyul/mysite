@@ -1,5 +1,5 @@
 /* Смысловые события; интерфейсные клики, интерфейсные клики не озвучиваются. */
-const soundButton=document.createElement('button');soundButton.type='button';soundButton.id='global-sound';soundButton.className='global-sound';soundButton.onclick=()=>SoundManager.setEnabled(!SoundManager.enabled);document.body.append(soundButton);SoundManager.updateButton();ge('sound-toggle').hidden=true;
+const soundButton=document.createElement('button');soundButton.type='button';soundButton.id='global-sound';soundButton.className='global-sound';soundButton.onclick=()=>{SoundManager.setEnabled(!SoundManager.enabled);if(SoundManager.enabled)SoundManager.play('support',{fast:true,group:'sound-check'})};document.body.append(soundButton);SoundManager.updateButton();ge('sound-toggle').hidden=true;
 const soundModal=showModal;showModal=function(...args){SoundManager.stop('portal');soundModal(...args)};
 const soundClose=closeModal;closeModal=function(){soundClose();if(!modalOpen)SoundManager.stop('portal')};
 const soundCell=handleCell;handleCell=function(){const type=routeCells()[game.position].type;soundCell();const cue={guardian:'guardian'}[type];if(cue)playSound(cue)};

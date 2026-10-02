@@ -1,5 +1,5 @@
 /* [частота, начало, длительность, уровень, конечная частота]. Все события можно заменить файлом url. */
-globalThis.soundDesign={volume:.24,events:{
+globalThis.soundDesign={volume:.24,mobileUnlockUrl:'./assets/audio/mobile-unlock.wav',events:{
  boardStep:{notes:[[220,0,.12,.035,260]]},
  crystalGain:{notes:[[440,0,.9,.08,660],[880,.7,1,.08],[1320,.9,.7,.035]]},
  intro:{notes:[[110,0,3.2,.22],[220,.45,2.6,.12],[440,1.5,1.6,.08]],air:2.5},

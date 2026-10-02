@@ -1,8 +1,23 @@
 /* Звук не меняет состояние игры. Контекст создается только внутри осознанного жеста. */
 class GameSoundManager{
  constructor(design){this.design=design;this.context=null;this.master=null;this.active=new Set();this.timers=new Map();this.buffers=new Map();this.last=new Map();this.generation=0;this.groups=new Map();this.ready=Promise.resolve();try{this.enabled=localStorage.getItem('tochka-sily-sound')!=='off'}catch{this.enabled=true}}
- unlock(){if(!this.enabled||document.hidden)return;try{if(!this.context){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;this.context=new C();this.master=this.context.createGain();this.master.gain.value=this.design.volume;const limiter=this.context.createDynamicsCompressor();limiter.threshold.value=-22;limiter.knee.value=24;limiter.ratio.value=4;this.master.connect(limiter).connect(this.context.destination)}this.ready=Promise.resolve(this.context.resume()).catch(()=>{});}catch{this.ready=Promise.resolve()}}
- setEnabled(value){this.enabled=!!value;try{localStorage.setItem('tochka-sily-sound',value?'on':'off')}catch{}if(!value){this.stop();if(this.context)this.context.suspend().catch(()=>{})}else this.unlock();this.updateButton()}
+ unlock(){if(!this.enabled||document.hidden)return;try{
+  // Ask iOS for media playback rather than the default silent-switch-sensitive route.
+  const nav=window.navigator;let playbackSession=false;
+  try{if(nav?.audioSession){nav.audioSession.type='playback';playbackSession=true}}catch{}
+  // Older iOS / embedded WebViews need an HTML audio route as well as Web Audio.
+  // A silent local PCM file keeps that route alive only while this visible game is unmuted.
+  const ios=/iPad|iPhone|iPod/.test(nav?.userAgent||'')||(nav?.platform==='MacIntel'&&nav?.maxTouchPoints>1);
+  if(ios&&!playbackSession&&window.Audio){if(!this.mobileRoute){this.mobileRoute=new window.Audio(this.design.mobileUnlockUrl||'./assets/audio/mobile-unlock.wav');this.mobileRoute.loop=true;this.mobileRoute.preload='auto';this.mobileRoute.setAttribute('playsinline','');this.mobileRoute.setAttribute('aria-hidden','true')}if(this.mobileRoute.paused)Promise.resolve(this.mobileRoute.play()).catch(()=>{})}
+  if(!this.context||this.context.state==='closed'){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;this.context=new C();this.master=this.context.createGain();this.master.gain.value=this.design.volume;const limiter=this.context.createDynamicsCompressor();limiter.threshold.value=-22;limiter.knee.value=24;limiter.ratio.value=4;this.master.connect(limiter).connect(this.context.destination)}
+  if(this.context.state!=='running'){
+   // Both resume and the first source start run synchronously inside the touch gesture.
+   this.ready=Promise.resolve(this.context.resume()).catch(()=>{});
+   const primer=this.context.createBufferSource();primer.buffer=this.context.createBuffer(1,1,this.context.sampleRate);primer.connect(this.context.destination);primer.onended=()=>primer.disconnect();primer.start(0);
+  }
+ }catch{this.ready=Promise.resolve()}}
+ pause(){this.stop();try{this.mobileRoute?.pause()}catch{}if(this.context?.state!=='closed')try{Promise.resolve(this.context?.suspend()).catch(()=>{})}catch{}}
+ setEnabled(value){this.enabled=!!value;try{localStorage.setItem('tochka-sily-sound',value?'on':'off')}catch{}if(!value)this.pause();else this.unlock();this.updateButton()}
  updateButton(){const b=document.getElementById('global-sound');if(!b)return;b.textContent=this.enabled?'🔊':'🔇';b.setAttribute('aria-label',this.enabled?'Отключить звук':'Включить звук');b.setAttribute('aria-pressed',String(this.enabled));b.title=this.enabled?'Отключить звук':'Включить звук'}
  stop(group){if(group)this.groups.set(group,(this.groups.get(group)||0)+1);else this.generation++;for(const [id,g] of this.timers)if(!group||g===group){clearTimeout(id);this.timers.delete(id)}for(const record of [...this.active])if(!group||record.group===group){try{record.source.stop();record.source.disconnect();record.gain.disconnect()}catch{}this.active.delete(record)}}
  later(fn,ms,group){const id=setTimeout(()=>{this.timers.delete(id);if(this.enabled&&!document.hidden)fn()},ms);this.timers.set(id,group);return id}
@@ -17,5 +32,7 @@ class GameSoundManager{
 }
 globalThis.SoundManager=new GameSoundManager(globalThis.soundDesign);
 document.addEventListener('click',()=>SoundManager.unlock(),true);
+document.addEventListener('touchend',()=>SoundManager.unlock(),{capture:true,passive:true});
 document.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')SoundManager.unlock()},true);
-document.addEventListener('visibilitychange',()=>{if(document.hidden){SoundManager.stop();if(SoundManager.context)SoundManager.context.suspend().catch(()=>{})}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)SoundManager.pause();else if(SoundManager.context)SoundManager.unlock()});
+window.addEventListener?.('pageshow',()=>{if(SoundManager.context)SoundManager.unlock()});
