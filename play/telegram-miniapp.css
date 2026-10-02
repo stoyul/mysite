@@ -1,0 +1,8 @@
+/* Applied only inside Telegram. Existing board geometry and card layout remain intact. */
+.telegram-miniapp { --miniapp-height:100dvh; --miniapp-safe-top:0px; --miniapp-safe-right:0px; --miniapp-safe-bottom:0px; --miniapp-safe-left:0px; }
+.telegram-miniapp body { min-height:var(--miniapp-height); padding:var(--miniapp-safe-top) var(--miniapp-safe-right) calc(var(--miniapp-safe-bottom) + 58px) var(--miniapp-safe-left); }
+.telegram-miniapp .journey-cinema,.telegram-miniapp .game-modal,.telegram-miniapp .transition-screen { top:var(--miniapp-safe-top); right:var(--miniapp-safe-right); bottom:auto; left:var(--miniapp-safe-left); height:calc(var(--miniapp-height) - var(--miniapp-safe-top) - var(--miniapp-safe-bottom)); }
+.telegram-miniapp .modal-card { max-height:calc(var(--miniapp-height) - var(--miniapp-safe-top) - var(--miniapp-safe-bottom) - 36px); overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+.telegram-miniapp .global-sound { right:calc(18px + var(--miniapp-safe-right)); bottom:calc(18px + var(--miniapp-safe-bottom)); }
+.telegram-miniapp .toast { bottom:calc(76px + var(--miniapp-safe-bottom)); }
+.miniapp-fullscreen { position:fixed; left:calc(14px + var(--miniapp-safe-left)); bottom:calc(18px + var(--miniapp-safe-bottom)); z-index:300; min-height:44px; padding:10px 15px; border:1px solid #d4b27866; border-radius:24px; background:#211322ee; color:#f8e6c4; font:13px system-ui,sans-serif; }
