@@ -68,8 +68,9 @@ function showGuardian(cell=routeCells().find(c=>c.type==='guardian')){
  ge('game-modal').classList.add('guardian-modal');
  field.addEventListener('blur',()=>button.scrollIntoView?.({block:'nearest',behavior:reducedMotion()?'auto':'smooth'}));
 }
+// Guardians open their question immediately, bypassing the generic tool introduction.
 const guardianCellHandler=handleCell;
-handleCell=function(){const cell=routeCells()[game.position];if(cell.type==='guardian'){playSound('guardian');showGuardian(cell);return}guardianCellHandler()};
+handleCell=function(){const cell=routeCells()[game.position];if(cell.type==='guardian'){const board=ge('board');board.dataset.effect='guardian';setTimeout(()=>{if(board.dataset.effect==='guardian')delete board.dataset.effect},1500);playSound('guardian');showGuardian(cell);return}guardianCellHandler()};
 // Preserve circle and energy requirements; the key itself confirms Guardian work.
 const guardianPortal=showPortalChoice;
 showPortalChoice=function(){guardianPortal();if(!game.keys[game.level]){ge('modal-title').textContent='ТЕБЕ НУЖЕН КЛЮЧ 🔑';const hint=document.createElement('p');hint.textContent='Чтобы открыть этот Портал, сначала получи Ключ у Хранителя.';ge('modal-content').prepend(hint)}else{const hint=document.createElement('p');hint.className='guardian-portal-key';hint.textContent=canPassPortal()?'🔑 КЛЮЧ ЕСТЬ · Путь открыт.':'🔑 КЛЮЧ ЕСТЬ';ge('modal-content').prepend(hint)}};
