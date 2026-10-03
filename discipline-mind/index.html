@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F6F1E8">
+  <meta name="description" content="Цифровая колода Дисциплина ума — 44 карты для ясности мышления.">
+  <title>Дисциплина ума</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    @media(max-width:620px){.site-header{padding:0 16px}.site-title{font-size:10px}.journal-link{font-size:7px;gap:5px}.journal-link svg{width:14px;height:14px}}
+  </style>
+</head>
+<body>
+  <div class="ambient-architecture" aria-hidden="true">
+    <div class="draft-grid"></div>
+    <span class="draft-orbit orbit-a"></span><span class="draft-orbit orbit-b"></span>
+    <span class="draft-axis axis-x"></span><span class="draft-axis axis-y"></span><span class="draft-axis axis-diagonal"></span>
+    <span class="glass-lens lens-a"></span><span class="glass-lens lens-b"></span>
+    <svg class="sacred-geometry" viewBox="0 0 700 700">
+      <g class="flower-mark"><circle cx="350" cy="350" r="150"/><circle cx="350" cy="200" r="150"/><circle cx="350" cy="500" r="150"/><circle cx="220" cy="275" r="150"/><circle cx="480" cy="275" r="150"/><circle cx="220" cy="425" r="150"/><circle cx="480" cy="425" r="150"/></g>
+      <g class="crystal-mark"><path d="m350 92 146 84v168l-146 84-146-84V176z"/><path d="m350 92 0 168m146-84-146 84-146-84m146 84v168m0-168 146 84m-146-84-146 84"/><path d="m350 92 82 168-82 168-82-168z"/></g>
+    </svg>
+    <svg class="crystal-shard shard-left" viewBox="0 0 120 210"><path d="M60 4 112 76 88 200 30 157 8 66z"/><path d="m60 4 4 93 48-21M60 4 64 97 30 157M8 66l56 31 24 103M112 76 64 97 88 200"/></svg>
+    <svg class="crystal-shard shard-right" viewBox="0 0 120 210"><path d="M60 4 112 76 88 200 30 157 8 66z"/><path d="m60 4 4 93 48-21M60 4 64 97 30 157M8 66l56 31 24 103M112 76 64 97 88 200"/></svg>
+    <span class="focus-point"></span>
+  </div>
+  <header class="site-header">
+    <div class="header-spacer" aria-hidden="true"></div>
+    <a class="site-title" href="#home" aria-label="Дисциплина ума — на главную"><span class="brand-sign" aria-hidden="true">Ю</span><span class="brand-copy"><b>ЮЛИЯ СТОЯНОВА</b><small>ДИСЦИПЛИНА УМА</small></span></a>
+    <button class="journal-link" id="open-journal" type="button" aria-label="Мои осознания">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.75h12v15l-6-3.6-6 3.6z"/><path d="M9 8h6M9 11h6"/></svg>
+      <span>МОИ ОСОЗНАНИЯ</span><span class="journal-total" id="journal-total">0</span>
+    </button>
+  </header>
+
+  <main id="app">
+    <section id="home-view" class="view home-view">
+      <div class="home-copy">
+        <span class="hero-mark" aria-hidden="true"><i></i><b></b><i></i></span>
+        <p class="hero-byline">АВТОРСКАЯ КОЛОДА ЮЛИИ СТОЯНОВОЙ</p>
+        <h1 class="hero-title"><span>ДИСЦИПЛИНА</span><span>УМА</span></h1>
+        <p class="hero-subtitle">44 карты для ясности, фокуса и действия</p>
+        <p class="hero-manifesto">Одна карта. Одна мысль. Один шаг к ясности.</p>
+      </div>
+      <div class="draw-composition" id="draw-composition">
+        <div class="geometry" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+        <div class="deck-stack" id="deck-stack" aria-hidden="true">
+          <div class="stack-shadow"></div><div class="stack-card stack-back"></div>
+          <div class="stack-card stack-mid"></div><div class="stack-card stack-top"><img src="../assets/discipline-mind/mind.001.png" alt="" loading="eager"></div>
+        </div>
+      </div>
+      <p class="draw-caption" id="draw-caption">ПРАКТИКА ЯСНОГО МЫШЛЕНИЯ</p>
+      <button class="button draw-button" id="draw-card" type="button">ВЫТЯНУТЬ КАРТУ <span class="button-arrow" aria-hidden="true">↗</span></button>
+    </section>
+
+    <section id="card-view" class="view card-view" hidden>
+      <div class="draw-status" id="draw-status" aria-live="polite" hidden>КОЛОДА ПЕРЕМЕШИВАЕТСЯ</div>
+      <div class="card-stage" id="card-stage" hidden>
+        <button class="card-scene" id="card-scene" type="button" aria-label="Перевернуть карту">
+          <span class="flip-card" id="flip-card">
+            <img class="card-image card-front" id="front-image" alt="Лицевая сторона карты">
+            <img class="card-image card-back" id="back-image" alt="Обратная сторона карты">
+          </span>
+        </button>
+        <p class="flip-hint" id="flip-hint">НАЖМИ НА КАРТУ, ЧТОБЫ ПЕРЕВЕРНУТЬ</p>
+        <div class="audio-slot" id="audio-slot" hidden></div>
+        <section class="insight-box" id="insight-box" hidden>
+          <label for="insight-input">МОЕ ОСОЗНАНИЕ</label>
+          <textarea id="insight-input" rows="2" maxlength="1000" placeholder="Что я сейчас поняла?"></textarea>
+          <div class="insight-actions"><span id="save-message" role="status" aria-live="polite"></span><button class="save-button" id="save-insight" type="button" disabled>СОХРАНИТЬ ОСОЗНАНИЕ</button></div>
+        </section>
+        <button class="button another-button" id="another-card" type="button">ВЫТЯНУТЬ ДРУГУЮ КАРТУ <span aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+
+    <section id="journal-view" class="view journal-view" hidden>
+      <button class="back-link" id="journal-back" type="button"><span aria-hidden="true">←</span> К КАРТАМ</button>
+      <div class="journal-heading"><p class="eyebrow">МОИ ОСОЗНАНИЯ</p><h1>Мои осознания</h1></div>
+      <div class="journal-list" id="journal-list"></div>
+      <div class="journal-empty" id="journal-empty" hidden><p>Здесь появятся сохраненные заметки.</p></div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./deck.js"></script><script src="./app.js"></script>
+</body>
+</html>
