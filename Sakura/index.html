@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <base href="/Sakura/">
+  <script>if(location.pathname==="/Sakura")location.replace("/Sakura/"+location.search+location.hash)</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#08070b">
+  <meta name="description" content="Интерактивный атлас сакральной геометрии: 84 формы, 13 категорий, геометрические принципы, символические значения и пространство для самоисследования.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Сакральная геометрия | Юлия Стоянова">
+  <meta property="og:description" content="84 формы. 13 уровней исследования. Один язык структуры.">
+  <meta property="og:url" content="https://yuliastoyanova.com/Sakura/">
+  <meta property="og:image" content="https://yuliastoyanova.com/Sakura/og-atlas.png">
+  <link rel="canonical" href="https://yuliastoyanova.com/Sakura/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%2308070b' stroke='%23d7bd7a'/%3E%3Cpath d='M32 8v48M8 32h48M15 15l34 34M49 15 15 49' stroke='%23d7bd7a'/%3E%3C/svg%3E" type="image/svg+xml">
+  <meta property="og:image:alt" content="Тонкая золотая геометрия в глубоком космическом пространстве">
+  <title>Сакральная геометрия | Юлия Стоянова</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="atlas.css">
+</head>
+<body class="atlas-body">
+  <div class="cosmos" aria-hidden="true"><div class="nebula"></div><div class="stars"></div><div class="hero-orbit"></div></div>
+  <header class="atlas-header">
+    <a class="atlas-brand" href="https://yuliastoyanova.com/" aria-label="Вернуться на сайт Юлии Стояновой"><span class="brand-seal">Ю</span><span><b>ЮЛИЯ СТОЯНОВА</b><small>САКРАЛЬНАЯ ГЕОМЕТРИЯ</small></span></a>
+    <nav aria-label="Навигация по атласу"><a href="#library">БИБЛИОТЕКА</a><a href="#language">ЯЗЫК ГЕОМЕТРИИ</a><a href="#journey">ПУТЬ ФОРМЫ</a></nav>
+    <a class="back-to-deck" href="https://yuliastoyanova.com/">САЙТ ЮЛИИ <span>↗</span></a>
+  </header>
+  <main>
+    <section class="atlas-hero" id="top">
+      <div class="hero-text">
+        <p class="eyebrow"><span></span> ИНТЕРАКТИВНЫЙ АТЛАС</p>
+        <h1>Сакральная<br><em>геометрия</em></h1>
+        <p class="hero-lede">Форма — это способ увидеть порядок.<br>Исследуй, как простые элементы складываются в язык структуры.</p>
+        <p class="hero-count">84 ФОРМЫ <i>·</i> 13 КАТЕГОРИЙ <i>·</i> ОДИН ЯЗЫК СТРУКТУРЫ</p>
+        <div class="hero-actions">
+          <a class="gold-button" href="#library">ИЗУЧИТЬ <span>↘</span></a>
+          <button class="quiet-button" data-scroll="draw">ПОЛУЧИТЬ СИМВОЛ <span>↘</span></button>
+          <a class="quiet-button as-link" href="#journey">ПРОЙТИ ПУТЬ ФОРМЫ <span>↘</span></a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Золотая структура, возникающая из концентрических окружностей"><div class="art-aura"></div><div class="hero-mark" id="hero-mark"></div><div class="art-label">ЦЕНТР · СВЯЗЬ · СТРУКТУРА</div></div>
+      <a class="all-symbols" href="#library">ПОСМОТРЕТЬ ВСЕ 84 СИМВОЛА <span>↓</span></a>
+    </section>
+
+    <section class="section library" id="library">
+      <div class="section-heading"><p class="eyebrow">01 / ИЗУЧИТЬ</p><h2>Библиотека <em>форм</em></h2><p>Выбери категорию или начни с любой формы. Авторские значения карточек сохранены по исходной таблице.</p></div>
+      <div class="library-tools"><div class="category-list" id="categories" aria-label="Фильтр по категориям"></div><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Найти форму" aria-label="Найти форму"><span id="result-count" class="result-count"></span></div></div>
+      <div class="symbol-grid" id="symbol-grid"></div>
+    </section>
+
+    <section class="draw-section section" id="draw">
+      <div class="draw-copy"><p class="eyebrow">02 / МОЙ СИМВОЛ</p><h2>О чём ты<br><em>размышляешь?</em></h2><p>Сформулируй вопрос или выбери состояние, которое хочешь исследовать. Символ станет поводом для наблюдения, а не предсказанием.</p>
+        <label class="question-field">ТВОЙ ВОПРОС <span>НЕОБЯЗАТЕЛЬНО</span><textarea id="draw-question" rows="2" maxlength="240" placeholder="Например: какой принцип мне сейчас важно заметить?"></textarea></label>
+        <label class="select-field">КОЛЛЕКЦИЯ<select id="draw-category"><option value="all">Из всей коллекции · 84 формы</option></select></label>
+        <button class="gold-button draw-button" id="draw-symbol">ПОЛУЧИТЬ СИМВОЛ <span>✦</span></button>
+      </div>
+      <div class="draw-visual" id="draw-visual"><div class="draw-glow"></div><div class="draw-point"></div><p>НАМЕРЕНИЕ → НАБЛЮДЕНИЕ</p></div>
+      <div class="draw-result" id="draw-result" hidden></div>
+      <div class="atlas-history" id="atlas-history" hidden><div class="history-heading"><p class="eyebrow">МОИ СИМВОЛЫ</p><h3>Журнал <em>исследований</em></h3><p>Выборы и записи остаются в этом браузере.</p></div><div class="history-list" id="draw-history"></div></div>
+    </section>
+
+    <section class="language-section section" id="language">
+      <div class="section-heading"><p class="eyebrow">03 / ОСНОВЫ</p><h2>Язык <em>геометрии</em></h2><p>Сложная структура начинается с простых отношений. Выбери элемент и посмотри, где он проявляется в коллекции.</p></div>
+      <div class="primitive-layout"><div class="primitive-list" id="primitive-list"></div><div class="primitive-detail" id="primitive-detail" aria-live="polite"></div></div>
+    </section>
+
+    <section class="journey-section section" id="journey">
+      <div class="journey-top"><div><p class="eyebrow">04 / ПУТЬ ФОРМЫ</p><h2>Из простого<br><em>рождается сложное</em></h2></div><p>Проследи за тем, как точка становится связью, связность — плоскостью, а повторение — структурой.</p></div>
+      <div class="journey-stage"><div class="journey-figure" id="journey-figure"></div><div class="journey-caption"><span id="journey-step">01 / 08</span><div><h3 id="journey-title">Точка</h3><p id="journey-description"></p></div></div><div class="journey-controls"><button id="journey-prev" aria-label="Предыдущий шаг">←</button><div class="journey-progress" id="journey-progress"></div><button id="journey-next" aria-label="Следующий шаг">→</button></div></div>
+    </section>
+    <section class="method-note"><span class="method-mark">✧</span><p><b>О геометрии и смысле.</b> Геометрические описания показывают устройство формы; символические значения принадлежат традициям и авторской системе карточек. Они не являются научными или медицинскими заключениями. Для ряда авторских конструкций и янтр точное изображение требует отдельного эталона.</p></section>
+  </main>
+  <footer class="atlas-footer"><a href="https://yuliastoyanova.com/" class="atlas-brand"><span class="brand-seal">Ю</span><span><b>ЮЛИЯ СТОЯНОВА</b><small>САКРАЛЬНАЯ ГЕОМЕТРИЯ</small></span></a><span>ФОРМА КАК ЯЗЫК СТРУКТУРЫ</span><a href="#top">НАВЕРХ ↑</a></footer>
+
+  <dialog class="symbol-dialog" id="symbol-dialog"><button class="dialog-close" id="dialog-close" aria-label="Закрыть">×</button><div id="dialog-content"></div></dialog>
+  <dialog class="artifact-viewer" id="artifact-viewer"><button class="dialog-close" id="artifact-close" aria-label="Закрыть изображение">×</button><figure><img id="artifact-image" src="" alt=""><figcaption><b id="artifact-title"></b><span id="artifact-credit"></span></figcaption></figure></dialog>
+  <script src="atlas.js" defer></script>
+</body>
+</html>
