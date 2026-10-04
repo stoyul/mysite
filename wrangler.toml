@@ -1,7 +1,9 @@
 name = "mysite"
+main = "care/backend/worker.js"
 compatibility_date = "2024-11-01"
 
-# Статичный сайт: раздаем файлы репозитория как есть, без сборки.
+# Static assets stay asset-first; only the Telegram API and webhook run through Worker code.
 [assets]
 directory = "./"
-# Game runtime assets live in play/; .assetsignore excludes source-only game-app/.
+binding = "ASSETS"
+run_worker_first = ["/api/telegram/*", "/telegram/webhook"]
