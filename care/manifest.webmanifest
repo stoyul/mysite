@@ -1,0 +1,13 @@
+{
+  "id": "./",
+  "name": "ДЛЯ СЕБЯ — 40 карточек заботы о себе",
+  "short_name": "ДЛЯ СЕБЯ",
+  "description": "Не исправляй себя. Выбирай себя.",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f3ec",
+  "theme_color": "#f7f3ec",
+  "icons": [{ "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }, { "src": "icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }]
+}
