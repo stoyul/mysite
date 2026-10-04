@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f7f3ec">
-  <meta name="description" content="ДЛЯ СЕБЯ — 40 карточек заботы о себе. Маленькое действие, которое сегодня будет только для тебя.">
-  <meta property="og:title" content="ДЛЯ СЕБЯ — 40 карточек заботы о себе">
+  <meta name="description" content="ДЛЯ СЕБЯ · 40 карточек заботы о себе. Маленькое действие, которое сегодня будет только для тебя.">
+  <meta property="og:title" content="ДЛЯ СЕБЯ · 40 карточек заботы о себе">
   <meta property="og:description" content="Не исправляй себя. Выбирай себя.">
   <meta property="og:type" content="website">
   <link rel="manifest" href="manifest.webmanifest">
@@ -14,8 +14,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
   <link rel="stylesheet" href="style.css">
-  <title>ДЛЯ СЕБЯ — 40 карточек заботы о себе</title>
+  <title>ДЛЯ СЕБЯ · 40 карточек заботы о себе</title>
 </head>
 <body>
   <a class="skip" href="#main">Перейти к содержимому</a>
@@ -24,7 +25,7 @@
       <button class="brand" data-action="home" aria-label="На главную">
         <span class="brand-mark">♡</span><span><b>ДЛЯ СЕБЯ</b><small>40 карточек заботы о себе</small></span>
       </button>
-      <button class="quiet-button install hidden" id="installBtn">Установить приложение</button>
+      <button class="quiet-button install hidden" id="installBtn">Добавить «Для себя»</button>
       <button class="profile-button" data-view="history" aria-label="Моя история"><span>♡</span></button>
     </header>
     <main id="main" tabindex="-1">
@@ -39,6 +40,11 @@
     </nav>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
+  <div class="card-viewer" id="cardViewer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Увеличенный просмотр карточки">
+    <button class="viewer-close" type="button" data-action="close-viewer" aria-label="Закрыть увеличенный просмотр">×</button>
+    <img class="viewer-image" id="viewerImage" alt="">
+  </div>
+  <div class="celebration" id="celebration" aria-live="polite" aria-atomic="true"></div>
   <script src="app.js" defer></script>
 </body>
 </html>
