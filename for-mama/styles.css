@@ -152,14 +152,15 @@ button { color: inherit; }
 @keyframes glow { 0%,100% { transform: scale(.94); opacity: .75; } 50% { transform: scale(1.06); opacity: 1; } }
 
 @media (min-width: 700px) {
-  .app-shell { padding-right: 38px; padding-left: 38px; }
+  .app-shell { display: flex; flex-direction: column; padding: 0 38px 24px; }
+  main { flex: 1 0 auto; }
   .today-view { padding-top: 12px; }
   .greeting { margin-bottom: 14px; }
   .address-line { margin-top: 16px; }
   .welcome-note { max-width: 710px; margin-top: 5px; margin-bottom: 9px; font-size: 20px; line-height: 1.42; }
   .gift-stage { margin-top: 0; padding-top: 0; }
   .envelope { height: 154px; }
-  .bottom-nav { bottom: 16px; width: min(calc(100% - 40px), 900px); padding: 8px 14px; border: 1px solid rgba(91,76,81,.16); border-radius: 18px; }
+  .bottom-nav { position: static; bottom: auto; left: auto; width: min(100%, 900px); margin: 18px auto 0; padding: 8px 14px; transform: none; border: 1px solid rgba(91,76,81,.16); border-radius: 18px; }
 }
 @media (max-width: 370px) {
   .app-shell { padding-right: 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); padding-left: 16px; }
