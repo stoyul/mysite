@@ -42,7 +42,7 @@ button { color: inherit; }
 .eyebrow { display: block; color: var(--coral-dark); font-size: 15px; font-weight: 700; letter-spacing: .17em; }
 .today-flower { display: block; margin: 5px auto 0; color: var(--gold); font-size: 21px; line-height: 1.1; }
 .greeting h1, .section-heading h1, .locked-view h1 { margin: 9px 0 9px; font: 500 clamp(32px, 5vw, 42px)/1.13 var(--serif); letter-spacing: -.025em; }
-.gift-promise { margin: 10px 0 7px; color: var(--coral-dark); font-size: 14px; font-weight: 700; letter-spacing: .13em; line-height: 1.45; }
+.gift-promise { margin: 10px 0 7px; color: var(--coral-dark); font-size: 15px; font-weight: 700; letter-spacing: .12em; line-height: 1.45; }
 .date-line { margin: 0; color: var(--muted); font-size: 19px; line-height: 1.4; }
 .special-banner { margin: 10px 0 0; color: var(--coral-dark); font: italic 18px/1.4 var(--serif); }
 .special-banner span { display: inline-block; margin-left: 5px; animation: glow 2.8s ease-in-out infinite; }
@@ -164,7 +164,7 @@ button { color: inherit; }
 @media (max-width: 370px) {
   .app-shell { padding-right: 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); padding-left: 16px; }
   .greeting h1 { font-size: 31px; }
-  .gift-promise { font-size: 13px; letter-spacing: .1em; }
+  .gift-promise { font-size: 15px; letter-spacing: .08em; }
   .nav-item { font-size: 15px; }
   .nav-icon { font-size: 23px; }
   .setting-row { gap: 8px; padding-right: 10px; padding-left: 10px; }
