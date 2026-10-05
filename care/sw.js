@@ -1,4 +1,4 @@
-const CACHE='dlya-sebya-v5';
+const CACHE='dlya-sebya-v6';
 const SHELL=['./','./index.html','./style.css','./app.js','./manifest.webmanifest','./data/cards.json','./icons/icon.svg','./icons/apple-touch-icon.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('dlya-sebya-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
