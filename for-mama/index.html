@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#edf3f6">
+  <meta name="description" content="365 маленьких посланий любви — по одному для мамы на каждый день.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="МАМА">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <title>МАМА — 365 дней тепла</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#today" aria-label="МАМА — на главную"><span class="brand-mark">м</span><span>для мамы</span></a>
+      <button class="icon-button settings-shortcut" type="button" aria-label="Настройки" data-view="settings"><span>☼</span></button>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="view today-view" id="today-view" aria-labelledby="page-title">
+        <div class="greeting">
+          <span class="eyebrow" id="date-label">СЕГОДНЯ</span>
+          <h1 id="page-title">Маленькое послание<br>для тебя, мама</h1>
+          <p class="date-line" id="today-date"></p>
+          <p class="special-banner" id="special-banner" hidden>Сегодня особенный день <span>✳</span></p>
+        </div>
+
+        <div class="gift-stage" id="gift-stage">
+          <div class="envelope" id="envelope">
+            <div class="envelope-flap"></div>
+            <span class="envelope-heart" aria-hidden="true">♥</span>
+            <span class="envelope-label">Для тебя</span>
+          </div>
+          <p class="gift-caption" id="gift-caption">С любовью, на сегодня</p>
+        </div>
+
+        <figure class="daily-card" id="daily-card" hidden>
+          <div class="card-image-wrap"><img id="card-image" alt="Теплая открытка для мамы" fetchpriority="high"></div>
+          <figcaption class="card-caption"><span class="caption-flower">✳</span><span id="card-phrase"></span></figcaption>
+          <button class="favorite-toggle" id="favorite-toggle" type="button" aria-label="Добавить в любимые" aria-pressed="false">♡</button>
+        </figure>
+
+        <button class="primary-button" id="open-today" type="button"><span>Открыть послание</span><span aria-hidden="true">↗</span></button>
+        <p class="opened-count" id="opened-count"></p>
+        <p class="future-note" id="future-note" hidden>Это послание еще ждет своего дня <span>♡</span></p>
+      </section>
+
+      <section class="view collection-view" id="archive-view" hidden aria-labelledby="archive-title">
+        <div class="section-heading"><span class="eyebrow">КОЛЛЕКЦИЯ ТЕПЛА</span><h1 id="archive-title">Мои послания</h1><p>Все слова, к которым захочется вернуться.</p></div>
+        <div class="card-list" id="archive-list"></div>
+        <div class="empty-state" id="archive-empty" hidden><span>♡</span><p>Открытые послания будут ждать тебя здесь.</p></div>
+      </section>
+
+      <section class="view collection-view" id="favorites-view" hidden aria-labelledby="favorites-title">
+        <div class="section-heading"><span class="eyebrow">СОХРАНЕНО С ЛЮБОВЬЮ</span><h1 id="favorites-title">Любимые</h1><p>Те самые слова, которые хочется перечитывать.</p></div>
+        <div class="card-list" id="favorites-list"></div>
+        <div class="empty-state" id="favorites-empty" hidden><span>♡</span><p>Нажми сердечко на открытке, чтобы сохранить любимые слова.</p></div>
+      </section>
+
+      <section class="view collection-view settings-view" id="settings-view" hidden aria-labelledby="settings-title">
+        <div class="section-heading"><span class="eyebrow">ВСЁ ПО-ТВОЕМУ</span><h1 id="settings-title">Настройки</h1><p>Пусть послания приходят в удобное время.</p></div>
+        <div class="settings-panel">
+          <label class="setting-row switch-row" for="notifications-toggle"><span><strong>Утреннее напоминание</strong><small>Бот пришлет ссылку на новое послание</small></span><input id="notifications-toggle" type="checkbox"><span class="switch" aria-hidden="true"></span></label>
+          <div class="setting-row time-row"><label for="reminder-time"><strong>Время</strong><small>По твоему местному времени</small></label><div class="time-controls"><select id="reminder-time"><option>07:00</option><option>08:00</option><option selected>09:00</option><option>10:00</option><option value="custom">Свое время</option></select><input type="time" id="custom-time" aria-label="Выбрать свое время" hidden></div></div>
+          <label class="setting-row timezone-row" for="timezone"><span><strong>Часовой пояс</strong><small>Определен по устройству</small></span><input id="timezone" type="text" inputmode="text" autocomplete="off"></label>
+          <label class="setting-row" for="birthday"><span><strong>День рождения</strong><small>Для ежегодного теплого сюрприза</small></span><input id="birthday" type="date"></label>
+          <label class="setting-row" for="special-days"><span><strong>Еще важные даты</strong><small>Например: 05-12, 12-31</small></span><input id="special-days" type="text" placeholder="ММ-ДД" aria-label="Особенные даты в формате месяц-день"></label>
+        </div>
+        <p class="settings-footnote">Твои настройки и открытые карточки хранятся на этом устройстве. В Telegram они синхронизируются с ботом.</p>
+        <div class="developer-tools" id="developer-tools" hidden><span class="eyebrow">ПРОВЕРКА ДАТ</span><label for="test-date">Показать дату</label><input type="date" id="test-date"><button class="text-button" id="test-date-reset" type="button">Вернуться к сегодняшнему дню</button><small>Видно только при включении режима разработчика.</small></div>
+      </section>
+
+      <section class="view collection-view locked-view" id="locked-view" hidden><div class="lock-mark">✳</div><span class="eyebrow">ДЕНЬ ЕЩЁ НЕ НАСТАЛ</span><h1>Это послание еще ждет своего дня</h1><button class="text-button" type="button" data-view="today">Вернуться к сегодняшнему дню</button></section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Основная навигация">
+      <button class="nav-item active" type="button" data-view="today" aria-current="page"><span class="nav-icon">⌂</span><span>Сегодня</span></button>
+      <button class="nav-item" type="button" data-view="archive"><span class="nav-icon">▤</span><span>Послания</span></button>
+      <button class="nav-item" type="button" data-view="favorites"><span class="nav-icon">♡</span><span>Любимые</span></button>
+      <button class="nav-item" type="button" data-view="settings"><span class="nav-icon">☼</span><span>Настройки</span></button>
+    </nav>
+  </div>
+
+  <div class="welcome-screen" id="welcome-screen" hidden role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+    <div class="welcome-sparkle" aria-hidden="true">✳</div><span class="eyebrow">ОДИН МАЛЕНЬКИЙ ПОДАРОК НА КАЖДЫЙ ДЕНЬ</span>
+    <h1 id="welcome-title">Мамочка <span>♡</span></h1>
+    <p>Я хотела подарить тебе не один подарок на день рождения.<br><br>Я хочу, чтобы тебя ждал маленький подарок каждый день. Здесь тебя ждут 365 посланий. По одному на каждый день года.</p>
+    <button class="primary-button" id="welcome-open" type="button"><span>Открыть сегодняшнее послание</span><span aria-hidden="true">↗</span></button>
+    <button class="welcome-skip" id="welcome-skip" type="button">Посмотреть приложение</button>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>

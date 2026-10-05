@@ -1,0 +1,14 @@
+{
+  "id": "/for-mama/",
+  "name": "МАМА — 365 дней тепла",
+  "short_name": "МАМА",
+  "description": "Маленькое послание любви для мамы на каждый день.",
+  "lang": "ru",
+  "start_url": "/for-mama/",
+  "scope": "/for-mama/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#edf3f6",
+  "theme_color": "#edf3f6",
+  "icons": [{"src":"/for-mama/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
