@@ -80,7 +80,7 @@ button { color: inherit; }
 .envelope.is-opening .envelope-heart { opacity: 0; }
 .gift-caption { margin: 13px 0 0; color: #5d5150; font: italic 18px/1.35 var(--serif); }
 
-.daily-card { position: relative; width: min(100%, 540px); margin: 18px auto 25px; animation: card-in .65s var(--ease) both; }
+.daily-card { position: relative; width: min(100%, 520px); margin: 18px auto 18px; animation: card-in .65s var(--ease) both; }
 .card-image-wrap { padding: 9px; border: 1px solid rgba(185,154,105,.4); border-radius: 16px; background: rgba(255,252,247,.78); box-shadow: 0 19px 48px rgba(66,56,65,.17); }
 .card-image-wrap img { width: 100%; height: auto; display: block; border-radius: 9px; background: #e9e4df; aspect-ratio: 1180/790; object-fit: contain; }
 .card-caption { display: flex; align-items: flex-start; gap: 10px; margin: 15px 20px 0; padding-right: 42px; text-align: left; color: var(--ink); font: italic clamp(19px,2.5vw,21px)/1.5 var(--serif); }
@@ -94,7 +94,7 @@ button { color: inherit; }
 .primary-button span:first-child { flex: 1; text-align: center; }
 .primary-button span:last-child { flex: 0 0 auto; font-size: 22px; }
 .primary-button:disabled { opacity: .72; cursor: wait; }
-.opened-count { min-height: 24px; margin: 14px 0 0; color: var(--muted); font-size: 16px; line-height: 1.5; }
+.opened-count { min-height: 24px; margin: 10px 0 0; color: var(--muted); font-size: 16px; line-height: 1.5; }
 .future-note { margin: 17px 0; color: var(--muted); font: italic 19px/1.5 var(--serif); }
 
 .collection-view { padding: 30px 0 20px; }
@@ -152,15 +152,17 @@ button { color: inherit; }
 @keyframes glow { 0%,100% { transform: scale(.94); opacity: .75; } 50% { transform: scale(1.06); opacity: 1; } }
 
 @media (min-width: 700px) {
-  .app-shell { display: flex; flex-direction: column; padding: 0 38px 24px; }
+  body { padding: 0; }
+  .app-shell { min-height: 100dvh; display: flex; flex-direction: column; padding: 0 38px 18px; }
   main { flex: 1 0 auto; }
-  .today-view { padding-top: 12px; }
-  .greeting { margin-bottom: 14px; }
+  .today-view { padding-top: 2px; }
+  .greeting { margin-bottom: 10px; }
   .address-line { margin-top: 16px; }
   .welcome-note { max-width: 710px; margin-top: 5px; margin-bottom: 9px; font-size: 20px; line-height: 1.42; }
   .gift-stage { margin-top: 0; padding-top: 0; }
   .envelope { height: 154px; }
-  .bottom-nav { position: static; bottom: auto; left: auto; width: min(100%, 900px); margin: 18px auto 0; padding: 8px 14px; transform: none; border: 1px solid rgba(91,76,81,.16); border-radius: 18px; }
+  .bottom-nav { position: static; bottom: auto; left: auto; width: min(100%, 900px); margin: 14px auto 0; padding: 8px 14px; transform: none; border: 1px solid rgba(91,76,81,.16); border-radius: 18px; }
+  .nav-item { min-height: 54px; }
 }
 @media (max-width: 370px) {
   .app-shell { padding-right: 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom)); padding-left: 16px; }
