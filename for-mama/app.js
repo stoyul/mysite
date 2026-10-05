@@ -36,7 +36,7 @@
     return cards.find(c=>c.month===targetMonth&&c.day===targetDay);
   }
   function isFuture(date) { const a=dateKey(date), b=dateKey(actualToday()); return a>b; }
-  function formatDate(date, withYear=false) { return new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',...(withYear?{year:'numeric'}:{})}).format(date); }
+  function formatDate(date, withYear=false) { return new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',...(withYear?{year:'numeric'}:{})}).format(date).toLocaleLowerCase('ru-RU'); }
   function opened() { return store.get('opened',[]); }
   function favorites() { return store.get('favorites',[]); }
   function persistSettings() { store.set('settings',settings); syncSettings(); }
@@ -90,7 +90,8 @@
     showEntry(entry,date,true); window.scrollTo({top:0,behavior:'smooth'});
   }
   function showEntry(entry,date,fromArchive=false) {
-    q('#gift-stage').hidden=true; q('#daily-card').hidden=false; q('#open-today').hidden=true; q('#future-note').hidden=true;
+    q('#gift-stage').hidden=true; q('#gift-caption').hidden=true; q('#welcome-note').hidden=true; q('#daily-invitation').hidden=true;
+    q('#daily-card').hidden=false; q('#open-today').hidden=true; q('#future-note').hidden=true;
     q('#date-label').textContent=fromArchive?'ИЗ ТВОИХ ПОСЛАНИЙ':'ПОСЛАНИЕ НА СЕГОДНЯ';
     q('#today-date').textContent=formatDate(date,true);
     q('#card-image').src=entry.image; q('#card-image').alt=`Открытка для мамы на ${formatDate(date)}`;
@@ -102,7 +103,10 @@
   function plural(n) { const a=n%10,b=n%100;return a===1&&b!==11?'послание':a>=2&&a<=4&&(b<12||b>14)?'послания':'посланий'; }
   function renderToday() {
     const date=selectedDate(), future=isFuture(date), entry=cardForDate(date);
-    viewing=null; q('#daily-card').hidden=true; q('#gift-stage').hidden=false; q('#future-note').hidden=!future;
+    viewing=null; q('#daily-card').hidden=true; q('#gift-stage').hidden=false; q('#gift-caption').hidden=future; q('#future-note').hidden=!future;
+    const welcomed=store.get('welcomed',false);
+    q('#welcome-note').hidden=welcomed;
+    q('#daily-invitation').hidden=!welcomed;
     q('#date-label').textContent=devMode?'ТЕСТОВАЯ ДАТА':'СЕГОДНЯ'; q('#today-date').textContent=formatDate(date,true);
     const monthDay=dayId(date), personalDays=(settings.specialDates||'').split(',').map(x=>x.trim()).filter(x=>/^\d{2}-\d{2}$/.test(x));
     const birthdayMatch=settings.birthday&&settings.birthday.slice(5)===`${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
@@ -111,7 +115,7 @@
     q('#page-title').innerHTML='Маленькое послание<br>для тебя, мама';
     const key=dateKey(date), seen=opened().includes(key);
     q('#gift-stage').hidden=future; q('#open-today').hidden=future; q('#open-today').disabled=false;
-    q('#open-today').querySelector('span:first-child').textContent=seen?'Перечитать сегодняшнее послание':'Открыть послание';
+    q('#open-today').querySelector('span:first-child').textContent=seen?'Перечитать сегодняшнее послание':'Открыть сегодняшнее послание';
     q('#open-today').onclick=()=>revealToday();
     q('#opened-count').textContent=`Мы уже открыли ${opened().length} ${plural(opened().length)} тепла ♡`;
     if(future){q('#page-title').textContent='Всё хорошее приходит в свой день';}
@@ -121,6 +125,7 @@
   function revealToday() {
     const date=selectedDate(), entry=cardForDate(date); if(!entry)return;
     if(isFuture(date)){setView('locked');return;}
+    store.set('welcomed',true);
     const env=q('#envelope'); env.classList.add('is-opening');
     q('#open-today').disabled=true;
     const finish=()=>{
@@ -153,21 +158,18 @@
   q('#special-days').addEventListener('change',e=>{settings.specialDates=e.target.value;persistSettings();renderToday();});
   q('#developer-tools').hidden=!devMode;
   if(devMode){q('#test-date').value=params.get('date')||dateKey(actualToday());q('#test-date').addEventListener('change',renderToday);q('#test-date-reset').addEventListener('click',()=>{q('#test-date').value=dateKey(actualToday());renderToday();});}
-  q('#welcome-open').addEventListener('click',()=>{store.set('welcomed',true);q('#welcome-screen').hidden=true;revealToday();});
-  q('#welcome-skip').addEventListener('click',()=>{store.set('welcomed',true);q('#welcome-screen').hidden=true;});
   let activeDateKey=dateKey(actualToday());
   function refreshDay(){if(devMode||view!=='today'||viewing)return;const current=dateKey(actualToday());if(current!==activeDateKey){activeDateKey=current;renderToday();}}
   window.addEventListener('focus',refreshDay);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshDay();});
   setInterval(refreshDay,30000);
   async function init() {
-    if(tg){tg.ready();tg.expand();try{tg.setHeaderColor('#edf3f6');tg.setBackgroundColor('#edf3f6');}catch{}}
+    if(tg){tg.ready();tg.expand();try{tg.setHeaderColor('#f5f0e8');tg.setBackgroundColor('#f5f0e8');}catch{}}
     const response=await fetch('./cards.json');cards=await response.json();
     if(initData){const cloud=await syncRequest('settings');if(cloud?.settings){Object.assign(settings,cloud.settings,{timezone:cloud.settings.timezone||settings.timezone});store.set('settings',settings);store.set('opened',[...new Set([...opened(),...(cloud.opened||[])])]);store.set('favorites',[...new Set([...favorites(),...(cloud.favorites||[])])]);q('#notifications-toggle').checked=settings.reminders;q('#reminder-time').value=presetTimes.includes(settings.time)?settings.time:'custom';q('#custom-time').hidden=q('#reminder-time').value!=='custom';q('#custom-time').value=settings.time;q('#timezone').value=settings.timezone;q('#birthday').value=settings.birthday||'';q('#special-days').value=settings.specialDates||'';syncSettings();}}
     renderToday();
     if(params.get('open')==='today') {store.set('welcomed',true);revealToday();}
-    else if(['archive','favorites','settings'].includes(params.get('view'))) {store.set('welcomed',true);setView(params.get('view'));}
-    else if(!store.get('welcomed',false)) q('#welcome-screen').hidden=false;
+    else if(['archive','favorites','settings'].includes(params.get('view'))) {setView(params.get('view'));}
     if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
   }
   init().catch(()=>showToast('Не удалось загрузить послания. Попробуй обновить страницу.'));

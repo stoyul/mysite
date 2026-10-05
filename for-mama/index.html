@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#edf3f6">
+  <meta name="theme-color" content="#f5f0e8">
   <meta name="description" content="365 маленьких посланий любви — по одному для мамы на каждый день.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -11,7 +11,7 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icon.svg">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=6">
   <title>МАМА — 365 дней тепла</title>
 </head>
 <body>
@@ -25,9 +25,18 @@
       <section class="view today-view" id="today-view" aria-labelledby="page-title">
         <div class="greeting">
           <span class="eyebrow" id="date-label">СЕГОДНЯ</span>
+          <span class="today-flower" aria-hidden="true">✳</span>
           <h1 id="page-title">Маленькое послание<br>для тебя, мама</h1>
+          <p class="gift-promise">ОДИН МАЛЕНЬКИЙ ПОДАРОК НА КАЖДЫЙ ДЕНЬ</p>
           <p class="date-line" id="today-date"></p>
           <p class="special-banner" id="special-banner" hidden>Сегодня особенный день <span>✳</span></p>
+        </div>
+
+        <p class="address-line">Мамочка <span aria-hidden="true">♡</span></p>
+        <p class="daily-invitation" id="daily-invitation" hidden>Для тебя есть новое послание</p>
+        <div class="welcome-note" id="welcome-note" hidden>
+          <p>Я хотела подарить тебе не один подарок на день рождения.</p>
+          <p>Я хочу, чтобы тебя ждал маленький подарок каждый день. Здесь тебя ждут 365 посланий. По одному на каждый день года.</p>
         </div>
 
         <div class="gift-stage" id="gift-stage">
@@ -36,7 +45,6 @@
             <span class="envelope-heart" aria-hidden="true">♥</span>
             <span class="envelope-label">Для тебя</span>
           </div>
-          <p class="gift-caption" id="gift-caption">С любовью, на сегодня</p>
         </div>
 
         <figure class="daily-card" id="daily-card" hidden>
@@ -46,6 +54,7 @@
         </figure>
 
         <button class="primary-button" id="open-today" type="button"><span>Открыть послание</span><span aria-hidden="true">↗</span></button>
+        <p class="gift-caption" id="gift-caption">С любовью, на сегодня</p>
         <p class="opened-count" id="opened-count"></p>
         <p class="future-note" id="future-note" hidden>Это послание еще ждет своего дня <span>♡</span></p>
       </section>
@@ -86,15 +95,8 @@
     </nav>
   </div>
 
-  <div class="welcome-screen" id="welcome-screen" hidden role="dialog" aria-modal="true" aria-labelledby="welcome-title">
-    <div class="welcome-sparkle" aria-hidden="true">✳</div><span class="eyebrow">ОДИН МАЛЕНЬКИЙ ПОДАРОК НА КАЖДЫЙ ДЕНЬ</span>
-    <h1 id="welcome-title">Мамочка <span>♡</span></h1>
-    <p>Я хотела подарить тебе не один подарок на день рождения.<br><br>Я хочу, чтобы тебя ждал маленький подарок каждый день. Здесь тебя ждут 365 посланий. По одному на каждый день года.</p>
-    <button class="primary-button" id="welcome-open" type="button"><span>Открыть сегодняшнее послание</span><span aria-hidden="true">↗</span></button>
-    <button class="welcome-skip" id="welcome-skip" type="button">Посмотреть приложение</button>
-  </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="./app.js" defer></script>
+  <script src="./app.js?v=6" defer></script>
 </body>
 </html>
