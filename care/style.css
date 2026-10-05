@@ -231,3 +231,18 @@ body{font-size:16px;background:var(--paper);color:var(--ink)}
 }
 @media(max-width:380px){.app-shell{padding-left:10px;padding-right:10px}.reading-art{width:min(calc(100vw - 20px),480px)}.hero{padding-left:16px;padding-right:16px}.brand-slogan{letter-spacing:.035em}}
 @media(prefers-reduced-motion:reduce){.brand-slogan i{animation:none!important}}
+
+/* Slightly larger mobile type for comfortable reading without zoom. */
+@media(max-width:760px){
+  body{font-size:17px}
+  .hero-kicker{font-size:21px!important}
+  .hero-copy>p:not(.hero-kicker):not(.footnote){font-size:19px}
+  .mood-block>p{font-size:17px}
+  .pill,.category-row button{font-size:15px}
+  .footnote,.section-head p{font-size:15px}
+  .feature b{font-size:17px!important}
+  .feature small{font-size:17px}
+  .bottom-nav button small{font-size:12px}
+  .brand small{font-size:11px}
+  .btn{font-size:16px}
+}
