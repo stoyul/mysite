@@ -1,13 +1,16 @@
 {
-  "id": "./",
-  "name": "ДЛЯ СЕБЯ — 40 карточек заботы о себе",
-  "short_name": "ДЛЯ СЕБЯ",
+  "id": "/care/",
+  "name": "Для себя. 40 карточек заботы о себе",
+  "short_name": "Для себя",
   "description": "Не исправляй себя. Выбирай себя.",
   "lang": "ru",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f7f3ec",
-  "theme_color": "#f7f3ec",
-  "icons": [{ "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }, { "src": "icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }]
+  "background_color": "#fff8fc",
+  "theme_color": "#fff8fc",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" },
+    { "src": "icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
 }
