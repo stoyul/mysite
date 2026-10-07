@@ -80,11 +80,12 @@
         </div></div>
         <p class="settings-footnote">Чтобы слышать наши утренние послания, убедись, что уведомления Telegram для этого чата включены 🔔</p>
         <p id="notification-status" class="settings-footnote" role="status" aria-live="polite"></p>
+        <p class="settings-footnote"><a href="https://t.me/Mamacalendar_bot" target="_blank" rel="noopener">Открыть чат «Для мамы» 💌</a></p>
         <div class="notification-actions"><button class="text-button" id="test-notification" type="button">🔔 Проверить уведомление</button><button class="text-button" id="scheduled-test" type="button">Проверить расписание через 2 минуты</button><button class="text-button" id="retry-connection" type="button" hidden>Повторить подключение</button></div>
         <div id="dates-home"><div class="settings-panel" id="dates-panel">
           <h2 class="panel-title">Важные даты 🎂</h2>
           <label class="setting-row" for="birthday"><span><strong>День рождения</strong><small>Для ежегодного тёплого сюрприза</small></span><input id="birthday" type="date"></label>
-          <label class="setting-row" for="special-days"><span><strong>Сохранённые даты</strong><small>Можно изменить или убрать дату: ММ-ДД</small></span><input id="special-days" type="text" placeholder="05-12, 12-31" aria-label="Особенные даты в формате месяц-день"></label>
+          <input id="special-days" type="hidden" aria-label="Сохранённые даты прежней версии">
           <div id="important-dates-list"></div>
           <form id="date-form" class="date-form"><label>Название<input id="date-name" maxlength="80" placeholder="Наш особенный день" required></label><label>Дата<input id="date-value" type="date" required></label><div><button class="text-button" type="submit" id="date-save">Добавить дату</button><button class="text-button" type="button" id="date-cancel" hidden>Отмена</button></div></form>
         </div></div>
