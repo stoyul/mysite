@@ -62,6 +62,19 @@ async function telegram(env, method, data) {
   if (!response.ok || !result.ok) throw new TelegramError(result.error_code || response.status, result.parameters?.retry_after || 0);
   return result.result;
 }
+export async function configureTelegram(env) {
+  if (!env.BOT_TOKEN || !env.WEBHOOK_SECRET) return false;
+  const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${env.BOT_TOKEN}\n${env.WEBHOOK_SECRET}`));
+  const fingerprint = [...new Uint8Array(bytes)].map(x => x.toString(16).padStart(2, '0')).join('');
+  const previous = await env.MAMA_DB.prepare("SELECT value FROM mama_runtime WHERE key = 'telegram_setup'").first();
+  if (previous?.value === fingerprint) return true;
+  const bot = await telegram(env, 'getMe', {});
+  if (bot.username?.toLowerCase() !== 'mamacalendar_bot') throw new Error('Wrong Mama bot token');
+  await telegram(env, 'setWebhook', { url: 'https://yuliastoyanova.com/telegram/webhook', secret_token: env.WEBHOOK_SECRET, allowed_updates: ['message', 'my_chat_member'] });
+  await telegram(env, 'setChatMenuButton', { menu_button: { type: 'web_app', text: '💌 Для мамы', web_app: { url: APP_URL } } });
+  await env.MAMA_DB.prepare("INSERT INTO mama_runtime (key, value) VALUES ('telegram_setup', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").bind(fingerprint).run();
+  return true;
+}
 async function ensureUser(env, id) {
   const now = new Date().toISOString();
   await env.MAMA_DB.prepare('INSERT OR IGNORE INTO mama_users (telegram_id, first_launch, updated_at) VALUES (?, ?, ?)').bind(String(id), now, now).run();
@@ -222,6 +235,9 @@ export default {
     } catch { console.error('mama_request_failed'); return json({ error: 'Не удалось связаться с сервером посланий. Попробуй позже.' }, 500); }
   },
   async scheduled(controller, env, ctx) {
-    ctx.waitUntil(runDaily(env, new Date(controller.scheduledTime)));
+    ctx.waitUntil((async () => {
+      if (!env.MAMA_DB || !await configureTelegram(env)) return;
+      await runDaily(env, new Date(controller.scheduledTime));
+    })());
   }
 };
