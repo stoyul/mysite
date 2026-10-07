@@ -160,6 +160,12 @@
   document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>setView(button.dataset.view)));
   const presetTimes=['07:00','08:00','09:00','10:00'];
   function refreshSettings() {
+    settings.importantDates=Array.isArray(settings.importantDates)?settings.importantDates:[];
+    // Upgrade the existing unnamed dates in place to the same editable named list.
+    for(const date of (settings.specialDates||'').split(',').map(d=>d.trim()).filter(validMonthDay)){
+      if(!settings.importantDates.some(d=>d.date===date))settings.importantDates.push({name:'Особенный день',date});
+    }
+    settings.specialDates='';
     q('#notifications-toggle').checked=settings.reminders;
     q('#notifications-toggle').disabled=!initData||!cloudReady;
     q('#test-notification').disabled=!initData||!cloudReady;
