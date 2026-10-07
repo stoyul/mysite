@@ -2,8 +2,8 @@ const APP_URL = 'https://yuliastoyanova.com/for-mama/';
 const timePattern = /^([01]\d|2[0-3]):[0-5]\d$/;
 const morningMessages = [
   'Доброе утро, мамочка ❤️\nДля тебя уже готово новое послание.',
-  'Мамочка, пусть утро будет тёплым 💌\nСегодняшнее послание уже ждёт тебя.',
-  'Новый день — ещё одна причина улыбнуться ❤️\nОткрой маленький подарок для тебя.'
+  'Мамочка, пусть утро будет теплым 💌\nСегодняшнее послание уже ждет тебя.',
+  'Новый день — еще одна причина улыбнуться ❤️\nОткрой маленький подарок для тебя.'
 ];
 function json(data, status = 200) {
   return Response.json(data, { status, headers: { 'cache-control': 'no-store' } });
@@ -81,7 +81,7 @@ async function ensureUser(env, id) {
   return env.MAMA_DB.prepare('SELECT * FROM mama_users WHERE telegram_id = ?').bind(String(id)).first();
 }
 function safeSettings(user) {
-  return { settings: { reminders: Boolean(user.notifications_enabled), time: user.notification_time, timezone: user.timezone, birthday: user.birthday, specialDates: user.special_dates, importantDates: JSON.parse(user.important_dates), onboardingCompleted: Boolean(user.onboarding_completed) }, opened: JSON.parse(user.opened), favorites: JSON.parse(user.favorites), firstLaunch: user.first_launch, botStarted: Boolean(user.started_at && user.chat_id), blocked: Boolean(user.blocked) };
+  return { settings: { reminders: Boolean(user.notifications_enabled), time: user.notification_time, timezone: user.timezone, birthday: user.birthday, specialDates: user.special_dates, importantDates: JSON.parse(user.important_dates).map(d => ({ ...d, name: d.name.replace(/\u0451/g, 'е').replace(/\u0401/g, 'Е') })), onboardingCompleted: Boolean(user.onboarding_completed) }, opened: JSON.parse(user.opened), favorites: JSON.parse(user.favorites), firstLaunch: user.first_launch, botStarted: Boolean(user.started_at && user.chat_id), blocked: Boolean(user.blocked) };
 }
 function cleanList(value, kind) {
   if (!Array.isArray(value) || value.length > 1000) throw new Error('invalid_list');
@@ -111,7 +111,7 @@ async function saveSettings(env, user, b, syncOnly = false) {
     }
     if ('importantDates' in b) {
       if (!Array.isArray(b.importantDates) || b.importantDates.length > 100 || b.importantDates.some(d => !d || typeof d.name !== 'string' || !d.name.trim() || d.name.length > 80 || !validMonthDay(d.date))) throw new Error('invalid_dates');
-      changes.important_dates = JSON.stringify(b.importantDates.map(d => ({ name: d.name.trim(), date: d.date })));
+      changes.important_dates = JSON.stringify(b.importantDates.map(d => ({ name: d.name.trim().replace(/\u0451/g, 'е').replace(/\u0401/g, 'Е'), date: d.date })));
     }
     const next = { ...user, ...changes };
     if (next.notifications_enabled && (!next.chat_id || !next.started_at || next.blocked)) throw new Error('start_required');
@@ -136,9 +136,9 @@ async function handleTelegram(env, update) {
     const command = (message.text || '').trim().split(/\s/)[0].split('@')[0];
     if (command === '/start') {
       await env.MAMA_DB.prepare('UPDATE mama_users SET chat_id = ?, started_at = ?, blocked = 0 WHERE telegram_id = ?').bind(String(message.chat.id), new Date().toISOString(), String(message.from.id)).run();
-      await telegram(env, 'sendMessage', { chat_id: String(message.chat.id), text: 'Мамочка ❤️\n\nЗдесь тебя каждый день будет ждать маленькое послание, созданное с любовью.\n\nЯ хочу, чтобы каждый день у тебя была маленькая причина улыбнуться.', disable_notification: false, reply_markup: { inline_keyboard: [[button('💌 Перейти в приложение')]] } });
+      await telegram(env, 'sendMessage', { chat_id: String(message.chat.id), text: 'Мамочка ❤️\n\nЯ приготовила для тебя маленький подарок на каждый день.\n\nЗдесь тебя ждут 365 теплых посланий. По одному на каждый день года.', disable_notification: false, reply_markup: { inline_keyboard: [[button('💌 Открыть календарь')]] } });
     } else if (command === '/today') {
-      await telegram(env, 'sendMessage', { chat_id: String(message.chat.id), text: 'Твоё послание на сегодня уже готово 💌', disable_notification: false, reply_markup: { inline_keyboard: [[button('💌 Открыть послание', '?open=today')]] } });
+      await telegram(env, 'sendMessage', { chat_id: String(message.chat.id), text: 'Твое послание на сегодня уже готово 💌', disable_notification: false, reply_markup: { inline_keyboard: [[button('💌 Открыть сегодняшнее послание', '?open=today')]] } });
     } else if (['/settings', '/pause', '/resume'].includes(command)) {
       if (command === '/pause') await env.MAMA_DB.prepare('UPDATE mama_users SET notifications_enabled = 0 WHERE telegram_id = ?').bind(String(message.from.id)).run();
       // Resume through settings so the time and zone are explicitly confirmed.
@@ -156,7 +156,7 @@ async function deliver(env, user, date, kind, now) {
   const claimed = await env.MAMA_DB.prepare("UPDATE mama_deliveries SET status = ?, lease_until = ?, attempts = attempts + 1 WHERE telegram_id = ? AND local_date = ? AND kind = ? AND status != 'sent' AND status != 'failed' AND lease_until <= ? AND retry_at <= ? RETURNING attempts").bind(lease, nowMs + 90000, user.telegram_id, date, kind, nowMs, nowMs).first();
   if (!claimed) return false;
   try {
-    const message = await telegram(env, 'sendMessage', { chat_id: user.chat_id, text: kind === 'scheduled-test' ? 'Проверка расписания ❤️\nЭто послание пришло по серверному расписанию, даже когда приложение закрыто.' : morningMessages[Number(date.replaceAll('-', '')) % morningMessages.length], disable_notification: false, reply_markup: { inline_keyboard: [[button('💌 Открыть послание', '?open=today')]] } });
+    const message = await telegram(env, 'sendMessage', { chat_id: user.chat_id, text: kind === 'scheduled-test' ? 'Проверка расписания ❤️\nЭто послание пришло по серверному расписанию, даже когда приложение закрыто.' : morningMessages[Number(date.replaceAll('-', '')) % morningMessages.length], disable_notification: false, reply_markup: { inline_keyboard: [[button('💌 Открыть сегодняшнее послание', '?open=today')]] } });
     await env.MAMA_DB.prepare("UPDATE mama_deliveries SET status = 'sent', message_id = ?, sent_at = ?, lease_until = 0 WHERE telegram_id = ? AND local_date = ? AND kind = ? AND status = ?").bind(message.message_id, now.toISOString(), user.telegram_id, date, kind, lease).run();
     return true;
   } catch (error) {
@@ -206,11 +206,11 @@ async function api(request, env, route) {
       return json({ scheduled: true, dueAt: new Date(now + 120000).toISOString() });
     }
     try {
-      const message = await telegram(env, 'sendMessage', { chat_id: user.chat_id, text: 'Всё работает ❤️\nТеперь я смогу напоминать тебе о новом послании.', disable_notification: false, reply_markup: { inline_keyboard: [[button('💌 Открыть послание', '?open=today')]] } });
+      const message = await telegram(env, 'sendMessage', { chat_id: user.chat_id, text: 'Все работает ❤️\nТеперь я смогу присылать тебе новое послание каждый день.', disable_notification: false, reply_markup: { inline_keyboard: [[button('💌 Открыть сегодняшнее послание', '?open=today')]] } });
       return json({ sent: true, messageId: message.message_id });
     } catch (error) {
       if (error.code === 403) await markBlocked(env, user);
-      return json({ error: error.code === 403 ? 'Разблокируй бота и нажми «Начать» в его чате.' : 'Telegram не принял сообщение. Попробуй ещё раз чуть позже.' }, 502);
+      return json({ error: error.code === 403 ? 'Разблокируй бота и нажми «Начать» в его чате.' : 'Telegram не принял сообщение. Попробуй еще раз чуть позже.' }, 502);
     }
   }
   if (route === 'notification-status' && request.method === 'GET') {
@@ -225,7 +225,7 @@ export default {
     const path = new URL(request.url).pathname;
     const apiRoute = path.match(/^\/for-mama\/api\/([^/]+)$/);
     if (!apiRoute && path !== '/telegram/webhook') return env.ASSETS.fetch(request);
-    if (!env.MAMA_DB || !env.BOT_TOKEN || !env.WEBHOOK_SECRET) return json({ error: 'Сервер посланий ещё настраивается. Попробуй позже.' }, 503);
+    if (!env.MAMA_DB || !env.BOT_TOKEN || !env.WEBHOOK_SECRET) return json({ error: 'Сервер посланий еще настраивается. Попробуй позже.' }, 503);
     try {
       if (apiRoute) return await api(request, env, apiRoute[1]);
       if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);

@@ -4,6 +4,7 @@
   const devMode = params.get('dev') === '1';
   const tg = window.Telegram?.WebApp;
   const initData = tg?.initData || '';
+  const normalizeRussian = text => text.replace(/\u0451/g,'е').replace(/\u0401/g,'Е');
   const store = {
     get(key, fallback) { try { const value = localStorage.getItem(`mama365:${key}`); return value === null ? fallback : JSON.parse(value); } catch { return fallback; } },
     set(key, value) { try { localStorage.setItem(`mama365:${key}`, JSON.stringify(value)); } catch {} }
@@ -45,14 +46,13 @@
   function favorites() { return store.get('favorites',[]); }
   function persistSettings() {
     store.set('settings',settings);
-    if (onboardingStep) return Promise.resolve();
     if (!initData) { setStatus('Даты сохранены на устройстве. Для посланий открой приложение через @Mamacalendar_bot.'); return Promise.resolve(); }
     const snapshot = {...settings, opened:opened(), favorites:favorites()};
     saveQueue = saveQueue.catch(()=>{}).then(()=>syncRequest('settings',snapshot)).then(()=>setStatus('Настройки сохранены у бота ❤️')).catch(error=>{setStatus(error.message);throw error;});
     return saveQueue;
   }
   function saveFromControl() { persistSettings().catch(()=>{}); }
-  function setStatus(text) { q('#notification-status').textContent=text; }
+  function setStatus(text) { q('#notification-status').textContent=text; q('#onboarding-status').textContent=text; }
 
   function showToast(text) { const el=q('#toast'); el.textContent=text; el.classList.add('visible'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('visible'),2600); }
   async function syncRequest(path, body) {
@@ -127,6 +127,8 @@
     const monthDay=dayId(date), personalDays=[...(settings.specialDates||'').split(',').map(x=>x.trim()),...(settings.importantDates||[]).map(x=>x.date)].filter(x=>/^\d{2}-\d{2}$/.test(x));
     const birthdayMatch=settings.birthday&&settings.birthday.slice(5)===`${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
     const isSpecial=['1-1','2-14','3-8'].includes(monthDay)||Boolean(birthdayMatch)||personalDays.includes(`${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`);
+    const namedDays=(settings.importantDates||[]).filter(x=>x.date===`${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`).map(x=>normalizeRussian(x.name));
+    q('#special-banner').textContent=namedDays.length?`Сегодня ${namedDays.join(', ')} ❤️`:birthdayMatch?'Сегодня День рождения ❤️':'Сегодня особенный день ✳';
     q('#special-banner').hidden=!isSpecial;q('#gift-stage').classList.toggle('special-day',isSpecial);
     q('#page-title').innerHTML='Маленькое послание<br>для тебя, мама';
     const key=dateKey(date), seen=opened().includes(key);
@@ -134,7 +136,7 @@
     q('#open-today').querySelector('span:first-child').textContent=seen?'Перечитать сегодняшнее послание':'Открыть сегодняшнее послание';
     q('#open-today').onclick=()=>revealToday();
     q('#opened-count').textContent=`Мы уже открыли ${opened().length} ${plural(opened().length)} тепла ♡`;
-    if(future){q('#page-title').textContent='Всё хорошее приходит в свой день';}
+    if(future){q('#page-title').textContent='Все хорошее приходит в свой день';}
     if(seen&&!future)showEntry(entry,date);
     if(!entry){q('#open-today').disabled=true;showToast('Для этого дня не нашлась карточка.');}
   }
@@ -166,10 +168,12 @@
       if(!settings.importantDates.some(d=>d.date===date))settings.importantDates.push({name:'Особенный день',date});
     }
     settings.specialDates='';
+    settings.importantDates=settings.importantDates.map(d=>({...d,name:normalizeRussian(d.name)}));
     q('#notifications-toggle').checked=settings.reminders;
-    q('#notifications-toggle').disabled=!initData||!cloudReady;
-    q('#test-notification').disabled=!initData||!cloudReady;
-    q('#scheduled-test').disabled=!initData||!cloudReady;
+    q('#notifications-toggle').disabled=false;
+    q('#notification-state').textContent=settings.reminders?'Включено':'Выключено';
+    q('#test-notification').disabled=false;
+    q('#scheduled-test').disabled=false;
     q('#reminder-time').value=presetTimes.includes(settings.time)?settings.time:'custom';
     q('#custom-time').hidden=q('#reminder-time').value!=='custom';
     q('#custom-time').value=settings.time;
@@ -178,7 +182,17 @@
     q('#special-days').value=settings.specialDates||'';
     renderDates();
   }
-  q('#notifications-toggle').addEventListener('change',e=>{settings.reminders=e.target.checked;saveFromControl();});
+  q('#notifications-toggle').addEventListener('change',async e=>{
+    const previous=settings.reminders;
+    if(e.target.checked&&(!initData||!cloudReady)){
+      e.target.checked=previous;
+      const message=!initData?'Открой календарь через Telegram-бота, чтобы включить ежедневные послания.':'Не удалось подключиться к боту. Нажми «Повторить подключение».';
+      setStatus(message);showToast(message);return;
+    }
+    settings.reminders=e.target.checked;q('#notification-state').textContent=settings.reminders?'Включено':'Выключено';
+    e.target.disabled=true;setStatus('Сохраняю настройку посланий...');
+    try{await persistSettings();}catch(error){settings.reminders=previous;store.set('settings',settings);q('#notifications-toggle').checked=previous;q('#notification-state').textContent=previous?'Включено':'Выключено';setStatus(error.message);}finally{e.target.disabled=false;}
+  });
   q('#reminder-time').addEventListener('change',e=>{const custom=e.target.value==='custom';q('#custom-time').hidden=!custom;if(custom)q('#custom-time').focus();else {settings.time=e.target.value;saveFromControl();}});
   q('#custom-time').addEventListener('change',e=>{if(e.target.value){settings.time=e.target.value;saveFromControl();}});
   q('#timezone').addEventListener('change',e=>{try{const zone=e.target.value.trim();if(!zone)throw new Error();new Intl.DateTimeFormat('ru-RU',{timeZone:zone});settings.timezone=zone;saveFromControl();renderToday();}catch{e.target.value=settings.timezone;showToast('Проверь название часового пояса');}});
@@ -189,12 +203,12 @@
     const [m,d]=value.split('-').map(Number), date=new Date(2000,m-1,d,12);
     return date.getMonth()===m-1&&date.getDate()===d;
   }
-  function cancelDate() {editingDate=-1;q('#date-form').reset();q('#date-cancel').hidden=true;q('#date-save').textContent='Добавить дату';}
+  function cancelDate() {editingDate=-1;q('#date-form').reset();q('#date-cancel').hidden=true;q('#date-save').textContent='+ Добавить важную дату';}
   function renderDates() {
     const list=q('#important-dates-list');list.replaceChildren();
     (settings.importantDates||[]).forEach((date,index)=>{
       const row=document.createElement('div');row.className='important-date';
-      const text=document.createElement('span');text.textContent=`${date.name} · ${date.date.split('-').reverse().join('.')}`;
+      const text=document.createElement('span');text.textContent=`${normalizeRussian(date.name)} · ${date.date.split('-').reverse().join('.')}`;
       const edit=document.createElement('button');edit.type='button';edit.textContent='Изменить';edit.setAttribute('aria-label',`Изменить дату: ${date.name}`);
       edit.onclick=()=>{editingDate=index;q('#date-name').value=date.name;q('#date-value').value=`2000-${date.date}`;q('#date-save').textContent='Сохранить дату';q('#date-cancel').hidden=false;q('#date-name').focus();};
       const remove=document.createElement('button');remove.type='button';remove.textContent='Удалить';remove.setAttribute('aria-label',`Удалить дату: ${date.name}`);
@@ -204,7 +218,7 @@
   }
   q('#date-cancel').onclick=cancelDate;
   q('#date-form').addEventListener('submit',event=>{
-    event.preventDefault();const name=q('#date-name').value.trim(),date=q('#date-value').value.slice(5);
+    event.preventDefault();const name=normalizeRussian(q('#date-name').value.trim()),date=q('#date-value').value.slice(5);
     if(!name||!validMonthDay(date))return;
     const entry={name,date};if(editingDate>=0)settings.importantDates[editingDate]=entry;else settings.importantDates.push(entry);
     cancelDate();renderDates();saveFromControl();renderToday();
@@ -221,7 +235,7 @@
     }catch(error){setStatus(error.message);}finally{button.disabled=false;}
   }
   async function checkDeliveryStatus() {
-    try {const result=await syncRequest('notification-status');const test=result.deliveries.find(d=>d.kind==='scheduled-test');setStatus(test?.status==='sent'?'Послание по расписанию отправлено ❤️ Проверь чат бота.':test?.status==='failed'?'Послание не отправлено. Нужно проверить подключение бота.':'Послание ещё ожидает отправки. Проверь результат чуть позже.');}catch(error){setStatus(error.message);}
+    try {const result=await syncRequest('notification-status');const test=result.deliveries.find(d=>d.kind==='scheduled-test');setStatus(test?.status==='sent'?'Послание по расписанию отправлено ❤️ Проверь чат бота.':test?.status==='failed'?'Послание не отправлено. Нужно проверить подключение бота.':'Послание еще ожидает отправки. Проверь результат чуть позже.');}catch(error){setStatus(error.message);}
   }
   q('#test-notification').onclick=()=>checkNotification();
   q('#scheduled-test').onclick=()=>checkNotification(true);
@@ -232,12 +246,14 @@
     q('#onboarding-progress').textContent=`ШАГ ${step} ИЗ 3`;
     q('#dates-home').append(q('#dates-panel'));q('#notification-home').append(q('#notification-panel'));
     q('#onboarding-sound').hidden=step!==2;
-    const titles=['','Мамочка, я тебя люблю ❤️','Ежедневное послание 💌','Всё готово ❤️'];
+    const titles=['','Мамочка, я тебя люблю ❤️','Ежедневное послание 💌','Все готово ❤️'];
     q('#onboarding-title').textContent=titles[step];
-    q('#onboarding-copy').textContent=step===1?'Давай настроим твой календарь, чтобы каждый день он напоминал тебе, как ты важна. Проверь или добавь важные даты 🎂':step===2?'Во сколько тебе удобно получать новое послание?':settings.reminders?'Теперь каждое утро тебя будет ждать маленькое послание.':'Твои послания ждут тебя в календаре. Напоминания можно включить в настройках.';
-    q('#onboarding-next span:first-child').textContent=step===1?'Даты проверены, дальше':step===2?'Сохранить и продолжить':'Открыть сегодняшнее послание';
+    q('#onboarding-copy').textContent=step===1?'Давай настроим твой календарь, чтобы каждый день напоминал тебе, как ты важна.':step===2?'Во сколько тебе удобно получать новое послание?':settings.reminders?`Твое новое послание будет приходить каждый день в ${settings.time}.`:'Ты сможешь включить ежедневные послания позже в настройках.';
+    q('#onboarding-next span:first-child').textContent=step===1?'Продолжить':step===2?'Сохранить и продолжить':'Открыть сегодняшнее послание';
     if(step===1)q('#onboarding-dates').append(q('#dates-panel'));
     if(step===2)q('#onboarding-notifications').append(q('#notification-panel'));
+    q('#onboarding-status').hidden=step!==2;
+    q('#onboarding-retry').hidden=step!==2||!initData||cloudReady;
     q('#onboarding-title').focus();window.scrollTo({top:0});
   }
   q('#onboarding-next').onclick=async()=>{
@@ -246,6 +262,7 @@
       const button=q('#onboarding-next');button.disabled=true;q('#onboarding-error').textContent='';
       try {
         if(q('#reminder-time').value==='custom'){if(!q('#custom-time').value)throw new Error('Выбери удобное время.');settings.time=q('#custom-time').value;}
+        await saveQueue.catch(()=>{});
         settings.onboardingCompleted=true;
         if(initData)await syncRequest('settings',{...settings,opened:opened(),favorites:favorites()});
         store.set('settings',settings);onboarding(3);
@@ -254,6 +271,17 @@
     }
     onboardingStep=0;q('.bottom-nav').hidden=false;q('.settings-shortcut').hidden=false;setView('today');revealToday();
   };
+  async function restartOnboarding(){
+    try{
+      await saveQueue.catch(()=>{});
+      if(initData)await syncRequest('settings',{onboardingCompleted:false});
+      settings.onboardingCompleted=false;store.set('settings',settings);
+      q('#onboarding-error').textContent='';refreshSettings();onboarding(1);
+    }catch(error){setStatus(error.message);showToast(error.message);}
+  }
+  q('#restart-onboarding').onclick=restartOnboarding;
+  q('#dev-reset-onboarding').onclick=restartOnboarding;
+  q('#onboarding-retry').onclick=()=>location.reload();
   refreshSettings();
   q('#developer-tools').hidden=!devMode;
   if(devMode){q('#test-date').value=params.get('date')||dateKey(actualToday());q('#test-date').addEventListener('change',renderToday);q('#test-date-reset').addEventListener('click',()=>{q('#test-date').value=dateKey(actualToday());renderToday();});}
@@ -264,7 +292,7 @@
   // Day changes are refreshed when the user returns; delivery runs on the server.
   async function init() {
     if(tg){tg.ready();tg.expand();try{tg.setHeaderColor('#f5f0e8');tg.setBackgroundColor('#f5f0e8');}catch{}}
-    const response=await fetch('./cards.json');cards=await response.json();
+    const response=await fetch('./cards.json');cards=await response.json();cards.forEach(card=>card.text=normalizeRussian(card.text));
     if(initData){
       try {
         const cloud=await syncRequest('settings');cloudReady=true;
@@ -279,13 +307,13 @@
         store.set('settings',settings);
         store.set('opened',[...new Set([...opened(),...(cloud.opened||[])])]);
         store.set('favorites',[...new Set([...favorites(),...(cloud.favorites||[])])]);
-        setStatus(cloud.blocked?'Разблокируй бота и нажми «Начать» в его чате.':cloud.botStarted?'Бот подключён ❤️':'Нажми «Начать» в чате @Mamacalendar_bot.');
-        if(!settings.onboardingCompleted) settings.reminders=Boolean(cloud.botStarted&&!cloud.blocked);
+        setStatus(cloud.blocked?'Разблокируй бота и нажми «Начать» в его чате.':cloud.botStarted?'Бот подключен ❤️':'Нажми «Начать» в чате @Mamacalendar_bot.');
+
       }catch(error){setStatus(error.message);q('#retry-connection').hidden=false;q('#retry-connection').onclick=()=>location.reload();}
     }else setStatus('Для утренних посланий открой календарь через @Mamacalendar_bot.');
     refreshSettings();
     renderToday();
-    if(!settings.onboardingCompleted&&(!initData||cloudReady)){onboarding(1);}
+    if(!settings.onboardingCompleted){onboarding(1);}
     else if(params.get('open')==='today') {store.set('welcomed',true);revealToday();}
     else if(['archive','favorites','settings'].includes(params.get('view'))) {setView(params.get('view'));}
     if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
