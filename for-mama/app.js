@@ -58,11 +58,11 @@
   async function syncRequest(path, body) {
     if (!initData) throw new Error('Открой приложение через @Mamacalendar_bot и нажми «Начать» в чате.');
     try {
-      const response=await fetch(new URL(`api/${path}`,document.baseURI),{method:body?'POST':'GET',cache:'no-store',headers:{'Content-Type':'application/json','X-Telegram-Init-Data':initData},...(body?{body:JSON.stringify(body)}:{})});
+      const response=await fetch(new URL(`api/${path}`,document.baseURI),{method:body?'POST':'GET',cache:'no-store',signal:AbortSignal.timeout(15000),headers:{'Content-Type':'application/json','X-Telegram-Init-Data':initData},...(body?{body:JSON.stringify(body)}:{})});
       const data=await response.json().catch(()=>({}));
       if(!response.ok) throw new Error(data.error||'Сервер посланий пока недоступен. Настройки не сохранены у бота.');
       return data;
-    } catch(error) { throw new Error(error instanceof TypeError ? 'Не удалось связаться с ботом. Проверь подключение и попробуй снова.' : error.message); }
+    } catch(error) { throw new Error(error instanceof TypeError || error.name==='TimeoutError' ? 'Не удалось связаться с ботом. Проверь подключение и попробуй снова.' : error.message); }
   }
   function backgroundSync(body) { if(initData) syncRequest('sync',body).catch(error=>setStatus(error.message)); }
   function updateNav(next) {
@@ -262,7 +262,14 @@
     if(initData){
       try {
         const cloud=await syncRequest('settings');cloudReady=true;
+        const oldDates={birthday:settings.birthday,specialDates:settings.specialDates,importantDates:settings.importantDates};
         Object.assign(settings,cloud.settings,{timezone:cloud.settings.timezone||localZone});
+        // Preserve dates already saved on this device when enrolling in the new backend.
+        if(!cloud.settings.onboardingCompleted){
+          if(!settings.birthday)settings.birthday=oldDates.birthday;
+          if(!settings.specialDates)settings.specialDates=oldDates.specialDates;
+          if(!settings.importantDates?.length)settings.importantDates=oldDates.importantDates;
+        }
         store.set('settings',settings);
         store.set('opened',[...new Set([...opened(),...(cloud.opened||[])])]);
         store.set('favorites',[...new Set([...favorites(),...(cloud.favorites||[])])]);
