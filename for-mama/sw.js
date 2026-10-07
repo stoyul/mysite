@@ -1,10 +1,10 @@
-const CACHE='mama365-v10';
-const SHELL=['./','./index.html','./styles.css?v=10','./app.js?v=10','./cards.json','./manifest.webmanifest','./icon.svg'];
+const CACHE='mama365-v11';
+const SHELL=['./','./index.html','./styles.css?v=11','./app.js?v=11','./cards.json','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('mama365-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
   const request=event.request,url=new URL(request.url);
-  if(request.method!=='GET'||url.origin!==location.origin)return;
+  if(request.method!=='GET'||url.origin!==location.origin||url.pathname.includes('/api/'))return;
   const image=url.pathname.includes('/cards/');
   if(image){event.respondWith(caches.open(CACHE).then(async cache=>{const hit=await cache.match(request);if(hit)return hit;const response=await fetch(request);if(response.ok)cache.put(request,response.clone());return response;}));return;}
   if(request.mode==='navigate'){event.respondWith(fetch(request).then(response=>{const copy=response.clone();caches.open(CACHE).then(cache=>cache.put('./index.html',copy));return response;}).catch(()=>caches.match('./index.html')));return;}
