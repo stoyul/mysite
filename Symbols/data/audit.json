@@ -1,0 +1,662 @@
+[
+  {
+    "file": "руны лемурии/руны лемурии.001.jpeg",
+    "symbol": "lemuria-01",
+    "sha256": "ae45ee58585ea6d4f48c1a6a02e015e62793c4cf90c1a2d4353000e728b1b9e9"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.002.jpeg",
+    "symbol": "lemuria-02",
+    "sha256": "8a53a4193e58a888b71f8c290a4eedccbec765165f7f42d6c866b9ff3786f125"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.003.jpeg",
+    "symbol": "lemuria-03",
+    "sha256": "c8c6c3691e09f66cba6022dc8162ae7804dae56e3c7d231d71989df97e30f75c"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.004.jpeg",
+    "symbol": "lemuria-04",
+    "sha256": "c57329b4d50a40d3fc2f2c289e8ddab60af9a02470add31555947160c5b26d55"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.005.jpeg",
+    "symbol": "lemuria-05",
+    "sha256": "e43898fa1a91ccaa79067d3146a73548863583141662c68f57131f89b17f1aba"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.006.jpeg",
+    "symbol": "lemuria-06",
+    "sha256": "e8345f37d6b4d9c3d5050bf316deab4f2c8a94ff66b7273a21e76372abc80c3a"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.007.jpeg",
+    "symbol": "lemuria-07",
+    "sha256": "f7aa9ac72702797be74792ca5c0c7bec84a03ad4998a08ed98cf61b83f8b8604"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.008.jpeg",
+    "symbol": "lemuria-08",
+    "sha256": "8c7472749d4eb9e85e2afb8f6bc68f472632d5244f8bec3abe70cd1c968afec0"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.009.jpeg",
+    "symbol": "lemuria-09",
+    "sha256": "c8400f7e571e148ab509e632d6effc88bebececa57ea002b4da670bcc1b91875"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.010.jpeg",
+    "symbol": "lemuria-10",
+    "sha256": "dfa0262f727cbcd7896c703243cd05a81ea3344f1e9a9bca17492949c1720b96"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.011.jpeg",
+    "symbol": "lemuria-11",
+    "sha256": "03eab61fc123100b28c663e8f43dfd4a727412026c4270e633ee8026d02466bf"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.012.jpeg",
+    "symbol": "lemuria-12",
+    "sha256": "f3871dd6f9a79a5b883885041fbe6af4ab1fffcddbb2e5c3410495d6ed8e0e39"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.013.jpeg",
+    "symbol": "lemuria-13",
+    "sha256": "85b5d6c812c21d51cfcddba7172ae44aedb464a621a3dc14d0c16618efd9b9ff"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.014.jpeg",
+    "symbol": "lemuria-14",
+    "sha256": "bfc340d51e313911f0795764f05b455a8a100953b1d03d605f33571383ec1f9a"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.015.jpeg",
+    "symbol": "lemuria-15",
+    "sha256": "b9374e4243a5f0aa8c3a9cb2d890df3198689a8f754b8dc53a43dc13da1466ec"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.016.jpeg",
+    "symbol": "lemuria-16",
+    "sha256": "cfcf43071a9595ff1292f5cd3ad23b05c2fde76159c2f274ad6d7cc91713068b"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.017.jpeg",
+    "symbol": "lemuria-17",
+    "sha256": "31437d04a5ca6ff23aaf246bd415b5875c99912101dbdf851eb1b08587795325"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.018.jpeg",
+    "symbol": "lemuria-18",
+    "sha256": "ce65bb736f8e39dd3098a3afe9440f6ac49d5b03aac8c71da594387dcd5b02cb"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.019.jpeg",
+    "symbol": "lemuria-19",
+    "sha256": "693be907ac76ceaf8b214e27564d3ec55dbaafd32ed4c3132565033ae6b50818"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.020.jpeg",
+    "symbol": "lemuria-20",
+    "sha256": "297f3b166330df2b51806cdb64b0572dd119eaa1b4dd578f3a304523a7224355"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.021.jpeg",
+    "symbol": "lemuria-21",
+    "sha256": "b3e31332ca81dc7b20cc2e613d2db9fd1947ab7202e521618c9582a0d7f29881"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.022.jpeg",
+    "symbol": "lemuria-22",
+    "sha256": "6039977973d2a049ecf22cca672012481338622c336e160db35b14800aa53b17"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.023.jpeg",
+    "symbol": "lemuria-23",
+    "sha256": "45bc98039a8cc89b714d7f0fe43ddb97122185c0cecd7d572cc38a2ca7eb9cfc"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.024.jpeg",
+    "symbol": "lemuria-24",
+    "sha256": "f969cd3968754368b37df81c5dc8cc00e1c206c9eacf2a689b1e48f0f51ec32f"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.025.jpeg",
+    "symbol": "lemuria-25",
+    "sha256": "4e02c6e8edb01259188ff7fa2fd85e0dee8a26e1bf965083100a1d3539bb8616"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.026.jpeg",
+    "symbol": "lemuria-26",
+    "sha256": "312fed3ad8b04eac96c4f2acd266434adfd5ef197b4e4e1699a2709bf673b95c"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.027.jpeg",
+    "symbol": "lemuria-27",
+    "sha256": "ee240afc39ff58a4fd85f87fb8426d4a54e97685042b869856e5edd388ae22a4"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.028.jpeg",
+    "symbol": "lemuria-28",
+    "sha256": "4a4e00b812687d6c679da3571cd1a211fd20a64ccc8c5c1964f30761fe821568"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.029.jpeg",
+    "symbol": "lemuria-29",
+    "sha256": "1aeb044739bbd97966354214c179b59912be5cfe864efce0fc69de67e1cac7bb"
+  },
+  {
+    "file": "руны лемурии/руны лемурии.030.jpeg",
+    "symbol": "lemuria-30",
+    "sha256": "c8d73a87d3d76c2756a786221dfd8cb79ac3b31b62440448be609298bf66b328"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.005.jpeg",
+    "symbol": "hyperborea-01",
+    "sha256": "18328f7305cf4d5e6e4633d5af8cc8d02896922f058dadf9bc7eb1d5128821ac"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.006.jpeg",
+    "symbol": "hyperborea-02",
+    "sha256": "64ef493d1d57fd02c99408b3c808592b6bc77fed34abea8e109c8433c02e81f8"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.007.jpeg",
+    "symbol": "hyperborea-03",
+    "sha256": "19f1dd59db8a724d54c718b0e46549b9a4e563ffb546c7344d382d38b4b884ff"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.008.jpeg",
+    "symbol": "hyperborea-04",
+    "sha256": "e39fb5344088432d917dfea492eb32bff8c4388a3743f4ef225fa4f3cf262aa8"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.009.jpeg",
+    "symbol": "hyperborea-05",
+    "sha256": "0f0a313eb1221a247b087619c7bfce7365f5e1d5aca2b766cf7683933a5d4b7b"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.010.jpeg",
+    "symbol": "hyperborea-06",
+    "sha256": "dd424f9c0f3c104e03b91e36dfbaab54ab06ca0027c8054afd2dcca7535ac9aa"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.011.jpeg",
+    "symbol": "hyperborea-07",
+    "sha256": "a7d1323a19cdfaa68daf610008863ac31733fec55fa4b40283ab82665d49965e"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.012.jpeg",
+    "symbol": "hyperborea-08",
+    "sha256": "7d242950e132a927e26ea9875c5dc88d9eefde6eb973c4049847fe448d4e869b"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.013.jpeg",
+    "symbol": "hyperborea-09",
+    "sha256": "9cde4485ce8d6571bccb123005f5de7b66d52b9efd7784d3386ce501c5a9b9a0"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.014.jpeg",
+    "symbol": "hyperborea-10",
+    "sha256": "f8a1dfe0c6f6dfd6dda94b81aa8355d0294b5ddd74ceed525a8214aa8492c64a"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.015.jpeg",
+    "symbol": "hyperborea-11",
+    "sha256": "8bae1126cd51c8dfd3e514e40ed595990bce279b183f3de4870d0dc5b63260e2"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.016.jpeg",
+    "symbol": "hyperborea-12",
+    "sha256": "9ed098d3c9572e749fa93e0a083e04629ef2a51fd895a5191af499cbb83ae130"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.017.jpeg",
+    "symbol": "hyperborea-13",
+    "sha256": "06639cd5823a45e7cc1dc7052b6a45c9e32bc5ce16cae3f60cf068de5e2a0f0f"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.018.jpeg",
+    "symbol": "hyperborea-14",
+    "sha256": "0c168eca54cdbb018040ab6ae48865e677e2cd56fbca6e7ed221718fc37c0e22"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.019.jpeg",
+    "symbol": "hyperborea-15",
+    "sha256": "a67e514778f69f7ae05cb1d70091ec38bfde9a5418422c0c4cb5f724faf13826"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.020.jpeg",
+    "symbol": "hyperborea-16",
+    "sha256": "7b1b8c6159462bef2e3fdf0f3012723f10feea9c8510663e6b0c1f572bff240d"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.021.jpeg",
+    "symbol": "hyperborea-17",
+    "sha256": "3db85cb9d00f46484972db0f428c4254d6f3e9f01c01050e91f3d31a1433100e"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.022.jpeg",
+    "symbol": "hyperborea-18",
+    "sha256": "ab0ad099afd064437295b36dd469f0b6554289f8af5ea39d575dadf8e9b48445"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.023.jpeg",
+    "symbol": "hyperborea-19",
+    "sha256": "c8bf41f121d74a9c6eb82f26d43e1b7704d610fa4d753a0b5a241cc036e703f8"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.024.jpeg",
+    "symbol": "hyperborea-20",
+    "sha256": "eb971a6b9bdd22fc56c32d136d9172b16823ff13fc63121c04b6d89b56cf3bf3"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.025.jpeg",
+    "symbol": "hyperborea-21",
+    "sha256": "384aa675d2b16ff3798eea1191044aa808c392d06c1174075f81c9b3ecdb064e"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.026.jpeg",
+    "symbol": "hyperborea-22",
+    "sha256": "696691f6023083615820a7a23866d13989909b9513935b597d9b4073c5872e99"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.027.jpeg",
+    "symbol": "hyperborea-23",
+    "sha256": "a6994af8bf072b657ed8c5799a5b18d645277272a75d4f6a4139c38dae69209e"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.028.jpeg",
+    "symbol": "hyperborea-24",
+    "sha256": "b588a318324fab1166c306e435b9004c7cb32c2ac727b5b671c0f59d3e3dfe64"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.029.jpeg",
+    "symbol": "hyperborea-25",
+    "sha256": "3eea80bd545bc9501aa21936f0f38756e4668e4f6180a1007e009844625e87d2"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.030.jpeg",
+    "symbol": "hyperborea-26",
+    "sha256": "fd56b9b018962b4601d8ade74c1b2f05f30fc7bc1c5fdebcb6579425926d001d"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.031.jpeg",
+    "symbol": "hyperborea-27",
+    "sha256": "dbd2838b696e360bbc8208d3a71ec7ad530ef4343b80b8dca459fde4d666349d"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.032.jpeg",
+    "symbol": "hyperborea-28",
+    "sha256": "b10d807c8677d47cf010167480a6dd8af2dbe6728ebf6cc4d038042e254a8281"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.033.jpeg",
+    "symbol": "hyperborea-29",
+    "sha256": "0193f08c4749dcc6b760b4078d7e94a4bd66bf897c5b3c9b2533d3e0cefaf5c9"
+  },
+  {
+    "file": "Символы Гипербореи/Символы Гипербореи.034.jpeg",
+    "symbol": "hyperborea-30",
+    "sha256": "f8070cf8cf58a4f99a0dec50bf341a1b51f6db7d96eda173f5fb07eace047f2b"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.001.jpeg",
+    "symbol": "atlantis-01",
+    "sha256": "b591d8d7feba34135d2f16be8d68848593014b9abe66c309bd3cfc2779a6041a"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.002.jpeg",
+    "symbol": "atlantis-02",
+    "sha256": "9657b508de72700c947970b5890447e8e468ca6b3d0d20bf1f9d6dc971fccb41"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.003.jpeg",
+    "symbol": "atlantis-03",
+    "sha256": "610f4b2090b2c7d4f6193a0ee18329c853d26e53166853cebb46db2dc90844ab"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.004.jpeg",
+    "symbol": "atlantis-04",
+    "sha256": "0e430198fd718d7999e9039a5bd05e99cf1df02980f1851f8a88dc6654a3c89f"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.005.jpeg",
+    "symbol": "atlantis-05",
+    "sha256": "c2b9d1ad26e1739129ccdaa7616c45f93042130e44f5e08957138bf561bd5697"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.006.jpeg",
+    "symbol": "atlantis-06",
+    "sha256": "8502ba4f3262a563a0123d231d8a7b968aa0099bb7a9cb86ed2de31392a365ad"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.007.jpeg",
+    "symbol": "atlantis-07",
+    "sha256": "914fe2294ebc0045d8608bd9cfec8906be5cb7b0d7d8ab0c341b388e54c34f6f"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.008.jpeg",
+    "symbol": "atlantis-08",
+    "sha256": "14fa5bd343a3e3b7840679132d3b849eccbe0ea20a0b99d62da98b9094c3d0d5"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.009.jpeg",
+    "symbol": "atlantis-09",
+    "sha256": "26ffd9b32b00ffc31c5122c776b511c128d249a40e73ca87986a1cd38d133427"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.010.jpeg",
+    "symbol": "atlantis-10",
+    "sha256": "fea8b7cb3773aeb5c3af03d8b963465e3759c4de0bc4606d0329b9f87f58fb15"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.011.jpeg",
+    "symbol": "atlantis-11",
+    "sha256": "43db251e3b3701eddb387248cde5d7fab55ee09d14a268dc24576e88d0f852bf"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.012.jpeg",
+    "symbol": "atlantis-12",
+    "sha256": "0d0cc96139d5ae6996cb81393a3fabeca470add2bce01fbe850dcdcf0d6d3542"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.013.jpeg",
+    "symbol": "atlantis-13",
+    "sha256": "c4c9d9cf08cc68d4777bee45abe3ada0e55e361f57ad072f14cd12f0ef0724ee"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.014.jpeg",
+    "symbol": "atlantis-14",
+    "sha256": "b6d2b243bac5b84b388f089189fee975a35ff16b80b2c01cd057f29c4f9a4885"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.015.jpeg",
+    "symbol": "atlantis-15",
+    "sha256": "29844e1e4b91bc9c17f45b8cdb014cbd17059cbac277a377ab4f1fd62ee119ee"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.016.jpeg",
+    "symbol": "atlantis-16",
+    "sha256": "add1a2fbbae55fda82c0081564f98ed0669a07273f7c2f5fc028432b880d47be"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.017.jpeg",
+    "symbol": "atlantis-17",
+    "sha256": "1af98e6296c4f581702d11f0fb72394e7e3e00b5d5c86e680892839b91693627"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.018.jpeg",
+    "symbol": "atlantis-18",
+    "sha256": "68f0ca3e11c53e26b4aff3867d289203963ee284813daa51499c91b82539f4cd"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.019.jpeg",
+    "symbol": "atlantis-19",
+    "sha256": "3f76a5f4a4e6cd35a6f9b1e06a1d7c98d1a8615005e8f68486609931a312bd8f"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.020.jpeg",
+    "symbol": "atlantis-20",
+    "sha256": "127aaaf47e1a40a3a2e7fca3499e91fb50eb953172b4a6dcfdc8e6703aaffdeb"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.021.jpeg",
+    "symbol": "atlantis-21",
+    "sha256": "9778f4e2c9b2ca6aa6b21ed8eb7f5508c8fd5e7b4dba429b313661b4019c7d8b"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.022.jpeg",
+    "symbol": "atlantis-22",
+    "sha256": "8b494e6198b8533a4e2ea380e43a28e864af0cdff7abd558e05f6b842507d367"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.023.jpeg",
+    "symbol": "atlantis-23",
+    "sha256": "3df2cabbea36c0c0305054a383446f1005e68d034c73fc3bb172585565298b4b"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.024.jpeg",
+    "symbol": "atlantis-24",
+    "sha256": "02ed2c3c0f9851decba659242d457620481e47ff6076d3cee9695496e7fde507"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.025.jpeg",
+    "symbol": "atlantis-25",
+    "sha256": "2936001c4f4a40632acde51153edea72c3807487f70e4c215f3eec8fefeca4b4"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.026.jpeg",
+    "symbol": "atlantis-26",
+    "sha256": "3216ae21a6a0b06cf5e4d4d92c516d78fbe5680d7341aae1438eec1e864d2b83"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.027.jpeg",
+    "symbol": "atlantis-27",
+    "sha256": "ff2596d00ccab54eb5bc2973f8c194b09adf6966e2ac4c78a03845f135257e24"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.028.jpeg",
+    "symbol": "atlantis-28",
+    "sha256": "c9c935f46017fed544b7cb781cd3cbfac7ccea9564902368e32d9d98d556e480"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.029.jpeg",
+    "symbol": "atlantis-29",
+    "sha256": "5866576649d46a0071535eac7ca258911f98697014731aca549a91d5c7ea1791"
+  },
+  {
+    "file": "Руны атлантиды/Руны атлантиды.030.jpeg",
+    "symbol": "atlantis-30",
+    "sha256": "65fc522862a34fcf2fe0ba9fb5fff618f8ce99879aa0c72545ddae90c4282449"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.001.jpeg",
+    "symbol": "sirius-01",
+    "sha256": "9e8fb3047edbbf7aa1d703a4f904359d5d33b2e52764eea2a575c6f2bcd7be96"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.002.jpeg",
+    "symbol": "sirius-02",
+    "sha256": "028adc12164b31d58afb96da353bea858fee2807a9d8581e046f6872b65a9aea"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.003.jpeg",
+    "symbol": "sirius-03",
+    "sha256": "21b1c78e78b3f654fe0d2c939cd899ae66ae48a849d61604d1d33a513628f967"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.004.jpeg",
+    "symbol": "sirius-04",
+    "sha256": "12bf754ffaff2aee419ed60b636460637b0002ebcf3b78023f2717392f1d52ff"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.005.jpeg",
+    "symbol": "sirius-05",
+    "sha256": "f57b3069d4efd8da2eb2fb43877d390f88b8feeb8f7abdd03c09d45a3fd61de6"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.006.jpeg",
+    "symbol": "sirius-06",
+    "sha256": "41ce37dc96dfe5e595ecd98658d962743c0f0dad8ba69254fd72bf2a4ff8bfbf"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.007.jpeg",
+    "symbol": "sirius-07",
+    "sha256": "fd65178e7116560a14721b30bf37ee78b6a99496c303c19e391b4677d658a1dd"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.008.jpeg",
+    "symbol": "sirius-08",
+    "sha256": "aecf9a7ef83fa0a09734dfcec3234aaf9140cfd07606f8bb45a35cf216766a07"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.009.jpeg",
+    "symbol": "sirius-09",
+    "sha256": "0619d569f6e02ba406ccaef2e07cf78414dc72639d41135de5cfc3138c321014"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.010.jpeg",
+    "symbol": "sirius-10",
+    "sha256": "8ca6a814da742b6fcf1a1033809a0bab315d6204182422e06f232a90728d6783"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.011.jpeg",
+    "symbol": "sirius-11",
+    "sha256": "b3b88058c9b7da6d5f8fc14818a557f3399bf08f7183483ffc0e0e66de6a56e6"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.012.jpeg",
+    "symbol": "sirius-12",
+    "sha256": "518ac0998d1a4b060693400a7fb717695b5bfa69762331eb6877fac9133f0a5c"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.013.jpeg",
+    "symbol": "sirius-13",
+    "sha256": "2cca254b1d51afe225fbb082b23cfa144910ecd2ead1148b91b1548d5eeae406"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.014.jpeg",
+    "symbol": "sirius-14",
+    "sha256": "495943b1bf069ec246086a7bb698a198b535871622d3436edf00a93fb9459c0b"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.015.jpeg",
+    "symbol": "sirius-15",
+    "sha256": "4851e64a51f386604c22d7924fef1c485610648c3c6db6afb938958af7693bb5"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.016.jpeg",
+    "symbol": "sirius-16",
+    "sha256": "265393ece7848ab85f35faa512191fb220499e9e6191f248965dfff297781e23"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.017.jpeg",
+    "symbol": "sirius-17",
+    "sha256": "503c505372cfc0281d0fca38018c0a8b2f46bfc53205a92863ad810826d1514e"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.018.jpeg",
+    "symbol": "sirius-18",
+    "sha256": "3d9020c8513a7da8a61a83a90529278f06171bf17b42b12df71f66edf69b6ece"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.019.jpeg",
+    "symbol": "sirius-19",
+    "sha256": "ec9bbac34885dfd015c9931a4bb283364e5dfe75bee48695ae0aa6ed2c78dcc3"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.020.jpeg",
+    "symbol": "sirius-20",
+    "sha256": "2356ae5790e4a08122cb04b0c7c90adf26736bbb982a3accb5aa0272cdc998d7"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.021.jpeg",
+    "symbol": "sirius-21",
+    "sha256": "af25e1d3ebead21d525c498570812f6535c6e2085a989d56c116f7e6d9ca6777"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.022.jpeg",
+    "symbol": "sirius-22",
+    "sha256": "9c7feec4b9133c52c7e2dca0e8205e3cac043725de2c2f889208d8e858743715"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.023.jpeg",
+    "symbol": "sirius-23",
+    "sha256": "e42f9e72e6f62f876cd76facf4ed5c389018b4fb902abec2a20c943bb499736e"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.024.jpeg",
+    "symbol": "sirius-24",
+    "sha256": "43e801bceac43ae953016ef5d40863fc6018a9f43c9e802d376ed1c8ff519d25"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.025.jpeg",
+    "symbol": "sirius-25",
+    "sha256": "533cd06c101524e5a6a13a29ea145f68fbbda2056652c31b98738f0277f59438"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.026.jpeg",
+    "symbol": "sirius-26",
+    "sha256": "4dd9b63d4fe766a4fa6517190c5bd69690af5fa3d45939b3b82784266dceb9ac"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.027.jpeg",
+    "symbol": "sirius-27",
+    "sha256": "d0331ebe5059e333e436e87184197037b75115cddaa6e0c9c3ac721c454c6b66"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.028.jpeg",
+    "symbol": "sirius-28",
+    "sha256": "06ec1841d358bb2c021c589f105e1528bbf378fd6fc3086ae0b26b804a2ee51c"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.029.jpeg",
+    "symbol": "sirius-29",
+    "sha256": "a4618f9f493385c5d8161d30a9224c5bbd4f99449fb807307bad8a1e2ec20292"
+  },
+  {
+    "file": "Символы Сириуса/Символы Сириуса.030.jpeg",
+    "symbol": "sirius-30",
+    "sha256": "8bbdef197b3d4ddb92291e432bdeb4ae9767184f155511a9ec1563b32740d8d3"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.001.jpeg",
+    "symbol": "galactic-01",
+    "sha256": "e1f2b60abe477390c474b2e19e305c5e1dc006e4ff410ef0d591f372a70ffb27"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.002.jpeg",
+    "symbol": "galactic-02",
+    "sha256": "5b25baf178ba9643785cb32c1285509efbb151cb5d8fa38eb8f49c4991534023"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.003.jpeg",
+    "symbol": "galactic-03",
+    "sha256": "cfd369f8bb95c5f09cb6b1741d5ef0fad761806af25d4144df7d9a28f0db6ab0"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.004.jpeg",
+    "symbol": "galactic-04",
+    "sha256": "1431aeb9135bc0a0f876926200b86829a3b10baeb7e59ba1abad4430ebf6c582"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.005.jpeg",
+    "symbol": "galactic-05",
+    "sha256": "e83e6d74deb563fbb25578bf100fb5d6ee3c815e0c47e90000df85eff23c0ac9"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.006.jpeg",
+    "symbol": "galactic-06",
+    "sha256": "1b76ebca6602b759be3e5d01d8eb9970673bfd5ef43dce54d2c498db8e2998b1"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.007.jpeg",
+    "symbol": "galactic-07",
+    "sha256": "9d2924ce2e5d33ee25adced564de6ed21fdd4e1d7925483693796a5c4ac531d3"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.008.jpeg",
+    "symbol": "galactic-08",
+    "sha256": "8d9d9bd8fde6132f5308da97b3cd66f931b11dfa3fc45835f593b913f7b197e3"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.009.jpeg",
+    "symbol": "galactic-09",
+    "sha256": "80dbece15823499306d140f116dc3e45a41dc81a59710244fe700a03bf03b94e"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.010.jpeg",
+    "symbol": "galactic-10",
+    "sha256": "7eb1a53f374728dc3977a6a4586eb01cba3b8fe7800ae5e0efc576154a1816d2"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.011.jpeg",
+    "symbol": "galactic-11",
+    "sha256": "3e9afa832cb591b1e072fd80c2587ff2b66e9323687a32900dcc7249b18212dd"
+  },
+  {
+    "file": "Символы Галактические/Символы Галактические.012.jpeg",
+    "symbol": "galactic-12",
+    "sha256": "89954ac3bb3f92c636f788dd47f8514924c6fa09bea6db8468ed56c1b25f1e6a"
+  }
+]
