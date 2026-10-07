@@ -11,7 +11,7 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icon.svg">
-  <link rel="stylesheet" href="./styles.css?v=10">
+  <link rel="stylesheet" href="./styles.css?v=11">
   <title>МАМА — 365 дней тепла</title>
 </head>
 <body>
@@ -73,15 +73,34 @@
 
       <section class="view collection-view settings-view" id="settings-view" hidden aria-labelledby="settings-title">
         <div class="section-heading"><span class="eyebrow">ВСЁ ПО-ТВОЕМУ</span><h1 id="settings-title">Настройки</h1><p>Пусть послания приходят в удобное время.</p></div>
-        <div class="settings-panel">
-          <label class="setting-row switch-row" for="notifications-toggle"><span><strong>Утреннее напоминание</strong><small>Бот пришлет ссылку на новое послание</small></span><input id="notifications-toggle" type="checkbox"><span class="switch" aria-hidden="true"></span></label>
+        <div id="notification-home"><div class="settings-panel" id="notification-panel">
+          <label class="setting-row switch-row" for="notifications-toggle"><span><strong>💌 Ежедневное послание</strong><small>Получать каждое утро новое послание</small></span><input id="notifications-toggle" type="checkbox"><span class="switch" aria-hidden="true"></span></label>
           <div class="setting-row time-row"><label for="reminder-time"><strong>Время</strong><small>По твоему местному времени</small></label><div class="time-controls"><select id="reminder-time"><option>07:00</option><option>08:00</option><option selected>09:00</option><option>10:00</option><option value="custom">Свое время</option></select><input type="time" id="custom-time" aria-label="Выбрать свое время" hidden></div></div>
           <label class="setting-row timezone-row" for="timezone"><span><strong>Часовой пояс</strong><small>Определен по устройству</small></span><input id="timezone" type="text" inputmode="text" autocomplete="off"></label>
-          <label class="setting-row" for="birthday"><span><strong>День рождения</strong><small>Для ежегодного теплого сюрприза</small></span><input id="birthday" type="date"></label>
-          <label class="setting-row" for="special-days"><span><strong>Еще важные даты</strong><small>Например: 05-12, 12-31</small></span><input id="special-days" type="text" placeholder="ММ-ДД" aria-label="Особенные даты в формате месяц-день"></label>
-        </div>
+        </div></div>
+        <p class="settings-footnote">Чтобы слышать наши утренние послания, убедись, что уведомления Telegram для этого чата включены 🔔</p>
+        <p id="notification-status" class="settings-footnote" role="status" aria-live="polite"></p>
+        <div class="notification-actions"><button class="text-button" id="test-notification" type="button">🔔 Проверить уведомление</button><button class="text-button" id="scheduled-test" type="button">Проверить расписание через 2 минуты</button><button class="text-button" id="retry-connection" type="button" hidden>Повторить подключение</button></div>
+        <div id="dates-home"><div class="settings-panel" id="dates-panel">
+          <h2 class="panel-title">Важные даты 🎂</h2>
+          <label class="setting-row" for="birthday"><span><strong>День рождения</strong><small>Для ежегодного тёплого сюрприза</small></span><input id="birthday" type="date"></label>
+          <label class="setting-row" for="special-days"><span><strong>Сохранённые даты</strong><small>Можно изменить или убрать дату: ММ-ДД</small></span><input id="special-days" type="text" placeholder="05-12, 12-31" aria-label="Особенные даты в формате месяц-день"></label>
+          <div id="important-dates-list"></div>
+          <form id="date-form" class="date-form"><label>Название<input id="date-name" maxlength="80" placeholder="Наш особенный день" required></label><label>Дата<input id="date-value" type="date" required></label><div><button class="text-button" type="submit" id="date-save">Добавить дату</button><button class="text-button" type="button" id="date-cancel" hidden>Отмена</button></div></form>
+        </div></div>
         <p class="settings-footnote">Твои настройки и открытые карточки хранятся на этом устройстве. В Telegram они синхронизируются с ботом.</p>
         <div class="developer-tools" id="developer-tools" hidden><span class="eyebrow">ПРОВЕРКА ДАТ</span><label for="test-date">Показать дату</label><input type="date" id="test-date"><button class="text-button" id="test-date-reset" type="button">Вернуться к сегодняшнему дню</button><small>Видно только при включении режима разработчика.</small></div>
+      </section>
+
+      <section class="view onboarding-view" id="onboarding-view" hidden aria-labelledby="onboarding-title">
+        <span class="eyebrow" id="onboarding-progress">ШАГ 1 ИЗ 3</span>
+        <span class="onboarding-heart" aria-hidden="true">♡</span>
+        <h1 id="onboarding-title" tabindex="-1">Мамочка, я тебя люблю ❤️</h1>
+        <p id="onboarding-copy">Давай настроим твой календарь, чтобы каждый день он напоминал тебе, как ты важна.</p>
+        <div id="onboarding-dates"></div><div id="onboarding-notifications"></div>
+        <p class="settings-footnote" id="onboarding-sound" hidden>Чтобы слышать наши утренние послания, убедись, что уведомления Telegram для этого чата включены 🔔</p>
+        <p id="onboarding-error" role="status" aria-live="polite"></p>
+        <button class="primary-button" id="onboarding-next" type="button"><span>Даты проверены, дальше</span><span aria-hidden="true">↗</span></button>
       </section>
 
       <section class="view collection-view locked-view" id="locked-view" hidden><div class="lock-mark">✳</div><span class="eyebrow">ДЕНЬ ЕЩЁ НЕ НАСТАЛ</span><h1>Это послание еще ждет своего дня</h1><button class="text-button" type="button" data-view="today">Вернуться к сегодняшнему дню</button></section>
@@ -97,6 +116,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="./app.js?v=10" defer></script>
+  <script src="./app.js?v=11" defer></script>
 </body>
 </html>

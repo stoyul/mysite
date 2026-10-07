@@ -1,7 +1,20 @@
 name = "mysite"
-compatibility_date = "2024-11-01"
+main = "mama-backend/worker.mjs"
+compatibility_date = "2026-10-07"
 
-# Статичный сайт: раздаем файлы репозитория как есть, без сборки.
 [assets]
 directory = "./"
-# Game runtime assets live in play/; .assetsignore excludes source-only game-app/.
+binding = "ASSETS"
+run_worker_first = ["/for-mama/api/*", "/telegram/webhook"]
+
+[triggers]
+crons = ["* * * * *"]
+
+[[d1_databases]]
+binding = "MAMA_DB"
+database_name = "mama365"
+database_id = "2ca52e94-aa66-4727-b57a-5a653a1a471d"
+migrations_dir = "mama-backend/migrations"
+
+[observability]
+enabled = true

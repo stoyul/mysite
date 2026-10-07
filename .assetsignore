@@ -6,3 +6,4 @@
 /wrangler.toml
 /.gitignore
 /care/backend/**
+/mama-backend/**

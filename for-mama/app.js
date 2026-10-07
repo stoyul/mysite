@@ -10,11 +10,15 @@
   };
   const firstLaunch=store.get('firstLaunch',new Date().toISOString());store.set('firstLaunch',firstLaunch);
   const localZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Europe/Berlin';
-  const settings = { reminders: false, time: '09:00', timezone: localZone, birthday: '', specialDates: '', ...store.get('settings', {}) };
+  const settings = { reminders: false, time: '09:00', timezone: localZone, birthday: '', specialDates: '', importantDates: [], onboardingCompleted: false, ...store.get('settings', {}) };
   let cards = [];
   let view = 'today';
   let viewing = null;
   let toastTimer;
+  let cloudReady = false;
+  let onboardingStep = 0;
+  let editingDate = -1;
+  let saveQueue = Promise.resolve();
   const dateKey = (d) => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
   const dayId = (d) => `${d.getMonth()+1}-${d.getDate()}`;
   function actualToday() {
@@ -39,21 +43,33 @@
   function formatDate(date, withYear=false) { return new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',...(withYear?{year:'numeric'}:{})}).format(date).toLocaleLowerCase('ru-RU'); }
   function opened() { return store.get('opened',[]); }
   function favorites() { return store.get('favorites',[]); }
-  function persistSettings() { store.set('settings',settings); syncSettings(); }
+  function persistSettings() {
+    store.set('settings',settings);
+    if (onboardingStep) return Promise.resolve();
+    if (!initData) { setStatus('Даты сохранены на устройстве. Для посланий открой приложение через @Mamacalendar_bot.'); return Promise.resolve(); }
+    const snapshot = {...settings, opened:opened(), favorites:favorites()};
+    saveQueue = saveQueue.catch(()=>{}).then(()=>syncRequest('settings',snapshot)).then(()=>setStatus('Настройки сохранены у бота ❤️')).catch(error=>{setStatus(error.message);throw error;});
+    return saveQueue;
+  }
+  function saveFromControl() { persistSettings().catch(()=>{}); }
+  function setStatus(text) { q('#notification-status').textContent=text; }
+
   function showToast(text) { const el=q('#toast'); el.textContent=text; el.classList.add('visible'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('visible'),2600); }
-  function syncRequest(path, body) {
-    if (!initData) return Promise.resolve(null);
-    const payload=body?{...body,firstLaunch}:null;
-    return fetch(new URL(`api/${path}`,document.baseURI),{method:body?'POST':'GET',headers:{'Content-Type':'application/json','X-Telegram-Init-Data':initData},...(payload?{body:JSON.stringify(payload)}:{})}).then(r=>r.ok?r.json():null).catch(()=>null);
+  async function syncRequest(path, body) {
+    if (!initData) throw new Error('Открой приложение через @Mamacalendar_bot и нажми «Начать» в чате.');
+    try {
+      const response=await fetch(new URL(`api/${path}`,document.baseURI),{method:body?'POST':'GET',cache:'no-store',headers:{'Content-Type':'application/json','X-Telegram-Init-Data':initData},...(body?{body:JSON.stringify(body)}:{})});
+      const data=await response.json().catch(()=>({}));
+      if(!response.ok) throw new Error(data.error||'Сервер посланий пока недоступен. Настройки не сохранены у бота.');
+      return data;
+    } catch(error) { throw new Error(error instanceof TypeError ? 'Не удалось связаться с ботом. Проверь подключение и попробуй снова.' : error.message); }
   }
-  function syncSettings() {
-    if (!initData) return;
-    syncRequest('settings',{...settings,opened:opened(),favorites:favorites()});
-  }
+  function backgroundSync(body) { if(initData) syncRequest('sync',body).catch(error=>setStatus(error.message)); }
   function updateNav(next) {
     document.querySelectorAll('.nav-item').forEach(el=>{const active=el.dataset.view===next;el.classList.toggle('active',active);if(active)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
   }
   function setView(next) {
+    if(onboardingStep) return;
     view=next; viewing=null;
     document.querySelectorAll('main .view').forEach(el=>el.hidden=true);
     q(`#${next}-view`)?.removeAttribute('hidden');
@@ -108,7 +124,7 @@
     q('#welcome-note').hidden=welcomed;
     q('#daily-invitation').hidden=!welcomed;
     q('#date-label').textContent=devMode?'ТЕСТОВАЯ ДАТА':'СЕГОДНЯ'; q('#today-date').textContent=formatDate(date,true);
-    const monthDay=dayId(date), personalDays=(settings.specialDates||'').split(',').map(x=>x.trim()).filter(x=>/^\d{2}-\d{2}$/.test(x));
+    const monthDay=dayId(date), personalDays=[...(settings.specialDates||'').split(',').map(x=>x.trim()),...(settings.importantDates||[]).map(x=>x.date)].filter(x=>/^\d{2}-\d{2}$/.test(x));
     const birthdayMatch=settings.birthday&&settings.birthday.slice(5)===`${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
     const isSpecial=['1-1','2-14','3-8'].includes(monthDay)||Boolean(birthdayMatch)||personalDays.includes(`${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`);
     q('#special-banner').hidden=!isSpecial;q('#gift-stage').classList.toggle('special-day',isSpecial);
@@ -130,7 +146,7 @@
     q('#open-today').disabled=true;
     const finish=()=>{
       env.classList.remove('is-opening');const key=dateKey(date);
-      if(!devMode&&!opened().includes(key)){store.set('opened',[...opened(),key]);syncRequest('sync',{opened:opened(),favorites:favorites()});}
+      if(!devMode&&!opened().includes(key)){store.set('opened',[...opened(),key]);backgroundSync({opened:opened(),favorites:favorites()});}
       showEntry(entry,date); q('#open-today').disabled=false;
     };
     setTimeout(finish,480);
@@ -139,36 +155,125 @@
     const entry=viewing?.entry||cardForDate(selectedDate()); if(!entry)return;
     const ids=favorites(),on=ids.includes(entry.n),next=on?ids.filter(n=>n!==entry.n):[...ids,entry.n];store.set('favorites',next);
     q('#favorite-toggle').setAttribute('aria-pressed',String(!on));q('#favorite-toggle').textContent=on?'♡':'♥';q('#favorite-toggle').setAttribute('aria-label',on?'Добавить в любимые':'Убрать из любимых');
-    syncRequest('sync',{opened:opened(),favorites:next});showToast(on?'Убрала из любимых':'Сохранила в любимые ♡');
+    backgroundSync({opened:opened(),favorites:next});showToast(on?'Убрала из любимых':'Сохранила в любимые ♡');
   });
   document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>setView(button.dataset.view)));
-  q('#notifications-toggle').checked=settings.reminders;
   const presetTimes=['07:00','08:00','09:00','10:00'];
-  q('#reminder-time').value=presetTimes.includes(settings.time)?settings.time:'custom';
-  q('#custom-time').hidden=q('#reminder-time').value!=='custom';
-  q('#custom-time').value=settings.time;
-  q('#timezone').value=settings.timezone;
-  q('#birthday').value=settings.birthday||'';
-  q('#special-days').value=settings.specialDates||'';
-  q('#notifications-toggle').addEventListener('change',e=>{settings.reminders=e.target.checked;persistSettings();showToast(initData?(settings.reminders?'Напоминания включены':'Напоминания выключены'):'Бот еще не подключен к приложению');});
-  q('#reminder-time').addEventListener('change',e=>{const custom=e.target.value==='custom';q('#custom-time').hidden=!custom;if(!custom){settings.time=e.target.value;persistSettings();showToast('Время сохранено');}});
-  q('#custom-time').addEventListener('change',e=>{if(e.target.value){settings.time=e.target.value;persistSettings();showToast('Время сохранено');}});
-  q('#timezone').addEventListener('change',e=>{try{new Intl.DateTimeFormat('ru-RU',{timeZone:e.target.value});settings.timezone=e.target.value.trim();persistSettings();renderToday();showToast('Часовой пояс сохранен');}catch{e.target.value=settings.timezone;showToast('Проверь название часового пояса');}});
-  q('#birthday').addEventListener('change',e=>{settings.birthday=e.target.value;persistSettings();renderToday();});
-  q('#special-days').addEventListener('change',e=>{settings.specialDates=e.target.value;persistSettings();renderToday();});
+  function refreshSettings() {
+    q('#notifications-toggle').checked=settings.reminders;
+    q('#notifications-toggle').disabled=!initData||!cloudReady;
+    q('#test-notification').disabled=!initData||!cloudReady;
+    q('#scheduled-test').disabled=!initData||!cloudReady;
+    q('#reminder-time').value=presetTimes.includes(settings.time)?settings.time:'custom';
+    q('#custom-time').hidden=q('#reminder-time').value!=='custom';
+    q('#custom-time').value=settings.time;
+    q('#timezone').value=settings.timezone;
+    q('#birthday').value=settings.birthday||'';
+    q('#special-days').value=settings.specialDates||'';
+    renderDates();
+  }
+  q('#notifications-toggle').addEventListener('change',e=>{settings.reminders=e.target.checked;saveFromControl();});
+  q('#reminder-time').addEventListener('change',e=>{const custom=e.target.value==='custom';q('#custom-time').hidden=!custom;if(custom)q('#custom-time').focus();else {settings.time=e.target.value;saveFromControl();}});
+  q('#custom-time').addEventListener('change',e=>{if(e.target.value){settings.time=e.target.value;saveFromControl();}});
+  q('#timezone').addEventListener('change',e=>{try{const zone=e.target.value.trim();if(!zone)throw new Error();new Intl.DateTimeFormat('ru-RU',{timeZone:zone});settings.timezone=zone;saveFromControl();renderToday();}catch{e.target.value=settings.timezone;showToast('Проверь название часового пояса');}});
+  q('#birthday').addEventListener('change',e=>{settings.birthday=e.target.value;saveFromControl();renderToday();});
+  q('#special-days').addEventListener('change',e=>{const value=e.target.value;if(value.split(',').some(d=>d.trim()&&!validMonthDay(d.trim()))){showToast('Укажи даты в формате ММ-ДД, например 05-12');e.target.value=settings.specialDates;return;}settings.specialDates=value;saveFromControl();renderToday();});
+  function validMonthDay(value) {
+    if(!/^\d{2}-\d{2}$/.test(value))return false;
+    const [m,d]=value.split('-').map(Number), date=new Date(2000,m-1,d,12);
+    return date.getMonth()===m-1&&date.getDate()===d;
+  }
+  function cancelDate() {editingDate=-1;q('#date-form').reset();q('#date-cancel').hidden=true;q('#date-save').textContent='Добавить дату';}
+  function renderDates() {
+    const list=q('#important-dates-list');list.replaceChildren();
+    (settings.importantDates||[]).forEach((date,index)=>{
+      const row=document.createElement('div');row.className='important-date';
+      const text=document.createElement('span');text.textContent=`${date.name} · ${date.date.split('-').reverse().join('.')}`;
+      const edit=document.createElement('button');edit.type='button';edit.textContent='Изменить';edit.setAttribute('aria-label',`Изменить дату: ${date.name}`);
+      edit.onclick=()=>{editingDate=index;q('#date-name').value=date.name;q('#date-value').value=`2000-${date.date}`;q('#date-save').textContent='Сохранить дату';q('#date-cancel').hidden=false;q('#date-name').focus();};
+      const remove=document.createElement('button');remove.type='button';remove.textContent='Удалить';remove.setAttribute('aria-label',`Удалить дату: ${date.name}`);
+      remove.onclick=()=>{settings.importantDates.splice(index,1);cancelDate();renderDates();saveFromControl();renderToday();};
+      row.append(text,edit,remove);list.append(row);
+    });
+  }
+  q('#date-cancel').onclick=cancelDate;
+  q('#date-form').addEventListener('submit',event=>{
+    event.preventDefault();const name=q('#date-name').value.trim(),date=q('#date-value').value.slice(5);
+    if(!name||!validMonthDay(date))return;
+    const entry={name,date};if(editingDate>=0)settings.importantDates[editingDate]=entry;else settings.importantDates.push(entry);
+    cancelDate();renderDates();saveFromControl();renderToday();
+  });
+  async function checkNotification(scheduled=false) {
+    const button=q(scheduled?'#scheduled-test':'#test-notification');button.disabled=true;
+    try {
+      await saveQueue.catch(()=>{});
+      const result=await syncRequest(scheduled?'scheduled-test':'test-notification',{});
+      if(scheduled&&result.scheduled)setStatus('Проверка назначена через 2 минуты ❤️ Можно закрыть приложение и Telegram. После возвращения нажми «Проверить результат».');
+      else if(result.sent)setStatus('Telegram принял сообщение ❤️ Проверь чат @Mamacalendar_bot.');
+      else throw new Error('Сервер не подтвердил отправку.');
+      if(scheduled){q('#retry-connection').hidden=false;q('#retry-connection').textContent='Проверить результат';q('#retry-connection').onclick=checkDeliveryStatus;}
+    }catch(error){setStatus(error.message);}finally{button.disabled=false;}
+  }
+  async function checkDeliveryStatus() {
+    try {const result=await syncRequest('notification-status');const test=result.deliveries.find(d=>d.kind==='scheduled-test');setStatus(test?.status==='sent'?'Послание по расписанию отправлено ❤️ Проверь чат бота.':test?.status==='failed'?'Послание не отправлено. Нужно проверить подключение бота.':'Послание ещё ожидает отправки. Проверь результат чуть позже.');}catch(error){setStatus(error.message);}
+  }
+  q('#test-notification').onclick=()=>checkNotification();
+  q('#scheduled-test').onclick=()=>checkNotification(true);
+  function onboarding(step) {
+    onboardingStep=step;
+    document.querySelectorAll('main .view').forEach(el=>el.hidden=true);
+    q('#onboarding-view').hidden=false;q('.bottom-nav').hidden=true;q('.settings-shortcut').hidden=true;
+    q('#onboarding-progress').textContent=`ШАГ ${step} ИЗ 3`;
+    q('#dates-home').append(q('#dates-panel'));q('#notification-home').append(q('#notification-panel'));
+    q('#onboarding-sound').hidden=step!==2;
+    const titles=['','Мамочка, я тебя люблю ❤️','Ежедневное послание 💌','Всё готово ❤️'];
+    q('#onboarding-title').textContent=titles[step];
+    q('#onboarding-copy').textContent=step===1?'Давай настроим твой календарь, чтобы каждый день он напоминал тебе, как ты важна. Проверь или добавь важные даты 🎂':step===2?'Во сколько тебе удобно получать новое послание?':settings.reminders?'Теперь каждое утро тебя будет ждать маленькое послание.':'Твои послания ждут тебя в календаре. Напоминания можно включить в настройках.';
+    q('#onboarding-next span:first-child').textContent=step===1?'Даты проверены, дальше':step===2?'Сохранить и продолжить':'Открыть сегодняшнее послание';
+    if(step===1)q('#onboarding-dates').append(q('#dates-panel'));
+    if(step===2)q('#onboarding-notifications').append(q('#notification-panel'));
+    q('#onboarding-title').focus();window.scrollTo({top:0});
+  }
+  q('#onboarding-next').onclick=async()=>{
+    if(onboardingStep===1){onboarding(2);return;}
+    if(onboardingStep===2){
+      const button=q('#onboarding-next');button.disabled=true;q('#onboarding-error').textContent='';
+      try {
+        if(q('#reminder-time').value==='custom'){if(!q('#custom-time').value)throw new Error('Выбери удобное время.');settings.time=q('#custom-time').value;}
+        settings.onboardingCompleted=true;
+        if(initData)await syncRequest('settings',{...settings,opened:opened(),favorites:favorites()});
+        store.set('settings',settings);onboarding(3);
+      }catch(error){settings.onboardingCompleted=false;q('#onboarding-error').textContent=error.message;}finally{button.disabled=false;}
+      return;
+    }
+    onboardingStep=0;q('.bottom-nav').hidden=false;q('.settings-shortcut').hidden=false;setView('today');revealToday();
+  };
+  refreshSettings();
   q('#developer-tools').hidden=!devMode;
   if(devMode){q('#test-date').value=params.get('date')||dateKey(actualToday());q('#test-date').addEventListener('change',renderToday);q('#test-date-reset').addEventListener('click',()=>{q('#test-date').value=dateKey(actualToday());renderToday();});}
   let activeDateKey=dateKey(actualToday());
   function refreshDay(){if(devMode||view!=='today'||viewing)return;const current=dateKey(actualToday());if(current!==activeDateKey){activeDateKey=current;renderToday();}}
   window.addEventListener('focus',refreshDay);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshDay();});
-  setInterval(refreshDay,30000);
+  // Day changes are refreshed when the user returns; delivery runs on the server.
   async function init() {
     if(tg){tg.ready();tg.expand();try{tg.setHeaderColor('#f5f0e8');tg.setBackgroundColor('#f5f0e8');}catch{}}
     const response=await fetch('./cards.json');cards=await response.json();
-    if(initData){const cloud=await syncRequest('settings');if(cloud?.settings){Object.assign(settings,cloud.settings,{timezone:cloud.settings.timezone||settings.timezone});store.set('settings',settings);store.set('opened',[...new Set([...opened(),...(cloud.opened||[])])]);store.set('favorites',[...new Set([...favorites(),...(cloud.favorites||[])])]);q('#notifications-toggle').checked=settings.reminders;q('#reminder-time').value=presetTimes.includes(settings.time)?settings.time:'custom';q('#custom-time').hidden=q('#reminder-time').value!=='custom';q('#custom-time').value=settings.time;q('#timezone').value=settings.timezone;q('#birthday').value=settings.birthday||'';q('#special-days').value=settings.specialDates||'';syncSettings();}}
+    if(initData){
+      try {
+        const cloud=await syncRequest('settings');cloudReady=true;
+        Object.assign(settings,cloud.settings,{timezone:cloud.settings.timezone||localZone});
+        store.set('settings',settings);
+        store.set('opened',[...new Set([...opened(),...(cloud.opened||[])])]);
+        store.set('favorites',[...new Set([...favorites(),...(cloud.favorites||[])])]);
+        setStatus(cloud.blocked?'Разблокируй бота и нажми «Начать» в его чате.':cloud.botStarted?'Бот подключён ❤️':'Нажми «Начать» в чате @Mamacalendar_bot.');
+        if(!settings.onboardingCompleted) settings.reminders=Boolean(cloud.botStarted&&!cloud.blocked);
+      }catch(error){setStatus(error.message);q('#retry-connection').hidden=false;q('#retry-connection').onclick=()=>location.reload();}
+    }else setStatus('Для утренних посланий открой календарь через @Mamacalendar_bot.');
+    refreshSettings();
     renderToday();
-    if(params.get('open')==='today') {store.set('welcomed',true);revealToday();}
+    if(!settings.onboardingCompleted&&(!initData||cloudReady)){onboarding(1);}
+    else if(params.get('open')==='today') {store.set('welcomed',true);revealToday();}
     else if(['archive','favorites','settings'].includes(params.get('view'))) {setView(params.get('view'));}
     if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
   }

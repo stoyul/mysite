@@ -185,3 +185,22 @@ button { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* A short gift setup reuses the existing settings and dates panels. */
+.onboarding-view { max-width: 650px; margin: 28px auto; text-align: center; }
+.onboarding-heart { display: block; margin: 18px; color: var(--coral); font: 64px var(--serif); }
+.onboarding-view h1 { font: 500 clamp(30px, 5vw, 42px)/1.2 var(--serif); }
+.onboarding-view > p { font: 20px/1.5 var(--serif); }
+.onboarding-view .settings-panel { text-align: left; margin: 28px 0; }
+.onboarding-view .primary-button { margin-top: 24px; }
+.panel-title { padding: 22px 20px 0; font: 24px var(--serif); }
+.date-form { display: grid; gap: 16px; padding: 20px; border-top: 1px solid var(--line); }
+.date-form label { display: grid; gap: 8px; }
+.date-form input { min-width: 0; width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: #fffcf7; color: var(--ink); }
+.important-date { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 14px 20px; border-top: 1px solid var(--line); }
+.important-date span { flex: 1; min-width: 130px; overflow-wrap: anywhere; }
+.important-date button { padding: 10px; border: 0; background: transparent; color: var(--coral-dark); cursor: pointer; }
+.notification-actions { display: grid; gap: 10px; margin: 12px 0 28px; }
+#notification-status, #onboarding-error { color: var(--coral-dark); overflow-wrap: anywhere; }
+button:disabled { opacity: .6; cursor: wait; }
+input:focus-visible, select:focus-visible, button:focus-visible { outline: 2px solid var(--coral-dark); outline-offset: 4px; }
