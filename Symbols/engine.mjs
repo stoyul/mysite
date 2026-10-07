@@ -37,7 +37,7 @@ export function rank(q,symbols,intents,model,civilization='Все',override=null
  if(override!==null&&!override.length)return {...analysis,results:[]};
  const rare=new Set(tokens(q).filter(w=>{let i=model.vocabulary.indexOf(w);return w.length>=5&&i>=0&&model.idf[i]>3.6}));
  const rows=symbols.filter(s=>civilization==='Все'||s.civilization===civilization||s.system===civilization).map(s=>{
- const matched=analysis.themes.filter(t=>s.intentEvidence[t.id]);let coverage=matched.reduce((x,t)=>x+t.weight,0)/total;let semantic=model.vectors[byId.get(s.id)].reduce((x,n,i)=>x+n*v[i],0);let exact=q.trim().length>3&&s.name.toLowerCase().includes(q.trim().toLowerCase());let score=coverage*.72+Math.max(0,semantic)*.28+(exact?.5:0);
+ const matched=analysis.themes.filter(t=>s.intentEvidence[t.id]).sort((a,b)=>b.weight-a.weight);let coverage=matched.reduce((x,t)=>x+t.weight,0)/total;let semantic=model.vectors[byId.get(s.id)].reduce((x,n,i)=>x+n*v[i],0);let exact=q.trim().length>3&&s.name.toLowerCase().includes(q.trim().toLowerCase());let score=coverage*.72+Math.max(0,semantic)*.28+(exact?.5:0);
  const source=s.fullDescription||s.searchSemanticText||'';let sourceTokens=new Set(tokens(source));let rareHits=[...rare].filter(w=>sourceTokens.has(w));let rareMatch=rareHits.length>=1&&semantic>.12;let sourceEvidence=rareMatch?source.split(/(?<=[.!?])\s+/).find(p=>tokens(p).some(w=>rareHits.includes(w))):null;
  if(rareMatch)score+=.36;
  return {...s,score,semantic,matched,coverage,evidence:matched.length?s.intentEvidence[matched[0].id]:sourceEvidence,exact,rareMatch};
