@@ -1,3 +1,4 @@
+import { handleMoonPush, scheduledMoonPush } from '../../moon-backend/notifications.mjs';
 import existingSite from '../../mama-backend/worker.mjs';
 import { accessCodes } from './codes.mjs';
 
@@ -72,8 +73,10 @@ export async function handleTimeForUs(request,env){
 export default {
   fetch(request,env,ctx){
     const path=new URL(request.url).pathname;
+    if(path.startsWith('/moon/api/push/'))return handleMoonPush(request,env).catch(()=>json({error:'Напоминания временно недоступны.'},503));
     if(path==='/time-for-us'||path.startsWith(root))return handleTimeForUs(request,env).catch(()=>json({error:'Вход временно недоступен. Попробуйте позже.'},503));
     return existingSite.fetch(request,env,ctx);
   },
-  scheduled: existingSite.scheduled
+  scheduled(event,env,ctx){ctx.waitUntil(Promise.allSettled([Promise.resolve().then(()=>existingSite.scheduled?.(event,env,ctx)),scheduledMoonPush(env)]));}
 };
+

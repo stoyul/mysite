@@ -5,7 +5,7 @@ compatibility_date = "2026-10-07"
 [assets]
 directory = "./"
 binding = "ASSETS"
-run_worker_first = ["/shadow-transformation", "/shadow-transformation/*", "/for-mama/api/*", "/telegram/webhook", "/time-for-us", "/time-for-us/*"]
+run_worker_first = ["/shadow-transformation", "/shadow-transformation/*", "/for-mama/api/*", "/telegram/webhook", "/time-for-us", "/time-for-us/*", "/moon/api/push/*"]
 
 [triggers]
 crons = ["* * * * *"]
@@ -18,3 +18,4 @@ migrations_dir = "mama-backend/migrations"
 
 [observability]
 enabled = true
+
