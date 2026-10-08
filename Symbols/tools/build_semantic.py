@@ -1,11 +1,15 @@
 import json,re,math
 from pathlib import Path
 import numpy as np
-P=Path(__file__).resolve().parents[1];ss=json.loads((P/'data/symbols.json').read_text());cs=json.loads((P/'data/intents.json').read_text())
+P=Path(__file__).resolve().parents[1]
+from prepare_images import build as build_images
+incoming=P/'incoming/cards'
+build_images(str(incoming) if incoming.exists() and any(x.suffix.lower() in ['.jpg','.jpeg','.png','.webp','.avif'] for x in incoming.iterdir()) else None)
+ss=json.loads((P/'data/symbols.json').read_text());cs=json.loads((P/'data/intents.json').read_text())
 def tokens(t):
  return [re.sub(r'(иями|ами|ями|ого|его|ому|ему|ость|ости|ение|ения|аться|иться|ать|ять|ить|ются|ется|ами|ям|ах|ях|ов|ев|ый|ий|ой|ая|яя|ое|ее|ые|ие|ом|ем|ам|у|ю|а|я|ы|и|е|о|ь)$','',w) for w in re.findall('[а-яё]+',t.lower().replace('ё','е')) if len(w)>3]
 docs=[]
-for s in ss:docs.append(tokens(s['fullDescription']+' '+s['name']+' '+ ' '.join(c['queryText']*3 for c in cs if c['id'] in s['subcategories'])))
+for s in ss:docs.append(tokens(s['fullDescription']+' '+s.get('fullEditedDescription','')+' '+s['name']+' '+ ' '.join(c['queryText']*3 for c in cs if c['id'] in s['subcategories'])))
 vocab=sorted(set(w for d in docs for w in d if len(w)>2));vi={w:i for i,w in enumerate(vocab)};A=np.zeros((len(docs),len(vocab)))
 for i,doc in enumerate(docs):
  for w in doc:
@@ -18,8 +22,10 @@ model={'version':1,'method':'TF-IDF + latent semantic analysis + evidence-ground
 # Browser initially downloads only a compact index; full texts loaded on demand.
 index=[]
 for s in ss:
- detail={k:s[k] for k in ['fullDescription','purposes','usageMethods','applicationPlaces','limitations','importantNotes','relatedSymbols','source','groupIntroduction']}
+ detail={k:s[k] for k in ['fullDescription','purposes','usageMethods','applicationPlaces','limitations','importantNotes','relatedSymbols','source','groupIntroduction','originalFullDescription','fullEditedDescription','editedSections','reviewFlags']}
  (P/'data/details').mkdir(exist_ok=True);(P/f'data/details/{s["id"]}.json').write_text(json.dumps(detail,ensure_ascii=False,separators=(',',':')))
- index.append({k:v for k,v in s.items() if k not in detail})
+ row={k:v for k,v in s.items() if k not in detail and k!='editedEvidence'}
+ paragraphs=list(dict.fromkeys(s['editedEvidence'].values()));row['editorialEvidenceParagraphs']=paragraphs;row['editedEvidenceIndex']={key:paragraphs.index(value) for key,value in s['editedEvidence'].items()}
+ index.append(row)
 (P/'data/index.json').write_text(json.dumps(index,ensure_ascii=False,separators=(',',':')))
 print('LSA model',len(vocab),'terms;',k,'dimensions')

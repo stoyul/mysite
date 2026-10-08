@@ -1,0 +1,1230 @@
+[
+  {
+    "id": "lemuria-01",
+    "originalSHA256": "4cc3460db88e19e4b544a39e1a8e449de76ab1c71d2d0e58358e9fa33208c6df",
+    "editedSHA256": "1d5fd8b99b44a2deb825322b03fc26c22f121473020bb0e8b9ae55f55b422a46",
+    "sourceCharacters": 935,
+    "editedCharacters": 575,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-02",
+    "originalSHA256": "9a99d8a877e30cb35eec4b5deedb1d426db15e1e68a77ca46a46496c0a4b30b0",
+    "editedSHA256": "b701fd8b961465590fca5903ceaa65fe56ed4d459cf329505953558c6e738a95",
+    "sourceCharacters": 691,
+    "editedCharacters": 536,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-03",
+    "originalSHA256": "1a753d5da1dcfe9ea6b997d1b2bab22ad641b33f3a1faff3bccb780c291efa48",
+    "editedSHA256": "8661c3df202771a1649096739bd3b1176754ae7c251c9012d6f36763ef70c7d6",
+    "sourceCharacters": 777,
+    "editedCharacters": 527,
+    "paragraphs": 3,
+    "reviewFlags": [
+      {
+        "fragment": "порвать стиль",
+        "note": "Неясный фрагмент не получил новой трактовки; смысл патологических связей сохранён."
+      }
+    ]
+  },
+  {
+    "id": "lemuria-04",
+    "originalSHA256": "79ba590cdaf4dbc128bbe39f79ed18bd934c7ef956846c96676cb9ad6328ae03",
+    "editedSHA256": "427ebd1412f315efc3a2ec03704e0ede9d91b5098e2a11f31d2b3fda488f633f",
+    "sourceCharacters": 532,
+    "editedCharacters": 470,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-05",
+    "originalSHA256": "f5062ed6a38d0fa6166f6dbff6b6866160a2a8edff230bfbb2e9618923362863",
+    "editedSHA256": "ebc8eb318bde4db81ab507eb011242a3227df0b66d99635cacd18b5fc5714a69",
+    "sourceCharacters": 600,
+    "editedCharacters": 411,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-06",
+    "originalSHA256": "d23eb83d1931f33aa5102e7442aba5a69fc82013e45ff9fab2a33351540d0c4a",
+    "editedSHA256": "b2609f361031ed6c146979358b6aac4c72dc72535e48ede07896912241ef18ac",
+    "sourceCharacters": 857,
+    "editedCharacters": 637,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-07",
+    "originalSHA256": "fa5048774b7d592e1525a093089f9eea933c45202ac506b78a05e5cf63b22c16",
+    "editedSHA256": "cd8ddb6de8b8ccab536259736ff687c5db5b1937c9884ec13b8990ff437dc3b9",
+    "sourceCharacters": 666,
+    "editedCharacters": 543,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-08",
+    "originalSHA256": "e50604792acfa58e9ed6c9d16ef617a6a5311b3fb0c92f1442d9e1bddda498e1",
+    "editedSHA256": "ae902d40ff193c34c98ab3d766d0ab2aefdefb624e0928c76dfa928c126044a9",
+    "sourceCharacters": 722,
+    "editedCharacters": 398,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-09",
+    "originalSHA256": "938ac70365983cf8e2f882ff0d6f3aed2b233ca184c0abaead89c8ff685cc74b",
+    "editedSHA256": "a41895762881833db51a85a6732d14cab0076a0381e280fb1db79cf08c8e5425",
+    "sourceCharacters": 600,
+    "editedCharacters": 489,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-10",
+    "originalSHA256": "e1a621f0bd0e95d2250a1cc316d0f43d15aba169f2985e4ab18a4e245193103e",
+    "editedSHA256": "4474a7889f64787db9d06b86efb38e4e059cfdd708c831c8e04b690d18a125aa",
+    "sourceCharacters": 542,
+    "editedCharacters": 452,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-11",
+    "originalSHA256": "837be87453fee9d98d0bd7e43bc398070b3461ff6d8d35df04dca34bf2614d94",
+    "editedSHA256": "a07559264c223b6c5d12744a2e0f8b19252dda0281d0b8c8b4d658d71c152258",
+    "sourceCharacters": 532,
+    "editedCharacters": 421,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-12",
+    "originalSHA256": "db50b680d72836f7b57cb948ca0ed3eb1a0247cb3080023b5ed94dee8a991973",
+    "editedSHA256": "524aeeaf26f5b6ed1de133c7d26e86a2f9cf62933d4c85b1f92540b3ba975e6b",
+    "sourceCharacters": 445,
+    "editedCharacters": 423,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-13",
+    "originalSHA256": "95372b44d45acc4e126076e9c9ee11fc8224186fcfcfc021bf2ddda061b6f117",
+    "editedSHA256": "726df0e7822b4ec19436fbbe51b7292dfe205605b485c5f4047799511815e047",
+    "sourceCharacters": 457,
+    "editedCharacters": 558,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-14",
+    "originalSHA256": "5e60ec92d27aa7e0a66379a49f1471766ade389e998e6529171694ec3b37e667",
+    "editedSHA256": "e51c7f9d9dc8db6a2940f94098116f5bdddc6fee91848daa7144e78348e53271",
+    "sourceCharacters": 682,
+    "editedCharacters": 453,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-15",
+    "originalSHA256": "e00125f75da7cd83738ba781660dcbb4579d4316c36a872e7c711c131ad2f4bc",
+    "editedSHA256": "06ad606aa40d21a01a49de0eaded88dfc6487c083d6f425eb114c87dc2c5a780",
+    "sourceCharacters": 410,
+    "editedCharacters": 395,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-16",
+    "originalSHA256": "d78024ae4a2e390953ead75b5aabdd2c3d23338896f80ea6538ce49153b1c734",
+    "editedSHA256": "25e4a6c3f3084aca4ba5be367f67f781cbb83259bfacf0f331d35e30a74ccc9f",
+    "sourceCharacters": 706,
+    "editedCharacters": 626,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-17",
+    "originalSHA256": "a4f9d9e70d5c4dbbb9090488f06907e127a62fc8c2012f9d0b81eeaefb46a3c7",
+    "editedSHA256": "f6e958314d22cebad2583c4c882d15c42864f018d6153b836de97e3e558a9f39",
+    "sourceCharacters": 741,
+    "editedCharacters": 560,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-18",
+    "originalSHA256": "c6e6ec416d537232372556020b2e8b6e1a1277938efa821fa53df5d45a445640",
+    "editedSHA256": "e2d0d2b2f8390c80bb832326087fec12556746eae079c52a3a64beaa5fe6d93f",
+    "sourceCharacters": 584,
+    "editedCharacters": 414,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-19",
+    "originalSHA256": "f7babf662b328105e91ebd5d633ea20c4e8f5c8db276abccf8168631bb099a5a",
+    "editedSHA256": "8122a54d2883129c82bc7f1818d8fbaf8e9c03e48d70cbadfe67dacdb422a97b",
+    "sourceCharacters": 399,
+    "editedCharacters": 318,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-20",
+    "originalSHA256": "e3681c0684fda5dd9bda2b525abbb552dade16809d03f0d80f164af6b78f62b1",
+    "editedSHA256": "22f461c7a2d44b895e4e52950585bb9d7558f34268cee386ba646c7b08096b3e",
+    "sourceCharacters": 496,
+    "editedCharacters": 390,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-21",
+    "originalSHA256": "10a4945fb481e7a4631d3d11c3e6c715f4614e9eb5af57379c602e7edee7f3a0",
+    "editedSHA256": "5afbed3f15ccffd4ecc6373208e81e2b5b9c8a96a8734af887020db2bb5e92e4",
+    "sourceCharacters": 397,
+    "editedCharacters": 330,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-22",
+    "originalSHA256": "3538dcf69667b4590c1328706a0eba62cb2846a6e1e753d62838226efebab147",
+    "editedSHA256": "4b8c7b4ef4698613c24afb2638e823f6662d97bdfadfc262cc4db871b751abfb",
+    "sourceCharacters": 348,
+    "editedCharacters": 313,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-23",
+    "originalSHA256": "994de0ff55cc533e40f9bdc7ac0707c01da32053db12869648e4719cd3d77762",
+    "editedSHA256": "747f4fa617c3ec974e541f0fedec515df0b993520e30e1ac1a979b64dc35d558",
+    "sourceCharacters": 439,
+    "editedCharacters": 378,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-24",
+    "originalSHA256": "c29c6d030807fb55ef334c56a20121d4e184f1d9e8bb2e4728bef9404b0630a2",
+    "editedSHA256": "c9d79d0f7fb6ffb27aaff9a2766885a68a24c87b2c7767d223b7ac443f5a9103",
+    "sourceCharacters": 435,
+    "editedCharacters": 377,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-25",
+    "originalSHA256": "4f89cb78caa06b16806fe7c46746b11d9997b4324bd0dbd3bb16616c6940c4ef",
+    "editedSHA256": "c149bd82cde5cf0b50e803b16c4ed76d397b2b42489a4a456f8ab61cf72a2b8e",
+    "sourceCharacters": 366,
+    "editedCharacters": 316,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-26",
+    "originalSHA256": "4a60faddfef54ba7609d6d637daaa78cadb6727940632fcb541a22b6cf00c0bf",
+    "editedSHA256": "1cf3e0e3add759b5a90650339eda6170d21b1a34e1fceea5b4401c389a3b7bb7",
+    "sourceCharacters": 520,
+    "editedCharacters": 445,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-27",
+    "originalSHA256": "77664fab4a4f444961a799dd7349dadc19922b1e621232bd8ba6763e250852e8",
+    "editedSHA256": "1c25ada02cc0b954450eb34356fdd6f6eb5b20610d2043870e397030f7931e70",
+    "sourceCharacters": 548,
+    "editedCharacters": 437,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-28",
+    "originalSHA256": "59e2a51998b7f7389c5c667d8e7e05e26e1a4c6c12d2adeb983433760d447fde",
+    "editedSHA256": "d1a75cded5ae79b97cc5f9132f3ec6417c26f94bed069e06c2f400c3c9c98506",
+    "sourceCharacters": 452,
+    "editedCharacters": 403,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-29",
+    "originalSHA256": "e0257246f95d5c298e49cb425358e2b8b20e63bb7a19b40aa27d1d01980dadc3",
+    "editedSHA256": "2189b5c28eb574597a36c2f7044cd64db9a8b0ef984cf29bcc188012edd1bf63",
+    "sourceCharacters": 559,
+    "editedCharacters": 336,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "lemuria-30",
+    "originalSHA256": "92d87e5608e70047e4a10905554b3227c1220b48b0fd9449e57bb6a5efc05bb4",
+    "editedSHA256": "bdf12bf7923f5148c1df7f71dc7c299aff805b17a5aa750f6c2826240863218b",
+    "sourceCharacters": 902,
+    "editedCharacters": 671,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-01",
+    "originalSHA256": "9daf8fe323701cf3c251b8da7df9e174ae499a40bc396d18c815b5c6afa8800b",
+    "editedSHA256": "23697c4091e13eb0e411c5943caf6b324fa900b64764348e691f976a80b144b2",
+    "sourceCharacters": 462,
+    "editedCharacters": 437,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-02",
+    "originalSHA256": "a9c28154301e2772ee886089f86f9007ea818eba611792c04713da099d528c5b",
+    "editedSHA256": "52da9c347ccc0a4030ece1ccca86406fb5db65813252322331e0ea7163c29bb5",
+    "sourceCharacters": 372,
+    "editedCharacters": 315,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-03",
+    "originalSHA256": "840b1f8851e812ca36ed031cca5e70ad41b6b79291fad8bc02a9d20f395f961b",
+    "editedSHA256": "b63f5d71644ec200688e218f32e2603ad46889722a38af8b780dd8ecb4713537",
+    "sourceCharacters": 437,
+    "editedCharacters": 391,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-04",
+    "originalSHA256": "f9990f5898c703876141961063665021fc1f756f169315d260c8335656ce8fcc",
+    "editedSHA256": "f168993826bf4f63fc37cb9f07e9aa3a9dc9535c0c22796654ae49fb86583465",
+    "sourceCharacters": 438,
+    "editedCharacters": 419,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-05",
+    "originalSHA256": "fc8e81f354deface8bf4c3b2449fadc9b317249e0d6ad669d96d4cb5ed7bec4d",
+    "editedSHA256": "dfb5665e017a837cbb37efded0aa2376b353e4123206e4f3355637413ab4d7e5",
+    "sourceCharacters": 409,
+    "editedCharacters": 550,
+    "paragraphs": 3,
+    "reviewFlags": [
+      {
+        "fragment": "уравновешиванию разобчённости",
+        "note": "Сверено с карточкой: разобщённость."
+      }
+    ]
+  },
+  {
+    "id": "hyperborea-06",
+    "originalSHA256": "2fe210a6a7615bdee9e6ca407389cbf137f75c2f0a2acec080eb4ba954f817b2",
+    "editedSHA256": "4a85326391121edca52d1054d0b1596fa180aa77f855e20234f545c755197604",
+    "sourceCharacters": 563,
+    "editedCharacters": 422,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-07",
+    "originalSHA256": "fac7ca038f07c24f786070fd57060bb772179bab46cc1e5e2b967a99109bcf88",
+    "editedSHA256": "0ca459f9fb45eb03404481de9bde7e812deb2bf119e5d548e8bd3ea5e9bf4e49",
+    "sourceCharacters": 417,
+    "editedCharacters": 338,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-08",
+    "originalSHA256": "29c4c03bfb49e907f99f67aea73d016c08bda60083c95c41d9c02dfec5fa318b",
+    "editedSHA256": "1e9b13235d1525935dadfa73c65fe271f57e4cd506b674475e16c95b2d402a8a",
+    "sourceCharacters": 400,
+    "editedCharacters": 377,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-09",
+    "originalSHA256": "f380debce41698755b86db3416f2c56c11fcc7c9fe62b27136168d8b2c2856b6",
+    "editedSHA256": "b135e6b1fdb520891113b6b0996fc7856ab4c4db5ee82c418f7145a0624854fc",
+    "sourceCharacters": 494,
+    "editedCharacters": 416,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-10",
+    "originalSHA256": "4760a45d2ea405a704975e73b0cdfcfec6559ca16ecb58a4ef35f59635acfdf3",
+    "editedSHA256": "ade4bef9ff3400a5074970da89aafe6f6bdff85b61f9f9713f944c244b14788b",
+    "sourceCharacters": 436,
+    "editedCharacters": 395,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-11",
+    "originalSHA256": "5d08817f49c3e24e492894df16176e18b08485a0e70070cafe7570b9a6e302c9",
+    "editedSHA256": "05b17f85e92d516d19a69d7a5be18bc16112f1a17d01c518163e597231c7d94a",
+    "sourceCharacters": 563,
+    "editedCharacters": 430,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-12",
+    "originalSHA256": "065287ead85b0bd5273a5bf51628c311a839e0406b340c6b1820beea8f8ffe1f",
+    "editedSHA256": "e8e3f3f5e8b4f5be661646888ddd4df9b62e933f88ff86ede1d5834af06d8d3e",
+    "sourceCharacters": 400,
+    "editedCharacters": 419,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-13",
+    "originalSHA256": "3103df1eb31d8a67f3e1a24519d172e5abc590837c617702fc4bd62bbbb11e3a",
+    "editedSHA256": "37f94b43dd0c75db61ffd47002f7db475f92091f5b70ee2e8a0ff1e9d559b0bc",
+    "sourceCharacters": 431,
+    "editedCharacters": 433,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-14",
+    "originalSHA256": "60d176506996eacdc3a99b6f494e8cf7c76cbc354bace2f53409d64ab25c1d4c",
+    "editedSHA256": "d188f9fb6dbfd7edd803fc683e301802688020f374d7d1ee6d2d5ddc5f4bdd2c",
+    "sourceCharacters": 419,
+    "editedCharacters": 446,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-15",
+    "originalSHA256": "ee225d5f6b2d19879a826efadc725e977f1644a87aa71251ad67f496cf23e97f",
+    "editedSHA256": "a8d092e6e167737981a54267ac47ef023e176724bd764f5da700a35af2878251",
+    "sourceCharacters": 286,
+    "editedCharacters": 385,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-16",
+    "originalSHA256": "2debda942247fafbe79a2b509118a01538a5fc7eb3ac7c9e4c4aaa4ecd74b14d",
+    "editedSHA256": "df14ca71c8954e4ff847a61691c1aa8ace48ced6aeee917446cfc7af446c8d2a",
+    "sourceCharacters": 538,
+    "editedCharacters": 426,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-17",
+    "originalSHA256": "640e2bfa22ecf5a1d56fc714840aa2b4dac2a43519f52d53bb846fa5ede6e050",
+    "editedSHA256": "2e3a32b32f71fa1d061a8b7d4cf5215139c4c11f7641ef90b4dde9bb388d3e3d",
+    "sourceCharacters": 560,
+    "editedCharacters": 458,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-18",
+    "originalSHA256": "5ef73fd6954def04a86eec9a2f877042090a951506c55b2c170e497894cf799b",
+    "editedSHA256": "4ae62d72c2d57e11e3b92625de78bff36c86fba80f5afe2d3597552560f5b33d",
+    "sourceCharacters": 374,
+    "editedCharacters": 379,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-19",
+    "originalSHA256": "c2485a1f8fdea3b8d51a3fea4af773ca1d8d5aef4e4bceef4698275c14bb1309",
+    "editedSHA256": "9956ab3080fdd4f17b215da6c42f6392ba52fea974179bbd7f87b419fbcba8f3",
+    "sourceCharacters": 433,
+    "editedCharacters": 424,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-20",
+    "originalSHA256": "25bf62e4a82ad31825938a13ab696f76f1cea166686f5d449b7f8beed1c3ddda",
+    "editedSHA256": "048d206a86a30414808bc8cb8bfcf7243023e8972a398b8dc831bf46b257d6a4",
+    "sourceCharacters": 438,
+    "editedCharacters": 419,
+    "paragraphs": 3,
+    "reviewFlags": [
+      {
+        "fragment": "надуманные из-за других мм какие-то упрямства",
+        "note": "Не конкретизирована причина упрямства."
+      }
+    ]
+  },
+  {
+    "id": "hyperborea-21",
+    "originalSHA256": "b6b2b08572dbd9e694d055a3e006fc8accead882db3aed6e132e2c490fc18d78",
+    "editedSHA256": "65c4caa63ac9111d44459fb2efc4db9794ef67e0992bdd848fa13f9c8b57aefa",
+    "sourceCharacters": 494,
+    "editedCharacters": 524,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-22",
+    "originalSHA256": "6fce3810091be1fdc4812961761158328d7d5a61a576342ce1c936d28b0bdccc",
+    "editedSHA256": "662d7e8fadfbea16e9d1b856aba2de56c7570f4702272be27d3c1d000cfb2b27",
+    "sourceCharacters": 331,
+    "editedCharacters": 359,
+    "paragraphs": 3,
+    "reviewFlags": [
+      {
+        "fragment": "устранению жалости и бессердечности",
+        "note": "Сохранены оба значения; требуется уточнение трактовки жалости."
+      }
+    ]
+  },
+  {
+    "id": "hyperborea-23",
+    "originalSHA256": "c19ffc3857819980432fd1265547a28532487879be41f45cc0284c3423da2d2d",
+    "editedSHA256": "7388e71879a1cbd9a009f19783c967cf0d4fa5939ffa23fbf333a00b3beb992f",
+    "sourceCharacters": 530,
+    "editedCharacters": 457,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-24",
+    "originalSHA256": "7e3a2900771fbe2ec921f82ffe1c0a2287545d041cab6ca19b99e2092ae51ecb",
+    "editedSHA256": "1fccb7d5780cb0e8465fa5fedcae57920b2c0938e901456428c6a6e74cd012ef",
+    "sourceCharacters": 443,
+    "editedCharacters": 329,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-25",
+    "originalSHA256": "d7fc2fe069718b7575dbf3a18f170e49449a5259837db16f5a1cb58b444b1b5e",
+    "editedSHA256": "5d8240d1132974018805a35d505988d7c63ffd7d10287497d2507b08528685e0",
+    "sourceCharacters": 389,
+    "editedCharacters": 352,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-26",
+    "originalSHA256": "80b566c1891eeea9346ba293e125f095ba551cf784a70174a810f9cbe9de78ab",
+    "editedSHA256": "bc7553f99a7c34e9103d149922f6a0c044aec5c09353ff3359ba07d09b95f03b",
+    "sourceCharacters": 496,
+    "editedCharacters": 444,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-27",
+    "originalSHA256": "f714693c91be9b360d4ffe47bb078fd8432234dd52efa82373d8e7d290a568af",
+    "editedSHA256": "5586d35bfe20bc9a7acf136e51180b95ddda96e3d4519021216c38ff69a5e9ba",
+    "sourceCharacters": 398,
+    "editedCharacters": 355,
+    "paragraphs": 3,
+    "reviewFlags": [
+      {
+        "fragment": "устранение желания, разврата",
+        "note": "Не определён объект отдельного слова «желания»."
+      }
+    ]
+  },
+  {
+    "id": "hyperborea-28",
+    "originalSHA256": "253469cf3cf482aec320bfa4ead50e39304658c78a34abfa71e042b25037ea76",
+    "editedSHA256": "51ea6ae2c961c7fde0bbaff41c777e711561bfcad1ae7c77a7fce17bdd41d0c0",
+    "sourceCharacters": 897,
+    "editedCharacters": 669,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "hyperborea-29",
+    "originalSHA256": "3dd23f0a86f099fb7aaa5fdf150344a8cc840cdba325b3a7620b5d5e9082db57",
+    "editedSHA256": "1603b1dc43da3e74039f596a20d1fd99bc04716bf41ba1beadac3aec533740b9",
+    "sourceCharacters": 491,
+    "editedCharacters": 451,
+    "paragraphs": 3,
+    "reviewFlags": [
+      {
+        "fragment": "когда на себя стягивают энергию",
+        "note": "Направление энергетической связи не уточнялось."
+      }
+    ]
+  },
+  {
+    "id": "hyperborea-30",
+    "originalSHA256": "e9ec943424aec8030628ab4e58dacb370f40cbdda32fad88967fe70e9ee2aaa1",
+    "editedSHA256": "3083b649a529989b40895effea5f12146a411c0916556cd068d05a64b57e4798",
+    "sourceCharacters": 747,
+    "editedCharacters": 491,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-01",
+    "originalSHA256": "fd5224adba67fa4a706298d5fc0ef3db152e85f6458351a9db394a907b86095f",
+    "editedSHA256": "6299017dea84b474f1cc1e74b3c846c10e6ba8fb4b2042405f4564f2891d3e98",
+    "sourceCharacters": 448,
+    "editedCharacters": 252,
+    "paragraphs": 2,
+    "reviewFlags": [
+      {
+        "fragment": "ускоренность эмоций",
+        "note": "Неясный термин вынесен на проверку."
+      }
+    ]
+  },
+  {
+    "id": "atlantis-02",
+    "originalSHA256": "e708edecc70aba0af305e412b9ca68cce0818b93d9ce80d0824ee3bc0af4883a",
+    "editedSHA256": "194e8206b99071a3f3d1925084465bd5d19740ef9164af67df2abb5bc0e074db",
+    "sourceCharacters": 354,
+    "editedCharacters": 279,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-03",
+    "originalSHA256": "dfe3cc606dd2c86ca25295eb963aa8ef5c840c19bacb9549e1a39ef51a5a1080",
+    "editedSHA256": "10d4f5bdedf67350adbc70c808e0998f9a0714b19a7a7fd24c08252fc60dd1cf",
+    "sourceCharacters": 176,
+    "editedCharacters": 155,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-04",
+    "originalSHA256": "cf04cd842e22d94661d7306c2bcda8a4531bd08c7db21e0ba8f6fca9147e10b3",
+    "editedSHA256": "9bd443f841bd05141894594454ef8710ee8a7f94b808d404579d42e4c55b760a",
+    "sourceCharacters": 416,
+    "editedCharacters": 361,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-05",
+    "originalSHA256": "ac00f95f05d5adce196f99d083290c47ce657342810c7548bcfd14b1200d34a5",
+    "editedSHA256": "1e62931d8631ee8988f5aabc5191b37283effd3d1d412cfe4011afb6ee7c1afa",
+    "sourceCharacters": 205,
+    "editedCharacters": 168,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-06",
+    "originalSHA256": "1a0c6676b26cbd9bd58d4dc4919b1ad7159b67f56207b971e9e10b7e3f42333c",
+    "editedSHA256": "1d1313c40498d7fb698eb51b79cbf7ac6a5312e5c6f38df6b9294272329af9bf",
+    "sourceCharacters": 310,
+    "editedCharacters": 296,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-07",
+    "originalSHA256": "ab41e85fbcbc9d01f159d459e1c09878cf48d920a22ed78e9d8c836f5e4ca856",
+    "editedSHA256": "b1a37d27312345bd6f8d3680baf2bc0e7162895841e833ab4450c62701be1d32",
+    "sourceCharacters": 258,
+    "editedCharacters": 226,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-08",
+    "originalSHA256": "bae607574dc67aa936e606f8c4f7482d498b7760f4ae085d04054b2812037a95",
+    "editedSHA256": "e32e80dedce2d14c46ed2569552baa7959f23409f925cff2fa6bc8108fa42dfb",
+    "sourceCharacters": 253,
+    "editedCharacters": 188,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-09",
+    "originalSHA256": "ed77e4037e15d3c19f2b0b5a910ca0a5ee4c06b68a23b53d896fa4b571b136b2",
+    "editedSHA256": "bf3252ee15e076cfb558f40f1fc798e586ef2bcaa0eeb4d1b1448aec9fdc3f83",
+    "sourceCharacters": 1196,
+    "editedCharacters": 617,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-10",
+    "originalSHA256": "cb481a3c05b308684d5da148a85a0b2c42ad01e527676b113f17cfc79ce92123",
+    "editedSHA256": "8342dcd6234b2ba7dbd8c37bbc6e4ce96fa4a447f85dd319ff0e9ad887dd342d",
+    "sourceCharacters": 353,
+    "editedCharacters": 267,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-11",
+    "originalSHA256": "bb6a22558f985b9253b6e5d959ae7c498ea04f73305197d8ecec9a6bede0a6c4",
+    "editedSHA256": "756c353e78fe9d1504a6f2b23fc549d37b82339b9c7660e0efef080e85c1e411",
+    "sourceCharacters": 194,
+    "editedCharacters": 272,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-12",
+    "originalSHA256": "630864e3f48eda1a2ee1e8b8a2c3f0da280cfa71ee201185d3a07ea334977608",
+    "editedSHA256": "843e1454cad58444e9c1e1b6c7facf918bf5a1851605eb8fb053165c6f023212",
+    "sourceCharacters": 252,
+    "editedCharacters": 181,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-13",
+    "originalSHA256": "041462d9364bbe583a99b6d32ba8dbe1976ea247f4dbb6baf77cffc37e91be0a",
+    "editedSHA256": "78c0955fad85c0ca70410d99c9ae91fa80d771e8c66ea4e6ffbf6fd669b34dbb",
+    "sourceCharacters": 228,
+    "editedCharacters": 224,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-14",
+    "originalSHA256": "d648628e361237aaa70f9c21134aa69cc8617f0e44d4fab713e28c4eef633f42",
+    "editedSHA256": "906099576a159f4c710e5795f04380e2ae0b02ae6ea42e45b5a1835c345bdea6",
+    "sourceCharacters": 195,
+    "editedCharacters": 284,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-15",
+    "originalSHA256": "4681e080cf9cea2db76d6565fe615de77a0ecf8824b13385384f63490c386d62",
+    "editedSHA256": "f8e97804ac8c02b726f3f91706aff6dcf9a691c85d4d6aeb1b1b67f5d22c526a",
+    "sourceCharacters": 188,
+    "editedCharacters": 145,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-16",
+    "originalSHA256": "6b53286324fbc665f00f3734196423b9ab66bb8e23bf523714ab6b7c713860d1",
+    "editedSHA256": "657e695ed935e191e49b5fac193b8aa9560416b0ad1b0c10eba8a3052eb8c085",
+    "sourceCharacters": 260,
+    "editedCharacters": 178,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-17",
+    "originalSHA256": "3901ba8d0a4625c6881a30940c191e5d085c0c204866fdfe976ae55f553f5043",
+    "editedSHA256": "422cce936ba7fa26a23e74a678c00b43e77c33c369e3af5b83d2c518dc6bd7da",
+    "sourceCharacters": 220,
+    "editedCharacters": 200,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-18",
+    "originalSHA256": "e15e5341ad0bd2f5670985b564ab972ccc49765a6baeff64a0badc617a98c999",
+    "editedSHA256": "b5d44165aedfb2b8ffa9694155f7ead9479f82cbb58bb42e3d8be3e9fbf7d160",
+    "sourceCharacters": 281,
+    "editedCharacters": 208,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-19",
+    "originalSHA256": "0e37330981bd455277fdad0ed33c879c7410b892cffb17261dfea80eb08e7ae6",
+    "editedSHA256": "bc14d1ef293a8f7ae9bb9c1f6015f5c38a54937b9d19fce336e4c7b508e63f2f",
+    "sourceCharacters": 235,
+    "editedCharacters": 252,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-20",
+    "originalSHA256": "69d34aa36b09d0ea1d73431b090af28f516b4a9a5c845cb0245ef719b37a4efa",
+    "editedSHA256": "1d1edaea5975fe73c062870a762fd23f300ae569cb9f8a5792163703790ed677",
+    "sourceCharacters": 549,
+    "editedCharacters": 545,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-21",
+    "originalSHA256": "401bb9be68f88dd55ae0b4cae2ba21bd4478317ba5a1b875ae98672ffbac11df",
+    "editedSHA256": "69cf4c3ad92d40f02bd3e8f0f12d5cf798c1f0b5454496e2fec41519b4d6d975",
+    "sourceCharacters": 700,
+    "editedCharacters": 529,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-22",
+    "originalSHA256": "c48cbc6417d3563f03146566b8e94297e1e1fc8b3279ed2d9f0ea1190d08714a",
+    "editedSHA256": "d3d001e0c528a3cdeef648520763f9a33f51dbc01f0fd0b93634f40a00601b49",
+    "sourceCharacters": 204,
+    "editedCharacters": 215,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-23",
+    "originalSHA256": "f1fea3ee66842a2e37cf259a0d2be1ff33377c1a8ca64ec53591aeb4d23ada55",
+    "editedSHA256": "9c44da9cbf4e5869e3f42cce125edc5fe4dd6d24a1ecd72798310a2311c0b528",
+    "sourceCharacters": 560,
+    "editedCharacters": 355,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-24",
+    "originalSHA256": "3f9ab15209ba63e170a640218228a3bf3227bcd01a22f42298b0b8a1e56a41e9",
+    "editedSHA256": "88394784f589f75d98e9be149e7c16547425c56b96247023f5185bfc6614f179",
+    "sourceCharacters": 303,
+    "editedCharacters": 259,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-25",
+    "originalSHA256": "6aa31dfc8bee880e5c6ca36df60b863710ef4c7cdca8321a6d89ed2dc5a525b8",
+    "editedSHA256": "fa8bbdd60257382b2ec2bb465a6dbf1e9be78ab6c433d6c0d1a24d30ccd56606",
+    "sourceCharacters": 212,
+    "editedCharacters": 229,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-26",
+    "originalSHA256": "19589d81591f57ecf0d9a36878e8c1e0e7d8b04d1894346960fe1951b18dc97d",
+    "editedSHA256": "b12ae6d093cce8f652fd13f4bc55650f9b63a28f276b1dd2772f1f184bba34a5",
+    "sourceCharacters": 397,
+    "editedCharacters": 302,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-27",
+    "originalSHA256": "4eeee64c4321e016e78a6a0e3fd38f9005fa11c649dc11fece8f6e833ad63e2f",
+    "editedSHA256": "b5e15ffb56f77a9cf15568a945b25e460c0827ca9c23394a7a9f809e9709e43a",
+    "sourceCharacters": 247,
+    "editedCharacters": 297,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-28",
+    "originalSHA256": "f15259b8d791c11152c25a23a895061856103780b6722e438f0e307bac12e650",
+    "editedSHA256": "836e1f65f1039fb79ba53f7dc69f219b045c9075553d0d1b8a7102eccfb73b9a",
+    "sourceCharacters": 951,
+    "editedCharacters": 639,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-29",
+    "originalSHA256": "c0ef1b51b172f9b9b8e903e3993f4d23547fd92a52348cf08bcffd41e282c94d",
+    "editedSHA256": "4abdf221cc3482b2dbd7f1090fb0a58bd9bd98de6a43ee615541d6c6419695c6",
+    "sourceCharacters": 1001,
+    "editedCharacters": 426,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "atlantis-30",
+    "originalSHA256": "94eba2c595b5ddfca54324e6d5800ad7fdf403b5d6ad38f47869553ddc2f9f07",
+    "editedSHA256": "633106cb7c7d6d1fb85219a6b29c425881d4dd9749f2fd5480b3eb623b41b6f0",
+    "sourceCharacters": 680,
+    "editedCharacters": 512,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-01",
+    "originalSHA256": "7e2050f8599ebe9cf6ee4c619b67120cfd9e887b1e7564535ced9ed86f604fdc",
+    "editedSHA256": "777f42d4df9d287421149532d6410bae0c22f897a599e4f4b4260f9fd6b6661e",
+    "sourceCharacters": 1582,
+    "editedCharacters": 522,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-02",
+    "originalSHA256": "2e5c794ec41b26821bbb9b074fd8765e88e86e908ecebdbd1c84921b65ec6058",
+    "editedSHA256": "73afc966f07891853525b8d68623f66deeaa47a5eb586b3bd41dfe95007c72cf",
+    "sourceCharacters": 368,
+    "editedCharacters": 171,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-03",
+    "originalSHA256": "055b1f19a79e4b0db7c978781c49c52955a4d597bb52d15ca0ab1f9aa7a0ae27",
+    "editedSHA256": "b5ac7fdd446d1d1705501037eee5efe4305ddc17f2bbceb0d7b0a681283c0af1",
+    "sourceCharacters": 921,
+    "editedCharacters": 482,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-04",
+    "originalSHA256": "3c816d20e09cf8d4eb750397a8a39ec5c72c6c974e37fb3dc90ff1b42281882e",
+    "editedSHA256": "d29b17e860ee8e0cb3fc9d26247e082a0fc0bef200293669b3935babeab25cde",
+    "sourceCharacters": 1485,
+    "editedCharacters": 543,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-05",
+    "originalSHA256": "4f68e9cf151ab3a35668c06250cc4d73f6f990bcb9f10160d238c2723f74920b",
+    "editedSHA256": "26f6d66d5badae942ee8cb125794352e0025cd001cea1935af03f3ccf20acf05",
+    "sourceCharacters": 1900,
+    "editedCharacters": 616,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-06",
+    "originalSHA256": "37948219954af7c83832469d3ae20e1d00f7c1b77911aeefb0b6cb2e7911b5a5",
+    "editedSHA256": "a2bc68f24a1b9637368e892277db1fad58cf9cb94f7810f0ea745fa9069e5138",
+    "sourceCharacters": 730,
+    "editedCharacters": 408,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-07",
+    "originalSHA256": "9aa2e1f60fe7716eae3b45404f4cab1c77e7c5cc7ac6000874fe0cb8478656bf",
+    "editedSHA256": "b32cccc44358c7ea5dfab8f81cfc9af60b3669f97c1e5476d0afc89f8b1fe1ef",
+    "sourceCharacters": 488,
+    "editedCharacters": 292,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-08",
+    "originalSHA256": "859eef34598124b9c7edc9ac2accad753133f4ecdf05c14a899efff1f414d6e8",
+    "editedSHA256": "24db653a322e7e980c6fcc44835c073963e2af07351eef24b906bf097f563b68",
+    "sourceCharacters": 454,
+    "editedCharacters": 346,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-09",
+    "originalSHA256": "a37f8214e6fcb21aa316154b7be75c7cbb22f5efc292c5a92f8aa6bf5ada2141",
+    "editedSHA256": "39f5f7842507c43fb54b7a20b3821c28c07221225f6ba9465dd4e0010476ddf3",
+    "sourceCharacters": 1443,
+    "editedCharacters": 608,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-10",
+    "originalSHA256": "b828508ec0740867fe663af08e178c19ead57bcfaa537735ffd48d43bad073f6",
+    "editedSHA256": "346dd223c60470d611092366e4d3e14222baa932250e4c66cb11a8ceae97002f",
+    "sourceCharacters": 681,
+    "editedCharacters": 440,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-11",
+    "originalSHA256": "fbf92feaf8ad851df9f86951b0c7698c74270b2f22d0aaaec81b5f6de92e351f",
+    "editedSHA256": "a206ef49847b63cf869b39f1ed8e987da33746b83059f1295a45d348e0a02554",
+    "sourceCharacters": 573,
+    "editedCharacters": 362,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-12",
+    "originalSHA256": "8e27e2a42b8405c7683c32e58035224dd80959b478d740ce744b1e05e09a67a2",
+    "editedSHA256": "0a1ff5bc2a84bdcf3043843c9ab9ada29f0bc9671e37f649a14efa5dd11d8612",
+    "sourceCharacters": 568,
+    "editedCharacters": 329,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-13",
+    "originalSHA256": "911cf9d84b09d63bbf41d1751711bc43e318f2a8167c81575a0b7f24dfd90a8f",
+    "editedSHA256": "f5236b68a90f86abbd2a6dee5b662d5d96ed5dc03ed6633b27038aa494a493c8",
+    "sourceCharacters": 984,
+    "editedCharacters": 504,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-14",
+    "originalSHA256": "a639a6f8dc2652fe51a720abd8cfe5278277b9eb94e7dda12a09730c99faf96a",
+    "editedSHA256": "b93b3781b0432232160c4c8c93bf1d1a6268a87c8cc15c2114f072d66d2cba8e",
+    "sourceCharacters": 644,
+    "editedCharacters": 392,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-15",
+    "originalSHA256": "3f2f343bb53989d1d79f65fd0e5e26e359a0ff210dc1d257d8f284a01851f8c0",
+    "editedSHA256": "45fd913d98344a5f1fdd9bfc5f5568e2de1010ab871b063a11f107518ea55196",
+    "sourceCharacters": 1889,
+    "editedCharacters": 497,
+    "paragraphs": 3,
+    "reviewFlags": [
+      {
+        "fragment": "реградная Венера",
+        "note": "Контекст времени записи не представлен как текущее условие применения."
+      }
+    ]
+  },
+  {
+    "id": "sirius-16",
+    "originalSHA256": "78fb1f8be4552d58e2444d23930a4408a4a607dca0b09f9bea0f95b8965e93b1",
+    "editedSHA256": "b4cacf29c96cbf60cfbd2075df16ac98e2dffa9e13569511a820b8e157200d44",
+    "sourceCharacters": 313,
+    "editedCharacters": 299,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-17",
+    "originalSHA256": "3938613459769f0f8a2910d3a5684496eee714f0235f05c46b9312b395461130",
+    "editedSHA256": "066e173d14a2a205cddab44532a48a6236ce829daa5097c35dfd312a82c2e878",
+    "sourceCharacters": 1213,
+    "editedCharacters": 588,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-18",
+    "originalSHA256": "6fd1a62a66fcae9425240c1bd45b30207bd40092970b3d3c5b8322a3a2282987",
+    "editedSHA256": "00382571ef96cd017ed6c21c6e7f712a3c0fb1a714e9738145b50cc8fc21a4e8",
+    "sourceCharacters": 421,
+    "editedCharacters": 299,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-19",
+    "originalSHA256": "78a876ad82d6d60c71a4fc000192702da1d7756c8956664243646b1f99945290",
+    "editedSHA256": "743694662218c9cb0dbf9acd7b850af333946691e1f1d2f07e5f5b209fc7dd3d",
+    "sourceCharacters": 200,
+    "editedCharacters": 137,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-20",
+    "originalSHA256": "70466dcf8c19cbba45b15aa13597ef3c7cc2f830485f42b0591638cf3fba03fe",
+    "editedSHA256": "304e13186a5580ee177111156365bf300bf6f37fd2570d2863fa1f34dc6ac021",
+    "sourceCharacters": 284,
+    "editedCharacters": 171,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-21",
+    "originalSHA256": "43182121706a2865534cfdba81ada1c74942dab81ea78cf4aa96a218b8b4738a",
+    "editedSHA256": "1f7831c1be6d312484cd28fcf5e1627f63c7240ca401e0cf073ce12cad0426b7",
+    "sourceCharacters": 1329,
+    "editedCharacters": 586,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-22",
+    "originalSHA256": "35e4c19a86811f12eba558a677431af2530ded53ce11c14170551ff42c547056",
+    "editedSHA256": "951074da9a7dee5b34a3e17943c8f2fb90d46168ac0c51719e6e3c300b60c942",
+    "sourceCharacters": 1530,
+    "editedCharacters": 626,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-23",
+    "originalSHA256": "38561ebd22f9a988a0e8bf7f98ed4d0c644786444d990d5ab4ff53277cd96481",
+    "editedSHA256": "2a003851042d94dd6899dd2ebd7f058e108fa42f7ede89e1e52913e77ee9c4b1",
+    "sourceCharacters": 297,
+    "editedCharacters": 195,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-24",
+    "originalSHA256": "9f9be032c049c29299f4611f2eeff44e43d25b9492ba8f4f742c2d017f0cbd41",
+    "editedSHA256": "615c67d8caacdb3f263599eca4407aa5fffca00cd022895201ccf408c0f35c87",
+    "sourceCharacters": 601,
+    "editedCharacters": 377,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-25",
+    "originalSHA256": "bfad443700e3fb052c7bf157a1d59a53b05cbfda256ca4ff35ff7eb4852e517e",
+    "editedSHA256": "5fdaaa3e2c7b0bcefbe0f43c31ded2a2a5fa66ad406f7dc5be6e12bbf92aca07",
+    "sourceCharacters": 983,
+    "editedCharacters": 444,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-26",
+    "originalSHA256": "652361729d420491b5063107d6546bc8bc976af0bf0a7303428fdc494f9ebe64",
+    "editedSHA256": "8fac7a3a2893d520bb0dab01c96303fff659e19e1a8a4d6793cf07d2af9aded9",
+    "sourceCharacters": 1797,
+    "editedCharacters": 617,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-27",
+    "originalSHA256": "b763a99a473ed1c515d8935af8aaed4311d5721d93f630fa2a6435ac336647f8",
+    "editedSHA256": "c9db8771e9e29fb12cdb3c667e0f636c3c077d9f8a9338b9504512481d41b77f",
+    "sourceCharacters": 1254,
+    "editedCharacters": 571,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-28",
+    "originalSHA256": "42b6eea3bb84a35fe16343f6b5dd2538e82450a29670f12bcca986655659be89",
+    "editedSHA256": "c3a03811536c1bdf29e73ff781646833aca13d1215f51aebe1c9adc3181d85de",
+    "sourceCharacters": 1153,
+    "editedCharacters": 526,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-29",
+    "originalSHA256": "ea8b629e8cfab9ab3d62e219f5f766dc38ba085c6034f933bb816d731c9d1338",
+    "editedSHA256": "962ab4efe3f51aa3cf0b4081b1a881f6cc453d22689af9967ed3d4d13e9e7e67",
+    "sourceCharacters": 790,
+    "editedCharacters": 432,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "sirius-30",
+    "originalSHA256": "634dcfab70c7f3a34eb5aee0edbca73cb2777454f9f074f25036af24c49a30de",
+    "editedSHA256": "42d6392c32c835e60d4c0361dd701222f0c7f9c66c45b827444c952f7e136209",
+    "sourceCharacters": 1188,
+    "editedCharacters": 551,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-01",
+    "originalSHA256": "25d89d1eaefe40c14ab56712e9692a828033ecf4c7217e5c72455e76416e773a",
+    "editedSHA256": "4f52c1d1ca80094c02b75721f855a54d760c0b00ea5ec5563ed792e13029776e",
+    "sourceCharacters": 2178,
+    "editedCharacters": 832,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-02",
+    "originalSHA256": "4dc6d1126e7c8ed48cb68b5b5c1e01b7178b3866cf12fec16e0b460ffa204315",
+    "editedSHA256": "2c5fa14138735a47e73124236922876dca7742194b9d5c21e1d6a1c590c322b4",
+    "sourceCharacters": 1096,
+    "editedCharacters": 590,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-03",
+    "originalSHA256": "397555f2939e09d61a23cc84d635e197685b6164c77b0ceefdae1da352f23bbe",
+    "editedSHA256": "26d854191d62b393ce63f570da58144eb540deaca0382d14ef19d27cbe228e5a",
+    "sourceCharacters": 426,
+    "editedCharacters": 380,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-04",
+    "originalSHA256": "8258bc9f223f5ab49d66731d48c589a0a877f2fc853337967d816a507159b99f",
+    "editedSHA256": "325ca63f6da21336a259f07de0ac202ea3542195c439515ac96d509b644d9729",
+    "sourceCharacters": 669,
+    "editedCharacters": 382,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-05",
+    "originalSHA256": "ab53fa67e45ee7cbf83642064ba7d15998be28d0ea5382bc8975da68754e6586",
+    "editedSHA256": "a991dd33b3b4ae49645a108c5df5cc92364e4c65a36c7774492bc474a1b4bf53",
+    "sourceCharacters": 1085,
+    "editedCharacters": 558,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-06",
+    "originalSHA256": "b277afafe91880445b75087847be14c13e1b5369686aa290898b7a1e20a119a8",
+    "editedSHA256": "89c5c5d9460399b70ef2e334ab5c1a5ec4cac49f3d9dee1ae52cca029102bc29",
+    "sourceCharacters": 1016,
+    "editedCharacters": 611,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-07",
+    "originalSHA256": "541873e4207d64681d67e7074973578e5cd04f86eafc6afce3428c3e09d706de",
+    "editedSHA256": "c12c84602288f323c17688fbefadd118f6d73b76bcbb5c790253b4fbd54842a8",
+    "sourceCharacters": 1412,
+    "editedCharacters": 607,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-08",
+    "originalSHA256": "c8054902ba9b47120ef8b65e7aaeb97ff481fd4a81ff1797890bfea0e202d784",
+    "editedSHA256": "a310fe29a36cd4213f9bad5968cd57643afdd57a82cd3c2dcf73b0365f41d095",
+    "sourceCharacters": 191,
+    "editedCharacters": 143,
+    "paragraphs": 2,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-09",
+    "originalSHA256": "e55a5719a7bd9bc0f30feac230dba6927c8baca90ed5a5680301ae61e65a0391",
+    "editedSHA256": "c1d684d3da96885f6c43f154793c8d89c761fad2a89fd7d23b4ec1258fee6017",
+    "sourceCharacters": 833,
+    "editedCharacters": 382,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-10",
+    "originalSHA256": "6290a1390c1e4e7ee68a561b205e96b580f22d82a9163cc511ac4884be72d9d3",
+    "editedSHA256": "ff4db1ee82a1c400fa7dd41f7bbdefa5e9d80bab0bc2d10d6256beb13073f495",
+    "sourceCharacters": 1130,
+    "editedCharacters": 532,
+    "paragraphs": 4,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-11",
+    "originalSHA256": "f30dff9308c8ac61ad5263ae6dfee1f721162177d3e6d7be68b5a6d6aab4438b",
+    "editedSHA256": "b681dce75066be3107d5082ee9e33c2032a0d45e01cd341e81488924ef7c581e",
+    "sourceCharacters": 520,
+    "editedCharacters": 384,
+    "paragraphs": 3,
+    "reviewFlags": []
+  },
+  {
+    "id": "galactic-12",
+    "originalSHA256": "e26f48be1008a039ca7e5e66058fe8ebd3d62925288b81cac8f085d3425d64b3",
+    "editedSHA256": "428fb627124f52e69c1b31293c16c57380d9e556c127b05c8624972cae1e4a47",
+    "sourceCharacters": 939,
+    "editedCharacters": 495,
+    "paragraphs": 3,
+    "reviewFlags": []
+  }
+]

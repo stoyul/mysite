@@ -24,8 +24,9 @@ export function analyze(q,intents,override=null){
  intents.forEach((c,i)=>{if((RULES[i]?.test(norm))||(c.queryPattern&&new RegExp(c.queryPattern,'i').test(norm)))strengths.set(c.id,1)});
  const processes=SCENARIOS.filter(s=>s.when.test(norm));
  for(const scenario of processes){for(const n of scenario.primary)strengths.set(`intent-${String(n).padStart(2,'0')}`,1);for(const n of scenario.extra){const id=`intent-${String(n).padStart(2,'0')}`;if(!strengths.has(id))strengths.set(id,.35)}}
- if(/любовь к себе|полюбить себя|принять себя/.test(norm)&&!/отношен|партнер|супруг/.test(norm))for(const n of [12,13,17])strengths.delete(`intent-${String(n).padStart(2,'0')}`);
+ if(/любовь к себе|полюбить себя|принять себя/.test(norm)&&!/отношен|партнер|супруг/.test(norm))for(const n of [12,13,17,75])strengths.delete(`intent-${String(n).padStart(2,'0')}`);
  if(/не (?:хочу|интересуют|нужны|про).{0,15}(?:деньг|доход|финанс)/.test(norm))for(const c of intents)if(c.category==='Деньги и материальная сфера')strengths.delete(c.id);
+ if(/безусловн|любов.{0,20}(жив|мир|всем|всему)/.test(norm)&&!/отношен|партнер|супруг/.test(norm))strengths.delete('intent-13');
  let themes=intents.filter(c=>strengths.has(c.id)).map(c=>({...c,weight:strengths.get(c.id),hits:[],strength:strengths.get(c.id)===1?'primary':'secondary'}));
  if(override!==null)themes=intents.filter(c=>override.includes(c.id)).map(c=>({...c,weight:strengths.get(c.id)||1,hits:[],strength:(strengths.get(c.id)||1)===1?'primary':'secondary'}));
  const expanded=expand(q)+' '+themes.map(t=>t.queryText).join(' ');
@@ -35,13 +36,15 @@ export function vectorize(q,model){const words=tokens(expand(q)),count=new Map()
 export function rank(q,symbols,intents,model,civilization='Все',override=null){
  const analysis=analyze(q,intents,override),v=vectorize(analysis.expanded,model),byId=new Map(model.ids.map((id,i)=>[id,i]));const total=analysis.themes.reduce((x,t)=>x+t.weight,0)||1;
  if(override!==null&&!override.length)return {...analysis,results:[]};
+ const queryWords=[...new Set(tokens(q))],knownFraction=queryWords.filter(w=>model.vocabulary.includes(w)).length/(queryWords.length||1);
+ const hasSearchContext=analysis.themes.length>0||knownFraction>=.5;
  const rare=new Set(tokens(q).filter(w=>{let i=model.vocabulary.indexOf(w);return w.length>=5&&i>=0&&model.idf[i]>3.6}));
  const rows=symbols.filter(s=>civilization==='Все'||s.civilization===civilization||s.system===civilization).map(s=>{
  const matched=analysis.themes.filter(t=>s.intentEvidence[t.id]).sort((a,b)=>b.weight-a.weight);let coverage=matched.reduce((x,t)=>x+t.weight,0)/total;let semantic=model.vectors[byId.get(s.id)].reduce((x,n,i)=>x+n*v[i],0);let exact=q.trim().length>3&&s.name.toLowerCase().includes(q.trim().toLowerCase());let score=coverage*.72+Math.max(0,semantic)*.28+(exact?.5:0);
- const source=s.fullDescription||s.searchSemanticText||'';let sourceTokens=new Set(tokens(source));let rareHits=[...rare].filter(w=>sourceTokens.has(w));let rareMatch=rareHits.length>=1&&semantic>.12;let sourceEvidence=rareMatch?source.split(/(?<=[.!?])\s+/).find(p=>tokens(p).some(w=>rareHits.includes(w))):null;
+ const source=s.fullDescription||s.searchSemanticText||'';let sourceTokens=new Set(tokens(source));let rareHits=[...rare].filter(w=>sourceTokens.has(w));let rareMatch=hasSearchContext&&rareHits.length>=1&&semantic>.12;let sourceEvidence=rareMatch?source.split(/(?<=[.!?])\s+/).find(p=>tokens(p).some(w=>rareHits.includes(w))):null;
  if(rareMatch)score+=.36;
  return {...s,score,semantic,matched,coverage,evidence:matched.length?s.intentEvidence[matched[0].id]:sourceEvidence,exact,rareMatch};
- }).filter(s=>s.exact||s.rareMatch||(s.matched.length&&s.score>=.19&&s.semantic>=.02)||(!analysis.themes.length&&s.semantic>=.6));
+ }).filter(s=>s.exact||s.rareMatch||(s.matched.length&&s.score>=.19&&s.semantic>=.02)||(!analysis.themes.length&&hasSearchContext&&s.semantic>=.6));
  rows.sort((a,b)=>b.score-a.score);let best=rows[0]?.score||0;const relevant=rows.filter(s=>s.exact||s.score>=Math.max(.20,best*.42));
  return {...analysis,results:relevant.map(s=>({...s,tier:s.exact||s.score>=best*.79?'primary':'secondary'}))};
 }

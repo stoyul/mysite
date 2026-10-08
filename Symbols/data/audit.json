@@ -2,661 +2,925 @@
   {
     "file": "руны лемурии/руны лемурии.001.jpeg",
     "symbol": "lemuria-01",
-    "sha256": "ae45ee58585ea6d4f48c1a6a02e015e62793c4cf90c1a2d4353000e728b1b9e9"
+    "sha256": "f273b1af39addac84dffd2b03a48f5262ef8ff6917ec4c038220b208a8618409",
+    "publishedOriginal": "assets/originals/lemuria-01-f273b1af39ad.jpeg",
+    "preview": "assets/web/lemuria-01-f273b1af39ad-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.002.jpeg",
     "symbol": "lemuria-02",
-    "sha256": "8a53a4193e58a888b71f8c290a4eedccbec765165f7f42d6c866b9ff3786f125"
+    "sha256": "7f83a3752242c0bc317a9bc1c43076059e72a2c9575f1e5cd1c0b7b0872dc094",
+    "publishedOriginal": "assets/originals/lemuria-02-7f83a3752242.jpeg",
+    "preview": "assets/web/lemuria-02-7f83a3752242-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.003.jpeg",
     "symbol": "lemuria-03",
-    "sha256": "c8c6c3691e09f66cba6022dc8162ae7804dae56e3c7d231d71989df97e30f75c"
+    "sha256": "cae63daf633169447b199af4322ed1186457360e952c879cd10ab09da0ad71fe",
+    "publishedOriginal": "assets/originals/lemuria-03-cae63daf6331.jpeg",
+    "preview": "assets/web/lemuria-03-cae63daf6331-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.004.jpeg",
     "symbol": "lemuria-04",
-    "sha256": "c57329b4d50a40d3fc2f2c289e8ddab60af9a02470add31555947160c5b26d55"
+    "sha256": "78efb02f4bc510c33455684fecc9b684733270b9494e66c353bc471e32976e86",
+    "publishedOriginal": "assets/originals/lemuria-04-78efb02f4bc5.jpeg",
+    "preview": "assets/web/lemuria-04-78efb02f4bc5-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.005.jpeg",
     "symbol": "lemuria-05",
-    "sha256": "e43898fa1a91ccaa79067d3146a73548863583141662c68f57131f89b17f1aba"
+    "sha256": "7d39095fe3dd96e6fdc390b361e28ddb36bf592079de23081662993f5d553dc2",
+    "publishedOriginal": "assets/originals/lemuria-05-7d39095fe3dd.jpeg",
+    "preview": "assets/web/lemuria-05-7d39095fe3dd-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.006.jpeg",
     "symbol": "lemuria-06",
-    "sha256": "e8345f37d6b4d9c3d5050bf316deab4f2c8a94ff66b7273a21e76372abc80c3a"
+    "sha256": "e270951b6bde4fbe64acf5dfdd2e154a21a1b433341453f378d9d69a3440bf5a",
+    "publishedOriginal": "assets/originals/lemuria-06-e270951b6bde.jpeg",
+    "preview": "assets/web/lemuria-06-e270951b6bde-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.007.jpeg",
     "symbol": "lemuria-07",
-    "sha256": "f7aa9ac72702797be74792ca5c0c7bec84a03ad4998a08ed98cf61b83f8b8604"
+    "sha256": "afc5b7734669f9b82dde0c2d69244b5323e8c160a0fa1062a25bac42c89af879",
+    "publishedOriginal": "assets/originals/lemuria-07-afc5b7734669.jpeg",
+    "preview": "assets/web/lemuria-07-afc5b7734669-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.008.jpeg",
     "symbol": "lemuria-08",
-    "sha256": "8c7472749d4eb9e85e2afb8f6bc68f472632d5244f8bec3abe70cd1c968afec0"
+    "sha256": "683676f8af2e75b5d11800dd272a75fad09d7175832c6c07447a15337c1280d5",
+    "publishedOriginal": "assets/originals/lemuria-08-683676f8af2e.jpeg",
+    "preview": "assets/web/lemuria-08-683676f8af2e-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.009.jpeg",
     "symbol": "lemuria-09",
-    "sha256": "c8400f7e571e148ab509e632d6effc88bebececa57ea002b4da670bcc1b91875"
+    "sha256": "f456c40472948d25530530a186d16dccd306a108b48fa67482c2e7960672052a",
+    "publishedOriginal": "assets/originals/lemuria-09-f456c4047294.jpeg",
+    "preview": "assets/web/lemuria-09-f456c4047294-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.010.jpeg",
     "symbol": "lemuria-10",
-    "sha256": "dfa0262f727cbcd7896c703243cd05a81ea3344f1e9a9bca17492949c1720b96"
+    "sha256": "e133b931d5abedf2d94af81faaac7054ccd1187908141d19a11e1ae26f04f8e8",
+    "publishedOriginal": "assets/originals/lemuria-10-e133b931d5ab.jpeg",
+    "preview": "assets/web/lemuria-10-e133b931d5ab-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.011.jpeg",
     "symbol": "lemuria-11",
-    "sha256": "03eab61fc123100b28c663e8f43dfd4a727412026c4270e633ee8026d02466bf"
+    "sha256": "23d36f65556231d4a3065787c6f809a56d4acca809ce4d632721663cdcb2a921",
+    "publishedOriginal": "assets/originals/lemuria-11-23d36f655562.jpeg",
+    "preview": "assets/web/lemuria-11-23d36f655562-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.012.jpeg",
     "symbol": "lemuria-12",
-    "sha256": "f3871dd6f9a79a5b883885041fbe6af4ab1fffcddbb2e5c3410495d6ed8e0e39"
+    "sha256": "cd955a43e64cbb5ab23fd8ebcda79aa05ec3dc6ca9af21c0c2ba6a3f5fca6e56",
+    "publishedOriginal": "assets/originals/lemuria-12-cd955a43e64c.jpeg",
+    "preview": "assets/web/lemuria-12-cd955a43e64c-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.013.jpeg",
     "symbol": "lemuria-13",
-    "sha256": "85b5d6c812c21d51cfcddba7172ae44aedb464a621a3dc14d0c16618efd9b9ff"
+    "sha256": "d93868ed008d0c171e6b0373aa6dad895672580fa8e677ede48085ba5b07f57f",
+    "publishedOriginal": "assets/originals/lemuria-13-d93868ed008d.jpeg",
+    "preview": "assets/web/lemuria-13-d93868ed008d-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.014.jpeg",
     "symbol": "lemuria-14",
-    "sha256": "bfc340d51e313911f0795764f05b455a8a100953b1d03d605f33571383ec1f9a"
+    "sha256": "fbf33ce9f5955f473ce95f0e5e2ebbe5d3f56029691fa1d1d79f8878433ef8c1",
+    "publishedOriginal": "assets/originals/lemuria-14-fbf33ce9f595.jpeg",
+    "preview": "assets/web/lemuria-14-fbf33ce9f595-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.015.jpeg",
     "symbol": "lemuria-15",
-    "sha256": "b9374e4243a5f0aa8c3a9cb2d890df3198689a8f754b8dc53a43dc13da1466ec"
+    "sha256": "f833a5d91082314a0dcf2dd8674ab41fd74a993fc99a1b5f06aa233f719ef347",
+    "publishedOriginal": "assets/originals/lemuria-15-f833a5d91082.jpeg",
+    "preview": "assets/web/lemuria-15-f833a5d91082-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.016.jpeg",
     "symbol": "lemuria-16",
-    "sha256": "cfcf43071a9595ff1292f5cd3ad23b05c2fde76159c2f274ad6d7cc91713068b"
+    "sha256": "17d5562adee9af79e35b195a5c9ee9ae603c1bc19d88d7524291f14f76d55d6b",
+    "publishedOriginal": "assets/originals/lemuria-16-17d5562adee9.jpeg",
+    "preview": "assets/web/lemuria-16-17d5562adee9-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.017.jpeg",
     "symbol": "lemuria-17",
-    "sha256": "31437d04a5ca6ff23aaf246bd415b5875c99912101dbdf851eb1b08587795325"
+    "sha256": "744c1033aeb395c11b955797cbdffc616b3feecfcaa271bdb5b5a7fff16bd3ae",
+    "publishedOriginal": "assets/originals/lemuria-17-744c1033aeb3.jpeg",
+    "preview": "assets/web/lemuria-17-744c1033aeb3-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.018.jpeg",
     "symbol": "lemuria-18",
-    "sha256": "ce65bb736f8e39dd3098a3afe9440f6ac49d5b03aac8c71da594387dcd5b02cb"
+    "sha256": "c2063ee0b11cd564e484c128263ed995fed3f7dc81d8a4b8a8b450f6150db6e6",
+    "publishedOriginal": "assets/originals/lemuria-18-c2063ee0b11c.jpeg",
+    "preview": "assets/web/lemuria-18-c2063ee0b11c-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.019.jpeg",
     "symbol": "lemuria-19",
-    "sha256": "693be907ac76ceaf8b214e27564d3ec55dbaafd32ed4c3132565033ae6b50818"
+    "sha256": "0617c11e96742eb373633e1ee9c410b6b82c224139fdb667151856f48af0cd44",
+    "publishedOriginal": "assets/originals/lemuria-19-0617c11e9674.jpeg",
+    "preview": "assets/web/lemuria-19-0617c11e9674-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.020.jpeg",
     "symbol": "lemuria-20",
-    "sha256": "297f3b166330df2b51806cdb64b0572dd119eaa1b4dd578f3a304523a7224355"
+    "sha256": "789b40e48feabd2a9e837ea6ce1365765911b50d6498727436cfae9773d80e37",
+    "publishedOriginal": "assets/originals/lemuria-20-789b40e48fea.jpeg",
+    "preview": "assets/web/lemuria-20-789b40e48fea-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.021.jpeg",
     "symbol": "lemuria-21",
-    "sha256": "b3e31332ca81dc7b20cc2e613d2db9fd1947ab7202e521618c9582a0d7f29881"
+    "sha256": "9f1f81db4b399f1cb17148e0c98bf2b16e09ea203056c26176994aa3c565fee9",
+    "publishedOriginal": "assets/originals/lemuria-21-9f1f81db4b39.jpeg",
+    "preview": "assets/web/lemuria-21-9f1f81db4b39-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.022.jpeg",
     "symbol": "lemuria-22",
-    "sha256": "6039977973d2a049ecf22cca672012481338622c336e160db35b14800aa53b17"
+    "sha256": "049dc9909e1146f01d53fcd9af185a6b8272efdaff91704ae8ce2c13c49a61d9",
+    "publishedOriginal": "assets/originals/lemuria-22-049dc9909e11.jpeg",
+    "preview": "assets/web/lemuria-22-049dc9909e11-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.023.jpeg",
     "symbol": "lemuria-23",
-    "sha256": "45bc98039a8cc89b714d7f0fe43ddb97122185c0cecd7d572cc38a2ca7eb9cfc"
+    "sha256": "040a6441a9e53a76292bf28ffba2244c6533e9340d9f532ca4d9c370ac8748fb",
+    "publishedOriginal": "assets/originals/lemuria-23-040a6441a9e5.jpeg",
+    "preview": "assets/web/lemuria-23-040a6441a9e5-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.024.jpeg",
     "symbol": "lemuria-24",
-    "sha256": "f969cd3968754368b37df81c5dc8cc00e1c206c9eacf2a689b1e48f0f51ec32f"
+    "sha256": "11dc741c1dcf11044c27516145f1108595d00db5890d11b818c8584cf0990045",
+    "publishedOriginal": "assets/originals/lemuria-24-11dc741c1dcf.jpeg",
+    "preview": "assets/web/lemuria-24-11dc741c1dcf-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.025.jpeg",
     "symbol": "lemuria-25",
-    "sha256": "4e02c6e8edb01259188ff7fa2fd85e0dee8a26e1bf965083100a1d3539bb8616"
+    "sha256": "193ec839ce37db998a3f61294221ad64e7d05c41a6404fe5d8ca9414797d1b89",
+    "publishedOriginal": "assets/originals/lemuria-25-193ec839ce37.jpeg",
+    "preview": "assets/web/lemuria-25-193ec839ce37-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.026.jpeg",
     "symbol": "lemuria-26",
-    "sha256": "312fed3ad8b04eac96c4f2acd266434adfd5ef197b4e4e1699a2709bf673b95c"
+    "sha256": "b2a44ff4aaf9e5a7c21ec26b425b2c03b63670c380f386f615b13b8e09150667",
+    "publishedOriginal": "assets/originals/lemuria-26-b2a44ff4aaf9.jpeg",
+    "preview": "assets/web/lemuria-26-b2a44ff4aaf9-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.027.jpeg",
     "symbol": "lemuria-27",
-    "sha256": "ee240afc39ff58a4fd85f87fb8426d4a54e97685042b869856e5edd388ae22a4"
+    "sha256": "3881161d39038af5c384c00255cf742c70430f496cb488e8ed79a15315a773b7",
+    "publishedOriginal": "assets/originals/lemuria-27-3881161d3903.jpeg",
+    "preview": "assets/web/lemuria-27-3881161d3903-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.028.jpeg",
     "symbol": "lemuria-28",
-    "sha256": "4a4e00b812687d6c679da3571cd1a211fd20a64ccc8c5c1964f30761fe821568"
+    "sha256": "fdac39f20a608b494cf98e1d3331c69f1fbc75bbfb76eb72190ee1636b6b5e9d",
+    "publishedOriginal": "assets/originals/lemuria-28-fdac39f20a60.jpeg",
+    "preview": "assets/web/lemuria-28-fdac39f20a60-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.029.jpeg",
     "symbol": "lemuria-29",
-    "sha256": "1aeb044739bbd97966354214c179b59912be5cfe864efce0fc69de67e1cac7bb"
+    "sha256": "478fb60ddc97f71273c24936571aa6110be6a62820bab4b34971d2048add969a",
+    "publishedOriginal": "assets/originals/lemuria-29-478fb60ddc97.jpeg",
+    "preview": "assets/web/lemuria-29-478fb60ddc97-340.webp"
   },
   {
     "file": "руны лемурии/руны лемурии.030.jpeg",
     "symbol": "lemuria-30",
-    "sha256": "c8d73a87d3d76c2756a786221dfd8cb79ac3b31b62440448be609298bf66b328"
+    "sha256": "ab4cf63416f75fb7097e959d6adbec6b8f4cc4437893b65d8c73e55f2c7baf8e",
+    "publishedOriginal": "assets/originals/lemuria-30-ab4cf63416f7.jpeg",
+    "preview": "assets/web/lemuria-30-ab4cf63416f7-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.005.jpeg",
     "symbol": "hyperborea-01",
-    "sha256": "18328f7305cf4d5e6e4633d5af8cc8d02896922f058dadf9bc7eb1d5128821ac"
+    "sha256": "b02282e08600b90d794644c13066f0c4794afc46261d01fbcbc9012111ad66fa",
+    "publishedOriginal": "assets/originals/hyperborea-01-b02282e08600.jpeg",
+    "preview": "assets/web/hyperborea-01-b02282e08600-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.006.jpeg",
     "symbol": "hyperborea-02",
-    "sha256": "64ef493d1d57fd02c99408b3c808592b6bc77fed34abea8e109c8433c02e81f8"
+    "sha256": "2eb0dabbe1b70c9a686a8056cc149febc1fcd1a74c644085a0442bd0f58b5214",
+    "publishedOriginal": "assets/originals/hyperborea-02-2eb0dabbe1b7.jpeg",
+    "preview": "assets/web/hyperborea-02-2eb0dabbe1b7-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.007.jpeg",
     "symbol": "hyperborea-03",
-    "sha256": "19f1dd59db8a724d54c718b0e46549b9a4e563ffb546c7344d382d38b4b884ff"
+    "sha256": "e32025562780916dea87f1e1f8bc404fa1bfe0fb4585af80324f3fb83bae2db1",
+    "publishedOriginal": "assets/originals/hyperborea-03-e32025562780.jpeg",
+    "preview": "assets/web/hyperborea-03-e32025562780-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.008.jpeg",
     "symbol": "hyperborea-04",
-    "sha256": "e39fb5344088432d917dfea492eb32bff8c4388a3743f4ef225fa4f3cf262aa8"
+    "sha256": "ae609b25cb3c119076694acf96eb639fe9ec7847912c8c81b1823203706098bc",
+    "publishedOriginal": "assets/originals/hyperborea-04-ae609b25cb3c.jpeg",
+    "preview": "assets/web/hyperborea-04-ae609b25cb3c-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.009.jpeg",
     "symbol": "hyperborea-05",
-    "sha256": "0f0a313eb1221a247b087619c7bfce7365f5e1d5aca2b766cf7683933a5d4b7b"
+    "sha256": "084e9deb1162ba9af51ee5a8d2918cd03c001e409b2de11b3413cec3395b6a88",
+    "publishedOriginal": "assets/originals/hyperborea-05-084e9deb1162.jpeg",
+    "preview": "assets/web/hyperborea-05-084e9deb1162-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.010.jpeg",
     "symbol": "hyperborea-06",
-    "sha256": "dd424f9c0f3c104e03b91e36dfbaab54ab06ca0027c8054afd2dcca7535ac9aa"
+    "sha256": "b66245295c4ccd0ce705945b030c4e3a14465e1b2068edd205ff3b135d022383",
+    "publishedOriginal": "assets/originals/hyperborea-06-b66245295c4c.jpeg",
+    "preview": "assets/web/hyperborea-06-b66245295c4c-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.011.jpeg",
     "symbol": "hyperborea-07",
-    "sha256": "a7d1323a19cdfaa68daf610008863ac31733fec55fa4b40283ab82665d49965e"
+    "sha256": "28a312028a6d4a238f7c1059889476835a3a6dc80900f349b529ebfa3b83734d",
+    "publishedOriginal": "assets/originals/hyperborea-07-28a312028a6d.jpeg",
+    "preview": "assets/web/hyperborea-07-28a312028a6d-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.012.jpeg",
     "symbol": "hyperborea-08",
-    "sha256": "7d242950e132a927e26ea9875c5dc88d9eefde6eb973c4049847fe448d4e869b"
+    "sha256": "334eedf3e89ca3910d2d956a36fd5f4505028598c7bf74e27d3401e9ecc50872",
+    "publishedOriginal": "assets/originals/hyperborea-08-334eedf3e89c.jpeg",
+    "preview": "assets/web/hyperborea-08-334eedf3e89c-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.013.jpeg",
     "symbol": "hyperborea-09",
-    "sha256": "9cde4485ce8d6571bccb123005f5de7b66d52b9efd7784d3386ce501c5a9b9a0"
+    "sha256": "bf8c3fc70d9875569124a2098b89a5cc8a27bc5e278b060b56ee8a204401f3a0",
+    "publishedOriginal": "assets/originals/hyperborea-09-bf8c3fc70d98.jpeg",
+    "preview": "assets/web/hyperborea-09-bf8c3fc70d98-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.014.jpeg",
     "symbol": "hyperborea-10",
-    "sha256": "f8a1dfe0c6f6dfd6dda94b81aa8355d0294b5ddd74ceed525a8214aa8492c64a"
+    "sha256": "33b661a59dbbfe5921f47ceb163b8c653c6babca899189f3bf0f3bd98676a4b5",
+    "publishedOriginal": "assets/originals/hyperborea-10-33b661a59dbb.jpeg",
+    "preview": "assets/web/hyperborea-10-33b661a59dbb-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.015.jpeg",
     "symbol": "hyperborea-11",
-    "sha256": "8bae1126cd51c8dfd3e514e40ed595990bce279b183f3de4870d0dc5b63260e2"
+    "sha256": "f314fd3a4603aeb2967a6f8f171ccc70f423230e45ada8aa31af1f6856d0631f",
+    "publishedOriginal": "assets/originals/hyperborea-11-f314fd3a4603.jpeg",
+    "preview": "assets/web/hyperborea-11-f314fd3a4603-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.016.jpeg",
     "symbol": "hyperborea-12",
-    "sha256": "9ed098d3c9572e749fa93e0a083e04629ef2a51fd895a5191af499cbb83ae130"
+    "sha256": "0f3d3980d970a5b142ef64a1ce1386d43204b6ef2d773d9fad1b04be4feca588",
+    "publishedOriginal": "assets/originals/hyperborea-12-0f3d3980d970.jpeg",
+    "preview": "assets/web/hyperborea-12-0f3d3980d970-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.017.jpeg",
     "symbol": "hyperborea-13",
-    "sha256": "06639cd5823a45e7cc1dc7052b6a45c9e32bc5ce16cae3f60cf068de5e2a0f0f"
+    "sha256": "51e6a0a538bd38f26c241f561bd42f49238bc01cdeb550ce194220b0b4e64763",
+    "publishedOriginal": "assets/originals/hyperborea-13-51e6a0a538bd.jpeg",
+    "preview": "assets/web/hyperborea-13-51e6a0a538bd-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.018.jpeg",
     "symbol": "hyperborea-14",
-    "sha256": "0c168eca54cdbb018040ab6ae48865e677e2cd56fbca6e7ed221718fc37c0e22"
+    "sha256": "6baf8abadcb8fbf9bf4b115c2626fd2945c0dad11e5c12165e18e0c8ce0db626",
+    "publishedOriginal": "assets/originals/hyperborea-14-6baf8abadcb8.jpeg",
+    "preview": "assets/web/hyperborea-14-6baf8abadcb8-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.019.jpeg",
     "symbol": "hyperborea-15",
-    "sha256": "a67e514778f69f7ae05cb1d70091ec38bfde9a5418422c0c4cb5f724faf13826"
+    "sha256": "d953cc7a6d4480741e9496f96c59c8c9c6a36744a227c1efadb5d2a3193b16b8",
+    "publishedOriginal": "assets/originals/hyperborea-15-d953cc7a6d44.jpeg",
+    "preview": "assets/web/hyperborea-15-d953cc7a6d44-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.020.jpeg",
     "symbol": "hyperborea-16",
-    "sha256": "7b1b8c6159462bef2e3fdf0f3012723f10feea9c8510663e6b0c1f572bff240d"
+    "sha256": "5c62768050c07084de971c643f2b1bce378fddd805641beb4a8233e60e8dde37",
+    "publishedOriginal": "assets/originals/hyperborea-16-5c62768050c0.jpeg",
+    "preview": "assets/web/hyperborea-16-5c62768050c0-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.021.jpeg",
     "symbol": "hyperborea-17",
-    "sha256": "3db85cb9d00f46484972db0f428c4254d6f3e9f01c01050e91f3d31a1433100e"
+    "sha256": "9aa1d496337c30a8c29aeb5c43899912c7a3d2981669606271c8a5f60933b8be",
+    "publishedOriginal": "assets/originals/hyperborea-17-9aa1d496337c.jpeg",
+    "preview": "assets/web/hyperborea-17-9aa1d496337c-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.022.jpeg",
     "symbol": "hyperborea-18",
-    "sha256": "ab0ad099afd064437295b36dd469f0b6554289f8af5ea39d575dadf8e9b48445"
+    "sha256": "6df02ae80e0023295e9ad476390503b425d855882949ff608d53c12a77e688c5",
+    "publishedOriginal": "assets/originals/hyperborea-18-6df02ae80e00.jpeg",
+    "preview": "assets/web/hyperborea-18-6df02ae80e00-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.023.jpeg",
     "symbol": "hyperborea-19",
-    "sha256": "c8bf41f121d74a9c6eb82f26d43e1b7704d610fa4d753a0b5a241cc036e703f8"
+    "sha256": "f036195240d3ea8da55d0e59601595a95c996e2987d0c25717f3aae0c3980964",
+    "publishedOriginal": "assets/originals/hyperborea-19-f036195240d3.jpeg",
+    "preview": "assets/web/hyperborea-19-f036195240d3-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.024.jpeg",
     "symbol": "hyperborea-20",
-    "sha256": "eb971a6b9bdd22fc56c32d136d9172b16823ff13fc63121c04b6d89b56cf3bf3"
+    "sha256": "d6c3f9813d093580df69e73ff3cc711e71e742e577a19f1e3a0a46520895d1ce",
+    "publishedOriginal": "assets/originals/hyperborea-20-d6c3f9813d09.jpeg",
+    "preview": "assets/web/hyperborea-20-d6c3f9813d09-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.025.jpeg",
     "symbol": "hyperborea-21",
-    "sha256": "384aa675d2b16ff3798eea1191044aa808c392d06c1174075f81c9b3ecdb064e"
+    "sha256": "3bce9ad32a1804cad302ed8014b6f9a7d6398ac9ae30ce8293036cc98213de07",
+    "publishedOriginal": "assets/originals/hyperborea-21-3bce9ad32a18.jpeg",
+    "preview": "assets/web/hyperborea-21-3bce9ad32a18-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.026.jpeg",
     "symbol": "hyperborea-22",
-    "sha256": "696691f6023083615820a7a23866d13989909b9513935b597d9b4073c5872e99"
+    "sha256": "dda3d11d812b5f33b0cecb685854a8bffd414862790012f08ce35638248d2838",
+    "publishedOriginal": "assets/originals/hyperborea-22-dda3d11d812b.jpeg",
+    "preview": "assets/web/hyperborea-22-dda3d11d812b-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.027.jpeg",
     "symbol": "hyperborea-23",
-    "sha256": "a6994af8bf072b657ed8c5799a5b18d645277272a75d4f6a4139c38dae69209e"
+    "sha256": "0103a394482a2b770e6b60d66e30e13f0bf3cb1698fb198277eb1a5be949817c",
+    "publishedOriginal": "assets/originals/hyperborea-23-0103a394482a.jpeg",
+    "preview": "assets/web/hyperborea-23-0103a394482a-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.028.jpeg",
     "symbol": "hyperborea-24",
-    "sha256": "b588a318324fab1166c306e435b9004c7cb32c2ac727b5b671c0f59d3e3dfe64"
+    "sha256": "07800521a478d0544e2a91ba36e50c4cb2dab1eaad8b5f733c93a48e3a753d5f",
+    "publishedOriginal": "assets/originals/hyperborea-24-07800521a478.jpeg",
+    "preview": "assets/web/hyperborea-24-07800521a478-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.029.jpeg",
     "symbol": "hyperborea-25",
-    "sha256": "3eea80bd545bc9501aa21936f0f38756e4668e4f6180a1007e009844625e87d2"
+    "sha256": "8d52874eaa71982e7b7ca3cb1c31cf106a4d802157fd7aed9bcfff91060fd4be",
+    "publishedOriginal": "assets/originals/hyperborea-25-8d52874eaa71.jpeg",
+    "preview": "assets/web/hyperborea-25-8d52874eaa71-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.030.jpeg",
     "symbol": "hyperborea-26",
-    "sha256": "fd56b9b018962b4601d8ade74c1b2f05f30fc7bc1c5fdebcb6579425926d001d"
+    "sha256": "850e997ce405e5f6c4d14ea5af569cd4973848ad41112f49a1113e7afb7277f4",
+    "publishedOriginal": "assets/originals/hyperborea-26-850e997ce405.jpeg",
+    "preview": "assets/web/hyperborea-26-850e997ce405-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.031.jpeg",
     "symbol": "hyperborea-27",
-    "sha256": "dbd2838b696e360bbc8208d3a71ec7ad530ef4343b80b8dca459fde4d666349d"
+    "sha256": "0ac141529ddceec90192e75c6d4dc8e0a07882148f2a6a8e0ae3bb343dc415ce",
+    "publishedOriginal": "assets/originals/hyperborea-27-0ac141529ddc.jpeg",
+    "preview": "assets/web/hyperborea-27-0ac141529ddc-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.032.jpeg",
     "symbol": "hyperborea-28",
-    "sha256": "b10d807c8677d47cf010167480a6dd8af2dbe6728ebf6cc4d038042e254a8281"
+    "sha256": "fee3e6f88501b28b2b2b5c87c44c4a64e8d017e8600b224c9830a7a58546a4ab",
+    "publishedOriginal": "assets/originals/hyperborea-28-fee3e6f88501.jpeg",
+    "preview": "assets/web/hyperborea-28-fee3e6f88501-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.033.jpeg",
     "symbol": "hyperborea-29",
-    "sha256": "0193f08c4749dcc6b760b4078d7e94a4bd66bf897c5b3c9b2533d3e0cefaf5c9"
+    "sha256": "90cf244fa06af112bccfce822c5d962c0f749eb4de66e23825bf2783a7c523f3",
+    "publishedOriginal": "assets/originals/hyperborea-29-90cf244fa06a.jpeg",
+    "preview": "assets/web/hyperborea-29-90cf244fa06a-340.webp"
   },
   {
     "file": "Символы Гипербореи/Символы Гипербореи.034.jpeg",
     "symbol": "hyperborea-30",
-    "sha256": "f8070cf8cf58a4f99a0dec50bf341a1b51f6db7d96eda173f5fb07eace047f2b"
+    "sha256": "c7317bffb798a4501a878fa17fa3e2076835c18da382e97c1f7be044716e5512",
+    "publishedOriginal": "assets/originals/hyperborea-30-c7317bffb798.jpeg",
+    "preview": "assets/web/hyperborea-30-c7317bffb798-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.001.jpeg",
     "symbol": "atlantis-01",
-    "sha256": "b591d8d7feba34135d2f16be8d68848593014b9abe66c309bd3cfc2779a6041a"
+    "sha256": "077f7886366afea2dc3210cd3abf948594c4309d3acbec523d5a735f07800ff7",
+    "publishedOriginal": "assets/originals/atlantis-01-077f7886366a.jpeg",
+    "preview": "assets/web/atlantis-01-077f7886366a-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.002.jpeg",
     "symbol": "atlantis-02",
-    "sha256": "9657b508de72700c947970b5890447e8e468ca6b3d0d20bf1f9d6dc971fccb41"
+    "sha256": "2cd696d80a4cc95b34e0cdf92b28c98eb8007cd6e02abb0dc0ff7f257e324088",
+    "publishedOriginal": "assets/originals/atlantis-02-2cd696d80a4c.jpeg",
+    "preview": "assets/web/atlantis-02-2cd696d80a4c-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.003.jpeg",
     "symbol": "atlantis-03",
-    "sha256": "610f4b2090b2c7d4f6193a0ee18329c853d26e53166853cebb46db2dc90844ab"
+    "sha256": "1448543b12648385504bfe63fdd1d2550e6464166f63cd16117927fa67ffa158",
+    "publishedOriginal": "assets/originals/atlantis-03-1448543b1264.jpeg",
+    "preview": "assets/web/atlantis-03-1448543b1264-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.004.jpeg",
     "symbol": "atlantis-04",
-    "sha256": "0e430198fd718d7999e9039a5bd05e99cf1df02980f1851f8a88dc6654a3c89f"
+    "sha256": "672407e96c92926d1493ed16088e1ffd87c219608540e4e72b9250650f384ee7",
+    "publishedOriginal": "assets/originals/atlantis-04-672407e96c92.jpeg",
+    "preview": "assets/web/atlantis-04-672407e96c92-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.005.jpeg",
     "symbol": "atlantis-05",
-    "sha256": "c2b9d1ad26e1739129ccdaa7616c45f93042130e44f5e08957138bf561bd5697"
+    "sha256": "26701518255422fb5a4e59c8e0309e324126e1d990843b301e46459597186593",
+    "publishedOriginal": "assets/originals/atlantis-05-267015182554.jpeg",
+    "preview": "assets/web/atlantis-05-267015182554-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.006.jpeg",
     "symbol": "atlantis-06",
-    "sha256": "8502ba4f3262a563a0123d231d8a7b968aa0099bb7a9cb86ed2de31392a365ad"
+    "sha256": "88221540b26ff477bd7992cdcc31fa6d597d8e95dc53607ebecb30619f090db8",
+    "publishedOriginal": "assets/originals/atlantis-06-88221540b26f.jpeg",
+    "preview": "assets/web/atlantis-06-88221540b26f-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.007.jpeg",
     "symbol": "atlantis-07",
-    "sha256": "914fe2294ebc0045d8608bd9cfec8906be5cb7b0d7d8ab0c341b388e54c34f6f"
+    "sha256": "826df2133a1b681e8ab6cc507ca9654b38c07e20e8a530af6b754efa387e32ce",
+    "publishedOriginal": "assets/originals/atlantis-07-826df2133a1b.jpeg",
+    "preview": "assets/web/atlantis-07-826df2133a1b-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.008.jpeg",
     "symbol": "atlantis-08",
-    "sha256": "14fa5bd343a3e3b7840679132d3b849eccbe0ea20a0b99d62da98b9094c3d0d5"
+    "sha256": "34ac9d28af7fb9ba230f1d230a7fec57fd4e9549f95b34d183a569e8ba7ad048",
+    "publishedOriginal": "assets/originals/atlantis-08-34ac9d28af7f.jpeg",
+    "preview": "assets/web/atlantis-08-34ac9d28af7f-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.009.jpeg",
     "symbol": "atlantis-09",
-    "sha256": "26ffd9b32b00ffc31c5122c776b511c128d249a40e73ca87986a1cd38d133427"
+    "sha256": "f93d9b7ae52436d1804b4e7c3b87b8445403839c1edcadbb7a04216454c83aeb",
+    "publishedOriginal": "assets/originals/atlantis-09-f93d9b7ae524.jpeg",
+    "preview": "assets/web/atlantis-09-f93d9b7ae524-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.010.jpeg",
     "symbol": "atlantis-10",
-    "sha256": "fea8b7cb3773aeb5c3af03d8b963465e3759c4de0bc4606d0329b9f87f58fb15"
+    "sha256": "5a03397a3ae33d7ead5d9acfda919f59a1511cf64d8ab2125574f9630f7dca83",
+    "publishedOriginal": "assets/originals/atlantis-10-5a03397a3ae3.jpeg",
+    "preview": "assets/web/atlantis-10-5a03397a3ae3-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.011.jpeg",
     "symbol": "atlantis-11",
-    "sha256": "43db251e3b3701eddb387248cde5d7fab55ee09d14a268dc24576e88d0f852bf"
+    "sha256": "79127b641a3993e685e02b1e415424a5399ddac6b392a1b28c0e64b3dea1f8cd",
+    "publishedOriginal": "assets/originals/atlantis-11-79127b641a39.jpeg",
+    "preview": "assets/web/atlantis-11-79127b641a39-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.012.jpeg",
     "symbol": "atlantis-12",
-    "sha256": "0d0cc96139d5ae6996cb81393a3fabeca470add2bce01fbe850dcdcf0d6d3542"
+    "sha256": "0bb2733c80acae7a129716b3261899d9c7b6a1076d74ee5411cc62c19a0e8413",
+    "publishedOriginal": "assets/originals/atlantis-12-0bb2733c80ac.jpeg",
+    "preview": "assets/web/atlantis-12-0bb2733c80ac-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.013.jpeg",
     "symbol": "atlantis-13",
-    "sha256": "c4c9d9cf08cc68d4777bee45abe3ada0e55e361f57ad072f14cd12f0ef0724ee"
+    "sha256": "b38aae87daf13624f3522bc754f55c2c28ade842ad9b52dd70abb71d86ee697d",
+    "publishedOriginal": "assets/originals/atlantis-13-b38aae87daf1.jpeg",
+    "preview": "assets/web/atlantis-13-b38aae87daf1-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.014.jpeg",
     "symbol": "atlantis-14",
-    "sha256": "b6d2b243bac5b84b388f089189fee975a35ff16b80b2c01cd057f29c4f9a4885"
+    "sha256": "07e55f7b8e09da752c1c8cd0ce2cb79d473a470817054e5df32bc49b4c88f429",
+    "publishedOriginal": "assets/originals/atlantis-14-07e55f7b8e09.jpeg",
+    "preview": "assets/web/atlantis-14-07e55f7b8e09-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.015.jpeg",
     "symbol": "atlantis-15",
-    "sha256": "29844e1e4b91bc9c17f45b8cdb014cbd17059cbac277a377ab4f1fd62ee119ee"
+    "sha256": "b0366d6582b2869c4750f9db389ebaf5a2b4612947a7a48c788f6bd3f649a4c5",
+    "publishedOriginal": "assets/originals/atlantis-15-b0366d6582b2.jpeg",
+    "preview": "assets/web/atlantis-15-b0366d6582b2-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.016.jpeg",
     "symbol": "atlantis-16",
-    "sha256": "add1a2fbbae55fda82c0081564f98ed0669a07273f7c2f5fc028432b880d47be"
+    "sha256": "25e985abeb27e3fb93571c54539ed478d0ffe84dc6e6ac33f41614d40a4215d9",
+    "publishedOriginal": "assets/originals/atlantis-16-25e985abeb27.jpeg",
+    "preview": "assets/web/atlantis-16-25e985abeb27-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.017.jpeg",
     "symbol": "atlantis-17",
-    "sha256": "1af98e6296c4f581702d11f0fb72394e7e3e00b5d5c86e680892839b91693627"
+    "sha256": "b1215a0484e670d4ee8a2ca3333088c983d5ba4c1595b6dc5131f0c8e0672431",
+    "publishedOriginal": "assets/originals/atlantis-17-b1215a0484e6.jpeg",
+    "preview": "assets/web/atlantis-17-b1215a0484e6-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.018.jpeg",
     "symbol": "atlantis-18",
-    "sha256": "68f0ca3e11c53e26b4aff3867d289203963ee284813daa51499c91b82539f4cd"
+    "sha256": "31b6fef17c1f54d1db53fdd302837aceeb1d6214e6e4d7a8877959e0613b974f",
+    "publishedOriginal": "assets/originals/atlantis-18-31b6fef17c1f.jpeg",
+    "preview": "assets/web/atlantis-18-31b6fef17c1f-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.019.jpeg",
     "symbol": "atlantis-19",
-    "sha256": "3f76a5f4a4e6cd35a6f9b1e06a1d7c98d1a8615005e8f68486609931a312bd8f"
+    "sha256": "e258350f543bf8ac0267e9f722235f6b9ffcd6380e5acb22dcb903841cfad918",
+    "publishedOriginal": "assets/originals/atlantis-19-e258350f543b.jpeg",
+    "preview": "assets/web/atlantis-19-e258350f543b-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.020.jpeg",
     "symbol": "atlantis-20",
-    "sha256": "127aaaf47e1a40a3a2e7fca3499e91fb50eb953172b4a6dcfdc8e6703aaffdeb"
+    "sha256": "24075b526c1d25de8082e4c86805ef57db6607f3dbe9e4aeebf949516f256090",
+    "publishedOriginal": "assets/originals/atlantis-20-24075b526c1d.jpeg",
+    "preview": "assets/web/atlantis-20-24075b526c1d-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.021.jpeg",
     "symbol": "atlantis-21",
-    "sha256": "9778f4e2c9b2ca6aa6b21ed8eb7f5508c8fd5e7b4dba429b313661b4019c7d8b"
+    "sha256": "eb0253a6b1f0274e90cd986214016a8f96f118dccd5001c2d3e76af6d57b6a74",
+    "publishedOriginal": "assets/originals/atlantis-21-eb0253a6b1f0.jpeg",
+    "preview": "assets/web/atlantis-21-eb0253a6b1f0-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.022.jpeg",
     "symbol": "atlantis-22",
-    "sha256": "8b494e6198b8533a4e2ea380e43a28e864af0cdff7abd558e05f6b842507d367"
+    "sha256": "434a8183dd7a88402d397aacb48632728d7d6ad0e6f88952c2ad4c9362c84b52",
+    "publishedOriginal": "assets/originals/atlantis-22-434a8183dd7a.jpeg",
+    "preview": "assets/web/atlantis-22-434a8183dd7a-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.023.jpeg",
     "symbol": "atlantis-23",
-    "sha256": "3df2cabbea36c0c0305054a383446f1005e68d034c73fc3bb172585565298b4b"
+    "sha256": "3965e074c689d1ea3f95cde5c6ef916053e8fc3419424a93b8e399dbb77b1164",
+    "publishedOriginal": "assets/originals/atlantis-23-3965e074c689.jpeg",
+    "preview": "assets/web/atlantis-23-3965e074c689-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.024.jpeg",
     "symbol": "atlantis-24",
-    "sha256": "02ed2c3c0f9851decba659242d457620481e47ff6076d3cee9695496e7fde507"
+    "sha256": "8e322a272a28442248912f4f768bfa647a2425067fde8148a935f115f7fc07ea",
+    "publishedOriginal": "assets/originals/atlantis-24-8e322a272a28.jpeg",
+    "preview": "assets/web/atlantis-24-8e322a272a28-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.025.jpeg",
     "symbol": "atlantis-25",
-    "sha256": "2936001c4f4a40632acde51153edea72c3807487f70e4c215f3eec8fefeca4b4"
+    "sha256": "9161aa7f2b1331fdd27430233a07755c10a13b39f481f32f35a376c6d5ddb6c3",
+    "publishedOriginal": "assets/originals/atlantis-25-9161aa7f2b13.jpeg",
+    "preview": "assets/web/atlantis-25-9161aa7f2b13-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.026.jpeg",
     "symbol": "atlantis-26",
-    "sha256": "3216ae21a6a0b06cf5e4d4d92c516d78fbe5680d7341aae1438eec1e864d2b83"
+    "sha256": "87c1aaeef2ed8e0ea5e5dbe925aa903c3dca1c9b7bd60bab5fa192d7182fdf79",
+    "publishedOriginal": "assets/originals/atlantis-26-87c1aaeef2ed.jpeg",
+    "preview": "assets/web/atlantis-26-87c1aaeef2ed-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.027.jpeg",
     "symbol": "atlantis-27",
-    "sha256": "ff2596d00ccab54eb5bc2973f8c194b09adf6966e2ac4c78a03845f135257e24"
+    "sha256": "d3bfad9959535bc62138a2552a0aebbe93f0124e803dc5cfa56a3ba45f8a5229",
+    "publishedOriginal": "assets/originals/atlantis-27-d3bfad995953.jpeg",
+    "preview": "assets/web/atlantis-27-d3bfad995953-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.028.jpeg",
     "symbol": "atlantis-28",
-    "sha256": "c9c935f46017fed544b7cb781cd3cbfac7ccea9564902368e32d9d98d556e480"
+    "sha256": "f5d7e1e73834b11b002ad3826b44efad3cffe1775bcf6b9a093e8c485419589a",
+    "publishedOriginal": "assets/originals/atlantis-28-f5d7e1e73834.jpeg",
+    "preview": "assets/web/atlantis-28-f5d7e1e73834-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.029.jpeg",
     "symbol": "atlantis-29",
-    "sha256": "5866576649d46a0071535eac7ca258911f98697014731aca549a91d5c7ea1791"
+    "sha256": "38611e55c851d40faa772056c40967a3a44d4cd16894207a8fc6954c9ff7e989",
+    "publishedOriginal": "assets/originals/atlantis-29-38611e55c851.jpeg",
+    "preview": "assets/web/atlantis-29-38611e55c851-340.webp"
   },
   {
     "file": "Руны атлантиды/Руны атлантиды.030.jpeg",
     "symbol": "atlantis-30",
-    "sha256": "65fc522862a34fcf2fe0ba9fb5fff618f8ce99879aa0c72545ddae90c4282449"
+    "sha256": "32ed85138594f11fd5449ed2ef27016ee7c8b10205a11889db7f703c51d3d7fa",
+    "publishedOriginal": "assets/originals/atlantis-30-32ed85138594.jpeg",
+    "preview": "assets/web/atlantis-30-32ed85138594-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.001.jpeg",
     "symbol": "sirius-01",
-    "sha256": "9e8fb3047edbbf7aa1d703a4f904359d5d33b2e52764eea2a575c6f2bcd7be96"
+    "sha256": "fff387fa6695d4fa330c8bdcec78cedf9faf1e46fb3d289def833aa3769211ce",
+    "publishedOriginal": "assets/originals/sirius-01-fff387fa6695.jpeg",
+    "preview": "assets/web/sirius-01-fff387fa6695-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.002.jpeg",
     "symbol": "sirius-02",
-    "sha256": "028adc12164b31d58afb96da353bea858fee2807a9d8581e046f6872b65a9aea"
+    "sha256": "b4c2edc8fa8bb655a2b8138ecfd60899a21b8249e6664d8be287f3a5ac0c045e",
+    "publishedOriginal": "assets/originals/sirius-02-b4c2edc8fa8b.jpeg",
+    "preview": "assets/web/sirius-02-b4c2edc8fa8b-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.003.jpeg",
     "symbol": "sirius-03",
-    "sha256": "21b1c78e78b3f654fe0d2c939cd899ae66ae48a849d61604d1d33a513628f967"
+    "sha256": "99adcb6d7aede27d8b30570781e3309bc99937d27c4ef91d37abd1e9c41ce408",
+    "publishedOriginal": "assets/originals/sirius-03-99adcb6d7aed.jpeg",
+    "preview": "assets/web/sirius-03-99adcb6d7aed-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.004.jpeg",
     "symbol": "sirius-04",
-    "sha256": "12bf754ffaff2aee419ed60b636460637b0002ebcf3b78023f2717392f1d52ff"
+    "sha256": "54d79f3f08ccf4d6c5c8d3eaa58acfa173b6ba8421b872a2b180c2dcdd07e376",
+    "publishedOriginal": "assets/originals/sirius-04-54d79f3f08cc.jpeg",
+    "preview": "assets/web/sirius-04-54d79f3f08cc-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.005.jpeg",
     "symbol": "sirius-05",
-    "sha256": "f57b3069d4efd8da2eb2fb43877d390f88b8feeb8f7abdd03c09d45a3fd61de6"
+    "sha256": "0288553e2f4042773cced5d9d898f5f7107af2ded6cc9df00481173f2e44e7ed",
+    "publishedOriginal": "assets/originals/sirius-05-0288553e2f40.jpeg",
+    "preview": "assets/web/sirius-05-0288553e2f40-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.006.jpeg",
     "symbol": "sirius-06",
-    "sha256": "41ce37dc96dfe5e595ecd98658d962743c0f0dad8ba69254fd72bf2a4ff8bfbf"
+    "sha256": "454f601a2235a3114bd3914ff329de4bc7077e7202f06423df1ce6dd58bf5e1d",
+    "publishedOriginal": "assets/originals/sirius-06-454f601a2235.jpeg",
+    "preview": "assets/web/sirius-06-454f601a2235-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.007.jpeg",
     "symbol": "sirius-07",
-    "sha256": "fd65178e7116560a14721b30bf37ee78b6a99496c303c19e391b4677d658a1dd"
+    "sha256": "7f64fd365b2698214cee41fb85d47f59c175dda822d9344b45e64c260001152d",
+    "publishedOriginal": "assets/originals/sirius-07-7f64fd365b26.jpeg",
+    "preview": "assets/web/sirius-07-7f64fd365b26-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.008.jpeg",
     "symbol": "sirius-08",
-    "sha256": "aecf9a7ef83fa0a09734dfcec3234aaf9140cfd07606f8bb45a35cf216766a07"
+    "sha256": "72885b8f07410267692215a1c30134aa3d979064033618fbc1b0c2192242dee6",
+    "publishedOriginal": "assets/originals/sirius-08-72885b8f0741.jpeg",
+    "preview": "assets/web/sirius-08-72885b8f0741-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.009.jpeg",
     "symbol": "sirius-09",
-    "sha256": "0619d569f6e02ba406ccaef2e07cf78414dc72639d41135de5cfc3138c321014"
+    "sha256": "fb0ae3150183788b8a80504e9cdf08c60c441bcd3aafe9319bf551b55afd0930",
+    "publishedOriginal": "assets/originals/sirius-09-fb0ae3150183.jpeg",
+    "preview": "assets/web/sirius-09-fb0ae3150183-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.010.jpeg",
     "symbol": "sirius-10",
-    "sha256": "8ca6a814da742b6fcf1a1033809a0bab315d6204182422e06f232a90728d6783"
+    "sha256": "12b6bd989e860728e5d0392eb2488ec1a80f1bd07643b4e6dad5daa6ed63f33c",
+    "publishedOriginal": "assets/originals/sirius-10-12b6bd989e86.jpeg",
+    "preview": "assets/web/sirius-10-12b6bd989e86-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.011.jpeg",
     "symbol": "sirius-11",
-    "sha256": "b3b88058c9b7da6d5f8fc14818a557f3399bf08f7183483ffc0e0e66de6a56e6"
+    "sha256": "680cfe4834c00994c2611d82e7fa0291612d74992d9a7b34af1592e3a1f19845",
+    "publishedOriginal": "assets/originals/sirius-11-680cfe4834c0.jpeg",
+    "preview": "assets/web/sirius-11-680cfe4834c0-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.012.jpeg",
     "symbol": "sirius-12",
-    "sha256": "518ac0998d1a4b060693400a7fb717695b5bfa69762331eb6877fac9133f0a5c"
+    "sha256": "f3e08eec19938473a579bf6b434d4196021c5f67e3547123a54a225c6da46b75",
+    "publishedOriginal": "assets/originals/sirius-12-f3e08eec1993.jpeg",
+    "preview": "assets/web/sirius-12-f3e08eec1993-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.013.jpeg",
     "symbol": "sirius-13",
-    "sha256": "2cca254b1d51afe225fbb082b23cfa144910ecd2ead1148b91b1548d5eeae406"
+    "sha256": "b8ec8ab2b2aec6b5fddecbb78e4c07111052ea0edac92e345654d7296d06b774",
+    "publishedOriginal": "assets/originals/sirius-13-b8ec8ab2b2ae.jpeg",
+    "preview": "assets/web/sirius-13-b8ec8ab2b2ae-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.014.jpeg",
     "symbol": "sirius-14",
-    "sha256": "495943b1bf069ec246086a7bb698a198b535871622d3436edf00a93fb9459c0b"
+    "sha256": "44e0003c4831aa4158353881856079cf9bb3ad89fc0b0fbce10c351691fddfb9",
+    "publishedOriginal": "assets/originals/sirius-14-44e0003c4831.jpeg",
+    "preview": "assets/web/sirius-14-44e0003c4831-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.015.jpeg",
     "symbol": "sirius-15",
-    "sha256": "4851e64a51f386604c22d7924fef1c485610648c3c6db6afb938958af7693bb5"
+    "sha256": "73c6147d262a2ad77834b0e078a4ce31496678bc62d33af7ff7284ee1ba090d5",
+    "publishedOriginal": "assets/originals/sirius-15-73c6147d262a.jpeg",
+    "preview": "assets/web/sirius-15-73c6147d262a-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.016.jpeg",
     "symbol": "sirius-16",
-    "sha256": "265393ece7848ab85f35faa512191fb220499e9e6191f248965dfff297781e23"
+    "sha256": "0c0d1ee2262b7eca75b826f0c9db6131b95e9d017ebee00fbbd9c9af79091379",
+    "publishedOriginal": "assets/originals/sirius-16-0c0d1ee2262b.jpeg",
+    "preview": "assets/web/sirius-16-0c0d1ee2262b-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.017.jpeg",
     "symbol": "sirius-17",
-    "sha256": "503c505372cfc0281d0fca38018c0a8b2f46bfc53205a92863ad810826d1514e"
+    "sha256": "42d7ab3922327197e71d0dcd910fc2dc4db6fc7342cc2be3068bc2303632780b",
+    "publishedOriginal": "assets/originals/sirius-17-42d7ab392232.jpeg",
+    "preview": "assets/web/sirius-17-42d7ab392232-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.018.jpeg",
     "symbol": "sirius-18",
-    "sha256": "3d9020c8513a7da8a61a83a90529278f06171bf17b42b12df71f66edf69b6ece"
+    "sha256": "f8bed5535d27cbfa7826462e8314e548e8dea456fa36c57aa4e4bd488a4224f4",
+    "publishedOriginal": "assets/originals/sirius-18-f8bed5535d27.jpeg",
+    "preview": "assets/web/sirius-18-f8bed5535d27-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.019.jpeg",
     "symbol": "sirius-19",
-    "sha256": "ec9bbac34885dfd015c9931a4bb283364e5dfe75bee48695ae0aa6ed2c78dcc3"
+    "sha256": "50d56f4b090fb02bb89d1408ce70b2a01bb6cb08e07e2b25f9b8a3e3e8fdda8e",
+    "publishedOriginal": "assets/originals/sirius-19-50d56f4b090f.jpeg",
+    "preview": "assets/web/sirius-19-50d56f4b090f-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.020.jpeg",
     "symbol": "sirius-20",
-    "sha256": "2356ae5790e4a08122cb04b0c7c90adf26736bbb982a3accb5aa0272cdc998d7"
+    "sha256": "fd75542648c20877ecd5f63908a45d56d1d2aafcd29fdc99c0a2703765497e4d",
+    "publishedOriginal": "assets/originals/sirius-20-fd75542648c2.jpeg",
+    "preview": "assets/web/sirius-20-fd75542648c2-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.021.jpeg",
     "symbol": "sirius-21",
-    "sha256": "af25e1d3ebead21d525c498570812f6535c6e2085a989d56c116f7e6d9ca6777"
+    "sha256": "1ab4200c969c23dd9c8b8df2d753eff10bb73687e13767e89d4ca529b6aeb8c8",
+    "publishedOriginal": "assets/originals/sirius-21-1ab4200c969c.jpeg",
+    "preview": "assets/web/sirius-21-1ab4200c969c-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.022.jpeg",
     "symbol": "sirius-22",
-    "sha256": "9c7feec4b9133c52c7e2dca0e8205e3cac043725de2c2f889208d8e858743715"
+    "sha256": "9984c4b2f5596a01dc33d8d385631986e7f9dbec6686e01c19b994d2b26520f2",
+    "publishedOriginal": "assets/originals/sirius-22-9984c4b2f559.jpeg",
+    "preview": "assets/web/sirius-22-9984c4b2f559-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.023.jpeg",
     "symbol": "sirius-23",
-    "sha256": "e42f9e72e6f62f876cd76facf4ed5c389018b4fb902abec2a20c943bb499736e"
+    "sha256": "d868a3db356642a71397a58237b1470edd990d285e9be3b7655b9c940ffcb7ce",
+    "publishedOriginal": "assets/originals/sirius-23-d868a3db3566.jpeg",
+    "preview": "assets/web/sirius-23-d868a3db3566-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.024.jpeg",
     "symbol": "sirius-24",
-    "sha256": "43e801bceac43ae953016ef5d40863fc6018a9f43c9e802d376ed1c8ff519d25"
+    "sha256": "880b92a55ea4d47bd8ef646233a7e9b72b731f1687a843e2eb672e136296b421",
+    "publishedOriginal": "assets/originals/sirius-24-880b92a55ea4.jpeg",
+    "preview": "assets/web/sirius-24-880b92a55ea4-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.025.jpeg",
     "symbol": "sirius-25",
-    "sha256": "533cd06c101524e5a6a13a29ea145f68fbbda2056652c31b98738f0277f59438"
+    "sha256": "fbb5856fbdd13a268a88ac3a895d50c36c284b9e8ab0b283eac3d19246004a5f",
+    "publishedOriginal": "assets/originals/sirius-25-fbb5856fbdd1.jpeg",
+    "preview": "assets/web/sirius-25-fbb5856fbdd1-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.026.jpeg",
     "symbol": "sirius-26",
-    "sha256": "4dd9b63d4fe766a4fa6517190c5bd69690af5fa3d45939b3b82784266dceb9ac"
+    "sha256": "f5d7e65c92c086cd75b3a17fb16c6f0bc072c6196a925b577dfff39044606194",
+    "publishedOriginal": "assets/originals/sirius-26-f5d7e65c92c0.jpeg",
+    "preview": "assets/web/sirius-26-f5d7e65c92c0-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.027.jpeg",
     "symbol": "sirius-27",
-    "sha256": "d0331ebe5059e333e436e87184197037b75115cddaa6e0c9c3ac721c454c6b66"
+    "sha256": "2cbda9c4f37ce9f37c50b5bca5b20dfdedc38d645f359195b6293070a00c53a0",
+    "publishedOriginal": "assets/originals/sirius-27-2cbda9c4f37c.jpeg",
+    "preview": "assets/web/sirius-27-2cbda9c4f37c-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.028.jpeg",
     "symbol": "sirius-28",
-    "sha256": "06ec1841d358bb2c021c589f105e1528bbf378fd6fc3086ae0b26b804a2ee51c"
+    "sha256": "a94002ae1488a10e5eeecc810ad1b0949bd5536e09b7e9ef6c48c8a3791c305f",
+    "publishedOriginal": "assets/originals/sirius-28-a94002ae1488.jpeg",
+    "preview": "assets/web/sirius-28-a94002ae1488-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.029.jpeg",
     "symbol": "sirius-29",
-    "sha256": "a4618f9f493385c5d8161d30a9224c5bbd4f99449fb807307bad8a1e2ec20292"
+    "sha256": "bc8015f5af5ddd996ab969cb9957c76a4b02934837e92c72f01f19cd990cc4e8",
+    "publishedOriginal": "assets/originals/sirius-29-bc8015f5af5d.jpeg",
+    "preview": "assets/web/sirius-29-bc8015f5af5d-340.webp"
   },
   {
     "file": "Символы Сириуса/Символы Сириуса.030.jpeg",
     "symbol": "sirius-30",
-    "sha256": "8bbdef197b3d4ddb92291e432bdeb4ae9767184f155511a9ec1563b32740d8d3"
+    "sha256": "475bb437cb62c4163131a82d288d18b62952d6d105c372a1bb759debcd2b9ac6",
+    "publishedOriginal": "assets/originals/sirius-30-475bb437cb62.jpeg",
+    "preview": "assets/web/sirius-30-475bb437cb62-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.001.jpeg",
     "symbol": "galactic-01",
-    "sha256": "e1f2b60abe477390c474b2e19e305c5e1dc006e4ff410ef0d591f372a70ffb27"
+    "sha256": "7e23846cd72f87cec03fcea6e31f03ba1f46eb7d30e064990c5ff868db5f664f",
+    "publishedOriginal": "assets/originals/galactic-01-7e23846cd72f.jpeg",
+    "preview": "assets/web/galactic-01-7e23846cd72f-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.002.jpeg",
     "symbol": "galactic-02",
-    "sha256": "5b25baf178ba9643785cb32c1285509efbb151cb5d8fa38eb8f49c4991534023"
+    "sha256": "1f72f523af1e0ccee74c5c9821ddb1a25f379e38cb29d8f3a070cc349ae47060",
+    "publishedOriginal": "assets/originals/galactic-02-1f72f523af1e.jpeg",
+    "preview": "assets/web/galactic-02-1f72f523af1e-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.003.jpeg",
     "symbol": "galactic-03",
-    "sha256": "cfd369f8bb95c5f09cb6b1741d5ef0fad761806af25d4144df7d9a28f0db6ab0"
+    "sha256": "7b3d60c16b92a466b227a20bb28f03024479331a44720f96c60df27c9d029e78",
+    "publishedOriginal": "assets/originals/galactic-03-7b3d60c16b92.jpeg",
+    "preview": "assets/web/galactic-03-7b3d60c16b92-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.004.jpeg",
     "symbol": "galactic-04",
-    "sha256": "1431aeb9135bc0a0f876926200b86829a3b10baeb7e59ba1abad4430ebf6c582"
+    "sha256": "c84a6c17d96db0da4dd6cb6384098da8c9a3d0425ccf11e53564c7727e6097d3",
+    "publishedOriginal": "assets/originals/galactic-04-c84a6c17d96d.jpeg",
+    "preview": "assets/web/galactic-04-c84a6c17d96d-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.005.jpeg",
     "symbol": "galactic-05",
-    "sha256": "e83e6d74deb563fbb25578bf100fb5d6ee3c815e0c47e90000df85eff23c0ac9"
+    "sha256": "7b6bdfabc4796214b48195d4002e18d8cc594c00ecf810543bc7f24688412854",
+    "publishedOriginal": "assets/originals/galactic-05-7b6bdfabc479.jpeg",
+    "preview": "assets/web/galactic-05-7b6bdfabc479-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.006.jpeg",
     "symbol": "galactic-06",
-    "sha256": "1b76ebca6602b759be3e5d01d8eb9970673bfd5ef43dce54d2c498db8e2998b1"
+    "sha256": "a129cca3c5a3787d95566c7c9376681abd1ff579392e84365270e87dce6dacab",
+    "publishedOriginal": "assets/originals/galactic-06-a129cca3c5a3.jpeg",
+    "preview": "assets/web/galactic-06-a129cca3c5a3-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.007.jpeg",
     "symbol": "galactic-07",
-    "sha256": "9d2924ce2e5d33ee25adced564de6ed21fdd4e1d7925483693796a5c4ac531d3"
+    "sha256": "19590e37f1b96ac3b514966bdee283c57e924ef4a3baecea225da5dbce7d25ce",
+    "publishedOriginal": "assets/originals/galactic-07-19590e37f1b9.jpeg",
+    "preview": "assets/web/galactic-07-19590e37f1b9-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.008.jpeg",
     "symbol": "galactic-08",
-    "sha256": "8d9d9bd8fde6132f5308da97b3cd66f931b11dfa3fc45835f593b913f7b197e3"
+    "sha256": "4d0542375ca8c5c03b565f9ec52b8f3dad595698553c34d409c8fa3b60ebdb95",
+    "publishedOriginal": "assets/originals/galactic-08-4d0542375ca8.jpeg",
+    "preview": "assets/web/galactic-08-4d0542375ca8-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.009.jpeg",
     "symbol": "galactic-09",
-    "sha256": "80dbece15823499306d140f116dc3e45a41dc81a59710244fe700a03bf03b94e"
+    "sha256": "294bfd1a37a33102ca6ffbdc350e2ebc49c71433b80d200b81b45ea390dfb961",
+    "publishedOriginal": "assets/originals/galactic-09-294bfd1a37a3.jpeg",
+    "preview": "assets/web/galactic-09-294bfd1a37a3-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.010.jpeg",
     "symbol": "galactic-10",
-    "sha256": "7eb1a53f374728dc3977a6a4586eb01cba3b8fe7800ae5e0efc576154a1816d2"
+    "sha256": "1091073c928fcc78fea97c735434f56e52790e00bfe1d816175a06759733c5c2",
+    "publishedOriginal": "assets/originals/galactic-10-1091073c928f.jpeg",
+    "preview": "assets/web/galactic-10-1091073c928f-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.011.jpeg",
     "symbol": "galactic-11",
-    "sha256": "3e9afa832cb591b1e072fd80c2587ff2b66e9323687a32900dcc7249b18212dd"
+    "sha256": "30b218916adf49bb4024d8b70a92c619f35d3b9203387d08ba3defd1fe457044",
+    "publishedOriginal": "assets/originals/galactic-11-30b218916adf.jpeg",
+    "preview": "assets/web/galactic-11-30b218916adf-340.webp"
   },
   {
     "file": "Символы Галактические/Символы Галактические.012.jpeg",
     "symbol": "galactic-12",
-    "sha256": "89954ac3bb3f92c636f788dd47f8514924c6fa09bea6db8468ed56c1b25f1e6a"
+    "sha256": "bad67b0ca5ba199c0ef4811d1998c73c6211da10e0fc3796cc52fa5a50e8e500",
+    "publishedOriginal": "assets/originals/galactic-12-bad67b0ca5ba.jpeg",
+    "preview": "assets/web/galactic-12-bad67b0ca5ba-340.webp"
   }
 ]
