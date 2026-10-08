@@ -1,3 +1,4 @@
+import { shadowFetch } from '../shadow-backend/worker.mjs';
 const APP_URL = 'https://yuliastoyanova.com/for-mama/';
 const timePattern = /^([01]\d|2[0-3]):[0-5]\d$/;
 const morningMessages = [
@@ -222,6 +223,8 @@ async function api(request, env, route) {
 }
 export default {
   async fetch(request, env) {
+    const shadow = await shadowFetch(request, env);
+    if (shadow) return shadow;
     const path = new URL(request.url).pathname;
     const apiRoute = path.match(/^\/for-mama\/api\/([^/]+)$/);
     if (!apiRoute && path !== '/telegram/webhook') return env.ASSETS.fetch(request);

@@ -1,0 +1,11 @@
+(() => {
+  const form=document.querySelector('#access-form'), error=document.querySelector('#access-error');
+  async function api(action, data) {const r=await fetch('api/'+action,{method:data?'POST':'GET',headers:data?{'Content-Type':'application/json'}:{},body:data?JSON.stringify(data):undefined,credentials:'same-origin',cache:'no-store'});let body;try{body=await r.json()}catch{throw new Error('Сервис входа временно недоступен. Попробуй позже.')}if(!r.ok)throw new Error(body.error||'Не удалось проверить доступ');return body;}
+  let loaded=false;
+  async function unlock(){if(!loaded){for(const name of ['archetypes.js','metacodes.js','app.js'])await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=name;script.onload=resolve;script.onerror=()=>reject(new Error('Не удалось загрузить приложение. Обнови страницу.'));document.head.append(script)});loaded=true;}document.body.classList.remove('access-pending');document.querySelector('#access-screen').hidden=true;document.querySelector('#access-code').value='';}
+  form.addEventListener('submit',async e=>{e.preventDefault();const button=form.querySelector('button');button.disabled=true;error.textContent='';try{await api('login',{code:document.querySelector('#access-code').value});await unlock()}catch(e){error.textContent=e.message}finally{button.disabled=false}});
+  document.querySelector('#reset-access').addEventListener('click',async()=>{try{await api('logout',{});location.reload()}catch(e){alert(e.message)}});
+  document.querySelector('#close-consultation').addEventListener('click',()=>document.querySelector('#consultation-dialog').close());
+  document.querySelector('#copy-telegram').addEventListener('click',async()=>{const field=document.querySelector('#consultation-message'),status=document.querySelector('#copy-status');let copied=false;try{await navigator.clipboard.writeText(field.value);copied=true}catch{field.focus();field.select();try{copied=document.execCommand('copy')}catch{}}status.textContent=copied?'Сообщение скопировано. Вставь его в чат @Stoyu и отправь.':'Не удалось скопировать автоматически. Выдели текст, скопируй его и открой Telegram.';if(copied)window.open('https://t.me/Stoyu','_blank','noopener,noreferrer');});
+  api('session').then(unlock).catch(e=>{if(!e.message.includes('Кодовое'))error.textContent=e.message;});
+})();

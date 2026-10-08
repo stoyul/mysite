@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100b13">
+  <meta name="description" content="Интерактивное путешествие по архетипам Тени и Силы.">
+  <title>Архетипы Тени и Силы</title>
+  <link rel="stylesheet" href="style.css">
+  
+  
+  <script src="access.js" defer></script>
+</head>
+<body class="access-pending">
+<section id="access-screen" class="access-screen" aria-labelledby="access-title">
+<div class="access-crystal" aria-hidden="true">✧</div><p class="eyebrow">ПРОСТРАНСТВО ТРАНСФОРМАЦИИ</p>
+<h1 id="access-title">АРХЕТИПЫ<br><em>ТЕНИ И СИЛЫ</em></h1>
+<p class="hero-subtitle">За каждой Тенью скрывается Сила.</p>
+<p>Введи кодовое слово, чтобы открыть пространство трансформации.</p>
+<form id="access-form"><label for="access-code">Кодовое слово</label><input id="access-code" type="password" autocomplete="current-password" required maxlength="128" placeholder="Кодовое слово"><button class="button button-primary button-large" type="submit">Открыть пространство</button><p id="access-error" role="status" aria-live="polite"></p></form></section>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <header class="topbar">
+    <a class="brand" href="#home-screen" data-action="home" aria-label="На главную">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span>ЮЛИЯ СТОЯНОВА <small>ПУТЕШЕСТВИЕ К СЕБЕ</small></span>
+    </a>
+    <nav class="topnav" aria-label="Главная навигация">
+      <button class="nav-link" data-action="library">Мои Тени и Силы <span id="saved-count" class="nav-count">0</span></button>
+    <button id="reset-access" class="text-button" type="button">Сбросить доступ</button></nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="home-screen" class="screen home-screen">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> ПУТЕШЕСТВИЕ ВНУТРЬ СЕБЯ</p>
+        <h1>АРХЕТИПЫ<br><em>ТЕНИ И СИЛЫ</em></h1>
+        <p class="hero-subtitle">За каждой Тенью скрывается Сила</p>
+        <div class="hero-description">
+          <p>Тень — не то, от чего нужно избавиться. За ней может скрываться энергия, которую когда-то пришлось не принять, подавить или проявлять через защиту.</p>
+          <p>Увидеть свою Тень — значит получить возможность обнаружить скрытую за ней Силу.</p>
+        </div>
+        <button class="button button-primary button-large" data-action="draw">Открыть свою Тень <span aria-hidden="true">↗</span></button>
+        <p class="hero-prompt">Что скрывается за твоей Тенью?</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-halo"></div>
+        <div class="hero-card hero-card-back"><img src="cards/Карты Игра Тень Сила.059.webp" alt=""></div>
+        <div class="hero-card hero-card-mid"><img src="cards/Карты Игра Тень Сила.030.webp" alt=""></div>
+        <div class="hero-card hero-card-front"><img src="cards/Карты Игра Тень Сила.002.webp" alt=""></div>
+        <span class="hero-spark spark-a">✦</span><span class="hero-spark spark-b">✧</span><span class="hero-spark spark-c">✦</span>
+        <div class="art-caption">60 АРХЕТИПОВ <span>ОДИН ПУТЬ К ЦЕЛОСТНОСТИ</span></div>
+      </div>
+      <div class="home-bottom"><span>УВИДЕТЬ</span><b>→</b><span>ОТКРЫТЬ</span><b>→</b><span>ПОНЯТЬ</span><b>→</b><span>ВЕРНУТЬ СИЛУ</span></div>
+    </section>
+
+    <section id="draw-screen" class="screen draw-screen" hidden aria-live="polite">
+      <div class="draw-glow"></div><div class="draw-deck"><span></span><span></span><span></span><span></span><span></span></div>
+      <p class="eyebrow">СЛУШАЙ СВОЙ ОТКЛИК</p>
+      <h2 id="draw-message">Твоя карта уже близко</h2>
+      <p class="muted">Остановись на мгновение и позволь себе увидеть.</p>
+    </section>
+
+    <section id="card-screen" class="screen journey-screen" hidden>
+      <div class="journey-topline">
+        <button class="text-button" data-action="home">← На главную</button>
+        <div class="progress-cluster"><span class="progress-label">ТВОЕ ПУТЕШЕСТВИЕ</span><div class="progress-track"><span id="journey-progress"></span></div><span id="journey-step">01 / 04</span></div>
+      </div>
+      <div class="journey-grid">
+        <div class="card-column">
+          <p id="side-label" class="card-overline">ТВОЯ ТЕНЬ</p>
+          <button class="card-stage" data-action="flip" aria-label="Перевернуть карту и открыть Силу">
+            <span class="card-flipper">
+              <span class="card-face card-front"><img id="card-image-front" alt="Карта Тени"></span>
+              <span class="card-face card-back"><img id="card-image-back" alt="Карта Силы"></span>
+            </span>
+            <span class="card-sheen" aria-hidden="true"></span>
+          </button>
+          <p class="card-hint" id="card-hint">Нажми на карту, чтобы увидеть скрытую в ней Силу <span>↗</span></p>
+        </div>
+        <div class="meaning-column">
+          <p id="phase-kicker" class="eyebrow">ПЕРВЫЙ ШАГ · УВИДЕТЬ</p>
+          <h2 id="archetype-title">Тень</h2>
+          <p id="archetype-subtitle" class="meaning-subtitle">Заметь, что откликается именно сейчас.</p>
+          <div id="side-copy" class="side-copy"></div>
+          <div id="flip-notice" class="reveal-note" hidden><span class="reveal-star">✦</span><span>Посмотри, какая Сила скрывалась за этой Тенью.</span></div>
+          <div class="question-box">
+            <span class="micro-label">ОСТАНОВИСЬ НА МГНОВЕНИЕ</span>
+            <p id="question-copy">Что ты сейчас понимаешь о себе?</p>
+            <ul class="reflection-prompts">
+              <li>Где эта Тень проявляется в твоей жизни?</li>
+              <li>В какой ситуации ты узнаешь этот сценарий?</li>
+              <li>О чем эта Тень для тебя?</li>
+            </ul>
+            <textarea id="first-reflection" rows="2" placeholder="Можно пока оставить это только себе…" aria-label="Первое осознание"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="button button-primary" data-action="description" aria-expanded="false">Открыть описание <span aria-hidden="true">＋</span></button>
+            <button class="button button-quiet" data-action="transform">Трансформация <span aria-hidden="true">↗</span></button>
+          </div>
+          <button class="text-button rec-link" data-action="recommendations">Посмотреть рекомендации <span aria-hidden="true">→</span></button>
+          <section id="description-panel" class="fold-panel" hidden>
+            <div class="fold-heading"><span class="micro-label">ПОНЯТЬ ГЛУБЖЕ</span><button class="icon-button" data-action="description-close" aria-label="Скрыть описание">×</button></div>
+            <div id="description-copy" class="prose"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section id="practice-screen" class="screen practice-screen" hidden>
+<aside class="consultation" aria-labelledby="consultation-title"><p class="eyebrow">ИНДИВИДУАЛЬНОЕ СОПРОВОЖДЕНИЕ</p><h2 id="consultation-title">Трансформация Тени в Силу</h2><p>Осознание своей Тени — первый шаг к внутренним изменениям.</p><p>Глубокую трансформацию рекомендуется проходить с мастером, который поможет увидеть скрытые механизмы, осознать причины и найти путь к раскрытию своей Силы.</p><p>Если ты хочешь пройти этот процесс с сопровождением, приглашаю тебя на индивидуальную консультацию.</p><button class="button button-primary" data-action="consultation">Получить консультацию ↗</button></aside>
+      <div class="practice-topline"><button class="text-button" data-action="back-card">← Вернуться к карте</button><span class="micro-label">03 · ВЕРНУТЬ СИЛУ</span></div>
+      <div class="practice-content">
+        <p class="eyebrow">ТЕНЬ <span class="arrow-glow">→</span> СИЛА</p>
+        <h1 id="practice-pair">Тень → Сила</h1>
+        <div class="practice-rule"></div>
+        <p id="practice-label" class="practice-label">МЕТАКОДЫ ТРАНСФОРМАЦИИ</p>
+        <div id="practice-copy" class="practice-prose"></div>
+        <div id="awareness-area" class="awareness-area" hidden>
+          <label for="awareness-input">Что ты сейчас поняла о себе?</label>
+          <p>Где проявлялась эта Тень? Что ты увидела? Что выбираешь изменить? Какую Силу возвращаешь?</p>
+          <textarea id="awareness-input" rows="6" placeholder="Запиши свое осознание своими словами…"></textarea>
+          <p id="awareness-error" class="awareness-error" aria-live="polite"></p>
+          <button id="complete-awareness" class="button button-primary" data-action="save-awareness" disabled>Продолжить к возвращению Силы <span aria-hidden="true">→</span></button>
+        </div>
+        <button id="finish-practice" class="button button-primary button-large" data-action="finish-practice">Я прошла трансформацию <span aria-hidden="true">✦</span></button>
+      </div>
+      <div id="crystal-toast" class="crystal-toast" hidden><span class="crystal-icon">✧</span><span>Кристалл осознания<br><small>Трансформация завершена</small></span></div>
+    </section>
+
+    <section id="recommendations-screen" class="screen recommendations-screen" hidden>
+      <div class="journey-topline"><button class="text-button" data-action="back-card">← Вернуться к карте</button><span class="micro-label">04 · ЗАКРЕПИТЬ</span></div>
+      <div class="recommendation-wrap">
+        <p class="eyebrow">ВОЗЬМИ С СОБОЙ</p>
+        <h1>Рекомендации</h1>
+        <p id="recommendation-pair" class="meaning-subtitle"></p>
+        <div id="recommendation-copy" class="prose recommendation-prose"></div>
+        <div class="completion-choices">
+          <button class="button button-primary button-large" data-action="transform-from-recommendations">Проработать Тень <span aria-hidden="true">→</span></button>
+          <button class="button button-quiet" data-action="already-understood">Я уже поняла <span aria-hidden="true">✦</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="final-screen" class="screen final-screen" hidden>
+      <div class="final-orb" aria-hidden="true">✦</div>
+      <p class="eyebrow">ОСОЗНАНИЕ ЗАФИКСИРОВАНО</p>
+      <h1>Ты увидела свою Тень.<br><em>Ты поняла, о чем она для тебя.</em></h1>
+      <div class="final-pair"><div><span>ТВОЯ ТЕНЬ</span><strong id="final-shadow"></strong></div><b>↓</b><div><span>ТВОЯ СИЛА</span><strong id="final-power"></strong></div></div>
+      <p id="final-transformation-note" class="final-message"></p>
+      <figure class="final-power-card"><img id="final-power-image" alt=""></figure>
+      <div id="final-awareness" class="final-awareness" hidden></div>
+      <div class="final-actions">
+        <button id="save-result" class="button button-primary button-large" data-action="save-result">Сохранить результат <span aria-hidden="true">✦</span></button>
+        <button id="open-next-shadow" class="button button-quiet" data-action="draw" hidden>Открыть другую Тень <span aria-hidden="true">↗</span></button>
+        <button class="text-button" data-action="library">Мои Тени и Силы</button>
+      </div>
+      <p id="saved-feedback" class="saved-feedback" aria-live="polite"></p>
+    </section>
+
+    <section id="library-screen" class="screen library-screen" hidden>
+      <div class="journey-topline"><button class="text-button" data-action="home">← На главную</button><span class="micro-label">ТВОЕ ЛИЧНОЕ ПРОСТРАНСТВО</span></div>
+      <div class="library-heading"><div><p class="eyebrow">СОХРАНЕННЫЕ ПУТИ</p><h1>Мои Тени<br><em>и Силы</em></h1></div><div class="collection-stats"><span><strong id="opened-stat">0</strong> / 60 <small>ОТКРЫТО</small></span><span><strong id="transformed-stat">0</strong> / 60 <small>ТРАНСФОРМИРОВАНО</small></span></div></div>
+      <div id="library-empty" class="library-empty"><span class="empty-crystal">✧</span><h2>Здесь появятся твои открытия</h2><p>Сохраняй пройденные пути, чтобы возвращаться к ним в любое время.</p><button class="button button-primary" data-action="draw">Открыть первую Тень <span aria-hidden="true">→</span></button></div>
+      <div id="library-list" class="library-list"></div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>АРХЕТИПЫ ТЕНИ И СИЛЫ</span><span>Увидеть целое · вернуть свою энергию</span></footer>
+<dialog id="consultation-dialog" aria-labelledby="message-title"><button class="icon-button dialog-close" aria-label="Закрыть" id="close-consultation">×</button><h2 id="message-title">Твое сообщение Юлии</h2><textarea id="consultation-message" rows="7" readonly aria-label="Подготовленное сообщение"></textarea><a id="telegram-draft" class="button button-primary" target="_blank" rel="noopener noreferrer">Открыть Telegram с сообщением ↗</a><button id="copy-telegram" class="button button-quiet">Скопировать сообщение и открыть Telegram</button><p id="copy-status" role="status">Проверь текст в Telegram и нажми «Отправить». Если текст не появился, скопируй и вставь его в чат.</p></dialog></body>
+</html>

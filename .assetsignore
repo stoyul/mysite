@@ -10,3 +10,5 @@
 /time-for-us/backend/**
 /time-for-us/tests/**
 /time-for-us/*.md
+
+/shadow-backend/**
