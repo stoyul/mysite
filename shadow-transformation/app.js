@@ -395,9 +395,11 @@
     if (!button) return;
     const action = button.dataset.action;
     if (action === 'consultation' && current) {
-      const message = 'Здравствуйте! Хочу получить консультацию по трансформации Тени в Силу. Я пришла из приложения „Архетипы Тени и Силы“.\n\nМоя Тень: ' + current.shadowName + '. Сила: ' + current.powerName + '.';
+      const message = 'Здравствуйте! Хочу получить консультацию по трансформации Тени в Силу. Я из приложения „Архетипы Тени и Силы“.\n\nМоя Тень: ' + current.shadowName + '. Сила: ' + current.powerName + '.';
       $('#consultation-message').value = message;
-      $('#telegram-draft').href = 'https://t.me/Stoyu?text=' + encodeURIComponent(message);
+      const telegramUrl = 'https://t.me/stoyul?text=' + encodeURIComponent(message);
+      button.href = telegramUrl;
+      $('#telegram-draft').href = telegramUrl;
       $('#consultation-dialog').showModal();
     }
     if (action === 'home') setScreen('home');
