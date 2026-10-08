@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d0f">
+  <title>Время для нас — 48 свиданий для двоих</title>
+  <link rel="stylesheet" href="/time-for-us/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Время для нас — на главную"><span class="brand-mark">♡</span><span class="brand-name">ВРЕМЯ ДЛЯ НАС</span></a>
+    <nav class="nav" aria-label="Главная навигация">
+      <button class="active" data-view="home">Главная</button><button data-view="catalog">48 свиданий</button><button data-view="guide">Как это работает</button>
+    </nav>
+  </header>
+  <main><div class="session-actions"><a href="/">Сайт Юлии Стояновой</a><span>Сезон: <b id="season"></b></span><button class="text-button" id="logout">Выйти</button></div>
+    <section id="home" class="view active" aria-label="Главная">
+      <div class="hero">
+        <div class="hero-copy-wrap"><div class="eyebrow">Личное пространство для двоих</div><h1>Время<br>для <em>нас</em></h1><p class="hero-copy">Отношения складываются из моментов, когда вы снова выбираете друг друга. <strong>48 идей для свиданий</strong>, чтобы находить время друг для друга среди обычных дней.</p><div class="actions"><button class="button" data-view="catalog">Выбрать наше свидание</button><button class="text-button" data-view="guide">Как это работает ↗</button></div></div>
+        <div class="cover-wrap"><img class="cover" src="/time-for-us/cover.jpeg" alt="Обложка колоды Время для нас: 48 идей для совместного времени"></div>
+      </div>
+      <div class="week-card"><div class="week-meta"><div class="eyebrow">Ваше свидание этой недели</div><h2 id="date-title">Сегодня — хорошее время для вас двоих</h2><div class="date-label" id="date-subtitle"></div><p>Карточка дает направление. Вы создаете из нее свой момент.</p><button id="open-current" class="button">Открыть свидание</button></div><button id="current-card" class="week-image" aria-label="Открыть карточку этой недели"><img id="current-img" alt="Карточка свидания этой недели"></button></div>
+      <div class="section-heading"><div><div class="eyebrow">Путь к вашим моментам</div><h2>Выбирайте свое время</h2></div><p>Идите по неделям или откройте любой момент, который подходит вам именно сейчас.</p></div>
+      <div class="filter-row"><button class="active" data-view="catalog">Все 48 свиданий ↗</button><button id="month-cards">Карточки текущего месяца ↗</button><button data-view="guide">Как это работает ↗</button></div>
+    </section>
+    <section id="catalog" class="view" aria-label="Каталог свиданий">
+      <div class="section-heading" style="padding-top:53px"><div><div class="eyebrow">Ваша общая история</div><h2>48 свиданий</h2></div><p>Нажмите на карточку, чтобы рассмотреть ее ближе. Выбирайте то, чего хочется сегодня.</p></div>
+      <div class="filter-row" id="filters" aria-label="Фильтр по сезону"></div><div class="cards-grid" id="cards-grid"></div>
+    </section>
+    <section id="guide" class="view" aria-label="Как это работает">
+      <div class="guide-intro"><div class="eyebrow">Ваше время для двоих</div><h2>Как этим <em>пользоваться</em></h2><p class="lead">48 недель. 48 поводов выбрать друг друга.</p><p>Отношения складываются не только из больших событий. Они создаются из маленьких моментов, когда вы разговариваете, смеетесь, пробуете новое или просто останавливаете привычный ритм, чтобы побыть вдвоем.</p><p style="margin-top:15px"><strong>«Время для нас» — это приглашение создавать такие моменты.</strong> Вам больше не нужно каждый раз придумывать, чем заняться вместе. Каждую неделю вас ждет новая идея. Здесь нет строгих правил: карточка дает направление, а вы делаете его своим.</p></div>
+      <div class="guide-body"><section class="guide-section"><h2>Правила использования</h2><p>Каждый месяц содержит четыре карточки: дни 1–7, 8–14, 15–21 и 22–конец месяца. На пятой календарной неделе остается четвертая карточка. Дата и сезон определяются по местному времени вашего устройства. Вы можете выбирать любую карточку и повторять любимые свидания.</p><p>Все идеи — по взаимному желанию. Адаптируйте их к вашему времени, бюджету и обстоятельствам. Отметки и заметки хранятся только в этом браузере: для переноса сохраните копию истории. Очистка данных браузера удалит ее. Код открывает продукт, но не синхронизирует историю между устройствами.</p><div class="session-actions"><button class="button" id="export-history">Сохранить копию истории</button><label>Восстановить копию <input id="import-history" type="file" accept="application/json"></label></div></section>
+        <section class="guide-section"><h2>Как это работает</h2><p>Каждую неделю система предлагает новое свидание. На карточке есть тип свидания, примерное время, ориентировочный бюджет, идея и маленькое действие, которое помогает превратить обычное время вдвоем в особенный момент.</p><p>Все это — ориентиры. Можно провести вместе 40 минут или целый день, выбрать бесплатный вариант, поменять место, еду или маршрут. Добавляйте свои традиции, соединяйте идеи и возвращайтесь к любимым свиданиям.</p><p class="pullquote">Карточка предлагает. Вы создаете.</p><p>Не старайтесь идеально выполнить карточку. Создайте из нее что-то свое.</p></section>
+        <section class="guide-section"><h2>Не 48 заданий. 48 поводов выбрать друг друга.</h2><p>Главная цель — не пройти все карточки и не поставить 48 галочек. Пусть среди работы, дел, детей и повседневности у вас остается пространство для вас двоих. Следуйте календарю или выберите любой момент в каталоге.</p><p><strong>Ценность не в стоимости свидания и не в самой идее. Ценность в том, что в этот момент вы присутствуете в жизни друг друга.</strong></p></section>
+        <section class="guide-section"><h2>Пять маленьких правил</h2><div class="principles">
+          <article class="principle"><b>01</b><h3>ВЫБИРАЙТЕ ДРУГ ДРУГА</h3><p>Освобождайте время только для вас двоих.</p></article><article class="principle"><b>02</b><h3>НЕ СТРЕМИТЕСЬ К ИДЕАЛУ</h3><p>Важнее ваше присутствие, чем место и сценарий.</p></article><article class="principle"><b>03</b><h3>МЕНЯЙТЕ ИДЕИ ПОД СЕБЯ</h3><p>Карточка дает направление. Остальное создаете вы.</p></article><article class="principle"><b>04</b><h3>СОЗДАВАЙТЕ ТРАДИЦИИ</h3><p>Повторяйте любимые свидания и добавляйте свои детали.</p></article><article class="principle"><b>05</b><h3>СОБИРАЙТЕ МОМЕНТЫ</h3><p>Это 48 возможностей сказать: «Сейчас наше время».</p></article>
+        </div><p class="pullquote">Собирайте моменты, а не галочки.</p></section>
+
+        <section class="guide-section" id="save-story">
+          <div class="memory-head"><div class="eyebrow">Маленькая рекомендация для вас</div><h2 style="margin-top:15px">СОХРАНЯЙТЕ ВАШУ ИСТОРИЮ</h2><p class="subnote">Это не задание и не условие прохождения. Только идея, если вам хочется оставить у себя частичку прожитого момента.</p><p>Свидание заканчивается, но момент может остаться с вами. Мы рекомендуем создать несколько особых мест, где будет постепенно собираться ваша общая история.</p><p><strong>Не обязательно сохранять все. Оставляйте только то, что действительно хочется помнить.</strong></p></div>
+          <div class="memory-objects" role="group" aria-label="Способы бережно сохранить общие моменты">
+            <button class="memory-object" data-kind="album" aria-expanded="false" aria-controls="panel-album"><span class="object-icon" aria-hidden="true">▧</span><span class="hint" aria-hidden="true">＋</span><h3>ФОТОАЛЬБОМ</h3><p class="short">Ваши моменты в фотографиях</p></button>
+            <button class="memory-object" data-kind="video" aria-expanded="false" aria-controls="panel-video"><span class="object-icon" aria-hidden="true">◌</span><span class="hint" aria-hidden="true">＋</span><h3>ВИДЕОИСТОРИЯ</h3><p class="short">Несколько секунд, которые хочется сохранить</p></button>
+            <button class="memory-object" data-kind="capsule" aria-expanded="false" aria-controls="panel-capsule"><span class="object-icon" aria-hidden="true">◇</span><span class="hint" aria-hidden="true">＋</span><h3>КАПСУЛА ВРЕМЕНИ</h3><p class="short">Маленькие вещи с большим смыслом</p></button>
+          </div>
+          <div class="memory-panel" id="panel-album"><h3>Ваш живой фотоальбом</h3><p>Создайте отдельный цифровой альбом для ваших свиданий и совместных моментов. Фотографируйте не только красивые места: случайное фото, смешное селфи, чашка кофе, билет или закат спустя годы могут вернуть больше чувств, чем идеально поставленный кадр.</p><p>Пусть это будет не коллекция идеальных фотографий, а <strong>живой альбом вашей жизни вдвоем.</strong></p></div>
+          <div class="memory-panel" id="panel-video"><h3>Ваша видеоистория</h3><p>Создайте отдельную папку для коротких видео общих моментов: несколько секунд прогулки, смех, дорога, море, музыка в машине или как кто-то из вас готовит ужин. Обычные мгновения со временем становятся необыкновенно ценными.</p><p>Не снимайте все свидание. <strong>Иногда достаточно сохранить 10 секунд счастья.</strong></p></div>
+          <div class="memory-panel" id="panel-capsule"><h3>Капсула времени</h3><p>Создайте дома небольшую красивую коробку или капсулу воспоминаний. Туда можно складывать маленькие вещи, связанные с вашими моментами:</p><ul><li>билеты и открытки</li><li>записки друг другу</li><li>фотографии и маленькие сувениры</li><li>засушенный цветок</li><li>записку из кафе</li><li>смешную бумажку</li><li>что-то найденное в путешествии</li><li>любую вещь, смысл которой понятен только вам</li></ul><p>Ценность такой коробки не в предметах, а в историях за ними. Со временем внутри нее появляется <strong>ваш собственный язык воспоминаний.</strong></p></div>
+          <div class="memory-divider"></div>
+          <div class="symbols"><h3>Ваши маленькие символы</h3><p>У каждой пары постепенно появляются вещи, которые понятны только им: своя песня, место, фраза, шутка, кафе или фотография. Билет, камешек с моря или совершенно обычная вещь для других ничего не значит, а для вас хранит целую историю.</p><p>Не выбрасывайте все эти маленькие свидетельства вашей жизни. Иногда именно из них складывается ощущение:</p><p class="pullquote">«Это наше».</p><p>Такие общие символы, истории и приятные воспоминания помогают поддерживать чувство близости и ощущение общей истории пары.</p></div>
+          <div style="margin-top:35px"><h2 style="font-size:35px">Не создавайте архив. Создавайте память.</h2><p>Очень важно, чтобы эта идея не превратилась в еще одну обязанность. Не нужно фотографировать каждое свидание, сохранять каждую вещь или документировать отношения.</p><p>Сохраняйте только то, что вызывает: <strong>«Я хочу это помнить».</strong></p><p>Иногда это будет фотография, видео, билет или маленькая записка. А иногда ничего материального не понадобится, потому что главным воспоминанием останется сам момент.</p></div>
+          <div class="closing"><h2>Вы создаете не коллекцию фотографий и вещей.<br><em>Вы создаете историю, которую однажды будете вспоминать вместе.</em></h2><p>Берегите то, что делает ваше «мы» только вашим.</p><button class="button" data-view="catalog">Выбрать следующее свидание</button></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">ВРЕМЯ ДЛЯ НАС · 48 ПОВОДОВ ВЫБРАТЬ ДРУГ ДРУГА</footer>
+  <dialog id="card-modal" aria-label="Карточка свидания"><div class="modal-inner"><button class="modal-close" aria-label="Закрыть">×</button><img id="modal-image" alt="Увеличенная карточка свидания"><div class="memory-form"><label><input type="checkbox" id="completed"> Мы сделали это</label><label for="memory-note">Наше воспоминание</label><textarea id="memory-note" maxlength="2000" placeholder="Что хочется запомнить об этом свидании?"></textarea><button class="button" id="save-memory">Сохранить</button><p id="save-status" role="status">Заметки хранятся на этом устройстве.</p></div></div></dialog><div class="toast" id="toast" role="status">Пусть этот момент останется с вами ✨</div>
+  <script src="/time-for-us/app.js" defer></script>
+</body>
+</html>

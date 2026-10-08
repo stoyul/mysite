@@ -165,7 +165,7 @@
       '<div class="prod-media"><span class="prod-tag">'+YS.pick(p.type)+'</span>'+
         '<img src="'+p.img+'" alt="'+YS.pick(p.title)+'" loading="lazy"></div>'+
       '<div class="prod-body"><h3>'+YS.pick(p.title)+'</h3><p>'+YS.pick(p.desc)+'</p>'+
-        '<div class="prod-foot"><span class="prod-link">'+t('cta.open')+' '+ARROW+'</span></div>'+
+        '<div class="prod-foot"><span class="prod-link">'+(p.openLabel?YS.pick(p.openLabel):t('cta.open'))+' '+ARROW+'</span></div>'+
       '</div></a>';
   }
   function renderGrid(grid,cat){

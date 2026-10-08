@@ -106,12 +106,13 @@ window.PRODUCTS = [
   },
   {
     slug:"52-svidaniya", cat:"deck", img:"assets/img/vn-box.jpg",
-    href:"vremya-dlya-nas.html", topics:["relations"], featured:true,
-    type:{ru:"Колода", en:"Deck", de:"Kartenset"},
+    href:"/time-for-us/", topics:["relations"], featured:true,
+    type:{ru:"48 свиданий для двоих", en:"48 dates for two", de:"48 Dates zu zweit"},
+    openLabel:{ru:'Открыть «Время для нас»', en:'Open “Time for us”', de:'„Zeit für uns“ öffnen'},
     title:{ru:"Время для нас", en:"Time for Us", de:"Zeit für uns"},
-    desc:{ru:"48 идей для свиданий и теплых моментов вдвоем на целый год.",
-          en:"48 ideas for dates and warm moments together for a whole year.",
-          de:"48 Ideen für Dates und schöne gemeinsame Momente für ein ganzes Jahr."},
+    desc:{ru:"Интерактивный календарь отношений, который каждую неделю предлагает новую идею для совместного времени, романтики и близости.",
+          en:"An interactive relationship calendar with a new idea each week for time together, romance and closeness.",
+          de:"Ein interaktiver Beziehungskalender mit einer neuen Idee jede Woche für gemeinsame Zeit, Romantik und Nähe."},
     long:{ru:"«Время для нас» — колода из 48 карточек с готовыми идеями совместного времени для пары. Каждую неделю выбирайте одну карточку и устраивайте свое маленькое свидание: уютные вечера, прогулки, поездки, творческие задания, игры и сюрпризы друг для друга.",
           en:"“Time for Us” is a deck of 48 cards with ready-made ideas for couples. Each week you pick one card and create your own little date: cozy evenings, walks, trips, creative tasks, games and surprises for each other.",
           de:"„Zeit für uns“ ist ein Kartenset aus 48 Karten mit fertigen Ideen für Paare. Jede Woche zieht ihr eine Karte und gestaltet euer kleines Date: gemütliche Abende, Spaziergänge, Ausflüge, kreative Aufgaben, Spiele und Überraschungen füreinander."}

@@ -7,3 +7,6 @@
 /.gitignore
 /care/backend/**
 /mama-backend/**
+/time-for-us/backend/**
+/time-for-us/tests/**
+/time-for-us/*.md
