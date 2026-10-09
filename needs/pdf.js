@@ -8,7 +8,9 @@ async function motivationPDF(state,data){
  function newPage(){if(content)pages.push(content);content='';y=785;}
  function line(t,size=13,color='0.20 0.26 0.21'){if(y<60)newPage();content+=`BT /F1 ${size} Tf ${color} rg 1 0 0 1 48 ${y} Tm <${hex(t)}> Tj ET\n`;y-=size*1.65;}
  function para(t,size=13){for(const paragraph of String(t||'').split('\n')){let row='';for(const word of paragraph.split(/\s+/)){if(width(row+(row?' ':'')+word,size)>495&&row){line(row,size);row='';}if(width(word,size)>495){if(row){line(row,size);row='';}for(const ch of word){if(width(row+ch,size)>495){line(row,size);row='';}row+=ch;}}else row+=(row?' ':'')+word;}if(row)line(row,size);else y-=10;}y-=10;}
- line('Код твоей мотивации',23);line('Мой план '+(state.period==='week'?'на неделю':'на день'),18);line('Юлия Стоянова · '+new Date().toLocaleDateString('ru-RU'),11);y-=14;para(state.plan||'Личный план пока не заполнен.');
+ line('Код твоей мотивации',23);line(state.research?'Мое исследование потребности':'Мой план '+(state.period==='week'?'на неделю':'на день'),18);line('Юлия Стоянова · '+new Date().toLocaleDateString('ru-RU'),11);y-=14;
+ if(state.research){const r=state.research;para('Возможные направления для саморефлексии. Это не психологический диагноз.',11);line('Что я чувствую',17);para(r.emotion);line('Как это проявляется',17);para(r.manifestations.length?r.manifestations.join(', '):'Проявления не выбраны.');line('Какие потребности могут за этим стоять',17);r.needs.forEach(n=>para(n));if(r.context){line('Мой контекст',17);para(r.context);}if(r.note){line('Мои наблюдения',17);para(r.note);}}
+ else para(state.plan||'Личный план пока не заполнен.');
  const selected=data.needs.flatMap(n=>n.ways.filter(w=>state.ways[w.id]?.selected).map(w=>({n,w})));
  if(selected.length){line('Выбранные способы',18);y-=10;for(const {n,w}of selected){if(y<150)newPage();para(n.name,16);para((state.ways[w.id].done?'Выполнено. ':'Запланировано. ')+w.text);if(state.ways[w.id].note)para('Моя заметка: '+state.ways[w.id].note);y-=12;}}
  newPage();
