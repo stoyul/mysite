@@ -18,5 +18,5 @@ export function education(s,{view=0}={}){const g=geometry(s.name,{view});let his
  if(g.mode==='interpretation'){facts=['Композиция создана для этой карточки и не выдается за исторический артефакт.','Математические параметры рисунка задают форму, а не физические свойства.','Смысл исходной карточки представлен отдельно от проверяемых геометрических сведений.'];}
  if(!facts.length)facts=[];
  const extra=auditedEducation(s);if(extra){history=extra.history||history;sources=[...sources,...(extra.sources||[])];examples=extra.examples||examples;facts=extra.facts||facts;status=extra.status||status;}
- return{geometry:g.math,algorithm:g.algorithm,parameters:g.parameters,history,examples,facts,sources,status,mode:g.mode,traditionalMeaning:'Подтвержденное традиционное значение для этой конкретной формы пока не добавлено. Авторская трактовка из таблицы доступна в разделе «Значение и исследование».',modernInterpretation:s.principle};
+ return{geometry:g.math.replace(' SVG-путь аппроксимирован 600 отрезками; формула задает каждый узел.',''),algorithm:g.algorithm,parameters:g.parameters,history,examples,facts,sources,status,mode:g.mode,traditionalMeaning:'Подтвержденное традиционное значение для этой конкретной формы пока не добавлено. Авторская трактовка из таблицы доступна в разделе «Значение и исследование».',modernInterpretation:s.principle};
 }
