@@ -1,6 +1,7 @@
+import {auditedGeometry} from './audited-geometry.js';
 import {shriTriangles,shriVerification} from './shri.js';
 export const TAU=2*Math.PI,PHI=(1+Math.sqrt(5))/2;
-const f=x=>Number(x.toFixed(6));
+const f=x=>Number(x.toFixed(12));
 export const points=(n,r=90,cx=150,cy=150,start=-Math.PI/2)=>Array.from({length:n},(_,i)=>[cx+r*Math.cos(start+TAU*i/n),cy+r*Math.sin(start+TAU*i/n)]);
 const circle=(x=150,y=150,r=90)=>`<circle cx="${f(x)}" cy="${f(y)}" r="${f(r)}"/>`;
 const dot=(x=150,y=150,r=3)=>`<circle class="solid" cx="${f(x)}" cy="${f(y)}" r="${r}"/>`;
@@ -43,7 +44,7 @@ function starTetra(){let m=solidModel('ТЕТРАЭДР');return solid('ТЕТР
 function triangleAt(r,up=true){return polygon(3,r,150,150,up?-Math.PI/2:Math.PI/2);}
 // Every entry has an explicit construction. Abstract entries use named compositions,
 // never a fallback glyph. Symbolic compositions are identified in the UI.
-export function geometry(name){let out='',mode='exact',math='',algorithm=[],parameters={};
+function baseGeometry(name){let out='',mode='exact',math='',algorithm=[],parameters={};
  const exact=(s,text,steps)=>{out=s;math=text;algorithm=steps||['Задать центр и масштаб.','Последовательно построить элементы по координатам.'];};
  const art=(s,text)=>{mode='interpretation';exact(s,text,['Задать композиционный центр.','Построить опорные элементы интерпретации.','Добавить связи и завершить композицию.']);};
  const polygons={'КВАДРАТ':4,'ПЕНТАГОН':5,'ГЕКСАГОН':6,'ГЕПТАГОН':7,'ОКТАГОН':8,'ЭННЕАГОН':9,'ДЕКАГОН':10};
@@ -112,4 +113,6 @@ export function geometry(name){let out='',mode='exact',math='',algorithm=[],para
  const tags=out.match(/<(?:circle|line|path|polygon|rect)\b[^>]*\/>/g)||[];
  return{name,mode,math,algorithm,parameters,shapes:tags,markup:out};
 }
-export function svgFor(name,{guides=false}={}){const g=geometry(name);return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="${name}" fill="none" stroke="#D6B56E" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><title>${name}</title><g class="aux" ${guides?'':'hidden'}>${circle(150,150,110)+line([20,150],[280,150])+line([150,20],[150,280])}</g><g class="drawing">${g.shapes.map((s,i)=>`<g class="step" style="--i:${i}">${s}</g>`).join('')}</g></svg>`;}
+export function svgFor(name,{guides=false,view=0}={}){const g=geometry(name,{view});return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="${name}" fill="none" stroke="#D6B56E" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><title>${name}</title><g class="aux" ${guides?'':'hidden'}>${circle(150,150,110)+line([20,150],[280,150])+line([150,20],[150,280])}</g><g class="drawing">${g.shapes.map((s,i)=>`<g class="step" style="--i:${i}">${s}</g>`).join('')}</g></svg>`;}
+
+export function geometry(name,{view=0}={}){let g=baseGeometry(name),update=auditedGeometry(name,view);if(update)g={...g,...update};if(['СЕМЯ ЖИЗНИ','ЦВЕТОК ЖИЗНИ'].includes(name)){let r=name==='СЕМЯ ЖИЗНИ'?98:102;g.markup+=circle(150,150,r).replace('<circle','<circle class="framing"')+circle(150,150,r+5).replace('<circle','<circle class="framing"');g.math+=' Две внешние окружности добавлены как отдельное необязательное обрамление.';g.algorithm.push('Добавить необязательные внешние контуры.');}g.shapes=g.markup.match(/<(?:circle|line|path|polygon|rect)\b[^>]*\/>/g)||[];return g;}

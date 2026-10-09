@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/geometry.test.mjs",
-    "test:browser": "node tests/browser.mjs && node tests/catalog-browser.mjs"
+    "test": "node tests/geometry.test.mjs && node tests/audit.test.mjs",
+    "test:browser": "node tests/browser.mjs && node tests/catalog-browser.mjs",
+    "test:print": "node tests/revision-browser.mjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
