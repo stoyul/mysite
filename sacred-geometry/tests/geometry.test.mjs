@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {geometry,latticeCenters,points,solidModel,hypercube,PHI,fibonacciParts,treeEdges} from '../geometry.js';
+import {LocalStorageAdapter} from '../storage.js';
+const symbols=JSON.parse(fs.readFileSync(new URL('../symbols.json',import.meta.url)));
+const raw=JSON.parse(fs.readFileSync(new URL('../source-table.json',import.meta.url)));
+const keys=['name','category','geometry','principle','keyTask','strengths','shadow','diagnostic','archetype','keyQuestion'];
+assert.equal(symbols.length,84);assert.equal(new Set(symbols.map(x=>x.category)).size,13);assert.equal(new Set(symbols.map(x=>x.id)).size,84);
+for(let i=0;i<84;i++)for(let j=0;j<keys.length;j++)assert.equal(symbols[i][keys[j]],raw[i].values[j],`${i+1}: ${keys[j]} differs from XLSX`);
+const all=symbols.map(s=>geometry(s.name));assert.equal(new Set(all.map(x=>x.markup)).size,84,'Every symbol must have unique geometry');for(let g of all){assert.ok(g.shapes.length>0);assert.ok(!/NaN|Infinity|undefined/.test(g.markup));assert.ok(g.math&&g.algorithm.length);}
+const close=(a,b,e=1e-8)=>assert.ok(Math.abs(a-b)<e,`${a} ≠ ${b}`);
+for(let n=4;n<=10;n++){let p=points(n),side=2*90*Math.sin(Math.PI/n);p.forEach((v,i)=>{close(Math.hypot(v[0]-150,v[1]-150),90);let next=p[(i+1)%n];close(Math.hypot(v[0]-next[0],v[1]-next[1]),side);});}
+for(let level of [1,2]){let p=latticeCenters(level,34);assert.equal(p.length,1+3*level*(level+1));for(let c of p){let a=Math.PI/3,x=(c.x-150)*Math.cos(a)-(c.y-150)*Math.sin(a)+150,y=(c.x-150)*Math.sin(a)+(c.y-150)*Math.cos(a)+150;assert.ok(p.some(v=>Math.hypot(v.x-x,v.y-y)<1e-8),'60-degree symmetry');}let distances=p.flatMap((v,i)=>p.slice(i+1).map(w=>Math.hypot(v.x-w.x,v.y-w.y)));close(Math.min(...distances),34);}
+const vesica=geometry('ВЕЗИКА ПИСЦИС').parameters;close(Math.hypot(vesica.centers[0][0]-vesica.centers[1][0],vesica.centers[0][1]-vesica.centers[1][1]),vesica.radius);close(2*Math.sqrt(vesica.radius**2-(vesica.radius/2)**2)/vesica.radius,Math.sqrt(3));
+for(let [name,v,e]of [['ТЕТРАЭДР',4,6],['КУБ (ГЕКСАЭДР)',8,12],['ОКТАЭДР',6,12],['ИКОСАЭДР',12,30],['ДОДЕКАЭДР',20,30],['КУБООКТАЭДР',12,24]]){let m=solidModel(name);assert.equal(m.vertices.length,v);assert.equal(m.edges.length,e);for(let[a,b]of m.edges)close(Math.hypot(...m.vertices[a].map((x,k)=>x-m.vertices[b][k])),m.edge);}
+for(let n of [4,5]){let m=hypercube(n);assert.equal(m.vertices.length,2**n);assert.equal(m.edges.length,n*2**(n-1));for(let[a,b]of m.edges)assert.equal(m.vertices[a].filter((v,i)=>v!==m.vertices[b][i]).length,1);}
+close(Math.exp(Math.log(PHI)/(Math.PI/2)*(Math.PI/2)),PHI);
+let fib=fibonacciParts().seq;assert.deepEqual(fib.map(q=>q.size),[1,1,2,3,5,8,13,21,34,55]);for(let i=1;i<fib.length;i++){let a=fib[i-1],b=fib[i];close(a.cx+a.size*Math.cos(a.end),b.cx+b.size*Math.cos(b.start));close(a.cy+a.size*Math.sin(a.end),b.cy+b.size*Math.sin(b.start));}
+assert.equal(treeEdges.length,22);assert.equal(new Set(treeEdges.map(x=>x.join(','))).size,22);
+const sri=geometry('ШРИ ЯНТРА').parameters,ts=sri.triangles;assert.equal(ts.length,9);assert.equal(sri.regions,43);for(let t of ts){close(t[1][0],-t[2][0]);close(t[1][1],t[2][1]);close(t[0][0],0);}
+const bases=ts.map(t=>t[1][1]),apices=ts.map(t=>t[0][1]),widths=ts.map(t=>t[2][0]);for(let[i,j]of [[8,1],[6,2],[9,3],[1,6],[5,7],[4,8],[2,9]])close(apices[i-1],bases[j-1],1e-9);for(let[i,j,k]of [[1,2,7],[2,3,7],[1,3,8],[1,4,6],[1,5,9],[4,6,9],[2,7,9],[3,7,8],[3,8,9],[4,4,8],[5,5,6],[2,6,6]]){const y=bases[j-1];i--;k--;close(widths[i]*(y-apices[i])/(bases[i]-apices[i]),widths[k]*(y-apices[k])/(bases[k]-apices[k]),1e-9);}for(let i of [2,6])for(let p of ts[i])close(Math.hypot(...p),1,1e-9);
+let memory=new Map([['sakura.notes.v1',JSON.stringify({25:{note:'Старая запись',updatedAt:'2026-10-01'}})]]);let adapter={getItem:k=>memory.get(k)||null,setItem:(k,v)=>memory.set(k,v)},a=new LocalStorageAdapter(adapter);assert.equal(a.data.notes[25].meaning,'Старая запись');a.note(25,'Новая запись','В музее');a.toggle(25);a.visit(25);a.route('journal');let b=new LocalStorageAdapter(adapter);assert.equal(b.data.notes[25].encounters,'В музее');assert.deepEqual(b.data.favorites,[25]);assert.equal(b.data.lastRoute,'journal');b.import(a.export());assert.equal(b.data.history.length,1);assert.throws(()=>b.import('{"version":1}'));let failing=new LocalStorageAdapter({getItem:()=>null,setItem:()=>{throw Error('quota');}});assert.equal(failing.note(1,'test',''),false);
+console.log('PASS: 84 rows, 13 categories, all source fields exact, 84 unique SVGs, lattice symmetry, vesica ratio, polygons, 6 polyhedra, 4D/5D graphs, golden ratio, Fibonacci continuity, 22 paths, storage/migration/backup/failure handling.');

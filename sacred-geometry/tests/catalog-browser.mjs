@@ -1,0 +1,14 @@
+import {chromium} from 'playwright';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
+const page=await browser.newPage({viewport:{width:390,height:844}}),base=process.env.ATLAS_URL||'http://127.0.0.1:8879/sacred-geometry/';
+await page.route('**/telegram-web-app.js',r=>r.fulfill({contentType:'application/javascript',body:`window.telegramCalls=[];window.Telegram={WebApp:{safeAreaInset:{top:12,bottom:10},contentSafeAreaInset:{top:18,bottom:8},viewportStableHeight:844,ready(){telegramCalls.push('ready')},expand(){telegramCalls.push('expand')},setHeaderColor(){},setBackgroundColor(){},isVersionAtLeast(){return true},setBottomBarColor(){},onEvent(){},BackButton:{show(){telegramCalls.push('show')},hide(){telegramCalls.push('hide')},onClick(fn){window.telegramBack=fn}}}};`}));
+await page.goto(base+'#catalog');await page.waitForSelector('.card');
+let boxes=await page.evaluate(async()=>{const{svgFor}=await import('./geometry.js');const s=await(await fetch('./symbols.json')).json();const node=document.createElement('div');node.style.cssText='position:absolute;width:300px;height:300px;top:0;left:0';document.body.append(node);const a=s.map(x=>{node.innerHTML=svgFor(x.name);const b=node.querySelector('.drawing').getBBox();return{name:x.name,x:b.x,y:b.y,width:b.width,height:b.height};});node.remove();return a;});
+const cropped=boxes.filter(b=>b.x<0||b.y<0||b.x+b.width>300||b.y+b.height>300);assert.deepEqual(cropped,[]);
+let opts=await page.locator('#category option').allTextContents();assert.equal(opts.length,14);for(const c of opts.slice(1)){await page.locator('#category').selectOption({label:c});assert.ok(await page.locator('.card').count()>0);}await page.locator('#category').selectOption('all');
+await page.locator('[data-symbol="60"]').click();await page.waitForSelector('#stage svg');assert.ok(await page.evaluate(()=>telegramCalls.includes('ready')&&telegramCalls.includes('expand')&&telegramCalls.includes('show')));assert.equal(await page.evaluate(()=>getComputedStyle(document.documentElement).getPropertyValue('--top')),'18px');
+await page.locator('#geometry-tab').click();await page.waitForSelector('#information a');assert.ok((await page.locator('#information').innerText()).includes('43'));const d=await Promise.all([page.waitForEvent('download'),page.locator('#download').click()]);await d[0].saveAs('/private/tmp/sri-export.svg');
+await page.screenshot({path:'/private/tmp/atlas-shri.png',fullPage:false});await page.evaluate(()=>telegramBack());await page.waitForSelector('#catalog');
+await page.goto(base+'#catalog');await page.screenshot({path:'/private/tmp/atlas-catalog.png',fullPage:false});
+await browser.close();console.log('PASS: all 84 SVG bounds, all 13 category filters, Telegram SDK initialization/safe area/BackButton (mock), Shri-yantra information and SVG download.');
