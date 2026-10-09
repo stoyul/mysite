@@ -1,0 +1,29 @@
+/* Soft motion at every input type, without moving reading text continuously. */
+button, .need-card { transition: transform 180ms ease, background-color 180ms ease, box-shadow 220ms ease, border-color 180ms ease; }
+button:active, button.touch-engaged { transform: scale(.975); }
+.need-card:active, .need-card.touch-engaged { transform: scale(.99); border-color: var(--gold); }
+.chakra-dot:active, .chakra-dot.touch-engaged {
+  transform: scale(1.09);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--chakra-color, #a58648) 35%, transparent), 0 0 26px color-mix(in srgb, var(--chakra-color, #a58648) 24%, transparent);
+}
+.chapter.touch-engaged { border-color: var(--color); box-shadow: 0 0 0 2px color-mix(in srgb, var(--color) 24%, transparent); }
+@media (prefers-reduced-motion: no-preference) {
+  .motion-pending { opacity: 0; transform: translateY(8px); }
+  .motion-visible { animation: soft-reveal 380ms cubic-bezier(.2,.7,.3,1) backwards; animation-delay: var(--reveal-delay, 0ms); }
+  .hero-art::before { content: ''; position: absolute; inset: 15% 8%; pointer-events: none; border-radius: 50%; background: radial-gradient(ellipse at 30% 35%, #e5e6d956, transparent 65%), radial-gradient(ellipse at 70% 65%, #eadee443, transparent 60%); }
+  .hero-art.motion-in-view .chakra-dot .medallion { animation: watercolor-float calc(6.4s + var(--c) * .24s) ease-in-out infinite; animation-delay: calc(var(--c) * -.83s); }
+  .hero-art.motion-in-view .orbit::before { animation: golden-breath 9s ease-in-out infinite; }
+  .hero-art.motion-in-view .orbit::after { animation: golden-breath 11s ease-in-out -3s infinite; }
+  .hero-art.motion-in-view::before { animation: watercolor-drift 13s ease-in-out infinite; }
+  .motion-paused .hero-art .medallion, .motion-paused .hero-art::before, .motion-paused .orbit::before, .motion-paused .orbit::after { animation-play-state: paused; }
+  @keyframes watercolor-float { 0%,100% { transform: translateY(-3px) rotate(-1deg) scale(1); } 50% { transform: translateY(4px) rotate(1deg) scale(1.035); } }
+  @keyframes golden-breath { 0%,100% { opacity: .55; transform: scale(.99); } 50% { opacity: 1; transform: scale(1.012); } }
+  @keyframes watercolor-drift { 0%,100% { transform: translate3d(-3px,-4px,0); opacity: .7; } 50% { transform: translate3d(4px,5px,0); opacity: 1; } }
+  @keyframes soft-reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-pending, .motion-visible { opacity: 1; transform: none; }
+  button:active, button.touch-engaged, .chakra-dot:active, .chakra-dot.touch-engaged, .need-card.touch-engaged { transform: none; }
+  .chakra-dot.touch-engaged { outline: 2px solid var(--chakra-color, var(--gold)); outline-offset: 3px; }
+}
+@media print { .motion-pending, .motion-visible { opacity: 1!important; transform: none!important; animation: none!important; } }
