@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101013">
+  <meta name="description" content="Мастер времени — пространство для важных дел, отдыха и радости. Автор Юлия Стоянова.">
+  <title>Мастер времени — мое время, моя жизнь</title>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">К содержимому</a>
+  <header><a class="brand" href="#game"><span aria-hidden="true">⌛</span> МАСТЕР ВРЕМЕНИ<small>Мое время. Моя жизнь.</small></a><span id="balance"></span></header>
+  <div class="shell"><aside><p class="eyebrow">МОЕ ПРОСТРАНСТВО</p><nav aria-label="Разделы приложения" id="navigation"></nav><p class="sidebar-note">Я выбираю цель,<br>но радость нахожу<br>уже в самом процессе.</p><a href="https://t.me/stoyul" target="_blank" rel="noopener">Получить консультацию ↗</a></aside>
+  <main id="content" tabindex="-1"></main></div>
+  <footer>Автор — <a href="https://yuliastoyanova.com" target="_blank" rel="noopener">Юлия Стоянова</a><span>Рабочий этап · данные только на этом устройстве · сервер не подключен</span></footer>
+  <div id="notice" role="status" aria-live="polite"></div>
+  <div id="reward-burst" aria-hidden="true"></div>
+  <dialog id="editor"><form id="task-form"><div class="heading"><h2 id="editor-title">Новое дело</h2><button type="button" id="cancel-edit" aria-label="Закрыть">×</button></div><input name="id" type="hidden"><label>Название<input name="title" required maxlength="200" placeholder="Время для важного"></label><div class="fields"><label>Дата<input name="date" type="date" required></label><label>Начало<input name="time" type="time" required></label></div><div class="fields"><label>Длительность, мин<input name="duration" type="number" min="1" max="1440" value="30" required></label><label>Категория<select name="category"><option>Должен</option><option>Хочу</option><option>Радость</option></select></label></div><label>При повторении часа осенью<select name="occurrence"><option value="reject">Уточнить, если время повторяется</option><option value="earlier">Первое вхождение</option><option value="later">Второе вхождение</option></select></label><p id="form-error" role="alert"></p><button class="primary">Сохранить дело</button></form></dialog>
+  <noscript>Для планирования и сохранения необходим JavaScript. Исходные документы находятся в папке проекта.</noscript>
+  <script defer src="./assets/app.js"></script>
+</body></html>

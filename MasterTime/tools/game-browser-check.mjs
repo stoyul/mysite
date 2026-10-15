@@ -1,0 +1,73 @@
+import {createRequire} from 'node:module';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+import assert from 'node:assert/strict';
+const require=createRequire(import.meta.url),{chromium}=require(process.env.MASTER_TIME_PLAYWRIGHT||'playwright');
+const browser=await chromium.launch({headless:true,...(process.env.MASTER_TIME_BROWSER?{executablePath:process.env.MASTER_TIME_BROWSER}:{})});
+const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];
+page.on('pageerror',e=>errors.push(e.message));
+const gameState=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('master-time:v1')));
+const next=async()=>{await page.locator('[data-game="advance"]').click();};
+try{
+  await page.goto('http://127.0.0.1:4173');
+  await page.getByRole('button',{name:'НАЧАТЬ ИГРУ',exact:true}).waitFor();
+  assert.equal(await page.locator('aside').isVisible(),false);
+  await page.screenshot({path:'/private/tmp/master-time-game-start.png',fullPage:true});
+  await page.getByRole('button',{name:'НАЧАТЬ ИГРУ',exact:true}).click();
+  await page.getByRole('heading',{name:'Я — Хранитель времени.'}).waitFor();
+  await next();
+  await page.getByLabel('Ради чего я хочу сохранить время?').fill('Начать рисовать');
+  await page.getByRole('button',{name:'ОТПРАВИТЬСЯ В ДЕНЬ →'}).click();
+  await page.locator('.scene-choices button').nth(0).click();
+  let s=await gameState(),run=s.gameRuns[0];assert.equal(run.resources.attention,52);assert.equal(run.allocation.buffer,120);
+  assert.match(await page.locator('.consequence-cause').innerText(),/Лента заняла защищенный час/);
+  assert.match(await page.locator('.impact-list').innerText(),/Внимание −18|Внимание -18/);
+  assert.match(await page.locator('.future-note').innerText(),/нагрузка и энергия/);
+  assert.equal(await page.locator('.impact-row').count(),4);
+  await page.screenshot({path:'/private/tmp/master-time-consequence.png',fullPage:true});
+  await page.reload();
+  await page.locator('.game-consequence').waitFor();
+  assert.equal((await gameState()).gameRuns[0].phase,'consequence');
+  await page.goto('http://127.0.0.1:4173/#game');
+  await page.getByRole('button',{name:'ПРОДОЛЖИТЬ ИГРУ',exact:true}).click();
+  await next();await page.locator('.scene-choices button').nth(0).click();await next();
+  await page.getByRole('heading',{name:'Один маленький шаг.'}).waitFor();
+  assert.match(await page.locator('.keeper-hint').innerText(),/дважды/);
+  assert.equal((await gameState()).gameRuns[0].phase,'practice');
+  await page.getByLabel('Что я заметила о себе?').fill('Я соглашаюсь без учета своих планов');
+  await page.getByLabel('Мой маленький шаг',{exact:true}).fill('15 минут рисования');
+  await page.getByRole('button',{name:'ВЫПОЛНИТЬ ПРАКТИКУ →'}).click();
+  await next();
+  assert.equal(await page.locator('.scene-content h1').innerText(),'Накопленная усталость');
+  await page.screenshot({path:'/private/tmp/master-time-game-scene.png',fullPage:true});
+  await page.setViewportSize({width:375,height:950});
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.screenshot({path:'/private/tmp/master-time-game-mobile.png',fullPage:true});
+  await page.locator('.scene-choices button').nth(1).click();await next();
+  await page.locator('.scene-choices button').nth(1).click();await next();
+  await page.getByRole('heading',{name:'Ты прожила свой день.'}).waitFor();
+  s=await gameState();const original=structuredClone(s.gameRuns[0]);assert.equal(original.phase,'result');assert.equal(s.decisions.length,4);assert.equal(s.cardRuns.length,1);
+  const reward=s.rewards.find(r=>r.key===`game:${original.id}:complete`);assert.equal(reward.amount,20+original.resources.crystals);
+  await page.reload();await page.getByRole('heading',{name:'Ты прожила свой день.'}).waitFor();assert.equal((await gameState()).rewards.length,1);
+  await page.getByRole('button',{name:'ДОБАВИТЬ МОЙ ШАГ В РЕАЛЬНЫЙ ПЛАН'}).click();
+  assert.equal(await page.getByLabel('Название',{exact:true}).inputValue(),'15 минут рисования');
+  await page.getByRole('button',{name:'Сохранить дело'}).click();
+  assert.equal((await gameState()).tasks[0].sourceRunId,original.id);
+  await page.getByRole('button',{name:'ПРОЖИТЬ ДЕНЬ ИНАЧЕ'}).click();
+  await page.getByRole('heading',{name:'Я — Хранитель времени.'}).waitFor();
+  s=await gameState();assert.equal(s.gameRuns.length,2);assert.deepEqual(s.gameRuns[0],original);assert.notEqual(s.activeRun,original.id);
+  for(const width of [375,390,768,1440]){
+    await page.setViewportSize({width,height:1000});
+    for(const route of ['game','play','day','cards']){
+      await page.goto('http://127.0.0.1:4173/#'+route);await page.locator('#content h1').waitFor();
+      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${route}: ${width}`);
+      assert.ok(!/[ёЁ]/.test(await page.locator('#content').innerText()));
+    }
+  }
+  const filePage=await browser.newPage({viewport:{width:390,height:844}});
+  await filePage.goto(pathToFileURL(fileURLToPath(new URL('../index.html',import.meta.url))).href+'#game');
+  await filePage.getByRole('button',{name:'НАЧАТЬ ИГРУ',exact:true}).waitFor();
+  await filePage.getByRole('button',{name:'НАЧАТЬ ИГРУ',exact:true}).click();await filePage.getByRole('heading',{name:'Я — Хранитель времени.'}).waitFor();
+  await filePage.goto(filePage.url().split('#')[0]+'#cards');await filePage.locator('.practice').first().waitFor();assert.equal(await filePage.locator('.practice').count(),74);
+  await filePage.close();assert.deepEqual(errors,[]);
+  console.log('PASS: landing → Keeper → allocation → 4 choices → contextual source practice → final result; causal fatigue branch; resume/reload; reward once; replay archive; bridge to real plan; responsive game screens; direct file:// game and 74-card catalog.');
+}catch(e){await page.screenshot({path:'/private/tmp/master-time-game-failure.png',fullPage:true});console.error(await page.locator('#content').innerText());throw e;}finally{await browser.close();}
