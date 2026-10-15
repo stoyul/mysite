@@ -52,7 +52,7 @@ try{
   await page.reload();
   await page.locator('.chapter').waitFor();
   assert.equal(await page.locator('.chapter').count(),1);
-  await page.getByRole('link',{name:'Мой ритм',exact:true}).click();
+  await page.getByRole('link',{name:'Настройки',exact:true}).click();
   const downloaded=page.waitForEvent('download');
   await page.getByRole('button',{name:'Скачать резервную копию JSON'}).click();
   const download=await downloaded;

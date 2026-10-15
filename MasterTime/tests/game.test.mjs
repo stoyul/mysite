@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {newRun,advance,startDay,DEFAULT_PLAN,validateAllocation,currentScene,applyChoice,completePractice,recommendedPractice,timeTotal,gameProgress,recommendation} from '../src/game.mjs';
+import {newRun,advance,startDay,DEFAULT_PLAN,DEFAULT_SCHEDULE,scheduleToAllocation,chooseWishes,validateAllocation,currentScene,applyChoice,completePractice,recommendedPractice,timeTotal,gameProgress,recommendation} from '../src/game.mjs';
 import scenarios from '../data/game-scenarios.mjs';
-const ready=(allocation=DEFAULT_PLAN,variant=0)=>{const r=newRun('run',1,variant);advance(r,2);startDay(r,allocation,'Рисование');return r;};
+const ready=(allocation=DEFAULT_PLAN,variant=0)=>{const r=newRun('run',1,variant);delete r.mode;advance(r,2);startDay(r,allocation,'Рисование');return r;};
 const choose=(r,n)=>applyChoice(r,currentScene(r).id,n,3);
 test('8 исходных событий, по 3 варианта и явные правила',()=>{assert.equal(scenarios.length,8);for(const e of scenarios){assert.equal(e.choices.length,3);for(const c of e.choices){assert.equal(typeof c.cost,'number');assert.equal(typeof c.attention,'number');assert.ok(c.explanation);}}});
 test('Хранитель, миссия, план и старт: последовательные фазы',()=>{const r=newRun('a',1);assert.equal(r.phase,'intro');assert.throws(()=>startDay(r,DEFAULT_PLAN,'Цель'));advance(r,2);assert.equal(r.phase,'plan');startDay(r,DEFAULT_PLAN,'Цель');assert.equal(r.phase,'scene');assert.equal(r.allocation.buffer,180);assert.equal(timeTotal(r),1440);});
@@ -23,4 +23,27 @@ test('Все допустимые цепочки выбора держат ба�
     const r=ready();for(const n of [a,b,c,d]){choose(r,n);assert.equal(timeTotal(r),1440);advance(r,10);if(r.phase==='practice'){completePractice(r,'Наблюдение','Маленький шаг',15,11);advance(r,12);}}
     assert.equal(r.phase,'result');for(const key of ['energy','attention','joy','freedom'])assert.ok(r.resources[key]>=0&&r.resources[key]<=100);
   }
+});
+test('Новый распорядок из часов и минут занимает не более суток и сохраняет подробности',()=>{
+  const {allocation,detail}=scheduleToAllocation(DEFAULT_SCHEDULE),r=newRun('new',1);
+  assert.equal(Object.values(detail).reduce((a,b)=>a+b,0),1260);
+  assert.equal(allocation.sleep,480);assert.equal(allocation.duties,150);
+  advance(r,2);startDay(r,allocation,null,detail);assert.equal(r.phase,'wishes');assert.equal(r.allocation.buffer,60);assert.equal(r.allocation.unaccounted,180);assert.deepEqual(r.schedule,detail);
+  assert.throws(()=>scheduleToAllocation({...DEFAULT_SCHEDULE,work:900}),/24 часа/);
+  assert.throws(()=>scheduleToAllocation({...DEFAULT_SCHEDULE,work:31}),/15 минут/);
+});
+test('Выбранное желание получает реальные 15 минут из резерва, а защищенные блоки не сокращаются',()=>{
+  const r=newRun('new',1),{allocation,detail}=scheduleToAllocation(DEFAULT_SCHEDULE);advance(r,2);startDay(r,allocation,null,detail);
+  chooseWishes(r,['Читать книги','Гулять'],'Читать книги');assert.equal(r.goal,'Читать книги');
+  const before=structuredClone(r.allocation);applyChoice(r,currentScene(r).id,1,3);
+  assert.equal(r.history.at(-1).saved,15);assert.equal(r.allocation.wishes,15);assert.equal(r.allocation.buffer,before.buffer-15);
+  assert.equal(r.history.at(-1).missionUnlocked,true);assert.equal(r.resources.crystals,7);
+  for(const key of ['sleep','rest','work','duties'])assert.equal(r.allocation[key],before[key]);
+  assert.equal(timeTotal(r),1440);
+});
+test('Prime Time из паспорта меняет игровую ситуацию, а отсутствие наблюдений не навязывает вывод',()=>{
+  const {allocation,detail}=scheduleToAllocation(DEFAULT_SCHEDULE),r=newRun('prime',1);
+  r.prime={focus:'09:00',unknown:false};advance(r,2);startDay(r,allocation,null,detail);chooseWishes(r,['Читать'],'Читать');
+  assert.match(currentScene(r).description,/Prime Time/);
+  r.prime.unknown=true;assert.doesNotMatch(currentScene(r).description,/Prime Time/);
 });

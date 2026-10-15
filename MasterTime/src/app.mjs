@@ -1,13 +1,26 @@
 import {CATEGORIES,initialState,dateInZone,zonedInstant,dayStats,shiftDate,parseDate,monthDates,habitProgress,percent,validateTask,grantReward,crystals,mastery,closeMonth} from './domain.mjs';
-import {newRun,startDay,applyChoice,advance,completePractice} from './game.mjs';
+import {newRun,startDay,applyChoice,advance,completePractice,skipPractice,scheduleToAllocation,chooseWishes,DAY_ACTIVITIES} from './game.mjs';
 import {gameView} from './game-view.mjs';
+import {journeyView,wishes} from './journey-view.mjs';
+import {CHAPTERS,chapterUnlocked,newChapter,prepareChapter,chooseChapter,advanceChapter,chapterReward} from './chapters.mjs';
+import {chapterLanding,chapterView} from './chapter-view.mjs';
+import {newPassportDraft,sleepWindow,setSleep,setDay,addCustom,setRhythm,setPrime,finishPassport} from './passport.mjs';
+import {passportView} from './passport-view.mjs';
 const $=id=>document.getElementById(id);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const KEY='master-time:v1';let state=initialState(),storageError='',cards=[],view='day',search='',favoritesOnly=false,selectedCard=null;
+const KEY='master-time:v1';let state=initialState(),storageError='',cards=[],view='day',search='',favoritesOnly=false,selectedCard=null,introSlide=0;
 try{const raw=localStorage.getItem(KEY);if(raw){const data=JSON.parse(raw);if(data.version!==1||!Array.isArray(data.tasks)||!data.profile?.zone||!data.months||!data.chapters||!Array.isArray(data.rewards))throw Error('Неизвестный формат сохранения');state=data;}}catch(error){storageError='Сохранение не удалось прочитать. Данные не перезаписаны. '+error.message;}
 let date=dateInZone(Date.now(),state.profile.zone),month=date.slice(0,7),year=Number(month.slice(0,4));
 let noticeTimer;
 function notify(message){$('notice').textContent=message;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').textContent='',5000);}
+let soundOn=localStorage.getItem('master-time:sound')==='on',musicOn=localStorage.getItem('master-time:music')==='on',audioCtx,musicVoices=[];
+function playSound(kind='tap'){
+  if(!soundOn)return;
+  try{audioCtx??=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();const now=audioCtx.currentTime,patterns={reward:[660,880,1100],step:[440,660],card:[520,700],start:[294,440,587],event:[392,466],decision:[520,659],success:[523,659,784],surprise:[392,330,440],end:[330,440,523],level:[440,587,880],tap:[490]},notes=patterns[kind]||patterns.tap;notes.forEach((pitch,i)=>{const osc=audioCtx.createOscillator(),gain=audioCtx.createGain(),start=now+i*.09;osc.type='sine';osc.frequency.setValueAtTime(pitch,start);gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(.025,start+.018);gain.gain.exponentialRampToValueAtTime(.0001,start+.24);osc.connect(gain).connect(audioCtx.destination);osc.start(start);osc.stop(start+.25);});}catch{}
+}
+function startMusic(){if(!musicOn||musicVoices.length)return;try{audioCtx??=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();const gain=audioCtx.createGain();gain.gain.value=.0001;gain.connect(audioCtx.destination);const voices=[1,1.5].map(factor=>{const osc=audioCtx.createOscillator();osc.type='sine';osc.frequency.value=196*factor;osc.connect(gain);osc.start();return osc;});gain.gain.exponentialRampToValueAtTime(.007,audioCtx.currentTime+1);musicVoices=[...voices,gain];}catch{}}
+function stopMusic(){if(!musicVoices.length)return;const gain=musicVoices.at(-1);try{gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.4);musicVoices.slice(0,-1).forEach(osc=>osc.stop(audioCtx.currentTime+.45));}catch{}musicVoices=[];}
+document.addEventListener('pointerdown',()=>{if(musicOn)startMusic();},{once:true});
 function showRewardBurst(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   const burst=$('reward-burst');burst.replaceChildren();
@@ -18,7 +31,7 @@ function update(fn,message='Сохранено на этом устройств�
   if(storageError){notify(storageError);return false;}
   const next=structuredClone(state);const oldLevel=mastery(state),oldBalance=crystals(state),oldRun=activeGame(state),oldRunCrystals=oldRun?.resources.crystals??0;
   try{fn(next);localStorage.setItem(KEY,JSON.stringify(next));state=next;render();notify(message);
-    if(crystals(state)>oldBalance||activeGame(state)?.id===oldRun?.id&&activeGame(state)?.resources.crystals>oldRunCrystals){document.body.classList.add('reward');showRewardBurst();setTimeout(()=>document.body.classList.remove('reward'),1300);if(mastery(state)>oldLevel)notify(`Новый уровень мастерства: ${mastery(state)}`);}return true;
+    if(crystals(state)>oldBalance||activeGame(state)?.id===oldRun?.id&&activeGame(state)?.resources.crystals>oldRunCrystals){document.body.classList.add('reward');showRewardBurst();playSound('reward');setTimeout(()=>document.body.classList.remove('reward'),1300);if(mastery(state)>oldLevel)notify(`Новый уровень мастерства: ${mastery(state)}`);}return true;
   }catch(error){notify(`Не сохранено: ${error.message}`);return false;}
 }
 const id=()=>crypto.randomUUID();
@@ -46,15 +59,26 @@ function yearView(){
   const months=Array.from({length:12},(_,i)=>`${year}-${String(i+1).padStart(2,'0')}`);
   return hero('Твой год — твоя история.','У каждого месяца свое место. Цели, решения и открытия остаются с тобой.')+`<div class="heading">${button('← Год','prev-year')}<h2>${year}</h2>${button('Следующий год →','next-year')}</div><div class="grid"><section class="panel year-panel"><svg class="wheel" viewBox="0 0 440 440" role="group" aria-label="Колесо моего года — выбери месяц"><circle class="wheel-aura" cx="220" cy="220" r="203"/>${months.map((m,i)=>{const a=(-75+i*30)*Math.PI/180,x=220+135*Math.cos(a),y=220+135*Math.sin(a);return `<a href="#month" data-month="${m}" class="wheel-month ${m===month?'current':''} ${state.chapters[m]?'closed':''}" aria-label="${monthLabel(m)}"><path d="${wheelSlice(i)}"/><text x="${x}" y="${y+5}" text-anchor="middle">${i+1}</text></a>`;}).join('')}<circle class="wheel-core" cx="220" cy="220" r="78"/><text class="wheel-year" x="220" y="212" text-anchor="middle">${year}</text><text class="wheel-subtitle" x="220" y="241" text-anchor="middle">МОЕ ВРЕМЯ</text></svg><div class="month-list">${months.map(m=>button(monthLabel(m).split(' ')[0],'select-month',`data-month="${m}"`,m===month?'active':'')).join('')}</div></section><section class="panel"><p class="eyebrow">ИСТОРИЯ МЕСЯЦА</p><h2>${monthLabel(month)}</h2><p>Целей: ${(state.months[month]?.goals||[]).length}<br>Привычек: ${(state.months[month]?.habits||[]).length}<br>Сохраненных карточек: ${(state.months[month]?.cards||[]).length}<br>Решений: ${state.decisions.filter(d=>d.month===month).length}</p>${button('Открыть месяц','open-month','','primary')}<p style="margin-top:22px">${state.chapters[month]?'Глава сохранена в книге.':month<dateInZone(Date.now(),state.profile.zone).slice(0,7)?'Месяц закончился. Можно сохранить главу с итогами.':'Глава автоматически появится после завершения месяца при следующем входе.'}</p></section></div>`;
 }
-function cardsView(){const selected=cards.find(c=>c.id===selectedCard);if(selected)return hero(esc(selected.title),'Практика из авторских материалов. Выбери маленькое действие для своей реальной жизни.')+`<section class="panel">${button('← В каталог','cards-back')}<p class="eyebrow" style="margin-top:24px">КАРТОЧКА ${selected.number} · ${esc(selected.source.file)}, строка ${selected.source.row}</p><p class="card-description">${esc(selected.description)}</p><h2>Моя практика</h2><p class="card-description">${esc(selected.practice)}</p><details><summary>Дополнительный формат упражнения</summary><p class="card-description">${esc(selected.engagement)}</p></details><form id="card-form"><label>Мое открытие<textarea name="note" maxlength="20000" required></textarea></label><button class="primary">Выполнить и сохранить</button></form><div class="actions" style="margin-top:20px">${button(state.favorites.includes(selected.id)?'★ В избранном':'☆ В избранное','favorite',`data-id="${selected.id}"`)}${button('Добавить в мой план','plan-card',`data-id="${selected.id}"`)}</div><small>Первое выполнение карточки: +3 кристалла. Повторная практика сохраняется без повторной награды.</small>${state.cardRuns.filter(r=>r.cardId===selected.id).map(r=>`<details><summary>${esc(r.date)} · мое открытие</summary><p class="card-description">${esc(r.note)}</p></details>`).join('')}</section>`;
-  const found=cards.filter(c=>(!favoritesOnly||state.favorites.includes(c.id))&&`${c.title} ${c.description} ${c.practice}`.toLowerCase().includes(search.toLowerCase()));return hero('Сокровищница времени.','74 авторские практики. Ищи свою тему, пробуй и возвращайся к важным открытиям.')+`<div class="fields"><label>Поиск по карточкам<input id="search" type="search" value="${esc(search)}" placeholder="Отдых, внимание, цели..."></label><label>Показать<select id="filter"><option value="all">Все карточки</option><option value="favorites" ${favoritesOnly?'selected':''}>Избранное</option></select></label></div><p class="muted">Найдено ${found.length} · Выполнено ${new Set(state.cardRuns.map(r=>r.cardId)).size} / ${cards.length}</p><div class="card-list">${found.map(c=>`<article class="practice"><span class="eyebrow">ПРАКТИКА ${c.number} ${state.favorites.includes(c.id)?'★':''}</span><h2>${esc(c.title)}</h2><p>${esc(c.practice.slice(0,150))}${c.practice.length>150?'…':''}</p>${button('Открыть практику →','card',`data-id="${c.id}"`)}</article>`).join('')||'<p class="empty">По этому запросу карточек нет.</p>'}</div>`;
+function cardsView(){
+  const selected=cards.find(c=>c.id===selectedCard);
+  if(selected){
+    const sourceText=(selected.original?.description||'').replaceAll('ё','е').replaceAll('Ё','Е');
+    const sourcePractice=(selected.original?.practice||'').replaceAll('ё','е').replaceAll('Ё','Е');
+    return hero(esc(selected.title),'Одно небольшое действие может изменить привычный день.')+`<section class="panel card-detail">${button('← В каталог','cards-back')}<p class="eyebrow">КАРТОЧКА ${selected.number}</p><div class="card-editorial"><div><span class="card-part">01 · СИТУАЦИЯ</span><p>${esc(selected.situation||selected.description)}</p></div><div><span class="card-part">02 · ПОПРОБУЙ</span><p>${esc(selected.action||selected.practice)}</p></div></div><details><summary>Подробнее: исходная методика</summary><p class="card-description">${esc(sourceText)}</p><p class="card-description">${esc(sourcePractice)}</p><small>${esc(selected.source.file)}, строка ${selected.source.row}</small></details><form id="card-form"><label>Мое открытие<textarea name="note" maxlength="20000" required></textarea></label><button class="primary">Выполнить и сохранить</button></form><div class="actions">${button(state.favorites.includes(selected.id)?'★ В избранном':'☆ В избранное','favorite',`data-id="${selected.id}"`)}${button('Добавить в мой план','plan-card',`data-id="${selected.id}"`)}</div><small>За первое выполнение: +3 кристалла. Повторная практика сохраняется без повторной награды.</small>${state.cardRuns.filter(r=>r.cardId===selected.id).map(r=>`<details><summary>${esc(r.date)} · мое открытие</summary><p class="card-description">${esc(r.note)}</p></details>`).join('')}</section>`;
+  }
+  const found=cards.filter(c=>(!favoritesOnly||state.favorites.includes(c.id))&&`${c.title} ${c.situation||c.description} ${c.action||c.practice}`.toLowerCase().includes(search.toLowerCase()));
+  return hero('Сокровищница времени.','74 практики: короткие истории и действия, к которым можно возвращаться.')+`<div class="fields"><label>Поиск по карточкам<input id="search" type="search" value="${esc(search)}" placeholder="Отдых, внимание, цели..."></label><label>Показать<select id="filter"><option value="all">Все карточки</option><option value="favorites" ${favoritesOnly?'selected':''}>Избранное</option></select></label></div><p class="muted">Найдено ${found.length} · Выполнено ${new Set(state.cardRuns.map(r=>r.cardId)).size} / ${cards.length}</p><div class="card-list">${found.map(c=>`<article class="practice"><span class="eyebrow">ПРАКТИКА ${c.number} ${state.favorites.includes(c.id)?'★':''}</span><h2>${esc(c.title)}</h2><p>${esc(c.situation||c.description)}</p>${button('Открыть практику →','card',`data-id="${c.id}"`)}</article>`).join('')||'<p class="empty">По этому запросу карточек нет.</p>'}</div>`;
 }
 function bookView(){const entries=Object.values(state.chapters).sort((a,b)=>a.month.localeCompare(b.month));return hero('Книга моего времени.','Здесь остаются прожитые месяцы. История, которую ты создаешь каждый день.')+`<p class="warning">Экспорт PDF будет добавлен отдельным этапом с проверкой кириллицы и печатных страниц.</p>${entries.map(c=>`<article class="panel chapter"><h2>${monthLabel(c.month)}</h2>${[['Мои цели',c.goals.map(g=>`${g.done?'✓':'○'} ${g.title}`).join('\n')],['Что произошло',c.events],['Какие решения я приняла',c.decisions.map(d=>d.choice||'').join('\n')],['Что удалось',c.completedTasks.map(t=>t.title).join('\n')],['Какие привычки сформировались',c.habits.map(h=>`${h.title}: ${habitProgress(h,c.month).done}/${habitProgress(h,c.month).planned} отметок`).join('\n')],['Какие карточки я сохранила',c.cards.map(id=>cards.find(card=>card.id===id)?.title||id).join('\n')],['Что я поняла о себе',c.insights],['Что принесло мне радость',c.joy],['Что я хочу изменить',c.changes]].map(([title,text])=>`<h3>${title}</h3><p>${esc(text||'Нет записей')}</p>`).join('')}</article>`).join('')||'<section class="panel"><h2>Первая глава еще впереди</h2><p>Записывай цели и открытия в разделе «Мой месяц». При следующем входе после окончания месяца глава сохранится автоматически.</p></section>'}`;}
 function settingsView(){return hero('Мой ритм и мои данные.','Настрой время сна и часовой пояс. Сохраняй резервную копию важных записей.')+`<section class="panel"><h2>Параметры расчетов</h2><form id="profile-form"><label>Часовой пояс IANA<input name="zone" value="${esc(state.profile.zone)}" required placeholder="Europe/Berlin"></label><div class="fields"><label>Отход ко сну<input name="bed" type="time" value="${state.profile.bed}" required></label><label>Пробуждение<input name="wake" type="time" value="${state.profile.wake}" required></label></div><button class="primary">Сохранить настройки</button></form><p style="margin-top:20px">Часовой пояс определяет отображение сохраненных моментов времени. При его смене часы задач могут измениться.</p></section><section class="panel"><h2>Данные на этом устройстве</h2><p>Серверная синхронизация и вход через Telegram пока не подключены. Очистка браузера удалит локальный прогресс.</p>${button('Скачать резервную копию JSON','backup','','primary')}<p>Восстановление копии и импорт данных старого прототипа будут добавлены после проверки схемы миграции.</p></section>`;}
-const routes=[['game','В игру'],['day','Мой день'],['week','Моя неделя'],['month','Мой месяц'],['year','Колесо года'],['cards','Карточки'],['book','Книга времени'],['settings','Мой ритм']];
-function render(){const requested=location.hash.slice(1);view=requested==='play'?'play':routes.some(([key])=>key===requested)?requested:'game';document.body.classList.toggle('game-mode',view==='game'||view==='play');$('navigation').innerHTML=routes.map(([key,label])=>`<a href="#${key}" ${key===view?'aria-current="page"':''}>${label}</a>`).join('');$('balance').textContent=`✦ ${crystals(state)} кристаллов`;
-  const game=()=>gameView({state,cards,hourglass,crystals,mastery,screen:view});
-  const views={game,play:game,day:dayView,week:weekView,month:monthView,year:yearView,cards:cardsView,book:bookView,settings:settingsView};
+function runsView(){return `<section class="panel"><p class="eyebrow">МОИ ПРОХОЖДЕНИЯ</p><h1>Каждая попытка остается с тобой.</h1><p>Игровые дни и главы можно повторять без ожидания и без потери прежних результатов.</p><h2>Игровые дни</h2>${(state.gameRuns||[]).map((r,i)=>`<p>${button(`${r.phase==='result'?'Итог':'Продолжить'} · День ${i+1}: ${esc(r.goal||'моя цель')}`,'past-run',`data-id="${r.id}"`)}</p>`).join('')||'<p>Пока нет прохождений.</p>'}<h2>Неделя, месяц и год</h2>${(state.chapterRuns||[]).map((r,i)=>`<p>${button(`${r.phase==='result'?'Итог':'Продолжить'} · ${esc(CHAPTERS[r.kind]?.title||r.kind)} ${i+1}`,'past-chapter',`data-id="${r.id}"`)}</p>`).join('')||'<p>Пока нет глав.</p>'}<a class="chapter-entry" href="#game">Начать новый игровой день →</a></section>`;}
+function toolsView(){return `<section class="tools-landing"><p class="eyebrow">РЕАЛЬНАЯ ЖИЗНЬ</p><h1>Инструменты планирования</h1><p class="game-lead">Игровые ситуации — тренировка. Здесь ты планируешь конкретные даты и сохраняешь настоящие дела.</p><div class="chapter-tiles">${[['day','Мой реальный день','Дела и свободные интервалы на выбранную дату'],['week','Моя реальная неделя','План на семь календарных дней'],['month','Мой реальный месяц','Цели и привычки на текущий месяц'],['year','Колесо моего года','История всех двенадцати месяцев'],['cards','Карточки','74 практики тайм-менеджмента'],['book','Книга моего времени','Сохраненные главы месяца']].map(([key,title,desc])=>`<a class="chapter-tile" href="#${key}"><h2>${title}</h2><p>${desc}</p><span>Открыть →</span></a>`).join('')}</div></section>`;}
+function achievementsView(){const completeDays=(state.gameRuns||[]).filter(r=>r.phase==='result'),completeChapters=(state.chapterRuns||[]).filter(r=>r.phase==='result');return `<section class="panel"><p class="eyebrow">МОИ ДОСТИЖЕНИЯ</p><h1>Твои решения оставляют след.</h1><div class="landing-stats"><div><strong>${completeDays.length}</strong><span>Игровых дней</span></div><div><strong>${completeChapters.length}</strong><span>Глав</span></div><div><strong>${crystals(state)}</strong><span>Кристаллов</span></div></div><div class="achievement-list">${[...new Set(completeDays.flatMap(r=>r.achievements||[]))].map(a=>`<span>✦ ${esc(a)}</span>`).join('')||'<p>Первое достижение появится после игрового дня.</p>'}</div><details><summary>История наград</summary>${state.rewards.map(r=>`<p>${esc(r.reason||r.key)} · +${r.amount} кристаллов</p>`).join('')}</details></section>`;}
+const routes=[['game','Играть'],['runs','Мои прохождения'],['passport','Мой ритм'],['tools','Инструменты планирования'],['achievements','Мои достижения'],['chapters','Игровые главы'],['day','Мой реальный день'],['week','Моя неделя'],['month','Мой месяц'],['year','Колесо года'],['cards','Карточки'],['book','Книга времени'],['settings','Настройки']];
+function render(){const requested=location.hash.slice(1);view=requested==='play'||requested==='chapter'?requested:routes.some(([key])=>key===requested)?requested:'game';document.body.classList.toggle('game-mode',['game','play','chapters','chapter','runs','passport','tools','achievements'].includes(view));$('navigation').innerHTML=routes.map(([key,label])=>`<a href="#${key}" ${key===view?'aria-current="page"':''}>${label}</a>`).join('');$('balance').textContent=`✦ ${crystals(state)} кристаллов`;
+  $('sound-toggle').textContent=soundOn?'♪ Звуки включены':'♪ Звуки выключены';$('sound-toggle').setAttribute('aria-pressed',String(soundOn));$('music-toggle').textContent=musicOn?'♫ Музыка включена':'♫ Музыка выключена';$('music-toggle').setAttribute('aria-pressed',String(musicOn));
+  const game=()=>{const run=activeGame(state),args={state,cards,hourglass,crystals,mastery,screen:view,introSlide};return view==='game'||!run||run.mode==='journey-v2'?journeyView(args):gameView(args);};
+  const views={game,play:game,chapters:()=>chapterLanding(state),chapter:()=>chapterView(state),runs:runsView,passport:()=>passportView(state),tools:toolsView,achievements:achievementsView,day:dayView,week:weekView,month:monthView,year:yearView,cards:cardsView,book:bookView,settings:settingsView};
   try{$('content').innerHTML=(storageError?`<p role="alert" class="warning">${esc(storageError)}</p>`:'')+views[view]();const past=$('past-runs');if(past)past.innerHTML=(state.gameRuns||[]).map(r=>`<p>${button(`${r.phase==='result'?'Итог':'Продолжить'} · Прохождение ${(state.gameRuns||[]).indexOf(r)+1}: ${esc(r.goal||'Новый день')}`,'past-run',`data-id="${r.id}"`)}</p>`).join('');}catch(error){$('content').innerHTML=`<p role="alert" class="warning">Не удалось открыть раздел: ${esc(error.message)}. Данные не удалены.</p>`;}
 }
 function openEditor(task=null){const f=$('task-form');f.reset();delete f.dataset.gameRun;f.elements.id.value=task?.id||'';f.elements.title.value=task?.title||'';f.elements.date.value=task?dateInZone(task.start,state.profile.zone):date;f.elements.time.value=task?localClock(task.start):'09:00';f.elements.duration.value=task?.duration||30;f.elements.category.value=task?.category||'Хочу';f.elements.occurrence.value=task?.occurrence||'reject';$('editor-title').textContent=task?'Изменить дело':'Новое дело';$('form-error').textContent='';$('editor').showModal();}
@@ -68,21 +92,84 @@ function recordGameResult(s,run){
   }
 }
 document.addEventListener('click',event=>{
+  const passportTarget=event.target.closest('[data-passport]');
+  if(passportTarget){
+    const action=passportTarget.dataset.passport;
+    if(action==='begin'){update(s=>{s.passportDraft=newPassportDraft(s.profile,false);},'');return;}
+    if(action==='back'){update(s=>{s.passportDraft.step=Math.max(0,s.passportDraft.step-1);},'');return;}
+    if(action==='energy-hour'){update(s=>{const d=s.passportDraft,h=Number(passportTarget.dataset.hour),levels=['unknown','low','medium','high'];d.energyHours[h]=levels[(levels.indexOf(d.energyHours[h])+1)%levels.length];},'');return;}
+    if(action==='add-custom'){
+      const form=$('passport-day-form');if(!form)return;
+      update(s=>{const d=s.passportDraft;setDay(d,Object.fromEntries(new FormData(form)));d.step=1;addCustom(d,$('custom-name').value,$('custom-hours').value,$('custom-minutes').value);d.schedule.other+=d.custom.at(-1).minutes;},'Занятие добавлено');return;
+    }
+    if(action==='remove-custom'){
+      update(s=>{const d=s.passportDraft,i=Number(passportTarget.dataset.index),removed=d.custom.splice(i,1)[0];if(removed)d.schedule.other-=removed.minutes;},'Занятие удалено');return;
+    }
+    return;
+  }
+  const chapterTarget=event.target.closest('[data-chapter]');
+  if(chapterTarget){
+    const action=chapterTarget.dataset.chapter,kind=chapterTarget.dataset.kind;
+    if(action==='history'){if(update(s=>{s.activeChapter=chapterTarget.dataset.id;},'')){location.hash='chapter';render();}return;}
+    if(action==='bridge-week'){
+      const run=state.chapterRuns.find(r=>r.id===state.activeChapter);openEditor();const form=$('task-form');form.elements.title.value=`30 минут: ${run.goal||'мое желание'}`.slice(0,200);form.elements.duration.value=30;form.elements.category.value='Хочу';return;
+    }
+    if(action==='bridge-month'){
+      if(update(s=>{const run=s.chapterRuns.find(r=>r.id===s.activeChapter),m=monthRecord(s);if(m.habits.some(h=>h.sourceChapterId===run.id))throw Error('Эта привычка уже добавлена');if(m.habits.length>=3)throw Error('В месяце уже три привычки');m.habits.push({id:id(),title:run.focus,goal:'Маленький шаг каждый день',start:`${month}-01`,weekdays:[0,1,2,3,4,5,6],checks:[],sourceChapterId:run.id});},'Привычка добавлена в мой месяц'))playSound('reward');return;
+    }
+    if(action==='bridge-year'){
+      if(update(s=>{const run=s.chapterRuns.find(r=>r.id===s.activeChapter),m=monthRecord(s);if(m.goals.some(g=>g.sourceChapterId===run.id))throw Error('Приоритет уже добавлен');m.goals.push({id:id(),title:run.focus,done:false,sourceChapterId:run.id});},'Приоритет добавлен в цели месяца'))playSound('reward');return;
+    }
+    if(action==='open'||action==='replay'){
+      if(!state.profile.passport){if(update(s=>{s.passportDraft=newPassportDraft(s.profile,false);},'')){location.hash='passport';render();}return;}
+      if(action==='open'&&!chapterUnlocked(state,kind)){notify('Сначала заверши предыдущую главу');return;}
+      const existing=action==='open'?[...(state.chapterRuns||[])].reverse().find(r=>r.kind===kind&&r.phase!=='result'):null;
+      if(update(s=>{s.chapterRuns??=[];if(existing)s.activeChapter=existing.id;else{const day=[...(s.gameRuns||[])].reverse().find(r=>r.phase==='result');const run=newChapter(kind,id(),Date.now(),day?.goal||'');s.chapterRuns.push(run);s.activeChapter=run.id;}},'')){location.hash='chapter';render();playSound('step');}return;
+    }
+    if(action==='choose'){if(update(s=>chooseChapter(s.chapterRuns.find(r=>r.id===s.activeChapter),Number(chapterTarget.dataset.choice),Date.now()),''))playSound('card');return;}
+    if(action==='advance'){if(update(s=>{const run=s.chapterRuns.find(r=>r.id===s.activeChapter);advanceChapter(run,Date.now());if(run.phase==='result')grantReward(s,`chapter:${run.id}`,chapterReward(run),`Завершение главы: ${CHAPTERS[run.kind].title}`,dateInZone(Date.now(),s.profile.zone));},''))playSound('step');return;}
+    return;
+  }
+  if(event.target.closest('#sound-toggle')){soundOn=!soundOn;localStorage.setItem('master-time:sound',soundOn?'on':'off');render();playSound('step');return;}
+  if(event.target.closest('#music-toggle')){musicOn=!musicOn;localStorage.setItem('master-time:music',musicOn?'on':'off');if(musicOn)startMusic();else stopMusic();render();return;}
+  if(event.target.closest('#close-journey-review')){$('journey-review').close();return;}
   const target=event.target.closest('[data-game]');if(!target)return;
   const action=target.dataset.game;
-  if(action==='start'||action==='replay'){
-    const current=activeGame(state);if(current&&current.phase!=='result'){location.hash='play';return;}
-    if(update(s=>{s.gameRuns??=[];const run=newRun(id(),Date.now(),s.gameRuns.length);s.gameRuns.push(run);s.activeRun=run.id;},'')){location.hash='play';render();}return;
+  if(action==='adjust-time'){
+    const form=$('game-plan-form'),input=form.elements[target.dataset.key],next=Math.max(0,Math.min(1440,Number(input.value)+Number(target.dataset.delta)));input.value=String(next);
+    form.querySelector(`[data-time-output="${target.dataset.key}"]`).textContent=next>=60?`${Math.floor(next/60)} ч${next%60?' '+next%60+' мин':''}`:`${next} мин`;
+    const used=[...form.querySelectorAll('.activity-row input')].reduce((n,item)=>n+Number(item.value),0),remaining=1440-used;
+    $('day-used').textContent=`${Math.floor(used/60)} ч${used%60?' '+used%60+' мин':''}`;
+    $('game-budget-preview').textContent=remaining>=0?`Не учтено ${Math.floor(remaining/60)} ч${remaining%60?' '+remaining%60+' мин':''}`:`Превышено на ${Math.floor(-remaining/60)} ч${-remaining%60?' '+(-remaining%60)+' мин':''}. Уменьши время.`;
+    $('game-budget-preview').classList.toggle('warning',remaining<0);
+    const colors=['#e9bb66','#dc418c','#6b91e6','#9c70cd','#f07865','#d4a46c','#b9ad68','#7daaa3','#6bc29a','#925cb7','#f3dc81','#74717e','#f7d990'];let angle=0;const slices=[];
+    DAY_ACTIVITIES.forEach(([key],i)=>{const size=Number(form.elements[key].value)/1440*360;if(size>0){slices.push(`${colors[i]} ${angle}deg ${angle+size}deg`);angle+=size;}});slices.push(`#302b37 ${angle}deg 360deg`);$('day-ring').style.background=`conic-gradient(${slices.join(',')})`;
+    playSound();return;
   }
-  if(action==='resume'){location.hash='play';render();return;}
-  if(action==='advance')update(s=>{const run=activeGame(s);advance(run,Date.now());recordGameResult(s,run);},'');
-  if(action==='choose')update(s=>applyChoice(activeGame(s),target.dataset.scene,Number(target.dataset.choice),Date.now()),'');
+  if(action==='intro-next'){introSlide=Math.min(2,introSlide+1);render();playSound('card');return;}
+  if(action==='toggle-wish'){update(s=>{const run=activeGame(s),wish=wishes[Number(target.dataset.wishIndex)];run.desires??=[];run.desires=run.desires.includes(wish)?run.desires.filter(x=>x!==wish):[...run.desires,wish];},'');playSound('card');return;}
+  if(action==='remove-custom-wish'){update(s=>{const run=activeGame(s),custom=(run.desires||[]).filter(x=>!wishes.includes(x));run.desires=run.desires.filter(x=>x!==custom[Number(target.dataset.customIndex)]);},'');return;}
+  if(action==='desire-next'){const run=activeGame(state);if(!run.desires?.length){$('wish-error').textContent='Выбери хотя бы одно желание';return;}update(s=>{activeGame(s).desireStep=1;},'');playSound('step');return;}
+  if(action==='desire-back'){update(s=>{activeGame(s).desireStep=0;},'');return;}
+  if(action==='focus-wish'){const run=activeGame(state),goal=run.desires[Number(target.dataset.wishIndex)];if(update(s=>chooseWishes(activeGame(s),run.desires,goal),''))playSound('step');return;}
+  if(action==='skip-practice'){update(s=>skipPractice(activeGame(s),Date.now()),'');return;}
+  if(action==='active-node'){document.getElementById('active-scene')?.scrollIntoView({behavior:'smooth',block:'start'});playSound('step');return;}
+  if(action==='history-node'){const entry=activeGame(state)?.history.find(h=>h.kind==='choice'&&h.step===Number(target.dataset.step));if(entry){$('journey-review-content').innerHTML=`<p class="eyebrow">ТВОЕ ПРОШЛОЕ РЕШЕНИЕ</p><h2>${esc(entry.title)}</h2><p><strong>${esc(entry.choice)}</strong></p><p>${esc(entry.explanation)}</p><p>Время события: ${entry.cost} мин. Для желания: ${entry.goalAfter??'—'} мин.</p>`;$('journey-review').showModal();playSound('card');}return;}
+  if(action==='start'||action==='replay'){
+    if(!state.profile.passport){if(update(s=>{s.passportDraft=newPassportDraft(s.profile,true);},'')){location.hash='passport';render();}return;}
+    introSlide=0;if(update(s=>{s.gameRuns??=[];const run=newRun(id(),Date.now(),s.gameRuns.length);run.schedule={...s.profile.passport.schedule};run.desires=[...s.profile.passport.desires];run.prime={focus:s.profile.passport.focus,complex:s.profile.passport.complex,slump:s.profile.passport.slump,energyHours:s.profile.passport.energyHours,unknown:s.profile.passport.primeUnknown};run.rhythm=s.profile.passport.rhythm;s.gameRuns.push(run);s.activeRun=run.id;},'')){location.hash='play';render();playSound('step');}return;
+  }
+  if(action==='resume'){if(target.dataset.id&&target.dataset.id!==state.activeRun)update(s=>{s.activeRun=target.dataset.id;},'');location.hash='play';render();return;}
+  if(action==='advance'){update(s=>{const run=activeGame(s);advance(run,Date.now());recordGameResult(s,run);},'');playSound('step');}
+  if(action==='choose'){update(s=>applyChoice(activeGame(s),target.dataset.scene,Number(target.dataset.choice),Date.now()),'');playSound('card');}
   if(action==='bridge'){
     const run=activeGame(state),existing=state.tasks.find(t=>t.sourceRunId===run.id);openEditor(existing);
     if(!existing){const f=$('task-form');f.dataset.gameRun=run.id;f.elements.title.value=run.practice.action;f.elements.duration.value=run.practice.minutes;f.elements.category.value='Хочу';}
   }
 });
 document.addEventListener('input',event=>{
+  if(event.target.closest('#passport-sleep-form')){const form=$('passport-sleep-form');try{const n=sleepWindow(form.elements.bed.value,form.elements.wake.value);const text=form.querySelector('p strong');if(text)text.textContent=`${Math.floor(n/60)} ч ${n%60} мин`;}catch{}return;}
+  if(event.target.closest('#passport-day-form')){const form=$('passport-day-form'),draft=state.passportDraft,custom=draft.custom.reduce((n,c)=>n+c.minutes,0),values=Object.fromEntries(new FormData(form)),parts=[draft.averageSleep],colors=['#e9bb66','#dc418c','#6b91e6','#9c70cd','#f07865','#d4a46c','#b9ad68','#7daaa3','#6bc29a','#925cb7','#f3dc81','#74717e','#f7d990'];DAY_ACTIVITIES.filter(([key])=>key!=='sleep').forEach(([key])=>parts.push(Number(values[`${key}Hours`]||0)*60+Number(values[`${key}Minutes`]||0)+(key==='other'?custom:0)));const used=parts.reduce((n,v)=>n+v,0);$('passport-used').textContent=`${Math.floor(used/60)} ч ${used%60} мин`;$('passport-unknown').textContent=used<=1440?`Не учтено: ${Math.floor((1440-used)/60)} ч ${(1440-used)%60} мин`:`Превышение: ${used-1440} мин`;let angle=0;const slices=[];parts.forEach((n,i)=>{const width=n/1440*360;if(width>0){slices.push(`${colors[i]} ${angle}deg ${angle+width}deg`);angle+=width;}});slices.push(`#302b37 ${angle}deg 360deg`);$('passport-ring').style.background=`conic-gradient(${slices.join(',')})`;return;}
   if(!event.target.closest('#game-plan-form'))return;
   const form=document.getElementById('game-plan-form'),names=['sleep','work','duties','rest','wishes','joy'];
   const used=names.reduce((n,key)=>n+Number(form.elements[key].value||0),0);
@@ -90,7 +177,21 @@ document.addEventListener('input',event=>{
 });
 document.addEventListener('submit',event=>{
   const form=event.target;if(!(form instanceof HTMLFormElement))return;event.preventDefault();const values=Object.fromEntries(new FormData(form)),formId=form.getAttribute('id');
-  if(formId==='game-plan-form'){update(s=>startDay(activeGame(s),values,values.goal),'');return;}
+  if(formId==='passport-sleep-form'){update(s=>setSleep(s.passportDraft,values),'');return;}
+  if(formId==='passport-day-form'){update(s=>setDay(s.passportDraft,values),'');return;}
+  if(formId==='passport-rhythm-form'){update(s=>setRhythm(s.passportDraft,values.rhythm),'');return;}
+  if(formId==='passport-prime-form'){update(s=>setPrime(s.passportDraft,values),'');return;}
+  if(formId==='passport-wishes-form'){
+    const desires=new FormData(form).getAll('desire');
+    if(update(s=>{const draft=s.passportDraft,passport=finishPassport(draft,desires,values.customWish);s.profile.passport=passport;s.profile.bed=passport.bed;s.profile.wake=passport.wake;s.passportDraft=null;if(draft.returnToGame){s.gameRuns??=[];const run=newRun(id(),Date.now(),s.gameRuns.length);run.schedule={...passport.schedule};run.desires=[...passport.desires];run.prime={focus:passport.focus,complex:passport.complex,slump:passport.slump,energyHours:passport.energyHours,unknown:passport.primeUnknown};run.rhythm=passport.rhythm;s.gameRuns.push(run);s.activeRun=run.id;}},'Паспорт времени сохранен')){location.hash=state.activeRun&&state.gameRuns?.at(-1)?.id===state.activeRun?'play':'passport';render();playSound('step');}return;
+  }
+  if(formId==='chapter-setup-form'){if(update(s=>prepareChapter(s.chapterRuns.find(r=>r.id===s.activeChapter),values.focus),''))playSound('step');return;}
+  if(formId==='game-plan-form'){
+    if(activeGame(state)?.mode==='journey-v2'){
+      try{const {allocation,detail}=scheduleToAllocation(values);if(update(s=>startDay(activeGame(s),allocation,null,detail),''))playSound('step');}catch(error){$('game-form-error').textContent=error.message;}
+    }else update(s=>startDay(activeGame(s),values,values.goal),'');return;
+  }
+  if(formId==='custom-wish-form'){const wish=String(values.wish||'').trim();if(!wish)return;update(s=>{const run=activeGame(s);run.desires??=[];if(!run.desires.includes(wish))run.desires.push(wish);},'');playSound('card');return;}
   if(formId==='game-practice-form'){
     update(s=>{const run=activeGame(s);completePractice(run,values.note,values.action,Number(values.minutes),Date.now());const today=dateInZone(Date.now(),s.profile.zone),m=monthRecord(s,today.slice(0,7));s.cardRuns.push({id:id(),cardId:run.practice.cardId,date:today,note:run.practice.note,month:today.slice(0,7),gameRun:run.id});if(!m.cards.includes(run.practice.cardId))m.cards.push(run.practice.cardId);},'');return;
   }
@@ -109,6 +210,7 @@ document.addEventListener('click',event=>{
   const {action,id:taskId}=target.dataset;
   if(action==='add')openEditor();
   if(action==='past-run') {if(update(s=>{s.activeRun=taskId;},'Открыто сохраненное прохождение')){location.hash='play';render();}}
+  if(action==='past-chapter'){if(update(s=>{s.activeChapter=taskId;},'Открыта сохраненная глава')){location.hash='chapter';render();}}
   if(action==='edit')openEditor(state.tasks.find(t=>t.id===taskId));
   if(action==='delete')update(s=>{s.tasks=s.tasks.filter(t=>t.id!==taskId);});
   if(action==='done')update(s=>{const t=s.tasks.find(t=>t.id===taskId);t.done=!t.done;if(t.done)grantReward(s,`task:${t.id}`,5,'Первое выполнение дела',date);});
