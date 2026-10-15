@@ -28,5 +28,7 @@ output+='})();\n';
 await mkdir(new URL('assets/',root),{recursive:true});
 await writeFile(new URL('assets/app.js',root),output);
 await writeFile(new URL('assets/app-20261015.js',root),output);
+await writeFile(new URL('assets/app-20261015-cards.js',root),output);
 await writeFile(new URL('assets/styles-20261015.css',root),await readFile(new URL('src/styles.css',root),'utf8'));
+await writeFile(new URL('assets/styles-20261015-cards.css',root),await readFile(new URL('src/styles.css',root),'utf8'));
 console.log(`Built assets/app.js from ${ordered.length} source modules and the 74-card catalog.`);

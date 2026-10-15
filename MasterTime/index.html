@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101013">
   <meta name="description" content="Мастер времени — пространство для важных дел, отдыха и радости. Автор Юлия Стоянова.">
   <title>Мастер времени — мое время, моя жизнь</title>
-  <link rel="stylesheet" href="./assets/styles-20261015.css">
+  <link rel="stylesheet" href="./assets/styles-20261015-cards.css">
 </head>
 <body>
   <a class="skip" href="#content">К содержимому</a>
@@ -19,5 +19,5 @@
   <dialog id="journey-review"><div id="journey-review-content"></div><button type="button" id="close-journey-review">Закрыть</button></dialog>
   <dialog id="editor"><form id="task-form"><div class="heading"><h2 id="editor-title">Новое дело</h2><button type="button" id="cancel-edit" aria-label="Закрыть">×</button></div><input name="id" type="hidden"><label>Название<input name="title" required maxlength="200" placeholder="Время для важного"></label><div class="fields"><label>Дата<input name="date" type="date" required></label><label>Начало<input name="time" type="time" required></label></div><div class="fields"><label>Длительность, мин<input name="duration" type="number" min="1" max="1440" value="30" required></label><label>Категория<select name="category"><option>Должен</option><option>Хочу</option><option>Радость</option></select></label></div><label>При повторении часа осенью<select name="occurrence"><option value="reject">Уточнить, если время повторяется</option><option value="earlier">Первое вхождение</option><option value="later">Второе вхождение</option></select></label><p id="form-error" role="alert"></p><button class="primary">Сохранить дело</button></form></dialog>
   <noscript>Для планирования и сохранения необходим JavaScript. Исходные документы находятся в папке проекта.</noscript>
-  <script defer src="./assets/app-20261015.js"></script>
+  <script defer src="./assets/app-20261015-cards.js"></script>
 </body></html>

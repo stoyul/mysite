@@ -1,7 +1,7 @@
 {
   "cards": {
     "file": "Таймменеджмент.xlsx",
-    "sha256": "2c4c642a8965929a9bba02a91eba438a97960d816e14a03897b53a81c10908c1",
+    "sha256": "62673a778c238096919784431677de3bb6b1d57fbbbfeb3c70d24950f7da68ba",
     "count": 74,
     "source_numbers": [
       2,
@@ -78,7 +78,8 @@
       73,
       74,
       75
-    ]
+    ],
+    "text_columns": 2
   },
   "methodology": {
     "file": "zeit.docx",
