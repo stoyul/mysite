@@ -83,15 +83,16 @@ window.PRODUCTS = [
           de:"„Energie zurückholen“ ist ein Kartenset aus 24 psychologischen Praktiken. Oft fehlt die Kraft nicht, weil wir wenig davon haben, sondern weil unsere Energie durch das gebunden ist, was wir festhalten: die Vergangenheit, Angst, Kontrolle, fremde Erwartungen. Das Set hilft zu sehen, wohin die Aufmerksamkeit geht, und die Ressource zu dir zurückzuholen. Teil des Systems „Punkt der Kraft“."}
   },
   {
-    slug:"disciplina-uma", cat:"book", img:"assets/img/c08.jpg",
-    type:{ru:"Книга", en:"Book", de:"Buch"},
+    slug:"disciplina-uma", cat:"deck", img:"assets/discipline-mind/hero-cards.jpg",
+    href:"disciplina-uma.html", topics:["energy"], featured:true,
+    type:{ru:"Колода", en:"Deck", de:"Kartenset"},
     title:{ru:"Дисциплина ума", en:"Discipline of Mind", de:"Disziplin des Geistes"},
-    desc:{ru:"Книга о ясности мышления и внутренней опоре.",
-          en:"A book about clarity of thinking and inner support.",
-          de:"Ein Buch über Klarheit des Denkens und inneren Halt."},
-    long:{ru:"Книга о том, как выстроить ясность мышления, вернуть внутреннюю опору и превратить понимание в устойчивую практику.",
-          en:"A book on building clarity of mind, restoring inner support, and turning understanding into a steady practice.",
-          de:"Ein Buch darüber, wie du Klarheit des Denkens aufbaust, inneren Halt zurückgewinnst und Verstehen in eine beständige Praxis verwandelst."}
+    desc:{ru:"44 двусторонние карты для ясности, фокуса и действия.",
+          en:"44 double-sided cards for clarity, focus and action.",
+          de:"44 doppelseitige Karten für Klarheit, Fokus und Handeln."},
+    long:{ru:"«Дисциплина ума» — авторская колода из 44 двусторонних карт (88 смысловых сторон). Одна сторона — короткая ментальная формула, вторая — что это значит, вопрос для ума, микро-действие и аудиосопровождение. Карты помогают остановить мысли по кругу, увидеть, что происходит в уме сейчас, и перейти от размышлений к действию.",
+          en:"“Discipline of Mind” is an original deck of 44 double-sided cards (88 meaningful sides). One side is a short mental formula; the other holds what it means, a question for the mind, a micro-action and audio. The cards help you stop looping thoughts, see what your mind is doing right now, and move from thinking to action.",
+          de:"„Disziplin des Geistes“ ist ein eigenes Kartenset aus 44 doppelseitigen Karten (88 Bedeutungsseiten). Eine Seite ist eine kurze mentale Formel, die andere enthält, was sie bedeutet, eine Frage für den Geist, eine Mikro-Handlung und Audio. Die Karten helfen, das Gedankenkreisen zu stoppen, zu sehen, was der Geist gerade tut, und vom Denken ins Handeln zu kommen."}
   },
   {
     slug:"meditacii-vozvrascheniya", cat:"meditation", img:"assets/img/c11.jpg",
