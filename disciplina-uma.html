@@ -121,36 +121,22 @@ ul{margin:0;padding:0;list-style:none}
   .brand .mono{width:34px;height:34px;font-size:15px}
 }
 
-/* hero */
+/* hero — изображение-герой */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .hero{position:relative;background:
-  radial-gradient(90% 70% at 85% 10%,rgba(248,233,231,.95),transparent 60%),
+  radial-gradient(90% 70% at 85% 8%,rgba(248,233,231,.95),transparent 60%),
   radial-gradient(70% 60% at 6% 92%,rgba(246,235,220,.85),transparent 60%),
   linear-gradient(180deg,#fdf8f0,var(--bg))}
-.hero-wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;
-  padding:clamp(32px,5vw,64px) var(--gutter) clamp(40px,6vw,76px);
-  display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(26px,4.5vw,54px);align-items:center}
-.hero-copy .eyebrow{margin-bottom:16px}
-.hero h1{margin:0 0 16px}
-.hero .h1-title{display:block;font-size:clamp(38px,7.6vw,74px);font-weight:800;text-transform:uppercase;
-  letter-spacing:.01em;line-height:.98;
-  background:linear-gradient(100deg,var(--wine) 8%,var(--magenta) 48%,var(--gold-deep) 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-sub{font-family:var(--display);font-size:clamp(20px,2.7vw,26px);color:var(--wine-soft);
-  font-weight:600;line-height:1.3;margin-bottom:20px;max-width:24ch}
-.hero-lead{font-size:16.5px;color:var(--ink-soft);margin-bottom:12px;max-width:46ch}
-.hero-lead.accent{color:var(--wine);font-weight:600;font-family:var(--display);font-size:20px}
-.hero-cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 20px}
-.hero-meta{font-size:13.5px;color:var(--ink-soft);letter-spacing:.01em;max-width:48ch}
+.hero-inner{position:relative;z-index:1;padding:clamp(24px,4vw,48px) 0 clamp(36px,5vw,66px);
+  display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero-inner .eyebrow{margin-bottom:16px}
+.hero-banner{margin:0;width:100%;max-width:1000px}
+.hero-banner img{width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line-gold)}
+.hero-lead.accent{font-family:var(--display);font-size:clamp(21px,2.7vw,27px);color:var(--wine);
+  font-weight:600;line-height:1.3;margin:26px 0 2px;max-width:26ch}
+.hero-cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:16px 0 14px}
+.hero-meta{font-size:13.5px;color:var(--ink-soft);letter-spacing:.01em;max-width:52ch}
 .hero-meta b{color:var(--magenta);font-weight:700}
-.hero-media{position:relative;min-width:0}
-.hero-media img{width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow);
-  border:1px solid var(--line-gold)}
-.hero-media figcaption{margin-top:12px;text-align:center;font-family:var(--display);font-size:17px;color:var(--wine-soft);font-weight:600}
-@media(max-width:880px){
-  .hero-wrap{grid-template-columns:1fr;gap:24px}
-  .hero-copy{order:2} .hero-media{order:1;max-width:620px;margin:0 auto;width:100%}
-  .hero-sub,.hero-lead,.hero-meta{max-width:none}
-}
 
 /* sections */
 .section{padding:clamp(46px,7vw,88px) 0}
@@ -404,24 +390,18 @@ ul{margin:0;padding:0;list-style:none}
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero-wrap">
-    <div class="hero-copy">
-      <span class="eyebrow" data-i18n="he.eyebrow">Авторская колода · 44 карты</span>
-      <h1><span class="h1-title" data-i18n="he.h1">Дисциплина ума</span></h1>
-      <p class="hero-sub" data-i18n="he.sub">44 двусторонние карты для ясности, фокуса и действия</p>
-      <p class="hero-lead" data-i18n="he.l1">Когда мысли ходят по кругу, сложно услышать себя, принять решение и начать действовать.</p>
-      <p class="hero-lead" data-i18n="he.l2">Эти карты помогают остановить внутренний шум, увидеть, что происходит в уме прямо сейчас, и сделать следующий шаг.</p>
-      <p class="hero-lead accent" data-i18n="he.l3">Меньше мыслей по кругу. Больше ясности и действия.</p>
-      <div class="hero-cta-row">
-        <a class="btn btn-magenta btn-lg" href="#" data-cta><span data-i18n="cta.get">Получить колоду</span> →</a>
-        <a class="btn btn-ghost btn-lg" href="#flip" data-i18n="cta.look">Посмотреть карту</a>
-      </div>
-      <p class="hero-meta" data-i18n-html="he.meta"><b>44 карты</b> · 88 смысловых сторон · вопросы · микро-действия · аудиосопровождение</p>
-    </div>
-    <figure class="hero-media" style="margin:0">
-      <img src="assets/discipline-mind/deck-promo.jpg" alt="Колода «Дисциплина ума» и автор Юлия Стоянова: коробка и двусторонние карты" width="1280" height="853" fetchpriority="high">
-      <figcaption data-i18n="he.cap">Колода «Дисциплина ума» · автор Юлия Стоянова</figcaption>
+  <div class="wrap hero-inner">
+    <h1 class="sr-only" data-i18n="he.h1full">Дисциплина ума — 44 двусторонние карты для ясности, фокуса и действия. Автор Юлия Стоянова</h1>
+    <span class="eyebrow" data-i18n="he.eyebrow">Авторская колода · 44 карты</span>
+    <figure class="hero-banner">
+      <img src="assets/discipline-mind/deck-promo.jpg" alt="Колода «Дисциплина ума» и автор Юлия Стоянова: 44 двусторонние карты для ясности, фокуса и действия" width="1280" height="853" fetchpriority="high">
     </figure>
+    <p class="hero-lead accent" data-i18n="he.l3">Меньше мыслей по кругу. Больше ясности и действия.</p>
+    <div class="hero-cta-row">
+      <a class="btn btn-magenta btn-lg" href="#" data-cta><span data-i18n="cta.get">Получить колоду</span> →</a>
+      <a class="btn btn-ghost btn-lg" href="#flip" data-i18n="cta.look">Посмотреть карту</a>
+    </div>
+    <p class="hero-meta" data-i18n-html="he.meta"><b>44 карты</b> · 88 смысловых сторон · вопросы · микро-действия · аудиосопровождение</p>
   </div>
 </section>
 
@@ -777,6 +757,7 @@ ul{margin:0;padding:0;list-style:none}
       "he.l2":"These cards help you stop the inner noise, see what your mind is doing right now, and take the next step.",
       "he.l3":"Fewer looping thoughts. More clarity and action.",
       "he.meta":"<b>44 cards</b> · 88 meaningful sides · questions · micro-actions · audio",
+      "he.h1full":"Discipline of Mind — 44 double-sided cards for clarity, focus and action. By Yulia Stoyanova",
       "he.cap":"The “Discipline of Mind” deck · by Yulia Stoyanova",
       "kn.eyebrow":"Sound familiar?","kn.title":"When the mind doesn't help,<br>but overloads",
       "kn.1":"You've already made a decision, but keep turning it over.","kn.2":"You know what to do, but keep putting off the start.",
@@ -856,6 +837,7 @@ ul{margin:0;padding:0;list-style:none}
       "he.l2":"Diese Karten helfen, den inneren Lärm zu stoppen, zu sehen, was im Geist gerade passiert, und den nächsten Schritt zu machen.",
       "he.l3":"Weniger Gedankenkreisen. Mehr Klarheit und Handeln.",
       "he.meta":"<b>44 Karten</b> · 88 Bedeutungsseiten · Fragen · Mikro-Handlungen · Audio",
+      "he.h1full":"Disziplin des Geistes — 44 doppelseitige Karten für Klarheit, Fokus und Handeln. Von Julia Stojanowa",
       "he.cap":"Das Kartenset „Disziplin des Geistes“ · von Julia Stojanowa",
       "kn.eyebrow":"Kommt dir bekannt vor?","kn.title":"Wenn der Geist nicht hilft,<br>sondern überlastet",
       "kn.1":"Du hast dich schon entschieden, drehst die Entscheidung aber weiter im Kopf.","kn.2":"Du weißt, was zu tun ist, schiebst den Anfang aber auf.",
