@@ -10,9 +10,19 @@ export const DAY_ACTIVITIES=[
   ['social','Социальные сети','📱',30],['personal','Личное время','✨',0],['other','Другие занятия','✦',0],['free','Проверенный резерв','⏳',60]
 ];
 export const DEFAULT_SCHEDULE=Object.fromEntries(DAY_ACTIVITIES.map(([key,,,minutes])=>[key,minutes]));
+export const AUDIT_SOURCES={free:'проверенного резерва',social:'социальных сетей',other:'других занятий',none:'пока не найденного времени'};
+export function quickAudit(schedule,source){
+  if(!(source in AUDIT_SOURCES))throw Error('Выбери один источник времени');
+  const next=structuredClone(schedule);
+  if(source==='none')return {schedule:next,claimed:0};
+  if(!Number.isInteger(next[source])||next[source]<15)throw Error('Здесь пока нет 15 минут. Выбери другой источник или продолжи поиск в игре');
+  next[source]-=15;next.personal=Number(next.personal||0)+15;
+  scheduleToAllocation(next);
+  return {schedule:next,claimed:15};
+}
 export function scheduleToAllocation(schedule){
   const detail=Object.fromEntries(DAY_ACTIVITIES.map(([key])=>[key,Number(schedule[key])]));
-  if(Object.values(detail).some(n=>!Number.isInteger(n)||n<0||n>1440||n%15!==0))throw Error('Выбирай время с шагом 15 минут');
+  if(Object.entries(detail).some(([key,n])=>!Number.isInteger(n)||n<0||n>1440||(key!=='sleep'&&n%15!==0)))throw Error('Выбирай время с шагом 15 минут');
   const used=Object.values(detail).reduce((n,v)=>n+v,0);
   if(used>1440)throw Error(`В сутках 24 часа. Убери ${used-1440} мин из распорядка`);
   return {allocation:{sleep:detail.sleep,work:detail.work,duties:detail.commute+detail.home+detail.family+detail.cooking+detail.shopping+detail.other,rest:detail.rest,wishes:detail.personal+detail.learning,joy:detail.social,unaccounted:1440-used},detail};
@@ -63,6 +73,7 @@ function awardFirstMinutes(run){
 }
 export function currentScene(run){
   if(!run.allocation)return null;
+  if(run.experimentScene){const experiment=scenarios.find(s=>s.id===run.experimentScene);if(!experiment)throw Error('Неизвестное испытание');return experiment;}
   let scene;
   if(run.step===0)scene=scenarios[run.variant%2===0?0:4];
   else if(run.step===1)scene=scenarios[1];
@@ -141,3 +152,14 @@ export function recommendation(run){
   if(run.allocation.wishes<15)return 'События вытеснили время твоей цели. Попробуй увеличить резерв или защитить свой рабочий блок.';
   return 'Тебе удалось защитить время для своей цели. Перенеси небольшой шаг в реальный план и посмотри, как он впишется в день.';
 }
+export function dayInsight(run){
+  const choices=run.history.filter(h=>h.kind==='choice');
+  const lost=Math.max(0,(run.initialAllocation?.wishes||0)-(run.allocation?.wishes||0));
+  const source=run.auditSource&&run.auditSource!=='none'?`В начале выделено ${run.auditClaimed||15} минут из ${AUDIT_SOURCES[run.auditSource]} для «${run.goal}».`:'В начале свободные 15 минут не были очевидны — их поиск продолжился через игровые решения.';
+  const load=run.overload>=2?`В ${run.overload} решениях нагрузка выросла; поэтому следующие события показали усталость.`:choices.some(h=>h.saved>0)?`Твои решения вернули ${choices.reduce((n,h)=>n+(h.saved||0),0)} минут выбранной цели.`:'В этом прохождении дополнительные минуты для цели не появились.';
+  const time=lost?`К концу дня ${lost} минут первоначального времени цели заняли события и практика. Сейчас осталось ${run.allocation.wishes} минут.`:`К концу дня для цели осталось ${run.allocation.wishes} минут.`;
+  const next=run.practice&&!run.practice.skipped?`Твой записанный шаг: «${run.practice.action}». Его можно перенести в реальный план.`:recommendation(run);
+  return {source,load,time,next};
+}
+
+export function newExperiment(sceneId,runId,at){if(!scenarios.some(s=>s.id===sceneId))throw Error('Неизвестное испытание');const run=newRun(runId,at);run.phase='plan';run.experienceVersion=3;run.experimentScene=sceneId;run.missionAwarded=true;startDay(run,DEFAULT_PLAN,'Мой приоритет');return run;}
